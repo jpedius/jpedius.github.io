@@ -202,7 +202,7 @@
   // TODO add saveSelectedCities function here
   app.saveSelectedCities = function() {
   	var selectedCities = JSON.stringify(app.selectedCities);
-  	localstorage.selectedCities = selectedCities;
+  	localStorage.selectedCities = selectedCities;
   };
 
   app.getIconClass = function(weatherCode) {
