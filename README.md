@@ -1,3 +1,3 @@
 ## jpedius.github.io
 
-[Tutorial](/tutorial)
+[Tutorial](tutorial/)
