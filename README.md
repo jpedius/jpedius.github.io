@@ -1,2 +1,3 @@
-# jpedius.github.io
-JPedius Home
+## jpedius.github.io
+
+[Tutorial](/tutorial)
