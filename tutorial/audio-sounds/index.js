@@ -49,7 +49,8 @@ jQuery(function($) {
 
   function shuffle(array) {
 
-    let currentIndex = array.length, randomIndex;
+    let items = JSON.parse(JSON.stringify(array));
+    let currentIndex = items.length, randomIndex;
 
     // While there remain elements to shuffle...
     while (currentIndex !== 0) {
@@ -59,18 +60,46 @@ jQuery(function($) {
       currentIndex--;
 
       // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+      [items[currentIndex], items[randomIndex]] = [
+        items[randomIndex], items[currentIndex]];
     }
 
-    return array;
+    return items;
+  };
+
+  function single_sound(id, mp3, letter) {
+
+    let p = document.createElement('p');
+
+    p.innerHTML = `
+      <audio src="` + mp3 + `"></audio>
+      <button type="button" class="" id="` + id + `">Play</button> 
+      <input type="text" class="" size="10" class="" />
+      <span class=""> ` + letter + ` </span>
+    `;
+
+    let audio = 0;
+    let button = 1;
+
+    p.children[button].addEventListener('click', () => {
+      p.children[audio].play();
+    });
+
+    return p
   }
 
-  console.log(consonant);
-  console.log(shuffle(consonant));
-  console.log(vowel);
-  console.log(shuffle(vowel));
+  function map_sounds(sounds) {
 
-  const sounds = shuffle(consonant.concat(vowel));
-  console.log(sounds);
+    let items = document.getElementById('audio-sounds');
+
+    sounds.map(function(element, index) {
+      let p = single_sound(index, element.mp3, element.letter);
+      items.appendChild(p);
+    });
+
+    return items;
+  }
+
+  let sounds = shuffle(consonant.concat(vowel));
+  map_sounds(sounds);
 });
