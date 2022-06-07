@@ -100,6 +100,46 @@ jQuery(function($) {
     return items;
   }
 
+  function single_button(items) {
+
+    let item = document.getElementById('button-sounds');
+
+    let button = document.createElement('button');
+
+    button.innerHTML = "Letters Show";
+    let p = items.children;
+    for (let i=0; i<p.length; i++) {
+      p[i].children[3].style.display = 'none';
+    }
+
+    let letter = 1;
+    button.addEventListener('click', () => {
+
+      if (letter) {
+        button.innerHTML = "Letters Hide";
+        let p = items.children;
+        for (let i=0; i<p.length; i++) {
+          p[i].children[3].style.display = 'inline';
+        }
+        letter = 0;
+      }
+      else {
+        button.innerHTML = "Letters Show";
+        let p = items.children;
+        for (let i=0; i<p.length; i++) {
+          p[i].children[3].style.display = 'none';
+        }
+        letter = 1;
+      }
+    });
+
+    item.appendChild(button);
+
+    return item;
+  }
+
   let sounds = shuffle(consonant.concat(vowel));
-  map_sounds(sounds);
+  let items = map_sounds(sounds);
+
+  single_button(items)
 });
