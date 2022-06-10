@@ -21,13 +21,20 @@ jQuery(function($) {
     return items;
   };
 
-  let c = [];
-  for (const a of words) {
-    for (const b of a) {
-      c.push(b);
-    }
-  }
+  function words_push(words) {
 
-  let d = shuffle(c);
-  //console.log(d);
+    let items = [];
+    for (const i of words) {
+      for (const j of i) {
+        items.push(j);
+      }
+    }
+    return items;
+  };
+
+  let a = words_push(words);
+  let b = shuffle(a);
+
+  console.log(a);
+  console.log(b);
 });

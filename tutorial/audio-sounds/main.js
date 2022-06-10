@@ -67,7 +67,7 @@ jQuery(function($) {
     return items;
   };
 
-  function single_sound(id, mp3, letter) {
+  function audio_paragraph(id, mp3, letter) {
 
     let p = document.createElement('p');
 
@@ -88,58 +88,60 @@ jQuery(function($) {
     return p
   }
 
-  function map_sounds(sounds) {
-
-    let items = document.getElementById('audio-sounds');
-
-    sounds.map(function(element, index) {
-      let p = single_sound(index, element.mp3, element.letter);
-      items.appendChild(p);
-    });
-
-    return items;
-  }
-
-  function single_button(items) {
-
-    let item = document.getElementById('button-sounds');
+  function show_hide_button(letters, items) {
 
     let button = document.createElement('button');
 
     button.innerHTML = "Letters Show";
-    let p = items.children;
-    for (let i=0; i<p.length; i++) {
-      p[i].children[3].style.display = 'none';
+    for (let i of letters) {
+      i.children[items].style.display = 'none';
     }
-
-    let letter = 1;
+    
+    let hide = 1;
     button.addEventListener('click', () => {
 
-      if (letter) {
+      if (hide) {
         button.innerHTML = "Letters Hide";
-        let p = items.children;
-        for (let i=0; i<p.length; i++) {
-          p[i].children[3].style.display = 'inline';
+        for (let i of letters) {
+          i.children[items].style.display = 'inline';
         }
-        letter = 0;
+        
+        hide = 0;
       }
       else {
         button.innerHTML = "Letters Show";
-        let p = items.children;
-        for (let i=0; i<p.length; i++) {
-          p[i].children[3].style.display = 'none';
+        for (let i of letters) {
+          i.children[items].style.display = 'none';
         }
-        letter = 1;
+        
+        hide = 1;
       }
     });
 
-    item.appendChild(button);
-
-    return item;
+    return button;
   }
 
-  let sounds = shuffle(consonant.concat(vowel));
-  let items = map_sounds(sounds);
+  function main() {
 
-  single_button(items)
+    let root = document.getElementById('root');
+
+    let sounds = shuffle(consonant.concat(vowel));
+
+    let letters = [];
+    let span = 3;
+    sounds.map(function(element, index) {
+      let p = audio_paragraph(index, element.mp3, element.letter);
+      letters.push(p);
+    });
+    let button = show_hide_button(letters, span);
+
+    root.appendChild(button);
+    letters.map(function(element) {
+      root.appendChild(element);
+    });
+
+    return root;
+  };
+
+  main();
 });
