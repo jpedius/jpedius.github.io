@@ -8,7 +8,33 @@
 </head>
 <body>
   <h1>Read Words</h1>
-  <div id="root"></div>
+  <div id="root">
+    <!--<form>-->
+    <div class="text-a">
+      <div class="text-box">
+        <input type="text" class="txt" readonly>
+      </div>
+    </div>
+    <div class="text-a">
+      <span>
+        <label for="rate">Rate</label>
+        <input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+      </span>
+      <span>
+        <label for="pitch">Pitch</label>
+        <input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+      </span>
+    </div>
+    <div class="text-a">
+      <select></select>
+    </div>
+    <div class="text-a">
+      <button class="btn" onclick="previous()">Previous</button>
+      <button class="btn" onclick="play()">Play</button>
+      <button class="btn" onclick="next()">Next</button>
+    </div>
+    <!--</form>-->
+  </div>
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
