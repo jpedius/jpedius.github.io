@@ -64,8 +64,7 @@
   let voices = [];
 
   // "Microsoft Zira - English (United States)"
-  // "Samantha (en-US)"
-  let microsoftFemaleVoices = 0; //3;
+  // "Samantha"
 
   function populateVoiceList() {
 
@@ -81,32 +80,19 @@
       }
     });
 
-    const selectedIndex =
-      voiceSelect.selectedIndex < 0
-        ? microsoftFemaleVoices
-        : voiceSelect.selectedIndex;
-    
     voiceSelect.innerHTML = "";
     for (let i = 0; i < voices.length; i++) {
-      //if (voices[i].lang === "en-US") {
-      //if (voices[i].name === "Microsoft Zira - English (United States)") {
+      if (voices[i].lang === "en-US") {
         const option = document.createElement("option");
         option.textContent = `${voices[i].name} (${voices[i].lang})`;
         option.setAttribute("data-lang", voices[i].lang);
         option.setAttribute("data-name", voices[i].name);
-        voiceSelect.appendChild(option);
-      //}
-      /*
-      if (voices[i].name === "Samantha") {
-        const option = document.createElement("option");
-        option.textContent = `${voices[i].name} (${voices[i].lang})`;
-        option.setAttribute("data-lang", voices[i].lang);
-        option.setAttribute("data-name", voices[i].name);
+        if ((voices[i].name === "Microsoft Zira - English (United States)") || (voices[i].name === "Samantha")) {
+          option.defaultSelected = true;
+        }
         voiceSelect.appendChild(option);
       }
-      */
     }
-    voiceSelect.selectedIndex = selectedIndex;
   }
 
   populateVoiceList();
