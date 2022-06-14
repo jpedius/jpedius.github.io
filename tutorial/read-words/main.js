@@ -64,6 +64,7 @@
   let voices = [];
 
   // "Microsoft Zira - English (United States)"
+  // "Samantha (en-US)"
   let microsoftFemaleVoices = 0; //3;
 
   function populateVoiceList() {
@@ -88,13 +89,13 @@
     voiceSelect.innerHTML = "";
     for (let i = 0; i < voices.length; i++) {
       //if (voices[i].lang === "en-US") {
-      //if (voices[i].name === "Microsoft Zira - English (United States)") {
+      if (voices[i].name === "Microsoft Zira - English (United States)" || voices[i].name === "Samantha (en-US)") {
         const option = document.createElement("option");
         option.textContent = `${voices[i].name} (${voices[i].lang})`;
         option.setAttribute("data-lang", voices[i].lang);
         option.setAttribute("data-name", voices[i].name);
         voiceSelect.appendChild(option);
-      //}
+      }
     }
     voiceSelect.selectedIndex = selectedIndex;
   }
