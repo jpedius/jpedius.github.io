@@ -1,8 +1,10 @@
-const inputTxt = document.querySelector(".txt");
+'use strict';
 
 let previousOrNext = 0;
 let howMany = read_sentences(whole_sentences);
+howMany = shuffle(howMany);
 
+const inputTxt = document.querySelector(".txt");
 inputTxt.value = (howMany.length === 0) ? "" : howMany[previousOrNext];
 
 const one = document.querySelector("#one");
@@ -19,7 +21,7 @@ function play() {
   }
 }
 
-function read_sentences(ws) {
+function read_sentences(rs) {
 
   let url = new URL(document.location);
   let items = [];
@@ -31,9 +33,9 @@ function read_sentences(ws) {
 
     searchId = searchParams.get("id");
 
-    for (let i=0; i<ws.length; i++) {
+    for (let i=0; i<rs.length; i++) {
       if (searchId === i.toString()) {
-        items = ws[i];
+        items = rs[i];return items;
       }
     }
 
@@ -46,8 +48,6 @@ function read_sentences(ws) {
 }
 
 // This is all the same down here
-
-howMany = shuffle(howMany);
 
 function previous() {
   if (previousOrNext <= 0) {

@@ -1,8 +1,10 @@
-const inputTxt = document.querySelector(".txt");
+'use strict';
 
 let previousOrNext = 0;
 let howMany = read_sentences(words);
+howMany = shuffle(howMany);
 
+const inputTxt = document.querySelector(".txt");
 inputTxt.value = howMany[previousOrNext].word;
 
 function setText() {
@@ -15,7 +17,6 @@ function play() {
 }
 
 function read_sentences(w) {
-
   let items = [];
   for (const i of w) {
     for (const j of i) {
@@ -26,8 +27,6 @@ function read_sentences(w) {
 };
 
 // This is all the same down here
-
-howMany = shuffle(howMany);
 
 function previous() {
   if (previousOrNext <= 0) {
