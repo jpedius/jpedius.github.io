@@ -5,22 +5,22 @@ let howMany = read_sentences(words);
 howMany = shuffle(howMany);
 
 const inputTxt = document.querySelector(".txt");
-inputTxt.value = howMany[previousOrNext].word;
+inputTxt.value = howMany[previousOrNext];
 
 function setText() {
-  return inputTxt.value = howMany[previousOrNext].word;
+  return inputTxt.value = howMany[previousOrNext];
 }
 
 function play() {
-  speak(howMany[previousOrNext].word);
+  speak(howMany[previousOrNext]);
   inputTxt.blur();
 }
 
-function read_sentences(w) {
+function read_sentences(rs) {
   let items = [];
-  for (const i of w) {
+  for (const i of rs) {
     for (const j of i) {
-      items.push(j);
+      items.push(j.word);
     }
   }
   return items;
