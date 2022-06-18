@@ -31,7 +31,7 @@ function read_sentences(rs) {
 
   if (searchParams.get("id")) {
 
-    searchId = searchParams.get("id");
+    let searchId = searchParams.get("id");
 
     for (let i=0; i<rs.length; i++) {
       if (searchId === i.toString()) {
