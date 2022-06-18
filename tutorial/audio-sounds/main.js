@@ -73,9 +73,9 @@ jQuery(function($) {
 
     p.innerHTML = `
       <audio src="` + mp3 + `"></audio>
-      <button type="button" class="" id="` + id + `">Play</button> 
-      <input type="text" class="" size="10" class="" />
-      <span class=""> ` + letter + ` </span>
+      <button type="button" class="text-a" id="` + id + `">Play</button> 
+      <input type="text" class="text-a" size="10" class="" />
+      <span class="text-a"> ` + letter + ` </span>
     `;
 
     let audio = 0;
