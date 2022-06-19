@@ -35,7 +35,7 @@ function read_sentences(rs) {
 
     for (let i=0; i<rs.length; i++) {
       if (searchId === i.toString()) {
-        items = rs[i];return items;
+        items = rs[i];
       }
     }
 
