@@ -1,7 +1,8 @@
 .txt {
-	font-size: 60px;
+	font-size: 40px;
 	border: none;
 	outline: none;
+	width: 100%;
 }
 
 .text-a {
