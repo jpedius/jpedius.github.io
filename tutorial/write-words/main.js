@@ -4,18 +4,26 @@ let previousOrNext = 0;
 let howMany = read_sentences(words);
 howMany = shuffle(howMany);
 
+let inputBinary = false;
 const inputTxt = document.querySelector(".txt");
-inputTxt.value = '-----';
+inputTxt.value = howMany[previousOrNext];
 
 const one = document.querySelector("#one");
 
 function setText() {
   one.value = "";
-  return inputTxt.value = '-----';
+  return inputTxt.value = howMany[previousOrNext];
 }
 
 function show() {
-  inputTxt.value = howMany[previousOrNext];
+  if (inputBinary === false) {
+    inputTxt.value = '-----';
+    inputBinary = true; 
+  }
+  else {
+    inputTxt.value = howMany[previousOrNext];
+    inputBinary = false;
+  }
 }
 
 function play() {
