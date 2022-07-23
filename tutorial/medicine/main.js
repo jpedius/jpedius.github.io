@@ -4,37 +4,86 @@ let previousOrNext = 0;
 let howMany = read_sentences(words);
 howMany = shuffle(howMany);
 
-let inputBinary = false;
-const inputTxt = document.querySelector(".txt");
-inputTxt.value = howMany[previousOrNext];
+const textWord = document.querySelector(".txt");
+textWord.value = howMany[previousOrNext].word;
+let inputWord = false;
 
-const one = document.querySelector("#one");
+const textImage = document.querySelector(".txt2");
+textImage.src = 'img/blank.jpg'; //howMany[previousOrNext].image;
+let inputImage = true;
+
+const textDesc = document.querySelector(".txt3");
+textDesc.value = '-----'; //howMany[previousOrNext].description;
+let inputDesc = true;
 
 function setText() {
-  one.value = "";
-  return inputTxt.value = howMany[previousOrNext];
-}
 
-function show() {
-  if (inputBinary === false) {
-    inputTxt.value = '-----';
-    inputBinary = true; 
+  if (inputWord === true) {
+    textWord.value = '-----';
   }
   else {
-    inputTxt.value = howMany[previousOrNext];
-    inputBinary = false;
+    textWord.value = howMany[previousOrNext].word;
+  }
+
+  if (inputImage === true) {
+    textImage.src = "img/blank.jpg";
+  }
+  else {
+    textImage.src = howMany[previousOrNext].image;
+  }
+
+  if (inputDesc === true) {
+    textDesc.value = '-----';
+  }
+  else {
+    textDesc.value = howMany[previousOrNext].description;
+  }
+
+  return howMany[previousOrNext];
+}
+
+function showWord() {
+  if (inputWord === false) {
+    textWord.value = '-----';
+    inputWord = true; 
+  }
+  else {
+    textWord.value = howMany[previousOrNext].word;
+    inputWord = false;
+  }
+}
+
+function showImage() {
+  if (inputImage === false) {
+    textImage.src = "img/blank.jpg";
+    inputImage = true; 
+  }
+  else {
+    textImage.src = howMany[previousOrNext].image;
+    inputImage = false;
+  }
+}
+
+function showDesc() {
+  if (inputDesc === false) {
+    textDesc.value = '-----';
+    inputDesc = true; 
+  }
+  else {
+    textDesc.value = howMany[previousOrNext].description;
+    inputDesc = false;
   }
 }
 
 function play() {
-  speak(howMany[previousOrNext]);
-  inputTxt.blur();
+  speak(howMany[previousOrNext].word);
+  textWord.blur();
 }
 
 function read_sentences(rs) {
   let items = [];
   for (const i of rs) {
-    items.push(i.word);
+    items.push(i);
   }
   return items;
 };
@@ -133,7 +182,7 @@ function speak(talk) {
     return;
   }
 
-  if (inputTxt.value !== "") {
+  if (textWord.value !== "") {
     const utterThis = new SpeechSynthesisUtterance(talk);
 
     utterThis.onend = function (event) {
