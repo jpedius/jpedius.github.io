@@ -1,0 +1,26 @@
+.txt {
+	font-size: 50px;
+	border: none;
+	outline: none;
+	width: 75%;
+	height: 400px;
+}
+
+.text-a {
+	margin: 30px auto;
+}
+
+.btn {
+	border: none;
+	outline: none;
+	background: #008;
+	padding: 10px 30px;
+	font-size: 20px;
+	color: #eee;
+	cursor: pointer;
+	margin: 10px auto;			 
+}
+
+.btn:hover {
+	background: #111;
+}
