@@ -114,7 +114,7 @@ const words = [
     {"word": "eat"},
     {"word": "hit"},
     {"word": "six"},
-    {"word": "arm"}
+    {"word": "arm"},
     {"word": "mom"},
     {"word": "uh"},
     {"word": "oil"},
