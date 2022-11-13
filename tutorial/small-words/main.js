@@ -2,7 +2,7 @@
 
 let previousOrNext = 0;
 let howMany = read_sentences(words);
-howMany = shuffle(howMany);
+//howMany = shuffle(howMany);
 
 const inputTxt = document.querySelector(".txt");
 inputTxt.value = howMany[previousOrNext];
