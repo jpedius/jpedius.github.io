@@ -140,7 +140,7 @@ const words = [
     {"word": "cup"},
     {"word": "hi"},
     {"word": "fan"},
-    {"word": "set"}
+    {"word": "set"},
     {"word": "et"},
     {"word": "lay"},
     {"word": "ten"},
