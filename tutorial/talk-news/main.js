@@ -94,7 +94,7 @@ function populateVoiceList() {
 
   voiceSelect.innerHTML = "";
   for (let i = 0; i < voices.length; i++) {
-    if (voices[i].lang === "en-US") {
+    //if (voices[i].lang === "en-US") {
       const option = document.createElement("option");
       option.textContent = `${voices[i].name} (${voices[i].lang})`;
       option.setAttribute("data-lang", voices[i].lang);
@@ -106,7 +106,7 @@ function populateVoiceList() {
         option.defaultSelected = true;
       }
       voiceSelect.appendChild(option);
-    }
+    //}
   }
 }
 
