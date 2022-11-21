@@ -21,3 +21,7 @@ Partial Sentences
 [Medicine](medicine/)
 
 [Talk News](talk-news/)
+
+- [Lord of the Rings](talk-news/?id=0)
+- [Harry Potter](talk-news/?id=1)
+ 
