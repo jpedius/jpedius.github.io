@@ -21,3 +21,6 @@ Partial Sentences
 [Medicine](medicine/)
 
 [Talk News](talk-news/)
+
+[Plot Words](plot-words/)
+
