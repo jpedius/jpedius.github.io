@@ -11,7 +11,7 @@ const allPlots = [
   const ps = document.querySelector("#plot");
 
   function plotTxt() {
-    let c = "plot/" + ps.value + ".txt";
+    let c = "/tutorial/storage/plot/" + ps.value + ".txt";
     console.log(ps.value, c);
     
     $.get(c, function(data) {
