@@ -11,7 +11,11 @@ $.get( "ajax/test.html", function( data ) {
 
   const ps = document.querySelector("#plot");
   
+  console.log("ps = ", ps);
+  
   let a = ps[3];
+  
+  console.log("a = ", ps[3]);
 
   const allPlots = [
     "aaa",
