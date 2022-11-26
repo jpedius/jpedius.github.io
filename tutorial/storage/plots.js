@@ -1,26 +1,27 @@
 'use strict';
 
-/*
-$.get( "ajax/test.html", function( data ) {
-  $( ".result" ).html( data );
-  alert( "Load was performed." );
-});
-*/
+const allPlots = [
+  "aaaAAA",
+  "bbbBBB",
+  "cccCCC"
+];
 
 (function($) {
 
   const ps = document.querySelector("#plot");
-  
-  console.log("ps = ", ps);
-  
-  let a = ps[3];
-  
-  console.log("a = ", ps[3]);
 
-  const allPlots = [
-    "aaa",
-    "bbb",
-    "ccc"
-  ];
+  function plotTxt() {
+    let c = "plot/" + ps.value + ".txt";
+    console.log(ps.value, c);
+    
+    $.get(c, function(data) {
+      console.log(data);
+    });
+  };
+  
+  plotTxt();
+  ps.addEventListener('chage', function() {
+    plotTxt();
+  }, false); 
 
 })(jQuery);
