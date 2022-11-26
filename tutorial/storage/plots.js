@@ -14,13 +14,13 @@ const allPlots = [
     let c = "plot/" + ps.value + ".txt";
     console.log(ps.value, c);
     
-    $.get(c, function(data) {
-      console.log(data);
-    });
+    //$.get(c, function(data) {
+    //  console.log(data);
+    //});
   };
   
   plotTxt();
-  ps.addEventListener('chage', function() {
+  ps.addEventListener('change', function() {
     plotTxt();
   }, false); 
 
