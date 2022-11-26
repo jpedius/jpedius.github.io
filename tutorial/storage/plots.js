@@ -11,12 +11,12 @@ const allPlots = [
   const ps = document.querySelector("#plot");
 
   function plotTxt() {
-    let c = "plot/" + ps.value + ".js";
+    let c = "plot/" + ps.value + ".txt";
     console.log(ps.value, c);
     
     $.get(c, function(data) {
       console.log(data);
-    });
+    }, "text");
   };
   
   plotTxt();
