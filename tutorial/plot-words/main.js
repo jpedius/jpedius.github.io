@@ -1,7 +1,7 @@
 'use strict';
 
-let previousOrNext = 0;
-let howMany = allPlots;
+let previousOrNext = allPreviousOrNext;
+let howMany = allHowMany;
 
 const inputTxt = document.querySelector(".txt");
 inputTxt.value = howMany[previousOrNext];
