@@ -54,11 +54,12 @@
     return setText();
   }
 
-  let previousOrNext = 0;
-  let howMany = ["Hello", "World"];
-
   let inputTxt = document.querySelector(".txt");
   let ps = document.querySelector("#plot");
+
+  let previousOrNext = 0;
+  let howMany = ["Hello", "World"];
+  inputTxt.value = howMany[previousOrNext];
   
   plotTxt();
   ps.addEventListener('change', function() { plotTxt() }, false);
