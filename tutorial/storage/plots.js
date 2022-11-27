@@ -16,6 +16,12 @@ const allPlots = [
     
     $.get(c, function(data) {
       console.log(data);
+      
+      let b = data.match( /[^\.!\?]+[\.!\?]+/g );
+      b = b.map(x => x.trim());
+      
+      console.log(b);
+ 
     }, "text");
   };
   
