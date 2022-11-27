@@ -18,7 +18,17 @@
       <button class="btn" id="buttonNext">Next</button>
     </div>
     <div class="text-a">
-      <select id="plot">
+      <span>
+        <label for="rate">Rate</label>
+        <input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+      </span>
+      <span>
+        <label for="pitch">Pitch</label>
+        <input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+      </span>
+    </div>
+    <div class="text-a">
+      <select id="selectPlot">
         <option value="harry-potter">Harry Potter</option>
 
         <option value="eragon">Eragon</option>
@@ -48,16 +58,6 @@
         
         <option value="klaus">Klaus</option>      
       </select>
-    </div>
-    <div class="text-a">
-      <span>
-        <label for="rate">Rate</label>
-        <input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
-      </span>
-      <span>
-        <label for="pitch">Pitch</label>
-        <input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
-      </span>
     </div>
     <div class="text-a">
       <select id="voice"></select>
