@@ -22,6 +22,8 @@
       howMany = b;
       previousOrNext = 0;
       
+      inputTxt.value = howMany[previousOrNext];
+      
       console.log(data, b, howMany);
  
     }, "text");
@@ -55,12 +57,11 @@
   let previousOrNext = 0;
   let howMany = ["Hello", "World"];
 
-  const ps = document.querySelector("#plot");
+  let inputTxt = document.querySelector(".txt");
+  let ps = document.querySelector("#plot");
   
   plotTxt();
   ps.addEventListener('change', function() { plotTxt() }, false);
 
-  const inputTxt = document.querySelector(".txt");
-  inputTxt.value = howMany[previousOrNext];
 
 })(jQuery);
