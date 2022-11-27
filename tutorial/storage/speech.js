@@ -80,7 +80,7 @@ function speak(talk) {
     return;
   }
 
-  if (inputTxt.value !== "") {
+  if (letSelectText.value !== "") {
     const utterThis = new SpeechSynthesisUtterance(talk);
 
     utterThis.onend = function (event) {
