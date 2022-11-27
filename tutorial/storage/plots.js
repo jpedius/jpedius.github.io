@@ -14,6 +14,11 @@ const allPlots = [
     let c = "/tutorial/storage/plot/" + ps.value + ".txt";
     console.log(ps.value, c);
     
+    let d = c.match( /[^\.!\?]+[\.!\?]+/g );
+    d = d.map(x => x.trim());
+      
+    console.log(d);
+    
     $.get(c, function(data) {
       console.log(data);
       
