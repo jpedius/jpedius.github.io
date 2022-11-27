@@ -1,7 +1,7 @@
 'use strict';
 
-const allPreviousOrNext = 0;
-const allHowMany = ["Hello", "World"];
+let allPreviousOrNext = 0;
+let allHowMany = ["Hello", "World"];
 
 (function($) {
 
