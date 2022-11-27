@@ -15,8 +15,8 @@ let allHowMany = ["Hello", "World"];
 
     let d = e.match( /[^\.!\?]+[\.!\?]+/g );
     d = d.map(x => x.trim());
-    allHowMany = d;
-    allPreviousOrNext = 0;
+    //allHowMany = d;
+    //allPreviousOrNext = 0;
     
     console.log(e, d, allHowMany);
     
@@ -24,8 +24,8 @@ let allHowMany = ["Hello", "World"];
       
       let b = data.match( /[^\.!\?]+[\.!\?]+/g );
       b = b.map(x => x.trim());
-      allHowMany = b;
-      allPreviousOrNext = 0;
+      //allHowMany = b;
+      //allPreviousOrNext = 0;
       
       console.log(data, b, allHowMany);
  
