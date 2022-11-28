@@ -2,7 +2,7 @@
 
 (function($) {
 
-  let c = [" ", "X", "O"]; 
+  let c = ["_", "X", "O"]; 
 
   let e = [];
   for (let d=0; d<9; d++) {
