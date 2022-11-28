@@ -5,12 +5,12 @@
 	font-size: 20px;
 	color: #eee;
 	cursor: pointer;
-	margin: 10px auto;
+	margin: 10px; /*auto;*/
 	padding: 40px 30px;	
 }
 
 .text-a {
 	background: #fff;
-	margin: 10px auto;
+	margin: 10px; /*auto;*/
 	padding: 40px 30px;
 }
