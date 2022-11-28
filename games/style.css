@@ -2,13 +2,15 @@
 	border: none;
 	outline: none;
 	background: #008;
-	padding: 40px 30px;
 	font-size: 20px;
 	color: #eee;
 	cursor: pointer;
 	margin: 10px auto;
+	padding: 40px 30px;	
 }
 
 .text-a {
-	margin: 50px auto;
+	background: #000;
+	margin: 10px auto;
+	padding: 40px 30px;
 }
