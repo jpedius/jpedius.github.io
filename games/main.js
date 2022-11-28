@@ -6,7 +6,8 @@
 
   let e = [];
   for (let d=0; d<9; d++) {
-    let b0 = document.querySelector(".a0");
+    let f = ".a" + d;
+    let b0 = document.querySelector(f);
     b0.innerHTML = " ";
     e[d] = b0.addEventListener("click", function() {
       b0.innerHTML = "X";
