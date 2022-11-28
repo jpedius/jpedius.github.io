@@ -4,7 +4,7 @@
 
   let b0 = document.querySelector(".a0");
   b0.addEventListener("click", function() {
-    b0.value = b0.value + "@";
+    b0.innerHTML = "Hello";
   }, false);
 
 })(jQuery);
