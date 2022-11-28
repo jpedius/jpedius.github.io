@@ -1,4 +1,10 @@
 .ttt {
-    padding: 4em;
-    border: 50px; 
+	border: none;
+	outline: none;
+	background: #008;
+	padding: 10px 30px;
+	font-size: 20px;
+	color: #eee;
+	cursor: pointer;
+	margin: 10px auto;
 }
