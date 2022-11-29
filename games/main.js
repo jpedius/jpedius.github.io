@@ -3,7 +3,8 @@
 (function($) {
 
   let c = ["_", "X", "O"]; 
-
+  let j = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  
   let e = "";
   for (let d=0; d<9; d++) {
     
@@ -12,7 +13,7 @@
     let b0 = document.querySelector(f);
     b0.innerHTML = f;
     b0.addEventListener("click", function() {
-      b0.innerHTML = "X";
+      b0.innerHTML += "X";
     }, false);
     
     e += f + " ";
