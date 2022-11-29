@@ -21,5 +21,9 @@
   
   let abc = document.getElementById(".abc");
   abc.innerHTML = e;
+  
+  let bcd = document.getElementById(".bcd");
+  bcd.innerHTML = "Star Wars";
+ 
 
 })(jQuery);
