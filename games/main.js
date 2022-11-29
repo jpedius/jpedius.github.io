@@ -19,7 +19,7 @@
     e += f + " ";
   }
   
-  let abc = document.querySelector(".abc");
+  let abc = document.getElementById(".abc");
   abc.innerHTML = e;
 
 })(jQuery);
