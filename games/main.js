@@ -30,5 +30,17 @@
       bcd.className += " dfg";
     }
   }, false);
+  
+  const t0 = document.querySelector('#root');
+  
+  let t1 = document.createElement('center');
+  t1.textContent = t0;
+  
+  let t2 = document.createElement('div');
+  t2.textContent = t1;
+  
+  t1.appendChild(t2);
+  
+  t0.appendChild(t1);
 
 })(jQuery);
