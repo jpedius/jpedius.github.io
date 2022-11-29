@@ -12,7 +12,7 @@
     let b0 = document.querySelector(f);
     b0.innerHTML = f;
     
-    e[d] = b0.addEventListener("click", function() {
+    e[f] = b0.addEventListener("click", function() {
       b0.innerHTML = "X";
     }, false);
   }
