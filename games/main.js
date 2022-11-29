@@ -19,10 +19,10 @@
     e += f + " ";
   }
   
-  let abc = document.getElementById(".abc");
+  let abc = document.querySelector(".abc");
   abc.innerHTML = e;
   
-  let bcd = document.getElementById(".bcd");
+  let bcd = document.querySelector(".bcd");
   bcd.innerHTML = "Star Wars";
  
 
