@@ -37,9 +37,17 @@
   t1.textContent = t0;
   
   let t2 = document.createElement('div');
-  t2.textContent = t1;
+  t2.textContent = t1;  
+
+  let t3 = document.createElement('div');
+  t3.textContent = t1;
+    
+  let t4 = document.createElement('div');
+  t4.textContent = t1;
   
   t1.appendChild(t2);
+  t1.appendChild(t3);
+  t1.appendChild(t4);  
   
   t0.appendChild(t1);
 
