@@ -24,6 +24,8 @@
   
   let bcd = document.querySelector(".bcd");
   bcd.innerHTML = "Star Wars";
- 
+  bcd.addEventListener("click", function() {
+    bcd.innerHTML += "X";
+  }, false);
 
 })(jQuery);
