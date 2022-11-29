@@ -26,7 +26,9 @@
   bcd.innerHTML = "Star Wars";
   bcd.addEventListener("click", function() {
     bcd.innerHTML += "X";
-    bcd.className += " dfg";
+    if (bcd.classList.add("dfg")) {
+      bcd.className += " dfg";
+    }
   }, false);
 
 })(jQuery);
