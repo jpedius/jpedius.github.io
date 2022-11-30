@@ -43,7 +43,7 @@
       sSpan.innerHTML = '_';
       
       sSpan.addEventListener('click', function() {
-        sSpan.innerHTML = game.turn : 'X' ? 'O';
+        sSpan.innerHTML = game.turn ? 'X' : 'O';
         game.turn = !game.turn;
       }, false);
       
