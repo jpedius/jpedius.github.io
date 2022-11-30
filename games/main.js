@@ -55,6 +55,8 @@
       
       q1.appendChild(q3);
       
+      w0[w1];
+      
       w1++;
     }
     
@@ -62,7 +64,14 @@
   }
   
   t0.appendChild(t1a);
-  
+
+  let abc2 = document.querySelector(".abc");
+  let abc3 = '';
+  for (let i = 0; i < w0.length; i++) { 
+    abc3 += w0[i] + ", ";
+  }
+  abc2.innerHTML = abc3;
+
   let t1 = document.createElement('center');
   
   let t2 = document.createElement('div');
