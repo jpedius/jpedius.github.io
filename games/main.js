@@ -72,6 +72,8 @@
   }
   abc2.innerHTML = abc3;
 
+  t0.appendChild(abc2);
+
   let t1 = document.createElement('center');
   
   let t2 = document.createElement('div');
