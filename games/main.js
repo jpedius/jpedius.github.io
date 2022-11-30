@@ -36,8 +36,11 @@
   let t1  = document.createElement('center');
   
   let t2  = document.createElement('div');
+  t2.classList.add('text-a');
   let t3  = document.createElement('div');
+  t3.classList.add('text-a');
   let t4  = document.createElement('div');
+  t4.classList.add('text-a');
   
   let t5  = document.createElement('span');
   let t6  = document.createElement('span');
