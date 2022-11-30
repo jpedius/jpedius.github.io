@@ -33,6 +33,33 @@
   
   const t0 = document.querySelector('#root');
   
+  let t1a = document.createElement('center');
+
+  let w0 = 'X';
+  
+  for (let q0=0; q0<3; q0++) {
+
+    let q1 = document.createElement('div');
+    q1.classList.add('text-a');
+    
+    for (let q2=0; q2<3; q2++) {
+
+      let q3 = document.createElement('span'); 
+      q3.classList.add('ttt', w0);
+      q3.innerHTML = w0;
+      
+      q3.addEventListener("click", function() {
+        q3.innerHTML += "X";
+      }, false);
+      
+      q1.appendChild(q3);
+    }
+    
+    t1a.appendChild(q1);  
+  }
+  
+  t0.appendChild(t1a);
+  
   let t1 = document.createElement('center');
   
   let t2 = document.createElement('div');
