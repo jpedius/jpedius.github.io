@@ -40,13 +40,13 @@
   t2.textContent = t1;
   
   let t5 = document.createElement('span'):
-  t5.textContenr = t2;
+  t5.textContent = t2;
 
   let t6 = document.createElement('span'):
-  t6.textContenr = t2;
+  t6.textContent = t2;
 
   let t7 = document.createElement('span'):
-  t7.textContenr = t2;
+  t7.textContent = t2;
 
   let t3 = document.createElement('div');
   t3.textContent = t1;
