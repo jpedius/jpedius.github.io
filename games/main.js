@@ -43,20 +43,28 @@
   t4.classList.add('text-a');
   
   let t5  = document.createElement('span');
+  t5.classList.add('ttt', 'a0');
   let t6  = document.createElement('span');
+  t6.classList.add('ttt', 'a1');
   let t7  = document.createElement('span');
+  t7.classList.add('ttt', 'a2');
   let t8  = document.createElement('span');
+  t8.classList.add('ttt', 'a3');
   let t9  = document.createElement('span');
+  t9.classList.add('ttt', 'a4');
   let t10 = document.createElement('span');
+  t10.classList.add('ttt', 'a5');
   let t11 = document.createElement('span');
+  t11.classList.add('ttt', 'a6');
   let t12 = document.createElement('span');
+  t12.classList.add('ttt', 'a7');
   let t13 = document.createElement('span');
+  t13.classList.add('ttt', 'a8');
+  //t1.textContent = t0;
   
-  t1.textContent = t0;
-  
-  t2.textContent = t1;
-  t3.textContent = t1;
-  t4.textContent = t1; 
+  //t2.textContent = t1;
+  //t3.textContent = t1;
+  //t4.textContent = t1; 
   
   t5.textContent = t2;
   t6.textContent = t2;
