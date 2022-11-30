@@ -15,7 +15,7 @@
 
       let sSpan = document.createElement('span'); 
       sSpan.classList.add('sSpan', 'i' + pos);
-      sSpan.innerHTML = 'i' + pos;
+      sSpan.innerHTML = '&nbsp;';
       
       sSpan.addEventListener('click', function() {
         sSpan.innerHTML += 'X';
