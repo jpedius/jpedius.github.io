@@ -2,6 +2,11 @@
 
 (function($) {
 
+  let root = document.querySelector('#root');
+  let sCenter = document.createElement('center');
+  
+  
+
   let c = ["_", "X", "O"]; 
   let j = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   
@@ -31,19 +36,19 @@
     }
   }, false);
   
-  const t0 = document.querySelector('#root');
+
   
-  let t1a = document.createElement('center');
+
 
   let w0 = [];
   let w1 = 0;
   
-  for (let q0=0; q0<3; q0++) {
+  for (let i=0; i<3; i++) {
 
     let q1 = document.createElement('div');
     q1.classList.add('text-a');
     
-    for (let q2=0; q2<3; q2++) {
+    for (let j=0; j<3; j++) {
 
       let q3 = document.createElement('span'); 
       q3.classList.add('ttt', 'a' + w1);
@@ -60,19 +65,19 @@
       w1++;
     }
     
-    t1a.appendChild(q1);  
+    sCenter.appendChild(q1);  
   }
   
-  t0.appendChild(t1a);
+  root.appendChild(sCenter);
 
   let abc2 = document.querySelector(".abc");
   let abc3 = '';
-  for (let i = 0; i < w0.length; i++) { 
-    abc3 += w0[i] + ", ";
+  for (let i2 = 0; i2 < w0.length; i2++) { 
+    abc3 += w0[i2] + ", ";
   }
   abc2.innerHTML = abc3;
 
-  t0.appendChild(abc2);
+  root.appendChild(abc2);
 
   let t1 = document.createElement('center');
   
@@ -107,6 +112,6 @@
     }
   }
 
-  t0.appendChild(t1);
+  root.appendChild(t1);
 
 })(jQuery);
