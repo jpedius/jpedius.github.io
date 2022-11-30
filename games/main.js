@@ -54,10 +54,10 @@
       sSpan.innerHTML = '_';
       
       sSpan.addEventListener('click', function() {
-        if (sDisabled[pos] === true) {
+        if (game.sDisabled[pos] === true) {
           sSpan.innerHTML = game.turn ? 'X' : 'O';
           game.turn = !game.turn;
-          sDisabled[pos] = false;
+          game.sDisabled[pos] = false;
         } 
       }, false);
       
