@@ -4,7 +4,18 @@
 
   const game = {
 
-    turn: true, 
+    turn: true,
+    
+    sTicTacToe: [
+      true, true, true,
+      true, true, true,
+      true, true, true,
+    ],
+    sDisabled: [
+      true, true, true,
+      true, true, true,
+      true, true, true,
+    ],
 
     x: [],
     o: [],
@@ -43,8 +54,11 @@
       sSpan.innerHTML = '_';
       
       sSpan.addEventListener('click', function() {
-        sSpan.innerHTML = game.turn ? 'X' : 'O';
-        game.turn = !game.turn;
+        if (sDisabled[pos] === true) {
+          sSpan.innerHTML = game.turn ? 'X' : 'O';
+          game.turn = !game.turn;
+          sDisabled[pos] = false;
+        } 
       }, false);
       
       sDiv.appendChild(sSpan);
