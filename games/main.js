@@ -48,9 +48,15 @@
   t1.appendChild(t4);
  
   for (let t14=0; t14<9; t14++) {
+
     let t15 = document.createElement('span');
     t15.classList.add('ttt', 'a' + t14);
     t15.innerHTML = '.a' + t14;
+    
+    t15.addEventListener("click", function() {
+      t15.innerHTML += "X";
+    }, false);
+    
     if (t14 < 3) {
       t2.appendChild(t15);
     } else if (t14 < 6) {
