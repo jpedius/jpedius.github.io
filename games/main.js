@@ -47,11 +47,11 @@
     t15.classList.add('ttt', 'a' + t14);
     t15.innerHTML = '.a' + t14;
     if (t14 < 3) {
-      t3.appendChild(t15);
+      t2.appendChild(t15);
     } else if (t14 < 6) {
-      t4.appendChild(t15);
+      t3.appendChild(t15);
     } else if (t14 < 9) {
-      t5.appendChild(t15);
+      t4.appendChild(t15);
     }
   }
   
