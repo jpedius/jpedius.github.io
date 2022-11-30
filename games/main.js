@@ -35,7 +35,8 @@
   
   let t1a = document.createElement('center');
 
-  let w0 = 'X';
+  let w0 = [];
+  let w1 = 0;
   
   for (let q0=0; q0<3; q0++) {
 
@@ -45,14 +46,16 @@
     for (let q2=0; q2<3; q2++) {
 
       let q3 = document.createElement('span'); 
-      q3.classList.add('ttt', w0);
-      q3.innerHTML = w0;
+      q3.classList.add('ttt', 'a' + w1);
+      q3.innerHTML = 'a' + w1;
       
       q3.addEventListener("click", function() {
         q3.innerHTML += "X";
       }, false);
       
       q1.appendChild(q3);
+      
+      w1++;
     }
     
     t1a.appendChild(q1);  
