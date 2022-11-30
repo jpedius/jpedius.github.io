@@ -6,6 +6,7 @@
   let sCenter = document.createElement('center');
   
   let pos = 0;
+  let index = [];
   for (let i=0; i<3; i++) {
 
     let sDiv = document.createElement('div');
@@ -15,7 +16,7 @@
 
       let sSpan = document.createElement('span'); 
       sSpan.classList.add('sSpan', 'i' + pos);
-      sSpan.innerHTML = '&nbsp;';
+      sSpan.innerHTML = '_';
       
       sSpan.addEventListener('click', function() {
         sSpan.innerHTML += 'X';
@@ -23,12 +24,14 @@
       
       sDiv.appendChild(sSpan);
       
+      index[pos];
       pos++;
     }
     
     sCenter.appendChild(sDiv);  
   }
-  
+
+  sCenter.textContent = index;
   root.appendChild(sCenter);
 
 })(jQuery);
