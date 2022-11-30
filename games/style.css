@@ -1,26 +1,16 @@
-.ttt {
+.sSpan {
 	border: none;
 	outline: none;
 	background: #008;
 	font-size: 20px;
 	color: #eee;
 	cursor: pointer;
-	margin: 10px; /*auto;*/
+	margin: 10px;
 	padding: 40px 30px;	
 }
 
-.text-a {
+.sDiv {
 	background: #fff;
-	margin: 10px; /*auto;*/
+	margin: 10px;
 	padding: 40px 30px;
-}
-
-.bcd {
-	margin: 10px; /*auto;*/
-	padding: 40px 30px;
-	font-size: 30px;
-}
-
-.bcd.dfg {
-	font-size: 50px;
 }
