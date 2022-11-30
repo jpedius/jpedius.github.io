@@ -58,7 +58,10 @@
           sSpan.innerHTML = game.turn ? 'X' : 'O';
           game.turn = !game.turn;
           game.sDisabled[pos] = false;
-        } 
+        }
+        else {
+          sSpan.innerHTML = 'G';
+        }
       }, false);
       
       sDiv.appendChild(sSpan);
