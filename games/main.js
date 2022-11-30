@@ -6,7 +6,6 @@
   let sCenter = document.createElement('center');
   
   let pos = 0;
-  let index = [];
   for (let i=0; i<3; i++) {
 
     let sDiv = document.createElement('div');
@@ -23,15 +22,13 @@
       }, false);
       
       sDiv.appendChild(sSpan);
-      
-      index[pos];
+
       pos++;
     }
     
     sCenter.appendChild(sDiv);  
   }
 
-  sCenter.textContent = index;
   root.appendChild(sCenter);
 
 })(jQuery);
