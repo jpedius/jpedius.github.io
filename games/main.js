@@ -4,6 +4,42 @@
 
   const game = {
 
+    xTurn: true,
+    xState: [],
+    oState: [],
+    
+    winningStates: [
+      // Rows
+      ['0', '1', '2'],
+      ['3', '4', '5'],
+      ['6', '7', '8'],
+
+      // Columns
+      ['0', '3', '6'],
+      ['1', '4', '7'],
+      ['2', '5', '8'],
+
+      // Diagonal
+      ['0', '4', '8'],
+      ['2', '4', '6']
+    ]
+  }
+
+  document.querySelector('.restart').addEventListener('click', () => {
+    
+    document.querySelector('.game-over').classList.remove('visible')
+    
+    document.querySelectorAll('.grid-cell').forEach(cell => {
+      cell.classList.remove('disabled', 'x', 'o')
+    })
+
+    game.xTurn = true
+    game.xState = []
+    game.oState = []
+  })
+/*
+  const game = {
+
     turn: true,
     
     sTicTacToe: [
@@ -37,7 +73,7 @@
       ['2', '4', '6'],          
     ],  
   };
-  /*
+
   let root = document.querySelector('#root');
   let sCenter = document.createElement('center');
   
