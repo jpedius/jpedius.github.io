@@ -1,3 +1,7 @@
+body {
+    background: #000;
+}
+
 #game {
     position: absolute;
     top: 50%;
@@ -8,6 +12,6 @@
 .gameBackground {
     width: 800px;
     height: 600px;
-    background: black;
+    background: #fff;
     color: blue;
 }
