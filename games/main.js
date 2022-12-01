@@ -49,7 +49,7 @@
     
     for (let j=0; j<3; j++) {
     
-      console.log('a long time ago');
+      //console.log('a long time ago');
       
       let sSpan = document.createElement('span'); 
       sSpan.classList.add('sSpan', 'i' + pos);
@@ -57,8 +57,9 @@
       
       sSpan.addEventListener('click', function(event) {
       
-        console.log(game, game.sDisabled, event, pos, game.sDisabled[pos]);
-      
+        //console.log(game, game.sDisabled, event, pos, game.sDisabled[pos]);
+        //console.log(game.sDisabled[event.target.classList[1]]);
+        console.log(event);
         if (game.sDisabled[pos] === true) {
           sSpan.innerHTML = game.turn ? 'X' : 'O';
           game.turn = !game.turn;
