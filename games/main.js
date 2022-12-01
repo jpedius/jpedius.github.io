@@ -41,22 +41,19 @@
   let root = document.querySelector('#root');
   let sCenter = document.createElement('center');
   
-  let pos = 0;
   for (let i=0; i<3; i++) {
 
     let sDiv = document.createElement('div');
     sDiv.classList.add('sDiv');
     
     for (let j=0; j<3; j++) {
-    
-      //console.log('a long time ago');
       
       let sSpan = document.createElement('span'); 
-      sSpan.classList.add('sSpan', 'i' + pos);
+      sSpan.classList.add('sSpan');
+      
       sSpan.innerHTML = '_';      
+      
       sDiv.appendChild(sSpan);
-
-      pos++;
     }
     
     sCenter.appendChild(sDiv);  
@@ -67,7 +64,7 @@
       
         //console.log(game, game.sDisabled, event, pos, game.sDisabled[pos]);
         //console.log(game.sDisabled[event.target.classList[1]]);
-        console.log(event.target.classList.contains['i0']);
+        //console.log(event.target.classList.contains['i0']);
         console.log(event.target.classList);
         //event.target.classList.contains('');
         
