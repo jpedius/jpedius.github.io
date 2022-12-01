@@ -2,4 +2,4 @@
 
 [Tutorial](tutorial/)
 
-[Games](games/)
+[Tic Tac Toe](games/tic-tac-toe/)
