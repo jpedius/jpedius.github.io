@@ -37,7 +37,7 @@
       ['2', '4', '6'],          
     ],  
   };
-  
+  /*
   let root = document.querySelector('#root');
   let sCenter = document.createElement('center');
   
@@ -70,7 +70,7 @@
         
         
         
-        /* 
+        
         if (game.sDisabled[pos] === true) {
           sSpan.innerHTML = game.turn ? 'X' : 'O';
           game.turn = !game.turn;
@@ -79,9 +79,10 @@
         else {
           sSpan.innerHTML = 'G';
         }
-        */ 
+         
       }, false);  
 
   root.appendChild(sCenter);
-
+  */
+ 
 })(jQuery);
