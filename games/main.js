@@ -48,7 +48,9 @@
     sDiv.classList.add('sDiv');
     
     for (let j=0; j<3; j++) {
-
+    
+      console.log('a long time ago');
+      
       let sSpan = document.createElement('span'); 
       sSpan.classList.add('sSpan', 'i' + pos);
       sSpan.innerHTML = '_';
