@@ -53,27 +53,7 @@
       
       let sSpan = document.createElement('span'); 
       sSpan.classList.add('sSpan', 'i' + pos);
-      sSpan.innerHTML = '_';
-      
-      sSpan.addEventListener('click', function(event) {
-      
-        //console.log(game, game.sDisabled, event, pos, game.sDisabled[pos]);
-        //console.log(game.sDisabled[event.target.classList[1]]);
-        console.log(event.target.classList.contains);
-        console.log(event.target.classList);
-        //event.target.classList.contains('');
-        
-        
-        if (game.sDisabled[pos] === true) {
-          sSpan.innerHTML = game.turn ? 'X' : 'O';
-          game.turn = !game.turn;
-          game.sDisabled[pos] = false;
-        }
-        else {
-          sSpan.innerHTML = 'G';
-        } 
-      }, false);
-      
+      sSpan.innerHTML = '_';      
       sDiv.appendChild(sSpan);
 
       pos++;
@@ -81,6 +61,27 @@
     
     sCenter.appendChild(sDiv);  
   }
+  
+      
+      document.addEventListener('click', function(event) {
+      
+        //console.log(game, game.sDisabled, event, pos, game.sDisabled[pos]);
+        //console.log(game.sDisabled[event.target.classList[1]]);
+        console.log(event.target.classList.contains);
+        console.log(event.target.classList);
+        //event.target.classList.contains('');
+        
+        /* 
+        if (game.sDisabled[pos] === true) {
+          sSpan.innerHTML = game.turn ? 'X' : 'O';
+          game.turn = !game.turn;
+          game.sDisabled[pos] = false;
+        }
+        else {
+          sSpan.innerHTML = 'G';
+        }
+        */ 
+      }, false);  
 
   root.appendChild(sCenter);
 
