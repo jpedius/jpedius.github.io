@@ -5,3 +5,7 @@
     transform: translate(-50%, -50%);
 }
 
+.gameBackground {
+    width: 800px;
+    height: 600px;    
+}
