@@ -67,9 +67,11 @@
       
         //console.log(game, game.sDisabled, event, pos, game.sDisabled[pos]);
         //console.log(game.sDisabled[event.target.classList[1]]);
-        console.log(event.target.classList.contains);
+        console.log(event.target.classList.contains['i0']);
         console.log(event.target.classList);
         //event.target.classList.contains('');
+        
+        
         
         /* 
         if (game.sDisabled[pos] === true) {
