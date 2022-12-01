@@ -55,9 +55,9 @@
       sSpan.classList.add('sSpan', 'i' + pos);
       sSpan.innerHTML = '_';
       
-      sSpan.addEventListener('click', function() {
+      sSpan.addEventListener('click', function(event) {
       
-        console.log(game, game.sDisabled, pos, game.sDisabled[pos]);
+        console.log(game, game.sDisabled, event, pos, game.sDisabled[pos]);
       
         if (game.sDisabled[pos] === true) {
           sSpan.innerHTML = game.turn ? 'X' : 'O';
@@ -66,7 +66,7 @@
         }
         else {
           sSpan.innerHTML = 'G';
-        }
+        } 
       }, false);
       
       sDiv.appendChild(sSpan);
