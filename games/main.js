@@ -57,7 +57,7 @@
       
       sSpan.addEventListener('click', function() {
       
-        console.log(game, game.sDisabled, game.sDisabled[pos]);
+        console.log(game, game.sDisabled, pos, game.sDisabled[pos]);
       
         if (game.sDisabled[pos] === true) {
           sSpan.innerHTML = game.turn ? 'X' : 'O';
