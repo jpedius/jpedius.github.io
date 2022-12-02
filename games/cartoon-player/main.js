@@ -10,14 +10,14 @@ let margin = {
   left: 30
 };
     
-let width  = 800 - margin.left - margin.right;
-let height = 600 - margin.top  - margin.bottom;
+let width  = 870 - margin.left - margin.right;
+let height = 640 - margin.top  - margin.bottom;
 
 // append the svg object to the body of the page
 let svg = d3.select("#root")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width",  width  + margin.left + margin.right)
+    .attr("height", height + margin.top  + margin.bottom)
     // translate this svg element to leave some margin.
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
