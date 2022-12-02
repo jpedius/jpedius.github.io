@@ -7,6 +7,8 @@ h1.innerHTML = 'JP';
 let grass = document.createElement('img');
 grass.src = 'grass.webp';
 grass.width = 800;
+grass.x = 400;
+
 console.log(grass);
 
 game.appendChild(h1);
