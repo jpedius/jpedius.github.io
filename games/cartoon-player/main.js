@@ -61,8 +61,8 @@ svg.append("circle")
  
 svg.append("circle")
   .attr("cx", 300)
-  .attr("cy", 100)
-  .attr("r", 40)
+  .attr("cy", 300)
+  .attr("r", 85)
   .style("fill", "green");
 
 /*
