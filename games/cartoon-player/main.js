@@ -65,7 +65,25 @@ svg.append("circle")
   .attr("r", 85)
   .style("fill", "green");
 
+   
+
+let r = Math.floor(Math.random() * 255);
+
+let g = Math.floor(Math.random() * 255);
+
+let b = Math.floor(Math.random() * 255);
+    
+svg.append("line")
+  .attr("x1", 100)
+  .attr("y1", 100)
+  .attr("x2", 200)
+  .attr("y2", 200)
+  .style("stroke", "rgb(" + r + "," + g + "," + b + ")")
+  .style("stroke-width", 2);
 /*
+<line x1 = "100" y1 = "100" 
+               x2 = "200" y2 = "200" style = "stroke:rgb(255,0,0);
+               stroke-width:2"/>
 let h1 = document.createElement('h1');
 h1.innerHTML = 'JP';
 */
