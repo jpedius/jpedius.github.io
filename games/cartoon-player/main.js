@@ -10,8 +10,8 @@ let margin = {
   left: 30
 };
     
-let width  = 450 - margin.left - margin.right;
-let height = 400 - margin.top  - margin.bottom;
+let width  = 800 - margin.left - margin.right;
+let height = 600 - margin.top  - margin.bottom;
 
 // append the svg object to the body of the page
 let svg = d3.select("#root")
