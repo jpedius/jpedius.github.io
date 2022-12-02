@@ -24,7 +24,7 @@ let svg = d3.select("#root")
 
 // X scale and Axis
 let x = d3.scaleLinear()
-    .domain([0, 100])         // This is the min and the max of the data: 0 to 100 if percentages
+    .domain([0, 800])         // This is the min and the max of the data: 0 to 100 if percentages
     .range([0, width]);       // This is the corresponding value I want in Pixel
 
 svg.append('g')
@@ -49,7 +49,7 @@ svg.call(d3.axisBottom(x));
 // Add 3 dots for 0, 50 and 100%
 svg.append("circle")
   .attr("cx", 100)
-  .attr("cy", 100)
+  .attr("cy", 400)
   .attr("r", 40)
   .style("fill", "blue");
  
