@@ -10,11 +10,22 @@ var x = d3.scaleLinear()
 
 // Add 3 dots for 0, 50 and 100%
 svg.append("circle")
-  .attr("cx", x(10)).attr("cy", 100).attr("r", 40).style("fill", "blue");
+  .attr("cx", 100)
+  .attr("cy", 100)
+  .attr("r", 40)
+  .style("fill", "blue");
+ 
 svg.append("circle")
-  .attr("cx", x(50)).attr("cy", 100).attr("r", 40).style("fill", "red");
+  .attr("cx", x(50))
+  .attr("cy", 100)
+  .attr("r", 40)
+  .style("fill", "red");
+ 
 svg.append("circle")
-  .attr("cx", x(100)).attr("cy", 100).attr("r", 40).style("fill", "green");
+  .attr("cx", x(100))
+  .attr("cy", 100)
+  .attr("r", 40)
+  .style("fill", "green");
 
 
 /*
