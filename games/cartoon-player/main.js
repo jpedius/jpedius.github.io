@@ -60,7 +60,7 @@ svg.append("circle")
   .style("fill", "red");
  
 svg.append("circle")
-  .attr("cx", x(100))
+  .attr("cx", 300)
   .attr("cy", 100)
   .attr("r", 40)
   .style("fill", "green");
