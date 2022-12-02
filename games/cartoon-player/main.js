@@ -54,7 +54,7 @@ svg.append("circle")
   .style("fill", "blue");
  
 svg.append("circle")
-  .attr("cx", x(50))
+  .attr("cx", 50)
   .attr("cy", 100)
   .attr("r", 40)
   .style("fill", "red");
