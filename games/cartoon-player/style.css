@@ -10,8 +10,8 @@ body {
 }
 
 .gameBackground {
-    width: 870px;
-    height: 640px;
+    /*width: 870px;
+    height: 640px;*/
     background: #fff;
-    color: blue;
+    color: #000;
 }
