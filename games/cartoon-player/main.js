@@ -45,7 +45,7 @@ var x = d3.scaleLinear()
     .range([0, 400]);       // This is the corresponding value I want in Pixel
 // Try console.log( x(25) ) to see what this x function does.
 svg.call(d3.axisBottom(x));
-
+*/
 // Add 3 dots for 0, 50 and 100%
 svg.append("circle")
   .attr("cx", 100)
@@ -65,7 +65,6 @@ svg.append("circle")
   .attr("r", 40)
   .style("fill", "green");
 
-*/
 /*
 let h1 = document.createElement('h1');
 h1.innerHTML = 'JP';
