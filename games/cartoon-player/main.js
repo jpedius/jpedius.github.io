@@ -8,8 +8,8 @@ const ctx = canvas.getContext('2d');
 
 console.log(canvas.width, window.innerWidth);
 
-const width = canvas.width = window.innerWidth;
-const height = canvas.height = window.innerHeight;
+const width = canvas.width = 800; //window.innerWidth;
+const height = canvas.height = 600; //window.innerHeight;
 
 console.log(canvas.width);
 
