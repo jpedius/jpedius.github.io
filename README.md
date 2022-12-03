@@ -4,4 +4,4 @@
 
 [Tic Tac Toe](games/tic-tac-toe/)
 
-[Cartoon Player](game/cartoon-player/)
+[Cartoon Player](games/cartoon-player/)
