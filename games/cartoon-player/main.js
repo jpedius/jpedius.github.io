@@ -6,6 +6,8 @@ let game = document.querySelector('#game');
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
+console.log(width, canvas.width, window.innerWidth);
+
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
