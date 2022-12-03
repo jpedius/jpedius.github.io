@@ -23,6 +23,21 @@ console.log(parent.innerWidth);
 // This will log the width of the viewport of the outermost frameset
 console.log(top.innerWidth);
 
+console.log(canvas.height);
+
+// This will log the width of the viewport
+console.log(window.innerHeight);
+
+// This will log the width of the frame viewport within a frameset
+console.log(self.innerHeight);
+
+// This will log the width of the viewport of the closest frameset
+console.log(parent.innerHeight);
+
+// This will log the width of the viewport of the outermost frameset
+console.log(top.innerHeight);
+
+
 /*
 //let svg = d3.select("#root");
 
