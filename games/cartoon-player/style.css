@@ -1,6 +1,12 @@
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
 body {
     background: #000;
     margin: 0;
+    
 }
 
 #game {
@@ -8,14 +14,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.gameBackground {
     background: #fff;
-    color: #000;
-}
-
-html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+    color: #000; 
 }
