@@ -9,6 +9,8 @@ const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
+console.log(canvas.width);
+
 // This will log the width of the viewport
 console.log(window.innerWidth);
 
