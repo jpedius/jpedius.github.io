@@ -1,5 +1,16 @@
-// Game index.html
+// game index.html
 let game = document.querySelector('#game');
+
+// set up canvas
+
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
+
+const width = canvas.width = window.innerWidth;
+const height = canvas.height = window.innerHeight;
+
+
+/*
 //let svg = d3.select("#root");
 
 // set the dimensions and margins of the graph
@@ -38,6 +49,7 @@ let y = d3.scaleLinear()
 
 svg.append('g')
   .call(d3.axisLeft(y));
+*/ 
 /*
 // Create a scale: transform value in pixel
 var x = d3.scaleLinear()
@@ -47,6 +59,7 @@ var x = d3.scaleLinear()
 svg.call(d3.axisBottom(x));
 */
 // Add 3 dots for 0, 50 and 100%
+/*
 svg.append("circle")
   .attr("cx", 100)
   .attr("cy", 400)
@@ -80,6 +93,7 @@ svg.append("line")
   .attr("y2", 200)
   .style("stroke", "rgb(" + r + "," + g + "," + b + ")")
   .style("stroke-width", 2);
+  */
 /*
 <line x1 = "100" y1 = "100" 
                x2 = "200" y2 = "200" style = "stroke:rgb(255,0,0);
