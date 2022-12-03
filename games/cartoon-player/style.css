@@ -1,5 +1,6 @@
 body {
     background: #000;
+    margin: 0;
 }
 
 #game {
@@ -12,4 +13,9 @@ body {
 .gameBackground {
     background: #fff;
     color: #000;
+}
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
