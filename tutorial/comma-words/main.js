@@ -72,6 +72,8 @@
   period.disable = true;
   period.addEventListener("change", function() { plot() }, false);
   
+  console.log(period, period.disable);  
+  
   let explanation = document.querySelector("#explanation");
   explanation.addEventListener("change", function() { plot() }, false);
   
