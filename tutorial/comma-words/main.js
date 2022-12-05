@@ -83,6 +83,7 @@
   let comma = document.querySelector("#comma");
   let word = document.querySelector("#word");
   let random = document.querySelector("#random");
+  random.addEventListener("change", function() { plot() }, false);
   
   console.log(period, explanation, question, comma, word, random);
 
