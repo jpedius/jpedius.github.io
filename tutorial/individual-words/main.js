@@ -8,7 +8,7 @@
       previousOrNext = 0;     
       //howMany = data.match( /[^\.!\?]+[\.!\?]+/g ).map(x => x.trim());
       console.log(data);
-      howMany = data.split(' ');
+      //howMany = data.split(' ');
       console.log(howMany);
       letSelectText.value = howMany[previousOrNext];
     }, "text");
