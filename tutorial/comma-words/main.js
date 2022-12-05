@@ -102,12 +102,7 @@
 
     voiceSelect.innerHTML = "";
     for (let i = 0; i < voices.length; i++) {
-      if (voices[i].lang === "en-US" ||
-          voices[i].lang === "en-GB" ||
-          voices[i].lang === "en-AU" ||
-          voices[i].lang === "en-IN" ||
-          voices[i].lang === "en-ZA") {
- 
+      if (voices[i].lang.slice(0, 3) === "en-") {
         const option = document.createElement("option");
         option.textContent = `${voices[i].name} (${voices[i].lang})`;
         option.setAttribute("data-lang", voices[i].lang);
@@ -118,7 +113,7 @@
         else if (voices[i].name === "Samantha") {
           option.defaultSelected = true;
         }
-        else if (voices[i].name === "Daniel") {
+        else if (voices[i].name === "Tessa") { //Daniel") {
           option.defaultSelected = true;
         }
         voiceSelect.appendChild(option);
