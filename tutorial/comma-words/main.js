@@ -6,7 +6,10 @@
     let src = "/tutorial/storage/plot/" + letSelectPlot.value + ".txt";
     $.get(src, function(data) {
       previousOrNext = 0;     
-      howMany = data.match( /[^\.!\?,]+[\.!\?,]+/g ).map(x => x.trim()); 
+      howMany = data.match( /[^\.!\?,]+[\.!\?,]+/g ).map(x => x.trim());
+      if (random.checked) {
+        howMany = shuffle(howMany);
+      }      
       letSelectText.value = howMany[previousOrNext];
     }, "text");
   };
