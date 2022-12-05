@@ -6,7 +6,7 @@
     let src = "/tutorial/storage/plot/" + letSelectPlot.value + ".txt";
     $.get(src, function(data) {
       previousOrNext = 0;     
-      //howMany = data.match( /[^\.!\?]+[\.!\?]+/g ).map(x => x.trim());
+      howMany = data.match( /[^\.!\?]+[\.!\?]+/g ).map(x => x.trim());
       console.log(data);
       //howMany = data.split(' ');
       console.log(howMany);
