@@ -78,10 +78,20 @@
   }
 
   let period = document.querySelector("#period");
+  period.addEventListener("change", function() { plot() }, false);
+  
   let explanation = document.querySelector("#explanation");
+  explanation.addEventListener("change", function() { plot() }, false);
+  
   let question = document.querySelector("#question");
+  question.addEventListener("change", function() { plot() }, false);
+  
   let comma = document.querySelector("#comma");
+  comma.addEventListener("change", function() { plot() }, false);
+  
   let word = document.querySelector("#word");
+  word.addEventListener("change", function() { plot() }, false);
+  
   let random = document.querySelector("#random");
   random.addEventListener("change", function() { plot() }, false);
   
