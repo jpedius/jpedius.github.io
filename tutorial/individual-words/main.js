@@ -7,7 +7,8 @@
     $.get(src, function(data) {
       previousOrNext = 0;     
       //howMany = data.match( /[^\.!\?]+[\.!\?]+/g ).map(x => x.trim());
-      howMany = data.split(' '); 
+      howMany = data.split(' ');
+      console.log(howMany);
       letSelectText.value = howMany[previousOrNext];
     }, "text");
   };
