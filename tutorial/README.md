@@ -24,3 +24,4 @@ Partial Sentences
 
 [Plot Words](plot-words/)
 
+[Individual Words](individual-words/)
