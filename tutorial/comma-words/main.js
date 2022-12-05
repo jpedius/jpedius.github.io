@@ -74,10 +74,10 @@
     return items;
   }
 
-  let period = document.querySelector("period");
-  let explanation = document.querySelector("explanation");
-  let question = document.querySelector("question");
-  let comma = document.querySelector("comma");
+  let period = document.querySelector("#period");
+  let explanation = document.querySelector("#explanation");
+  let question = document.querySelector("#question");
+  let comma = document.querySelector("#comma");
   
   console.log(period, explanation, question, comma);
 
