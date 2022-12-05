@@ -79,8 +79,9 @@
   let question = document.querySelector("#question");
   let comma = document.querySelector("#comma");
   let word = document.querySelector("#word");
+  let random = document.querySelector("#random");
   
-  console.log(period, explanation, question, comma, word);
+  console.log(period, explanation, question, comma, word, random);
 
   // "Microsoft Zira - English (United States)"
   // "Samantha"
