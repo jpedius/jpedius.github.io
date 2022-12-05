@@ -89,6 +89,17 @@
   let random = document.querySelector("#random");
   random.addEventListener("change", function() { plot() }, false);
   
+        let p1 = period.checked ? '\.' : '';
+        let e1 = explanation.checked ? '!' : '';;
+        let q1 = question.checked ? '\?' : '';;
+        let c1 = comma.checked ? ',' : '';;
+        let all1 = p1 + e1 + q1 + c1;
+        let all2 = "[^" + all1 + "]+[" + all1 + "]+";
+        
+        console.log(p1, e1, q1, c1, all1, all2);
+        //let re = new RegExp(, 'g')
+        //howMany = data.match( /[^\.!\?,]+[\.!\?,]+/g ).map(x =>
+
   console.log(period, explanation, question, comma, word, random);
 
   let letSelectPlot = document.querySelector("#selectPlot");
