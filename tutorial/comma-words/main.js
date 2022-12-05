@@ -69,7 +69,7 @@
   letButtonNext.addEventListener("click", function() { next() }, false);
 
   let period = document.querySelector("#period");
-  period.disable = true;
+  period.disabled = true;
   period.addEventListener("change", function() { plot() }, false);
   
   console.log(period, period.disable);  
