@@ -78,8 +78,9 @@
   let explanation = document.querySelector("#explanation");
   let question = document.querySelector("#question");
   let comma = document.querySelector("#comma");
+  let word = document.querySelector("#word");
   
-  console.log(period, explanation, question, comma);
+  console.log(period, explanation, question, comma, word);
 
   // "Microsoft Zira - English (United States)"
   // "Samantha"
