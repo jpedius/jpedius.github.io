@@ -102,9 +102,12 @@
 
     voiceSelect.innerHTML = "";
     for (let i = 0; i < voices.length; i++) {
-      //if (voices[i].lang === "en-US" ||
-      //    voices[i].lang === "en-GB" ||
-      //    voices[i].lang === "en-AU") {
+      if (voices[i].lang === "en-US" ||
+          voices[i].lang === "en-GB" ||
+          voices[i].lang === "en-AU" ||
+          voices[i].lang === "en-IN" ||
+          voices[i].lang === "en-ZA") {
+ 
         const option = document.createElement("option");
         option.textContent = `${voices[i].name} (${voices[i].lang})`;
         option.setAttribute("data-lang", voices[i].lang);
@@ -119,7 +122,7 @@
           option.defaultSelected = true;
         }
         voiceSelect.appendChild(option);
-      //}
+      }
     }
   }
 
