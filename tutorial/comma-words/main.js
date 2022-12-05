@@ -5,11 +5,26 @@
   function plot() {
     let src = "/tutorial/storage/plot/" + letSelectPlot.value + ".txt";
     $.get(src, function(data) {
-      previousOrNext = 0;     
-      howMany = data.match( /[^\.!\?,]+[\.!\?,]+/g ).map(x => x.trim());
+
+      if (word.checked) {
+        howMany = data.split(' ').map(x => x.trim());
+      }
+      else {
+        let p = period.checked ? '\.' : '';
+        let e = explanation.checked ? '!' : '';;
+        let q = question.checked ? '\?' : '';;
+        let c = comma.checked ? ',' : '';;
+        let all = p + e + q + c;
+        let re = new RegExp("[^" + all + "]+[" + all + "]+", 'g')
+        //howMany = data.match( /[^\.!\?,]+[\.!\?,]+/g ).map(x => x.trim());
+        howMany = data.match( re ).map(x => x.trim());
+      }
+
       if (random.checked) {
         howMany = shuffle(howMany);
-      }      
+      }
+
+      previousOrNext = 0;        
       letSelectText.value = howMany[previousOrNext];
     }, "text");
   };
@@ -53,6 +68,27 @@
   let letButtonNext = document.querySelector("#buttonNext");
   letButtonNext.addEventListener("click", function() { next() }, false);
 
+  let period = document.querySelector("#period");
+  period.disable = true;
+  period.addEventListener("change", function() { plot() }, false);
+  
+  let explanation = document.querySelector("#explanation");
+  explanation.addEventListener("change", function() { plot() }, false);
+  
+  let question = document.querySelector("#question");
+  question.addEventListener("change", function() { plot() }, false);
+  
+  let comma = document.querySelector("#comma");
+  comma.addEventListener("change", function() { plot() }, false);
+  
+  let word = document.querySelector("#word");
+  word.addEventListener("change", function() { plot() }, false);
+  
+  let random = document.querySelector("#random");
+  random.addEventListener("change", function() { plot() }, false);
+  
+  console.log(period, explanation, question, comma, word, random);
+
   let letSelectPlot = document.querySelector("#selectPlot");
   letSelectPlot.addEventListener("change", function() { plot() }, false);
   plot();
@@ -76,26 +112,6 @@
 
     return items;
   }
-
-  let period = document.querySelector("#period");
-  period.addEventListener("change", function() { plot() }, false);
-  
-  let explanation = document.querySelector("#explanation");
-  explanation.addEventListener("change", function() { plot() }, false);
-  
-  let question = document.querySelector("#question");
-  question.addEventListener("change", function() { plot() }, false);
-  
-  let comma = document.querySelector("#comma");
-  comma.addEventListener("change", function() { plot() }, false);
-  
-  let word = document.querySelector("#word");
-  word.addEventListener("change", function() { plot() }, false);
-  
-  let random = document.querySelector("#random");
-  random.addEventListener("change", function() { plot() }, false);
-  
-  console.log(period, explanation, question, comma, word, random);
 
   // "Microsoft Zira - English (United States)"
   // "Samantha"
