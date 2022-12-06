@@ -10,10 +10,10 @@
         howMany = data.split(' ').map(x => x.trim());
       }
       else {
-        let p = period.checked ? '\\.' : '';
-        let e = explanation.checked ? '!' : '';;
-        let q = question.checked ? '\\?' : '';;
-        let c = comma.checked ? ',' : '';;
+        let p = period.checked      ? '\\.' : '';
+        let e = explanation.checked ? '!'   : '';
+        let q = question.checked    ? '\\?' : '';
+        let c = comma.checked       ? ','   : '';
         let all = p + e + q + c;
         let re = new RegExp("[^" + all + "]+[" + all + "]+", 'g')
         //howMany = data.match( /[^\.!\?,]+[\.!\?,]+/g ).map(x => x.trim());
@@ -88,7 +88,7 @@
   
   let random = document.querySelector("#random");
   random.addEventListener("change", function() { plot() }, false);
-  
+  /*
         let p1 = period.checked ? '\\.' : '';
         let e1 = explanation.checked ? '!' : '';;
         let q1 = question.checked ? '\\?' : '';;
@@ -101,7 +101,7 @@
         //howMany = data.match( /[^\.!\?,]+[\.!\?,]+/g ).map(x =>
 
   console.log(period, explanation, question, comma, word, random);
-
+*/
   let letSelectPlot = document.querySelector("#selectPlot");
   letSelectPlot.addEventListener("change", function() { plot() }, false);
   plot();
