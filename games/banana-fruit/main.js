@@ -7,19 +7,19 @@
         ' because his mother is cleaning the house' +
         ' <span>Hello World</span>';
     
-    game.innerHTML = a;
-    console.log(game.innerHTML);
-    console.log(game.textContent, game.innerText, game.innerHTML);
+    //game.innerHTML = a;
+    //console.log(game.innerHTML);
+    //console.log(game.textContent, game.innerText, game.innerHTML);
     
-    game.innerText = a;
-    console.log(game.innerText);
-    console.log(game.textContent, game.innerText, game.innerHTML);
+    //game.innerText = a;
+    //console.log(game.innerText);
+    //console.log(game.textContent, game.innerText, game.innerHTML);
     
     game.textContent = a;
-    console.log(game.textContent);
-    console.log(game.textContent, game.innerText, game.innerHTML);
+    //console.log(game.textContent);
+    //console.log(game.textContent, game.innerText, game.innerHTML);
     
-    console.log(game);
-    console.log(game.textContent, game.innerText, game.innerHTML);
+    //console.log(game);
+    //console.log(game.textContent, game.innerText, game.innerHTML);
  
 })(jQuery);
