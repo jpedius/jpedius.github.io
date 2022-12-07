@@ -4,5 +4,6 @@ body {
 
 .game {
     margin: 0;
+    border: 30px;
     padding: 20px;
 }
