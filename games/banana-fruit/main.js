@@ -7,7 +7,7 @@
         ' because his mother is cleaning the house' +
         ' <em>Hello World</em>';
     
-    //game.innerHTML = a;
+    game.innerHTML = a;
     //console.log(game.innerHTML);
     //console.log(game.textContent, game.innerText, game.innerHTML);
     
@@ -15,7 +15,7 @@
     //console.log(game.innerText);
     //console.log(game.textContent, game.innerText, game.innerHTML);
     
-    game.textContent = a;
+    //game.textContent = a;
     //console.log(game.textContent);
     //console.log(game.textContent, game.innerText, game.innerHTML);
     
