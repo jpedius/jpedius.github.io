@@ -8,9 +8,29 @@
         ' <em>Hello World</em></p>';
     game.innerHTML = a;
     
+    let header = document.createElement('header');
+    header.innerHTML = '<p>header</p>';
+    game.appendChild(header);
+    
     let nav = document.createElement('nav');
     nav.innerHTML = '<p>navigation</p>';
     game.appendChild(nav);
+    
+    let aside = document.createElement('aside');
+    aside.innerHTML = '<p>aside</p>';
+    game.appendChild(aside);
+    
+    let main = document.createElement('main');
+    main.innerHTML = '<p>main</p>';
+    game.appendChild(main);
+    
+    let footer = document.createElement('footer');
+    footer.innerHTML = '<p>footer</p>';
+    game.appendChild(footer);
+
+
+ 
+    //game.append(nav);
     
 /*    
     var x1 = document.getElementById("example1").innerText;
