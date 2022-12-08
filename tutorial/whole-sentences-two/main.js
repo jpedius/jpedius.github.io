@@ -51,7 +51,7 @@
     pitch.type = 'range';
     pitch.min = 0;
     pitch.max = 2;
-    pitch.value = '1';
+    pitch.defaultValue = '1';
     pitch.step = 0.1;
     div02.appendChild(pitch);
     
