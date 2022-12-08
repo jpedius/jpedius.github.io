@@ -29,10 +29,12 @@
         
     let div02 = document.createElement('div');
     
+    let spanRate = document.createElement('span');
+    
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
     forRate.innerHTML = 'Rate';
-    div02.appendChild(forRate);
+    spanRate.appendChild(forRate);
     
     let rate = document.createElement('input');
     rate.type = 'range';
@@ -40,12 +42,16 @@
     rate.max = 2;
     rate.defaultValue = '1';
     rate.step = 0.1;
-    div02.appendChild(rate);
+    spanRate.appendChild(rate);
+    
+    div02.appendChild(spanRate);
+    
+    let spanPitch = document.createElement('span');
     
     let forPitch = document.createElement('label');
     forPitch.htmlFor = 'pitch';
     forPitch.innerHTML = 'Pitch';
-    div02.appendChild(forPitch);
+    spanPitch.appendChild(forPitch);
     
     let pitch = document.createElement('input');
     pitch.type = 'range';
@@ -53,7 +59,9 @@
     pitch.max = 2;
     pitch.defaultValue = '1';
     pitch.step = 0.1;
-    div02.appendChild(pitch);
+    spanPitch.appendChild(pitch);
+    
+    div02.appendChild(spanPitch); 
     
     root.appendChild(div02);
     
