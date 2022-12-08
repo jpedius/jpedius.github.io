@@ -80,7 +80,7 @@
     // "Daniel"
 
     const synth = window.speechSynthesis;
-    let voices = [];b
+    let voices = [];
 
     function populateVoiceList() {
 
