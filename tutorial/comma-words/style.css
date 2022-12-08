@@ -6,6 +6,14 @@
 	height: 500px;
 }
 
+#rate {
+	gap: 1rem;
+}
+
+#pitch {
+	gap: 1rem;
+}
+
 .text-a {
 	margin: 30px auto;
 }
