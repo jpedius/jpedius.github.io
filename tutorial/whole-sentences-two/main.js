@@ -1,10 +1,16 @@
-let title = 'Whole Sentences';
-document.title = title;
+'use strict';
 
-let root = document.querySelector('#root');
+(function($) {
 
-let h1 = document.createElement('h1');
-h1.innerHTML = title;
-root.appendChild(h1);
+    let title = 'Whole Sentences';
+    document.title = title;
 
-console.log(title, root, h1);
+    let root = document.querySelector('#root');
+
+    let h1 = document.createElement('h1');
+    h1.innerHTML = title;
+    root.appendChild(h1);
+
+    console.log(title, root, h1);
+
+})(jQuery);
