@@ -57,20 +57,22 @@
     
     root.appendChild(div02);
     
+    let div03 = document.createElement('div');
+    
     let voice = document.createElement('select');
-    root.appendChild(voice);
-      
+    div03.appendChild(voice);
+    
+    root.appendChild(div03);
+   
     console.log(title, root, h1, previous, next, play);
     console.log(forRate, rate, forPitch, pitch, voice);
-    console.log(rate.value, pitch.value);
 
     // "Microsoft Zira - English (United States)"
     // "Samantha"
     // "Daniel"
 
     const synth = window.speechSynthesis;
-    let voices = [];
-    let speaking = voice;
+    let voices = [];b
 
     function populateVoiceList() {
 
@@ -125,7 +127,7 @@
             return;
         }
 
-        if (speaking !== '') {
+        if (voice !== '') {
             
             const utterThis = new SpeechSynthesisUtterance(talk);
             
