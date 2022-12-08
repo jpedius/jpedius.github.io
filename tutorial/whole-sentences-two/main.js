@@ -24,7 +24,7 @@
     root.appendChild(play);
     
     let forRate = document.createElement('label');
-    forRate.for = 'rate';
+    forRate.htmlFor = 'rate';
     forRate.innerHTML = 'Rate';
     root.appendChild(forRate);
     
