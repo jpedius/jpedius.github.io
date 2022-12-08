@@ -4,6 +4,42 @@
 
 (function($) {
 
+    let previousOrNext = 0;
+    let howMany = ["Hello", "World"];
+    
+    
+
+    let text = document.createElement('input');
+    text.type = 'text';
+    text.value = howMany[previousOrNext];
+      
+    let previous = document.createElement('button');
+    previous.innerHTML = 'Previous';
+    previous.addEventListener('click', function() {
+        if (previousOrNext <= 0) {
+            previousOrNext = howMany.length;
+        }
+        previousOrNext--;
+        return text.value = howMany[previousOrNext]; 
+    }, false);
+    
+    let play = document.createElement('button');
+    play.innerHTML = 'Play';
+    play.addEventListener('click', function() {
+        speak(howMany[previousOrNext]);
+        text.blur();        
+    }, false);
+
+    let next = document.createElement('button');
+    next.innerHTML = 'Next';
+    next.addEventListener('click', function() {
+        if (previousOrNext >= howMany.length - 1) {
+            previousOrNext = -1;
+        }
+        previousOrNext++;
+        return text.value = howMany[previousOrNext];
+    }, false);
+
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
     forRate.innerHTML = 'Rate';
@@ -119,6 +155,14 @@
 
 
 
+
+
+    
+
+    
+    
+    
+    
     let title = 'Whole Sentences';
     document.title = title;
 
@@ -126,40 +170,33 @@
 
     let h1 = document.createElement('h1');
     h1.innerHTML = title;
-    root.appendChild(h1);
+    root.appendChild(h1);    
     
-    let divButton = document.createElement('div');
+    let divText = document.createElement('div');
     
-    let previous = document.createElement('button');
-    previous.innerHTML = 'Previous';
+    divText.appendChild(text);
+    
+    root.appendChild(divText);
+    
+    let divButton = document.createElement('div');    
+    
     divButton.appendChild(previous);
-    
-    let play = document.createElement('button');
-    play.innerHTML = 'Play';
-    divButton.appendChild(play);
-    
-    let next = document.createElement('button');
-    next.innerHTML = 'Next';
+    divButton.appendChild(play);    
     divButton.appendChild(next);
 
     root.appendChild(divButton);
         
     let divRatePitch = document.createElement('div');
-    
     let spanRate = document.createElement('span');
     
     spanRate.appendChild(forRate);
-    
     spanRate.appendChild(rate);
-    
     divRatePitch.appendChild(spanRate);
     
     let spanPitch = document.createElement('span');
-    
+
     spanPitch.appendChild(forPitch);
-    
     spanPitch.appendChild(pitch);
-    
     divRatePitch.appendChild(spanPitch); 
     
     root.appendChild(divRatePitch);
