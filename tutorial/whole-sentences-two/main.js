@@ -27,10 +27,12 @@
 
     root.appendChild(div01);
         
+    let div02 = document.createElement('div');
+    
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
     forRate.innerHTML = 'Rate';
-    root.appendChild(forRate);
+    div02.appendChild(forRate);
     
     let rate = document.createElement('input');
     rate.type = 'range';
@@ -38,12 +40,12 @@
     rate.max = 2;
     rate.value = '1';
     rate.step = 0.1;
-    root.appendChild(rate);
+    div02.appendChild(rate);
     
     let forPitch = document.createElement('label');
     forPitch.htmlFor = 'pitch';
     forPitch.innerHTML = 'Pitch';
-    root.appendChild(forPitch);
+    div02.appendChild(forPitch);
     
     let pitch = document.createElement('input');
     pitch.type = 'range';
@@ -51,7 +53,9 @@
     pitch.max = 2;
     pitch.value = '1';
     pitch.step = 0.1;
-    root.appendChild(pitch);
+    div02.appendChild(pitch);
+    
+    root.appendChild(div02);
     
     let voice = document.createElement('select');
     root.appendChild(voice);
