@@ -37,7 +37,7 @@
     root.appendChild(rate);
     
     let forPitch = document.createElement('label');
-    forPitch.for = 'pitch';
+    forPitch.htmlFor = 'pitch';
     forPitch.innerHTML = 'Pitch';
     root.appendChild(forPitch);
     
