@@ -11,18 +11,22 @@
     h1.innerHTML = title;
     root.appendChild(h1);
     
+    let div01 = document.createElement('div');
+    
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
-    root.appendChild(previous);
-    
-    let next = document.createElement('button');
-    next.innerHTML = 'Next';
-    root.appendChild(next);
+    div01.appendChild(previous);
     
     let play = document.createElement('button');
     play.innerHTML = 'Play';
-    root.appendChild(play);
+    div01.appendChild(play);
     
+    let next = document.createElement('button');
+    next.innerHTML = 'Next';
+    div01.appendChild(next);
+
+    root.appendChild(div01);
+        
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
     forRate.innerHTML = 'Rate';
@@ -54,5 +58,6 @@
       
     console.log(title, root, h1, previous, next, play);
     console.log(forRate, rate, forPitch, pitch, voice);
+    console.log(rate.value, pitch.value);
 
 })(jQuery);
