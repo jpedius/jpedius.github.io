@@ -87,7 +87,7 @@
             }
         });
 
-        voiceSelect.innerHTML = "";
+        voice.innerHTML = "";
         
         for (let i = 0; i < voices.length; i++) {
             
@@ -108,7 +108,7 @@
                     option.defaultSelected = true;
                 }
                 
-                voiceSelect.appendChild(option);
+                voice.appendChild(option);
             }
         }
     }
