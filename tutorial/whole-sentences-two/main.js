@@ -11,23 +11,23 @@
     h1.innerHTML = title;
     root.appendChild(h1);
     
-    let div01 = document.createElement('div');
+    let divButton = document.createElement('div');
     
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
-    div01.appendChild(previous);
+    divButton.appendChild(previous);
     
     let play = document.createElement('button');
     play.innerHTML = 'Play';
-    div01.appendChild(play);
+    divButton.appendChild(play);
     
     let next = document.createElement('button');
     next.innerHTML = 'Next';
-    div01.appendChild(next);
+    divButton.appendChild(next);
 
-    root.appendChild(div01);
+    root.appendChild(divButton);
         
-    let div02 = document.createElement('div');
+    let divRatePitch = document.createElement('div');
     
     let spanRate = document.createElement('span');
     
@@ -44,7 +44,7 @@
     rate.step = 0.1;
     spanRate.appendChild(rate);
     
-    div02.appendChild(spanRate);
+    divRatePitch.appendChild(spanRate);
     
     let spanPitch = document.createElement('span');
     
@@ -61,16 +61,16 @@
     pitch.step = 0.1;
     spanPitch.appendChild(pitch);
     
-    div02.appendChild(spanPitch); 
+    divRatePitch.appendChild(spanPitch); 
     
-    root.appendChild(div02);
+    root.appendChild(divRatePitch);
     
-    let div03 = document.createElement('div');
+    let divVoice = document.createElement('div');
     
     let voice = document.createElement('select');
-    div03.appendChild(voice);
+    divVoice.appendChild(voice);
     
-    root.appendChild(div03);
+    root.appendChild(divVoice);
    
     console.log(title, root, h1, previous, next, play);
     console.log(forRate, rate, forPitch, pitch, voice);
