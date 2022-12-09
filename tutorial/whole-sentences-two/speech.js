@@ -1,3 +1,25 @@
+let forRate = document.createElement('label');
+forRate.htmlFor = 'rate';
+forRate.innerHTML = 'Rate';
+
+let rate = document.createElement('input');
+rate.type = 'range';
+rate.min = 0.5;
+rate.max = 2;
+rate.defaultValue = '1';
+rate.step = 0.1;
+
+let forPitch = document.createElement('label');
+forPitch.htmlFor = 'pitch';
+forPitch.innerHTML = 'Pitch';
+
+let pitch = document.createElement('input');
+pitch.type = 'range';
+pitch.min = 0;
+pitch.max = 2;
+pitch.defaultValue = '1';
+pitch.step = 0.1;
+         
 // "Microsoft Zira - English (United States)"
 // "Samantha"
 // "Daniel"
