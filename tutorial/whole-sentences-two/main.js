@@ -285,7 +285,12 @@
     h1.innerHTML = title;
     h1.classList.add('q12');
     root.appendChild(h1);    
-    
+
+    let divB = document.createElement('div');
+    divB.classList.add('q19');
+    divB.appendChild(b);
+    root.appendChild(divB);
+        
     let divText = document.createElement('div');
     divText.classList.add('q13');
     divText.appendChild(text);
@@ -319,11 +324,6 @@
     divVoice.classList.add('q18');
     divVoice.appendChild(voice);
     root.appendChild(divVoice);
-    
-    let divB = document.createElement('div');
-    divB.classList.add('q19');
-    divB.appendChild(b);
-    root.appendChild(divB);
    
     console.log(title, root, h1, previous, next, play);
     console.log(forRate, rate, forPitch, pitch, voice);
