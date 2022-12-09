@@ -1,6 +1,6 @@
 'use strict';
 
-import { voice } from "/tutorial/whole-sentences-two/speech.js";
+//import { voice } from "/tutorial/whole-sentences-two/speech.js";
 
 (function($) {
 
@@ -166,7 +166,7 @@ import { voice } from "/tutorial/whole-sentences-two/speech.js";
     // "Daniel"
     // "Tessa"
 
-    let voice2 = document.createElement('select');
+    let voice = document.createElement('select');
         
     const synth = window.speechSynthesis;
     let voices = [];
@@ -186,7 +186,7 @@ import { voice } from "/tutorial/whole-sentences-two/speech.js";
             }
         });
 
-        voice2.innerHTML = "";
+        voice.innerHTML = "";
         
         for (let i = 0; i < voices.length; i++) {
             
@@ -207,7 +207,7 @@ import { voice } from "/tutorial/whole-sentences-two/speech.js";
                     option.defaultSelected = true;
                 }
                 
-                voice2.appendChild(option);
+                voice.appendChild(option);
             }
         }
     }
@@ -224,7 +224,7 @@ import { voice } from "/tutorial/whole-sentences-two/speech.js";
             return;
         }
 
-        if (voice2 !== '') {
+        if (voice !== '') {
             
             const utterThis = new SpeechSynthesisUtterance(talk);
             
