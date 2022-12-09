@@ -104,7 +104,7 @@
         option.textContent = `${c[i].name}`;
         b.appendChild(option);
     }
-    b.classList.add('a3', 'a2');
+    b.classList.add('a3');
     
     console.log(c);
     console.log(b, b.className, b.classList);
@@ -113,12 +113,13 @@
     let howMany = ["Hello", "World"];
    
     let text = document.createElement('input');
+    text.classList.add('a3');
     text.type = 'text';
     text.value = howMany[previousOrNext];
       
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
-    previous.classList.add('a1', 'a2');
+    previous.classList.add('a3');
     previous.addEventListener('click', function() {
         if (previousOrNext <= 0) {
             previousOrNext = howMany.length;
@@ -129,7 +130,7 @@
     
     let play = document.createElement('button');
     play.innerHTML = 'Play';
-    play.classList.add('a1', 'a2');
+    play.classList.add('a3');
     play.addEventListener('click', function() {
         speak(howMany[previousOrNext]);
         text.blur();        
@@ -137,7 +138,7 @@
 
     let next = document.createElement('button');
     next.innerHTML = 'Next';
-    next.classList.add('a1', 'a2');
+    next.classList.add('a3');
     next.addEventListener('click', function() {
         if (previousOrNext >= howMany.length - 1) {
             previousOrNext = -1;
@@ -174,7 +175,7 @@
     // "Tessa"
 
     let voice = document.createElement('select');
-    voice.classList.add('a1', 'a2');
+    voice.classList.add('a3');
         
     const synth = window.speechSynthesis;
     let voices = [];
@@ -281,18 +282,14 @@
     
     let divText = document.createElement('div');
     divText.classList.add('a1');
-    
     divText.appendChild(text);
-
     root.appendChild(divText);
     
     let divButton = document.createElement('div');    
     divButton.classList.add('a1');
-        
     divButton.appendChild(previous);
     divButton.appendChild(play);    
     divButton.appendChild(next);
-
     root.appendChild(divButton);
         
     let divRatePitch = document.createElement('div');
@@ -300,14 +297,12 @@
     
     let spanRate = document.createElement('span');
     spanRate.classList.add('a4');
-    
     spanRate.appendChild(forRate);
     spanRate.appendChild(rate);
     divRatePitch.appendChild(spanRate);
     
     let spanPitch = document.createElement('span');
     spanPitch.classList.add('a4');
-
     spanPitch.appendChild(forPitch);
     spanPitch.appendChild(pitch);
     divRatePitch.appendChild(spanPitch); 
@@ -316,16 +311,12 @@
     
     let divVoice = document.createElement('div');
     divVoice.classList.add('a1');
-
     divVoice.appendChild(voice);
-    
     root.appendChild(divVoice);
     
     let divB = document.createElement('div');
     divB.classList.add('a1');
-
     divB.appendChild(b);
-    
     root.appendChild(divB);
    
     console.log(title, root, h1, previous, next, play);

@@ -1,12 +1,4 @@
-.a4 {
-	margin: 20px auto;
-}
-
 .a3 {
-
-}
-
-.a2 {
 	background: #008;
 	cursor: pointer;
 	
@@ -17,8 +9,12 @@
 	outline: none;
 }
 
-.a2:hover {
+.a3:hover {
 	background: #111;
+}
+
+.a4 {
+	margin: 20px auto;
 }
 
 .a1 {
@@ -27,9 +23,6 @@
 
 /*
 .btn {
-	border: none;
-	outline: none;
-	
 	font-size: 20px;		 
 }
 */
