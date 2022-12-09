@@ -104,6 +104,8 @@
         option.textContent = `${c[i].name}`;
         b.appendChild(option);
     }
+    
+    console.log(c);
 
     let previousOrNext = 0;
     let howMany = ["Hello", "World"];
