@@ -4,41 +4,11 @@
 
 (function($) {
 
-/* 
-  function plot() {
-    let src = "/tutorial/storage/plot/" + letSelectPlot.value + ".txt";
-    $.get(src, function(data) {
+    let previousOrNext = 0;
+    let howMany = ["Hello", "World"];
 
-      if (word.checked) {
-        howMany = data.split(' ').map(x => x.trim());
-      }
-      else {
-        let p = period.checked      ? '\\.' : '';
-        let e = explanation.checked ? '!'   : '';
-        let q = question.checked    ? '\\?' : '';
-        let c = comma.checked       ? ','   : '';
-        let all = p + e + q + c;
-        let re = new RegExp("[^" + all + "]+[" + all + "]+", 'g')
-        howMany = data.match( re ).map(x => x.trim());
-      }
-
-      if (random.checked) {
-        howMany = shuffle(howMany);
-      }
-
-      previousOrNext = 0;        
-      letSelectText.value = howMany[previousOrNext];
-    }, "text");
-  };
- 
-    
-  let letSelectPlot = document.querySelector("#selectPlot");
-  letSelectPlot.addEventListener("change", function() { plot() }, false);
-  
-  plot();    
-*/
-    let c = [{
-        name: "One",
+    let sentences = [{
+        name: "Sentence One",
         key: [
             ["I", "feel", "great"],
             ["she", "was", "late"],
@@ -67,7 +37,7 @@
             ["pitch", "the", "tent"],  
         ],
     }, { 
-        name: "Two",
+        name: "Sentence Two",
         key: [
             ["the", "lion", "roared"],
             ["brush", "your", "hair"],
@@ -97,21 +67,15 @@
         ],
     }];
 
-    let b = document.createElement('select');
-    b.innerHTML = '';
-    for (let i = 0; i < c.length; i++) {
+    let words = document.createElement('select');
+    words.innerHTML = '';
+    for (let i = 0; i < sentences.length; i++) {
         const option = document.createElement('option');
-        option.textContent = `${c[i].name}`;
-        b.appendChild(option);
+        option.textContent = `${sentences[i].name}`;
+        words.appendChild(option);
     }
-    b.classList.add('q01');
-    
-    console.log(c);
-    console.log(b, b.className, b.classList);
+    words.classList.add('q01');
 
-    let previousOrNext = 0;
-    let howMany = ["Hello", "World"];
-   
     let text = document.createElement('input');
     text.classList.add('q02');
     text.type = 'text';
@@ -151,7 +115,7 @@
     forRate.htmlFor = 'rate';
     forRate.innerHTML = 'Rate';
     forRate.classList.add('q06');
-    
+
     let rate = document.createElement('input');
     rate.type = 'range';
     rate.min = 0.5;
@@ -159,12 +123,12 @@
     rate.defaultValue = '1';
     rate.step = 0.1;
     rate.classList.add('q07');
-    
+
     let forPitch = document.createElement('label');
     forPitch.htmlFor = 'pitch';
     forPitch.innerHTML = 'Pitch';
     forPitch.classList.add('q08');
-    
+
     let pitch = document.createElement('input');
     pitch.type = 'range';
     pitch.min = 0;
@@ -172,7 +136,7 @@
     pitch.defaultValue = '1';
     pitch.step = 0.1;
     pitch.classList.add('q09');
-             
+
     // "Microsoft Zira - English (United States)"
     // "Samantha"
     // "Daniel"
@@ -180,7 +144,7 @@
 
     let voice = document.createElement('select');
     voice.classList.add('q10');
-        
+
     const synth = window.speechSynthesis;
     let voices = [];
 
@@ -200,16 +164,16 @@
         });
 
         voice.innerHTML = "";
-        
+
         for (let i = 0; i < voices.length; i++) {
-            
+
             if (voices[i].lang.slice(0, 3) === "en-") {
-                
+
                 const option = document.createElement("option");
                 option.textContent = `${voices[i].name} (${voices[i].lang})`;
                 option.setAttribute("data-lang", voices[i].lang);
                 option.setAttribute("data-name", voices[i].name);
-                
+
                 if (voices[i].name === "Microsoft Zira - English (United States)") {
                     option.defaultSelected = true;
                 }
@@ -219,7 +183,7 @@
                 else if (voices[i].name === "Tessa") {
                     option.defaultSelected = true;
                 }
-                
+
                 voice.appendChild(option);
             }
         }
@@ -238,9 +202,9 @@
         }
 
         if (voice !== '') {
-            
+
             const utterThis = new SpeechSynthesisUtterance(talk);
-            
+
             utterThis.onend = function (event) {
                 console.log("SpeechSynthesisUtterance.onend");
             };
@@ -269,12 +233,12 @@
 
 
 
-    
 
-    
-    
-    
-    
+
+
+
+
+
     let title = 'Whole Sentences';
     document.title = title;
 
@@ -286,45 +250,47 @@
     h1.classList.add('q12');
     root.appendChild(h1);    
 
-    let divB = document.createElement('div');
-    divB.classList.add('q19');
-    divB.appendChild(b);
-    root.appendChild(divB);
-        
+    let divWords = document.createElement('div');
+    divWords.classList.add('q19');
+    divWords.appendChild(words);
+    root.appendChild(divWords);
+
     let divText = document.createElement('div');
     divText.classList.add('q13');
     divText.appendChild(text);
     root.appendChild(divText);
-    
+
     let divButton = document.createElement('div');    
     divButton.classList.add('q14');
     divButton.appendChild(previous);
     divButton.appendChild(play);    
     divButton.appendChild(next);
     root.appendChild(divButton);
-        
+
     let divRatePitch = document.createElement('div');
     divRatePitch.classList.add('q15');
-    
+
     let spanRate = document.createElement('span');
     spanRate.classList.add('q16');
     spanRate.appendChild(forRate);
     spanRate.appendChild(rate);
     divRatePitch.appendChild(spanRate);
-    
+
     let spanPitch = document.createElement('span');
     spanPitch.classList.add('q17');
     spanPitch.appendChild(forPitch);
     spanPitch.appendChild(pitch);
     divRatePitch.appendChild(spanPitch); 
-    
+
     root.appendChild(divRatePitch);
-    
+
     let divVoice = document.createElement('div');
     divVoice.classList.add('q18');
     divVoice.appendChild(voice);
     root.appendChild(divVoice);
-   
+
+    console.log(sentences);
+    console.log(words, words.className, words.classList);   
     console.log(title, root, h1, previous, next, play);
     console.log(forRate, rate, forPitch, pitch, voice);
 
