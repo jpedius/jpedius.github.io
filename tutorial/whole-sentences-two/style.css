@@ -5,6 +5,9 @@
 .a2 {
 	background: #008;
 	cursor: pointer;
+	
+	padding: 10px 30px;
+	margin: 10px auto;
 }
 
 .a2:hover {
@@ -14,9 +17,7 @@
 .btn {
 	border: none;
 	outline: none;
-	padding: 10px 30px;
-	font-size: 20px;
-	cursor: pointer;
-	margin: 10px auto;			 
+	
+	font-size: 20px;		 
 }
 */
