@@ -4,11 +4,110 @@
 
 (function($) {
 
+/* 
+  function plot() {
+    let src = "/tutorial/storage/plot/" + letSelectPlot.value + ".txt";
+    $.get(src, function(data) {
+
+      if (word.checked) {
+        howMany = data.split(' ').map(x => x.trim());
+      }
+      else {
+        let p = period.checked      ? '\\.' : '';
+        let e = explanation.checked ? '!'   : '';
+        let q = question.checked    ? '\\?' : '';
+        let c = comma.checked       ? ','   : '';
+        let all = p + e + q + c;
+        let re = new RegExp("[^" + all + "]+[" + all + "]+", 'g')
+        howMany = data.match( re ).map(x => x.trim());
+      }
+
+      if (random.checked) {
+        howMany = shuffle(howMany);
+      }
+
+      previousOrNext = 0;        
+      letSelectText.value = howMany[previousOrNext];
+    }, "text");
+  };
+ 
+    
+  let letSelectPlot = document.querySelector("#selectPlot");
+  letSelectPlot.addEventListener("change", function() { plot() }, false);
+  
+  plot();    
+*/
+    let c = {
+        name: 'One',
+        key: [
+            ["I", "feel", "great"],
+            ["she", "was", "late"],
+            ["is", "dinner", "ready"],
+            ["he", "will", "call"],
+            ["light", "the", "fire"],
+            ["eat", "your", "lunch"],
+            ["it", "is", "late"],
+            ["drink", "your", "milk"],
+            ["how", "are", "you"],
+            ["wash", "your", "hair"],
+            ["that's", "very", "nice"],
+            ["I", "am", "hungry"],
+            ["who", "are", "you"],
+            ["sit", "over", "there"],
+            ["the", "dog", "ran"],
+            ["we", "ate", "lunch"],
+            ["tie", "your", "shoe"],
+            ["we", "went", "downtown"],
+            ["open", "the", "door"],
+            ["ride", "the", "bike"],
+            ["do", "not", "hurry"],
+            ["pass", "the", "salt"],
+            ["we", "left", "early"],
+            ["open", "the", "window"],
+            ["pitch", "the", "tent"],  
+        ],
+    }, { 
+        name: 'Two',
+        key: [
+            ["the", "lion", "roared"],
+            ["brush", "your", "hair"],
+            ["it's", "snowing", "outside"],
+            ["don't", "look", "back"],
+            ["he", "played", "baseball"],
+            ["rang", "the", "alarm"],
+            ["what", "is", "dripping"],
+            ["he", "delivers", "mail"],
+            ["wear", "your", "coat"],
+            ["have", "times", "changed"],
+            ["time", "for", "lunch"],
+            ["where", "were", "you"],
+            ["thanks", "for", "coming"],
+            ["cross", "the", "bridge"],
+            ["turn", "it", "down"],
+            ["John", "left", "town"],
+            ["rang", "the", "phone"],
+            ["close", "the", "gate"],
+            ["watch", "the", "movie"],
+            ["please", "wait", "outside"],
+            ["water", "the", "plant"],
+            ["butter", "the", "toast"],
+            ["drive", "the", "car"],
+            ["the", "woman", "tripped"],
+            ["climb", "the", "tree"],   
+        ],
+    };
+
+    let b = document.createElement('select');
+    b.innerHTML = '';
+    for (let i = 0; i < c.length; i++) {
+        const option = document.createElement('option');
+        option.textContent = `${c.name[i]}`;
+        b.appendChild(option);
+    }
+
     let previousOrNext = 0;
     let howMany = ["Hello", "World"];
-    
-    
-
+   
     let text = document.createElement('input');
     text.type = 'text';
     text.value = howMany[previousOrNext];
@@ -206,6 +305,12 @@
     divVoice.appendChild(voice);
     
     root.appendChild(divVoice);
+    
+    let divB = document.createElement('div');
+
+    divB.appendChild(b);
+    
+    root.appendChild(divB);
    
     console.log(title, root, h1, previous, next, play);
     console.log(forRate, rate, forPitch, pitch, voice);
