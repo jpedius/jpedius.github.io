@@ -4,6 +4,9 @@
 
 (function($) {
 
+    let title = 'Whole Sentences';
+    document.title = title;
+
     let previousOrNext = 0;
     let howMany = ["Hello", "World"];
 
@@ -97,7 +100,7 @@
     play.classList.add('q04');
     play.addEventListener('click', function() {
         speak(howMany[previousOrNext]);
-        text.blur();        
+        text.blur();
     }, false);
 
     let next = document.createElement('button');
@@ -229,26 +232,13 @@
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-    let title = 'Whole Sentences';
-    document.title = title;
-
     let root = document.querySelector('#root');
     root.classList.add('q11');
 
     let h1 = document.createElement('h1');
     h1.innerHTML = title;
     h1.classList.add('q12');
-    root.appendChild(h1);    
+    root.appendChild(h1);
 
     let divWords = document.createElement('div');
     divWords.classList.add('q19');
@@ -263,7 +253,7 @@
     let divButton = document.createElement('div');    
     divButton.classList.add('q14');
     divButton.appendChild(previous);
-    divButton.appendChild(play);    
+    divButton.appendChild(play);
     divButton.appendChild(next);
     root.appendChild(divButton);
 
