@@ -104,7 +104,10 @@
 	margin: 10px;
 	padding: 10px 30px;
 	
-	font-size: 20px;		
+	border: none;
+	outline: none;
+	
+	font-size: 60px;		
 }
 
 .q14 {
