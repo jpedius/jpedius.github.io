@@ -104,7 +104,7 @@
         option.textContent = `${c[i].name}`;
         b.appendChild(option);
     }
-    b.classList.add('a1', 'a2');
+    b.classList.add('a3', 'a2');
     
     console.log(c);
     console.log(b, b.className, b.classList);
@@ -174,6 +174,7 @@
     // "Tessa"
 
     let voice = document.createElement('select');
+    voice.classList.add('a1', 'a2');
         
     const synth = window.speechSynthesis;
     let voices = [];
@@ -279,13 +280,15 @@
     root.appendChild(h1);    
     
     let divText = document.createElement('div');
+    divText.classList.add('a1');
     
     divText.appendChild(text);
-    
+
     root.appendChild(divText);
     
     let divButton = document.createElement('div');    
-    
+    divButton.classList.add('a1');
+        
     divButton.appendChild(previous);
     divButton.appendChild(play);    
     divButton.appendChild(next);
@@ -293,6 +296,8 @@
     root.appendChild(divButton);
         
     let divRatePitch = document.createElement('div');
+    divRatePitch.classList.add('a1');
+    
     let spanRate = document.createElement('span');
     
     spanRate.appendChild(forRate);
@@ -308,12 +313,14 @@
     root.appendChild(divRatePitch);
     
     let divVoice = document.createElement('div');
+    divVoice.classList.add('a1');
 
     divVoice.appendChild(voice);
     
     root.appendChild(divVoice);
     
     let divB = document.createElement('div');
+    divB.classList.add('a1');
 
     divB.appendChild(b);
     
