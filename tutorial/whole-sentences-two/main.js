@@ -104,7 +104,7 @@
         option.textContent = `${c[i].name}`;
         b.appendChild(option);
     }
-    b.classList.add('a3');
+    b.classList.add('q01');
     
     console.log(c);
     console.log(b, b.className, b.classList);
@@ -113,13 +113,13 @@
     let howMany = ["Hello", "World"];
    
     let text = document.createElement('input');
-    text.classList.add('a3');
+    text.classList.add('q02');
     text.type = 'text';
     text.value = howMany[previousOrNext];
       
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
-    previous.classList.add('a3');
+    previous.classList.add('q03');
     previous.addEventListener('click', function() {
         if (previousOrNext <= 0) {
             previousOrNext = howMany.length;
@@ -130,7 +130,7 @@
     
     let play = document.createElement('button');
     play.innerHTML = 'Play';
-    play.classList.add('a3');
+    play.classList.add('q04');
     play.addEventListener('click', function() {
         speak(howMany[previousOrNext]);
         text.blur();        
@@ -138,7 +138,7 @@
 
     let next = document.createElement('button');
     next.innerHTML = 'Next';
-    next.classList.add('a3');
+    next.classList.add('q05');
     next.addEventListener('click', function() {
         if (previousOrNext >= howMany.length - 1) {
             previousOrNext = -1;
@@ -150,6 +150,7 @@
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
     forRate.innerHTML = 'Rate';
+    forRate.classList.add('q06');
     
     let rate = document.createElement('input');
     rate.type = 'range';
@@ -157,10 +158,12 @@
     rate.max = 2;
     rate.defaultValue = '1';
     rate.step = 0.1;
+    rate.classList.add('q07');
     
     let forPitch = document.createElement('label');
     forPitch.htmlFor = 'pitch';
     forPitch.innerHTML = 'Pitch';
+    forPitch.classList.add('q08');
     
     let pitch = document.createElement('input');
     pitch.type = 'range';
@@ -168,6 +171,7 @@
     pitch.max = 2;
     pitch.defaultValue = '1';
     pitch.step = 0.1;
+    pitch.classList.add('q09');
              
     // "Microsoft Zira - English (United States)"
     // "Samantha"
@@ -175,7 +179,7 @@
     // "Tessa"
 
     let voice = document.createElement('select');
-    voice.classList.add('a3');
+    voice.classList.add('q10');
         
     const synth = window.speechSynthesis;
     let voices = [];
@@ -275,34 +279,36 @@
     document.title = title;
 
     let root = document.querySelector('#root');
+    root.classList.add('q11');
 
     let h1 = document.createElement('h1');
     h1.innerHTML = title;
+    h1.classList.add('q12');
     root.appendChild(h1);    
     
     let divText = document.createElement('div');
-    divText.classList.add('a1');
+    divText.classList.add('q13');
     divText.appendChild(text);
     root.appendChild(divText);
     
     let divButton = document.createElement('div');    
-    divButton.classList.add('a1');
+    divButton.classList.add('q14');
     divButton.appendChild(previous);
     divButton.appendChild(play);    
     divButton.appendChild(next);
     root.appendChild(divButton);
         
     let divRatePitch = document.createElement('div');
-    divRatePitch.classList.add('a1');
+    divRatePitch.classList.add('q15');
     
     let spanRate = document.createElement('span');
-    spanRate.classList.add('a4');
+    spanRate.classList.add('q16');
     spanRate.appendChild(forRate);
     spanRate.appendChild(rate);
     divRatePitch.appendChild(spanRate);
     
     let spanPitch = document.createElement('span');
-    spanPitch.classList.add('a4');
+    spanPitch.classList.add('q17');
     spanPitch.appendChild(forPitch);
     spanPitch.appendChild(pitch);
     divRatePitch.appendChild(spanPitch); 
@@ -310,12 +316,12 @@
     root.appendChild(divRatePitch);
     
     let divVoice = document.createElement('div');
-    divVoice.classList.add('a1');
+    divVoice.classList.add('q18');
     divVoice.appendChild(voice);
     root.appendChild(divVoice);
     
     let divB = document.createElement('div');
-    divB.classList.add('a1');
+    divB.classList.add('q19');
     divB.appendChild(b);
     root.appendChild(divB);
    
