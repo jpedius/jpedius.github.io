@@ -101,7 +101,7 @@
     b.innerHTML = '';
     for (let i = 0; i < c.length; i++) {
         const option = document.createElement('option');
-        option.textContent = `${c.name[i]}`;
+        option.textContent = `${c[i].name}`;
         b.appendChild(option);
     }
 
