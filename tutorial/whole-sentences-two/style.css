@@ -1,11 +1,15 @@
 .q01 {
 	margin: 10px;
 	padding: 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q02 {
 	margin: 10px;
 	padding: 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q03 {
@@ -13,6 +17,8 @@
 	
 	margin: 10px;
 	padding: 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q03:hover {
@@ -24,6 +30,8 @@
 	
 	margin: 10px;
 	padding: 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q04:hover {
@@ -35,6 +43,8 @@
 	
 	margin: 10px;
 	padding: 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q05:hover {
@@ -42,98 +52,110 @@
 }
 
 .q06 {
-	margin: 0px 10px 10px 10px;
-	/*padding: 10px 30px;*/
+	margin: 10px 10px 10px 10px;
+	padding: 10px 30px 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q07 {
-	margin: 10px;
-	padding: 10px 30px;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 30px 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q08 {
-	margin: 0px 10px 10px 10px;
-	/*padding: 10px 30px;*/
+	margin: 10px 10px 10px 10px;
+	padding: 10px 30px 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q09 {
-	margin: 10px;
-	padding: 10px 30px;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 30px 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q10 {
 	margin: 10px;
 	padding: 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q11 {
 	margin: 10px;
 	padding: 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q12 {
 	margin: 10px;
 	padding: 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q13 {
 	margin: 10px;
 	padding: 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q14 {
 	margin: 10px;
 	padding: 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q15 {
-	margin: 10px;
-	padding: 10px 30px;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 30px 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q16 {
-	/*margin: 10px;*/
-	/*padding: 10px 30px;*/
+	margin: 10px 10px 10px 10px;
+	padding: 10px 30px 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q17 {
-	/*margin: 10px;*/
-	/*padding: 10px 30px;*/
+	margin: 10px 10px 10px 10px;
+	padding: 10px 30px 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q18 {
 	margin: 10px;
 	padding: 10px 30px;
+	
+	font-size: 20px;		
 }
 
 .q19 {
 	margin: 10px;
 	padding: 10px 30px;
+	
+	font-size: 20px;		
 }
 
 
 
 .a3 {
-	background: #008;
 	cursor: pointer;
-	
-	padding: 10px 30px;
-	margin: 10px auto;
-	
+
 	border: none;
 	outline: none;
-}
-
-.a3:hover {
-	background: #111;
-}
-
-.a4 {
-	margin: 20px auto;
-}
-
-.a1 {
-	margin: 30px auto;
 }
 
 /*
