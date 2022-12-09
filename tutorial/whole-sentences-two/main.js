@@ -106,6 +106,7 @@
     }
     
     console.log(c);
+    console.log(b, b.className, b.classList);
 
     let previousOrNext = 0;
     let howMany = ["Hello", "World"];
