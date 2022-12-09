@@ -37,8 +37,8 @@
   
   plot();    
 */
-    let c = {
-        name: 'One',
+    let c = [{
+        name: "One",
         key: [
             ["I", "feel", "great"],
             ["she", "was", "late"],
@@ -67,7 +67,7 @@
             ["pitch", "the", "tent"],  
         ],
     }, { 
-        name: 'Two',
+        name: "Two",
         key: [
             ["the", "lion", "roared"],
             ["brush", "your", "hair"],
@@ -95,7 +95,7 @@
             ["the", "woman", "tripped"],
             ["climb", "the", "tree"],   
         ],
-    };
+    }];
 
     let b = document.createElement('select');
     b.innerHTML = '';
