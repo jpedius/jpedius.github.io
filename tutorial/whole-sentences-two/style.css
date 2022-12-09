@@ -1,0 +1,22 @@
+.a1 {
+
+}
+
+.a2 {
+	background: #008;
+	cursor: pointer;
+}
+
+.a2:hover {
+	background: #111;
+}
+/*
+.btn {
+	border: none;
+	outline: none;
+	padding: 10px 30px;
+	font-size: 20px;
+	cursor: pointer;
+	margin: 10px auto;			 
+}
+*/
