@@ -299,12 +299,14 @@
     divRatePitch.classList.add('a1');
     
     let spanRate = document.createElement('span');
+    spanRate.classList.add('a4');
     
     spanRate.appendChild(forRate);
     spanRate.appendChild(rate);
     divRatePitch.appendChild(spanRate);
     
     let spanPitch = document.createElement('span');
+    spanPitch.classList.add('a4');
 
     spanPitch.appendChild(forPitch);
     spanPitch.appendChild(pitch);

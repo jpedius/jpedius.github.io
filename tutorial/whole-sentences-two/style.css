@@ -1,3 +1,7 @@
+.a4 {
+	margin: 20px auto;
+}
+
 .a3 {
 
 }
@@ -8,6 +12,9 @@
 	
 	padding: 10px 30px;
 	margin: 10px auto;
+	
+	border: none;
+	outline: none;
 }
 
 .a2:hover {
