@@ -104,6 +104,7 @@
         option.textContent = `${c[i].name}`;
         b.appendChild(option);
     }
+    b.classList.add('a1', 'a2');
     
     console.log(c);
     console.log(b, b.className, b.classList);
@@ -117,6 +118,7 @@
       
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
+    previous.classList.add('a1', 'a2');
     previous.addEventListener('click', function() {
         if (previousOrNext <= 0) {
             previousOrNext = howMany.length;
@@ -127,6 +129,7 @@
     
     let play = document.createElement('button');
     play.innerHTML = 'Play';
+    play.classList.add('a1', 'a2');
     play.addEventListener('click', function() {
         speak(howMany[previousOrNext]);
         text.blur();        
@@ -134,6 +137,7 @@
 
     let next = document.createElement('button');
     next.innerHTML = 'Next';
+    next.classList.add('a1', 'a2');
     next.addEventListener('click', function() {
         if (previousOrNext >= howMany.length - 1) {
             previousOrNext = -1;
