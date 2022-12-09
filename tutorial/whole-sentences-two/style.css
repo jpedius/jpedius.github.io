@@ -8,8 +8,11 @@
 .q02 {
 	margin: 10px;
 	padding: 10px 30px;
+
+	border: none;
+	outline: none;
 	
-	font-size: 20px;		
+	font-size: 60px;		
 }
 
 .q03 {
@@ -104,10 +107,7 @@
 	margin: 10px;
 	padding: 10px 30px;
 	
-	border: none;
-	outline: none;
-	
-	font-size: 60px;		
+	font-size: 20px;		
 }
 
 .q14 {
