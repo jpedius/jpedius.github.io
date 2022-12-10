@@ -78,7 +78,7 @@
         option.textContent = `${sentences[i].name}`;
         words.appendChild(option);
     }
-    words.addEventListener('click', function(event) {
+    words.addEventListener('change', function(event) {
         previousOrNext = 0;
         howMany = sentences[words.options.selectedIndex].key;
         howMany = shuffle(howMany);
