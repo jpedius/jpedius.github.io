@@ -95,6 +95,7 @@
     let readonly = document.createElement('input');
     readonly.classList.add('q02a');
     readonly.type = 'text';
+    readonly.readonly = 'readonly';
 
     let text = document.createElement('input');
     text.classList.add('q02');
