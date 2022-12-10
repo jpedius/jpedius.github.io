@@ -82,6 +82,7 @@
         previousOrNext = 0;
         howMany = sentences[words.options.selectedIndex].key;
         howMany = shuffle(howMany);
+        text.value = howMany[previousOrNext];
     }, false); 
     words.classList.add('q01');
 
