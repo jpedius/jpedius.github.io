@@ -219,7 +219,7 @@
             };
 
             const selectedOption =
-                voiceSelect.selectedOptions[0].getAttribute("data-name");
+                voice.selectedOptions[0].getAttribute("data-name");
 
             for (let i = 0; i < voices.length; i++) {
                 if (voices[i].name === selectedOption) {
