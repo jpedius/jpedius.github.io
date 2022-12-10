@@ -103,7 +103,7 @@
     }
     console.log(a, a.trim());
 
-    readonly.value = howMany[previousOrNext];
+    readonly.value = a.trim(); //howMany[previousOrNext];
 
     let text = document.createElement('input');
     text.classList.add('q02');
