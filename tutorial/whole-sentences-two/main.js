@@ -70,10 +70,7 @@
     let previousOrNext = 0;
     let howMany = sentences[0].key;
     howMany = shuffle(howMany);
-
-    console.log(howMany, howMany.length);
     for (let i=0; i<howMany.length; i++) {
-        console.log(i, howMany[i]);
         howMany[i] = shuffle(howMany[i]);
     }
 
@@ -91,14 +88,20 @@
         for (let i=0; i<howMany.length; i++) {
             howMany[i] = shuffle(howMany[i]);
         }
-        text.value = howMany[previousOrNext];
+        readonly.value = howMany[previousOrNext];
+        text.value = '';
     }, false); 
     words.classList.add('q01');
+
+    let readonly = document.createElement('input');
+    readonly.classList.add('q02a');
+    readonly.type = 'text';
+    readonly.value = howMany[previousOrNext];
 
     let text = document.createElement('input');
     text.classList.add('q02');
     text.type = 'text';
-    text.value = howMany[previousOrNext];
+    text.value = '';
       
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
@@ -108,7 +111,7 @@
             previousOrNext = howMany.length;
         }
         previousOrNext--;
-        return text.value = howMany[previousOrNext]; 
+        return readonly.value = howMany[previousOrNext]; 
     }, false);
     
     let play = document.createElement('button');
@@ -127,7 +130,7 @@
             previousOrNext = -1;
         }
         previousOrNext++;
-        return text.value = howMany[previousOrNext];
+        return readonly.value = howMany[previousOrNext];
     }, false);
 
     let forRate = document.createElement('label');
@@ -261,6 +264,11 @@
     divWords.appendChild(words);
     root.appendChild(divWords);
 
+    let divReadonly = document.createElement('div');
+    divReadonly.classList.add('q13a');
+    divReadonly.appendChild(readonly);
+    root.appendChild(divReadonly);
+    
     let divText = document.createElement('div');
     divText.classList.add('q13');
     divText.appendChild(text);

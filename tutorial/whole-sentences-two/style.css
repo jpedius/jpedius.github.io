@@ -5,6 +5,16 @@
 	font-size: 20px;		
 }
 
+.q02a {
+	margin: 10px;
+	padding: 10px 30px;
+
+	border: none;
+	outline: none;
+	
+	font-size: 60px;		
+}
+
 .q02 {
 	margin: 10px;
 	padding: 10px 30px;
@@ -101,6 +111,13 @@
 	padding: 10px 30px;
 	
 	font-size: 40px;		
+}
+
+.q13a {
+	margin: 10px;
+	padding: 10px 30px;
+	
+	font-size: 20px;	
 }
 
 .q13 {
