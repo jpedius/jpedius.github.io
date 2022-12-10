@@ -74,6 +74,7 @@
     console.log(howMany, howMany.length);
     for (let i=0; i<howMany.length; i++) {
         console.log(i, howMany[i]);
+        howMany[i] = shuffle(howMany[i]);
     }
 
     let words = document.createElement('select');
@@ -87,6 +88,9 @@
         previousOrNext = 0;
         howMany = sentences[words.options.selectedIndex].key;
         howMany = shuffle(howMany);
+        for (let i=0; i<howMany.length; i++) {
+            howMany[i] = shuffle(howMany[i]);
+        }
         text.value = howMany[previousOrNext];
     }, false); 
     words.classList.add('q01');
