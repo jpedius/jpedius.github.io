@@ -71,10 +71,16 @@
     readonly.classList.add('q02a');
     readonly.type = 'text';
     readonly.readonly = 'readonly';
+    readonly.autocomplete = 'off';
+    readonly.autocorrect = 'off';
+    readonly.autocapitalize = 'off';
 
     let text = document.createElement('input');
     text.classList.add('q02');
     text.type = 'text';
+    text.autocomplete = 'off';
+    text.autocorrect = 'off';
+    text.autocapitalize = 'off';
     
     let previousOrNext = 0;
     let howMany = sentences[0].key;

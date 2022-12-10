@@ -12,7 +12,7 @@
 	border: none;
 	outline: none;
 	
-	font-size: 40px;		
+	font-size: 40px;	
 }
 
 .q02 {
@@ -103,8 +103,10 @@
 	margin: 0px;
 	padding: 0px;
 	
-	font-size: 20px;		
-}
+	font-size: 20px;	
+	
+	width: 100%;
+}f
 
 .q12 {
 	margin: 10px;
