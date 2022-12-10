@@ -96,7 +96,11 @@
     let readonly = document.createElement('input');
     readonly.classList.add('q02a');
     readonly.type = 'text';
-    readonly.value = howMany[previousOrNext];
+    let a = '';
+    for (let i=0 i<howMany[previousOrNext]; i++) {
+        a += howMany[previousOrNext][i] + ' ';
+    }
+    readonly.value = a.trim();
 
     let text = document.createElement('input');
     text.classList.add('q02');
