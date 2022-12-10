@@ -71,6 +71,13 @@
     let howMany = sentences[0].key;
     howMany = shuffle(howMany);
 
+    console.log(howMany);
+    /*
+    for (let i=0; i<howMany.length; i++) {
+      sentences[0].key = shuffle(sentences[0].key )
+    }
+    */
+
     let words = document.createElement('select');
     words.innerHTML = '';
     for (let i = 0; i < sentences.length; i++) {
@@ -286,10 +293,10 @@
     divVoice.appendChild(voice);
     root.appendChild(divVoice);
 
-    console.log(sentences);
-    console.log(words, words.className, words.classList);   
-    console.log(title, root, h1, previous, next, play);
-    console.log(forRate, rate, forPitch, pitch, voice);
+    //console.log(sentences);
+    //console.log(words, words.className, words.classList);   
+    //console.log(title, root, h1, previous, next, play);
+    //console.log(forRate, rate, forPitch, pitch, voice);
     
     function shuffle(array) {
 
