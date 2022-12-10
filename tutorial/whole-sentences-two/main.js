@@ -66,31 +66,6 @@
             ["climb", "the", "tree"],   
         ],
     }];
-    
-    let previousOrNext = 0;
-    let howMany = sentences[0].key;
-    howMany = shuffle(howMany);
-    for (let i=0; i<howMany.length; i++) {
-        howMany[i] = shuffle(howMany[i]);
-    }
-
-    let words = document.createElement('select');
-    words.innerHTML = '';
-    for (let i = 0; i < sentences.length; i++) {
-        const option = document.createElement('option');
-        option.textContent = `${sentences[i].name}`;
-        words.appendChild(option);
-    }
-    words.addEventListener('change', function(event) {
-        previousOrNext = 0;
-        howMany = sentences[words.options.selectedIndex].key;
-        howMany = shuffle(howMany);
-        for (let i=0; i<howMany.length; i++) {
-            howMany[i] = shuffle(howMany[i]);
-        }
-        setText();
-    }, false); 
-    words.classList.add('q01');
 
     let readonly = document.createElement('input');
     readonly.classList.add('q02a');
@@ -100,8 +75,32 @@
     let text = document.createElement('input');
     text.classList.add('q02');
     text.type = 'text';
-
+    
+    let previousOrNext = 0;
+    let howMany = sentences[0].key;
+    howMany = shuffle(howMany);
+    for (let i=0; i<howMany.length; i++) {
+        howMany[i] = shuffle(howMany[i]);
+    }
     setText();
+
+    let words = document.createElement('select');
+    words.innerHTML = '';
+    for (let i = 0; i < sentences.length; i++) {
+        const option = document.createElement('option');
+        option.textContent = `${sentences[i].name}`;
+        words.appendChild(option);
+    }
+    words.addEventListener('change', function() {
+        previousOrNext = 0;
+        howMany = sentences[words.options.selectedIndex].key;
+        howMany = shuffle(howMany);
+        for (let i=0; i<howMany.length; i++) {
+            howMany[i] = shuffle(howMany[i]);
+        }
+        setText();
+    }, false); 
+    words.classList.add('q01');
 
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
@@ -136,12 +135,13 @@
     }, false);
 
     function setText() {
+        let b = howMany[previousOrNext];
         let a = '';
-        for (let i=0; i<howMany[previousOrNext].length; i++) {
-            a += howMany[previousOrNext][i] + ' ';
+        for (let i=0; i<b.length; i++) {
+            a += b[i] + ' ';
         }
-        text.value = '';
         readonly.value = a.trim();
+        text.value = '';
     }
 
     let forRate = document.createElement('label');
