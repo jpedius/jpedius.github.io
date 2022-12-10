@@ -80,10 +80,8 @@
     }
     words.addEventListener('click', function(event) {
         previousOrNext = 0;
-        howMany = sentences[0].key;
+        howMany = sentences[words.options.selectedIndex].key;
         howMany = shuffle(howMany);
-        console.log(words);
-        //words.value = howMany[previousOrNext];
     }, false); 
     words.classList.add('q01');
 
