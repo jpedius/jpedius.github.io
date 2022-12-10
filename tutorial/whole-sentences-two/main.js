@@ -88,7 +88,11 @@
         for (let i=0; i<howMany.length; i++) {
             howMany[i] = shuffle(howMany[i]);
         }
-        readonly.value = howMany[previousOrNext];
+        let a = '';
+        for (let i=0; i<howMany[previousOrNext].length; i++) {
+            a += howMany[previousOrNext][i] + ' ';
+        }
+        readonly.value = a.trim(); //howMany[previousOrNext];  
         text.value = '';
     }, false); 
     words.classList.add('q01');
@@ -101,8 +105,6 @@
     for (let i=0; i<howMany[previousOrNext].length; i++) {
         a += howMany[previousOrNext][i] + ' ';
     }
-    console.log(a, a.trim());
-
     readonly.value = a.trim(); //howMany[previousOrNext];
 
     let text = document.createElement('input');
@@ -118,7 +120,11 @@
             previousOrNext = howMany.length;
         }
         previousOrNext--;
-        return readonly.value = howMany[previousOrNext]; 
+        let a = '';
+        for (let i=0; i<howMany[previousOrNext].length; i++) {
+            a += howMany[previousOrNext][i] + ' ';
+        }
+        return readonly.value = a.trim(); //howMany[previousOrNext]; 
     }, false);
     
     let play = document.createElement('button');
@@ -137,7 +143,11 @@
             previousOrNext = -1;
         }
         previousOrNext++;
-        return readonly.value = howMany[previousOrNext];
+        let a = '';
+        for (let i=0; i<howMany[previousOrNext].length; i++) {
+            a += howMany[previousOrNext][i] + ' ';
+        }
+        return readonly.value = a.trim(); //howMany[previousOrNext];
     }, false);
 
     let forRate = document.createElement('label');
