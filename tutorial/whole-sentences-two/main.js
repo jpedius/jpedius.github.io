@@ -7,10 +7,6 @@
     let title = 'Whole Sentences';
     document.title = title;
 
-    let previousOrNext = 0;
-    let howMany = ["Hello", "World"];
-    howMany = shuffle(howMany);
-
     let sentences = [{
         name: "Sentence One",
         key: [
@@ -70,6 +66,11 @@
             ["climb", "the", "tree"],   
         ],
     }];
+    
+    let previousOrNext = 0;
+    let howMany = sentences[0].key;
+    // ["Hello", "World"];
+    howMany = shuffle(howMany);
 
     let words = document.createElement('select');
     words.innerHTML = '';
