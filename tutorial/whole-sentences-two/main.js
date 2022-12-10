@@ -88,12 +88,7 @@
         for (let i=0; i<howMany.length; i++) {
             howMany[i] = shuffle(howMany[i]);
         }
-        let a = '';
-        for (let i=0; i<howMany[previousOrNext].length; i++) {
-            a += howMany[previousOrNext][i] + ' ';
-        }
-        readonly.value = a.trim(); //howMany[previousOrNext];  
-        text.value = '';
+        setText();
     }, false); 
     words.classList.add('q01');
 
@@ -101,17 +96,12 @@
     readonly.classList.add('q02a');
     readonly.type = 'text';
 
-    let a = '';
-    for (let i=0; i<howMany[previousOrNext].length; i++) {
-        a += howMany[previousOrNext][i] + ' ';
-    }
-    readonly.value = a.trim(); //howMany[previousOrNext];
-
     let text = document.createElement('input');
     text.classList.add('q02');
     text.type = 'text';
-    text.value = '';
-      
+
+    setText();
+
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
     previous.classList.add('q03');
@@ -120,11 +110,7 @@
             previousOrNext = howMany.length;
         }
         previousOrNext--;
-        let a = '';
-        for (let i=0; i<howMany[previousOrNext].length; i++) {
-            a += howMany[previousOrNext][i] + ' ';
-        }
-        return readonly.value = a.trim(); //howMany[previousOrNext]; 
+        setText();
     }, false);
     
     let play = document.createElement('button');
@@ -145,12 +131,17 @@
             previousOrNext = -1;
         }
         previousOrNext++;
+        setText();
+    }, false);
+
+    function setText() {
         let a = '';
         for (let i=0; i<howMany[previousOrNext].length; i++) {
             a += howMany[previousOrNext][i] + ' ';
         }
-        return readonly.value = a.trim(); //howMany[previousOrNext];
-    }, false);
+        text.value = '';
+        readonly.value = a.trim();
+    }
 
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
