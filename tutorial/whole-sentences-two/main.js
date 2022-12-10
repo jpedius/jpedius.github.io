@@ -9,6 +9,7 @@
 
     let previousOrNext = 0;
     let howMany = ["Hello", "World"];
+    howMany = shuffle(howMany);
 
     let sentences = [{
         name: "Sentence One",
@@ -283,5 +284,25 @@
     console.log(words, words.className, words.classList);   
     console.log(title, root, h1, previous, next, play);
     console.log(forRate, rate, forPitch, pitch, voice);
+    
+    function shuffle(array) {
+
+        let items = JSON.parse(JSON.stringify(array));
+        let currentIndex = items.length, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (currentIndex !== 0) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [items[currentIndex], items[randomIndex]] = [
+                items[randomIndex], items[currentIndex]];
+        }
+
+        return items;
+    }
 
 })(jQuery);
