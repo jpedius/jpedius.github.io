@@ -98,7 +98,7 @@
     readonly.type = 'text';
 
     let a = '';
-    for (let i=0; i<howMany[previousOrNext]; i++) {
+    for (let i=0; i<howMany[previousOrNext].length; i++) {
         a += howMany[previousOrNext][i] + ' ';
     }
     console.log(a, a.trim());
