@@ -13,6 +13,8 @@
 	outline: none;
 	
 	font-size: 60px;		
+
+	width: 100%;	
 }
 
 .q02 {
@@ -22,7 +24,9 @@
 	border: none;
 	outline: none;
 	
-	font-size: 60px;		
+	font-size: 60px;	
+	
+	width: 100%;	
 }
 
 .q03 {
