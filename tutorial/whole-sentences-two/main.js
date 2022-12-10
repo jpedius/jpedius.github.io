@@ -79,6 +79,12 @@
         option.textContent = `${sentences[i].name}`;
         words.appendChild(option);
     }
+    words.addEventListener('click', function(event) {
+        previousOrNext = 0;
+        howMany = sentences[0].key;
+        howMany = shuffle(howMany); 
+        console.log(event);
+    }, false); 
     words.classList.add('q01');
 
     let text = document.createElement('input');
