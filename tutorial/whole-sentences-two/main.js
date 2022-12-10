@@ -34,7 +34,7 @@
             ["pass", "the", "salt"],
             ["we", "left", "early"],
             ["open", "the", "window"],
-            ["pitch", "the", "tent"],  
+            ["pitch", "the", "tent"],
         ],
     }, { 
         name: "Sentence Two",
@@ -131,8 +131,10 @@
     play.innerHTML = 'Play';
     play.classList.add('q04');
     play.addEventListener('click', function() {
-        speak(howMany[previousOrNext]);
-        text.blur();
+        if (text.value !== '') {
+            speak(text.value);
+            text.blur();
+        }
     }, false);
 
     let next = document.createElement('button');
