@@ -71,12 +71,10 @@
     let howMany = sentences[0].key;
     howMany = shuffle(howMany);
 
-    console.log(howMany);
-    /*
+    console.log(howMany, howMany.length);
     for (let i=0; i<howMany.length; i++) {
-      sentences[0].key = shuffle(sentences[0].key )
+        console.log(i, howMany[i]);
     }
-    */
 
     let words = document.createElement('select');
     words.innerHTML = '';
