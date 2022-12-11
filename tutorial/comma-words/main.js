@@ -109,8 +109,9 @@
     text.type = 'text';
 
     let previousOrNext = 0;
-    let howMany = sentences[0].value;
+    let howMany = ['H', 'W']; //sentences[0].value;
     setText();
+    plot();
     
     function plot() {
         let src = "/tutorial/storage/plot/" + words.value + ".txt";
@@ -170,9 +171,7 @@
     play.classList.add('q04');
     play.addEventListener('click', function() {
         if (text.value !== '') {
-            console.log(howMany[previousOrNext]);
             speak(howMany[previousOrNext]);
-            //speak(text.value);
             text.blur();
         }
     }, false);
