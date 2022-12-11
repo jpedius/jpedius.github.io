@@ -148,7 +148,7 @@
         const option = document.createElement('option');
         option.textContent = `${sentences[i].text}`;
         words.appendChild(option);
-    $}
+    }
     words.addEventListener('change', function() {
         previousOrNext = 0;
         howMany = sentences[words.options.selectedIndex].value;
@@ -229,7 +229,7 @@
 
     let comma = document.createElement('input');
     comma.type = 'checkbox';
-    comma.checked = 'checked';
+    //comma.checked = 'checked';
     comma.classList.add('q07');
     comma.addEventListener('change', function() { plot() }, false);
     
@@ -240,7 +240,7 @@
 
     let toWord = document.createElement('input');
     toWord.type = 'checkbox';
-    toWord.checked = 'checked';
+    //toWord.checked = 'checked';
     toWord.classList.add('q07');
     toWord.addEventListener('change', function() { plot() }, false);
  
@@ -251,7 +251,7 @@
 
     let toRandom = document.createElement('input');
     toRandom.type = 'checkbox';
-    toRandom.checked = 'checked';
+    //toRandom.checked = 'checked';
     toRandom.classList.add('q07');
     toRandom.addEventListener('change', function() { plot() }, false); 
 
