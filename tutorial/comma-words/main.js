@@ -113,8 +113,7 @@
     setText();
     
     function plot() {
-        //let src = "/tutorial/storage/plot/" + sentences.value + ".txt";
-        /*
+        let src = "/tutorial/storage/plot/" + words.value + ".txt";
         $.get(src, function(data) {
             if (toWord.checked) {
                 howMany = data.split(' ').map(x => x.trim());
@@ -135,7 +134,6 @@
             previousOrNext = 0;        
             text.value = howMany[previousOrNext]; 
         }, "text");
-        */
     }
 
     function setText() {
@@ -172,7 +170,8 @@
     play.classList.add('q04');
     play.addEventListener('click', function() {
         if (text.value !== '') {
-            speak(text.value);
+            speak(howMany[previousOrNext]);
+            //speak(text.value);
             text.blur();
         }
     }, false);
@@ -229,7 +228,6 @@
 
     let comma = document.createElement('input');
     comma.type = 'checkbox';
-    //comma.checked = 'checked';
     comma.classList.add('q07');
     comma.addEventListener('change', function() { plot() }, false);
     
@@ -240,7 +238,6 @@
 
     let toWord = document.createElement('input');
     toWord.type = 'checkbox';
-    //toWord.checked = 'checked';
     toWord.classList.add('q07');
     toWord.addEventListener('change', function() { plot() }, false);
  
@@ -251,7 +248,6 @@
 
     let toRandom = document.createElement('input');
     toRandom.type = 'checkbox';
-    //toRandom.checked = 'checked';
     toRandom.classList.add('q07');
     toRandom.addEventListener('change', function() { plot() }, false); 
 
