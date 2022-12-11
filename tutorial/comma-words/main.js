@@ -170,6 +170,7 @@
     play.classList.add('q04');
     play.addEventListener('click', function() {
         if (text.value !== '') {
+            console.log(howMany[previousOrNext]);
             speak(howMany[previousOrNext]);
             //speak(text.value);
             text.blur();
