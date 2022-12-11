@@ -419,13 +419,13 @@
     spanWord.classList.add('q34');
     spanWord.appendChild(forWord);
     spanWord.appendChild(toWord);
-    divPeriodExplanationQuestionComma.appendChild(spanWord);
+    divWordRandom.appendChild(spanWord);
     
     let spanRandom = document.createElement('span');
     spanRandom.classList.add('q35');
     spanRandom.appendChild(forRandom);
     spanRandom.appendChild(toRandom);
-    divPeriodExplanationQuestionComma.appendChild(spanRandom);
+    divWordRandom.appendChild(spanRandom);
     
     root.appendChild(divWordRandom);
 
