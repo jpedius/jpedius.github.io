@@ -42,6 +42,9 @@
 
 
 */
+    let text = document.createElement('input');
+    text.classList.add('q02');
+    text.type = 'text';
 
     let previousOrNext = 0;
     let howMany = sentences[0].key;
