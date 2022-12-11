@@ -181,7 +181,7 @@
     play.innerHTML = 'Play';
     play.classList.add('q04');
     play.addEventListener('click', function() {
-        console.log(howMany[previousOrNext].length);
+        //console.log(howMany[previousOrNext].length);
         if (text.value !== '') {
             if (howMany[previousOrNext].length === 1) {
                 speak(readonly.value + ' ' + text.value);
