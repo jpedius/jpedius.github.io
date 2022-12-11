@@ -181,15 +181,14 @@
     play.innerHTML = 'Play';
     play.classList.add('q04');
     play.addEventListener('click', function() {
-        console.log(words, words.options.selectedIndex, sentences, howMany, previousOrNext, howMany[previousOrNext].length);
+        console.log(howMany[previousOrNext].length);
         if (text.value !== '') {
-            
-            //if ( === 1) {
-            //    speak(readonly.value + ' ' + text.value);
-            //}
-            //else {
+            if (howMany[previousOrNext].length === 1) {
+                speak(readonly.value + ' ' + text.value);
+            }
+            else {
                 speak(text.value);
-            //}
+            }
             text.blur();
         }
     }, false);
