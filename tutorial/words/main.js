@@ -94,7 +94,7 @@
     words.classList.add('q02');
 
     function setWords() {
-        let src = "/tutorial/storage/plot/" + words.value + ".txt";
+        let src = "/tutorial/words/files/" + words.value + ".txt";
         $.get(src, function(data) {
             
             if (toWord.checked) {
