@@ -110,9 +110,6 @@
 
     let previousOrNext = 0;
     let howMany = sentences[0].value;
-    for (let i=0; i<howMany.length; i++) {
-        howMany[i] = shuffle(howMany[i]);
-    }
     setText();
     
     function plot() {
