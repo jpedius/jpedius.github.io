@@ -5,10 +5,72 @@
     let title = 'Whole Sentences';
     document.title = title;
 
+    let sentences = [{
+        value: 'harry-potter',
+        text: 'Harry Potter'
+    }, {
+        value: 'eragon',
+        text: 'Eragon'
+    }, {
+        value: 'eldest',
+        text: 'Eldest'
+    }, {
+        value: 'brisingr',
+        text: 'Brisingr'
+    }, {
+        value: 'inheritance',
+        text: 'Inheritance'
+    }, {
+        value: 'lord-of-the-rings',
+        text: 'Lord of the Rings'
+    }, {
+        value: 'the-hobbit',
+        text: 'The Hobbit'
+    }, {
+        value: 'the-fellowship-of-the-ring',
+        text: 'The Fellowship of the Ring'
+    }, {
+        value: 'the-two-towers',
+        text: 'The Two Towers'
+    }, {
+        value: 'the-return-of-the-king',
+        text: 'The Return of the King'
+    }, {
+        value: 'northern-lights',
+        text: 'Northern Lights'
+    }, {
+        value: 'the-subtle-knife',
+        text: 'The Subtle Knife'
+    }, {
+        value: 'the-amber-spyglass',
+        text: 'The Amber Spyglass'
+    }, {
+        value: 'the-lion-the-witch-and-the-wardrobe',
+        text: 'The Lion the Witch and the Wardrobe'
+    }, {
+        value: 'prince-caspian',
+        text: 'Prince Caspian'
+    }, {
+        value: 'the-voyage-of-the-dawn-treader',
+        text: 'The Voyage of the Dawn Treader'
+    }, {
+        value: 'the-silver-chair',
+        text: 'The Silver Chair'
+    }, {
+        value: 'the-horse-and-his-boy',
+        text: 'The Horse and His Boy'
+    }, {
+        value: 'the-magicians-nephew',
+        text: 'The Magicians Nephew'
+    }, {
+        value: 'the-last-battle', 
+        text: 'The Last Battle'
+    }, {
+        value: 'klaus',
+        text: 'Klaus'
+    }];
 
-    function plot() {
-    
-    }
+
 
 
 /*
@@ -46,6 +108,30 @@
     text.classList.add('q02');
     text.type = 'text';
 
+    function plot() {
+        let src = "/tutorial/storage/plot/" + sentences.value + ".txt";
+        $.get(src, function(data) {
+            if (word.checked) {
+                howMany = data.split(' ').map(x => x.trim());
+            }
+            else {
+                let p = period.checked      ? '\\.' : '';
+                let e = explanation.checked ? '!'   : '';
+                let q = question.checked    ? '\\?' : '';
+                let c = comma.checked       ? ','   : '';
+                let all = p + e + q + c;
+                let re = new RegExp("[^" + all + "]+[" + all + "]+", 'g')
+                howMany = data.match( re ).map(x => x.trim());
+            }
+            if (random.checked) {
+                howMany = shuffle(howMany);
+            }
+            
+            previousOrNext = 0;        
+            text.value = howMany[previousOrNext];
+        }, "text");
+    }
+    
     let previousOrNext = 0;
     let howMany = sentences[0].key;
     for (let i=0; i<howMany.length; i++) {
@@ -61,12 +147,12 @@
     words.innerHTML = '';
     for (let i = 0; i < sentences.length; i++) {
         const option = document.createElement('option');
-        option.textContent = `${sentences[i].name}`;
+        option.textContent = `${sentences[i].text}`;
         words.appendChild(option);
-    }
+    $}
     words.addEventListener('change', function() {
         previousOrNext = 0;
-        howMany = sentences[words.options.selectedIndex].key;
+        howMany = sentences[words.options.selectedIndex].value;
         setText();
     }, false); 
     words.classList.add('q01');
