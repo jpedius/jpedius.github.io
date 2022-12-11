@@ -72,11 +72,7 @@
 
     let previousOrNext = 0;
     let howMany = ['Hello', 'World'];
- 
-    //let text = document.createElement('input');
-    //text.classList.add('q01');
-    //text.type = 'text';
-    
+
     let text = document.createElement('textarea');
     text.classList.add('q01');
     
@@ -92,7 +88,6 @@
         option.textContent = `${sentences[i].name}`;
         option.defaultValue = `${sentences[i].key}`;
         option.value = option.defaultValue;
-        //console.log(option, option.textContent, option.defaultValue, option.value);
         words.appendChild(option);
     }
     words.addEventListener('change', function() { setWords() }, false); 
@@ -100,7 +95,6 @@
 
     function setWords() {
         let src = "/tutorial/storage/plot/" + words.value + ".txt";
-        //console.log(src);
         $.get(src, function(data) {
             
             if (toWord.checked) {
