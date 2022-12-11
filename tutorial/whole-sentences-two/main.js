@@ -65,16 +65,80 @@
             ["the", "woman", "tripped"],
             ["climb", "the", "tree"],   
         ],
+    }, {
+        name: "Sentence Three",
+        key: [
+            ["I wish I was"],
+            ["I ate everything on my"],
+            ["I'm in no particular"],
+            ["Must you go"],
+            ["At 5:30 we eat"],
+            ["His goal in life was to write a"],
+            ["On Saturday he bought a new"],
+            ["The movie started at"],
+            ["They took a walk around the"],
+            ["She wore the ring on her"],
+            ["He took a picture with his"],
+            ["He lit the fire with a"],
+            ["The car was out of"],
+            ["It is illegal to"],
+            ["For her birthday, he bought a"],
+            ["They were followed by two"],
+            ["Tyler and Joe went swimming at the"],
+            ["Please turn on the"],
+            ["Maria went running every"],
+            ["He mows the lawn on"],
+            ["It has been snowing for three"],
+            ["He put salt and pepper on his"],
+            ["The boy took his dog for a"],
+            ["They went to London for their"],
+            ["I like butter on my"],
+        ],
+    }, { 
+        name: "Sentence Four",
+        key: [ 
+            ["She went"],
+            ["They bought a"],
+            ["I ate"],
+            ["For three years, I have been"],
+            ["The boat sailed"],
+            ["He sang"],
+            ["Yesterday I saw"],
+            ["We barbecued"],
+            ["Golfing is"],
+            ["The children were"],
+            ["In the summer, they go"],
+            ["Tom and Jessica were"],
+            ["The old man and his wife"],
+            ["They found"],
+            ["He watched"],
+            ["Sometimes I like"],
+            ["It was"],
+            ["We've been"],
+            ["The dog ran"],
+            ["What are"],
+            ["Fourteen geese were"],
+            ["The music was"],
+            ["It took"],
+            ["Hunting is"],
+            ["Maybe we should"],
+        ],
     }];
 
     let readonly = document.createElement('input');
     readonly.classList.add('q02a');
     readonly.type = 'text';
     readonly.readonly = 'readonly';
-
+    readonly.autocomplete = 'off';
+    readonly.autocorrect = 'off';
+    readonly.autocapitalize = 'off';
+    
     let text = document.createElement('input');
     text.classList.add('q02');
     text.type = 'text';
+    text.autocomplete = 'off';
+    text.autocorrect = 'off';
+    text.autocapitalize = 'off';
     
     let previousOrNext = 0;
     let howMany = sentences[0].key;
