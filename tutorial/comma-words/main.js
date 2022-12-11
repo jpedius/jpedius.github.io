@@ -104,6 +104,7 @@
             text.value = howMany[previousOrNext]; 
         }, "text");
     }
+    plot();
 
     function setText() {
         text.value = howMany[previousOrNext];
