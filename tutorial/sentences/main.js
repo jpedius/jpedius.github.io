@@ -146,7 +146,7 @@
     for (let i=0; i<howMany.length; i++) {
         howMany[i] = shuffle(howMany[i]);
     }
-    //setText();
+    setText();
 
     function setText() {
         let b = howMany[previousOrNext];
