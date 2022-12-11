@@ -113,7 +113,8 @@
     setText();
     
     function plot() {
-        let src = "/tutorial/storage/plot/" + sentences.value + ".txt";
+        //let src = "/tutorial/storage/plot/" + sentences.value + ".txt";
+        /*
         $.get(src, function(data) {
             if (word.checked) {
                 howMany = data.split(' ').map(x => x.trim());
@@ -132,8 +133,9 @@
             }
             
             previousOrNext = 0;        
-            text.value = howMany[previousOrNext];
+            text.value = howMany[previousOrNext]; 
         }, "text");
+        */
     }
 
     function setText() {
