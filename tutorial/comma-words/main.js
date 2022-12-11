@@ -70,18 +70,34 @@
         name: 'Klaus'
     }];
 
+    let previousOrNext = 0;
+    let howMany = ['Hello', 'World'];
+ 
     let text = document.createElement('input');
     text.classList.add('q01');
     text.type = 'text';
-
-    let previousOrNext = 0;
-    let howMany = ['Hello', 'World']; //sentences[0].value;
-    setText();
-    //plot();
     
-    function plot() {
+    function setText() {
+        text.value = howMany[previousOrNext];
+    }
+    setText();
+
+    let words = document.createElement('select');
+    words.innerHTML = '';
+    for (let i = 0; i < sentences.length; i++) {
+        const option = document.createElement('option');
+        option.textContent = `${sentences[i].name}`;
+        option.defaultValue = `${sentences[i].key}`;
+        option.value = option.defaultValue;
+        //console.log(option, option.textContent, option.defaultValue, option.value);
+        words.appendChild(option);
+    }
+    words.addEventListener('change', function() { setWords() }, false); 
+    words.classList.add('q02');
+
+    function setWords() {
         let src = "/tutorial/storage/plot/" + words.value + ".txt";
-        console.log(src);
+        //console.log(src);
         $.get(src, function(data) {
             
             if (toWord.checked) {
@@ -105,25 +121,8 @@
             text.value = howMany[previousOrNext]; 
         }, "text");
     }
-    plot();
+    setWords();
 
-    function setText() {
-        text.value = howMany[previousOrNext];
-    } 
-
-    let words = document.createElement('select');
-    words.innerHTML = '';
-    for (let i = 0; i < sentences.length; i++) {
-        const option = document.createElement('option');
-        option.textContent = `${sentences[i].name}`;
-        option.defaultValue = `${sentences[i].key}`;
-        option.value = option.defaultValue;
-        //console.log(option, option.textContent, option.defaultValue, option.value);
-        words.appendChild(option);
-    }
-    words.addEventListener('change', function() { plot() }, false); 
-    words.classList.add('q02');
-  
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
     previous.classList.add('q03');
@@ -166,7 +165,7 @@
     period.checked = 'checked';
     period.disabled = true;
     period.classList.add('q07');
-    period.addEventListener('change', function() { plot() }, false);
+    period.addEventListener('change', function() { setWords() }, false);
 
     let forExplanation = document.createElement('label');
     forExplanation.htmlFor = 'explanation';
@@ -177,7 +176,7 @@
     explanation.type = 'checkbox';
     explanation.checked = 'checked';
     explanation.classList.add('q09');
-    explanation.addEventListener('change', function() { plot() }, false);
+    explanation.addEventListener('change', function() { setWords() }, false);
  
     let forQuestion = document.createElement('label');
     forQuestion.htmlFor = 'question';
@@ -188,7 +187,7 @@
     question.type = 'checkbox';
     question.checked = 'checked';
     question.classList.add('q11');
-    question.addEventListener('change', function() { plot() }, false);
+    question.addEventListener('change', function() { setWords() }, false);
     
     let forComma = document.createElement('label');
     forComma.htmlFor = 'comma';
@@ -198,7 +197,7 @@
     let comma = document.createElement('input');
     comma.type = 'checkbox';
     comma.classList.add('q13');
-    comma.addEventListener('change', function() { plot() }, false);
+    comma.addEventListener('change', function() { setWords() }, false);
     
     let forWord = document.createElement('label');
     forWord.htmlFor = 'toWord';
@@ -208,7 +207,7 @@
     let toWord = document.createElement('input');
     toWord.type = 'checkbox';
     toWord.classList.add('q15');
-    toWord.addEventListener('change', function() { plot() }, false);
+    toWord.addEventListener('change', function() { setWords() }, false);
  
     let forRandom = document.createElement('label');
     forRandom.htmlFor = 'toRandom';
@@ -218,7 +217,7 @@
     let toRandom = document.createElement('input');
     toRandom.type = 'checkbox';
     toRandom.classList.add('q17');
-    toRandom.addEventListener('change', function() { plot() }, false); 
+    toRandom.addEventListener('change', function() { setWords() }, false); 
 
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
