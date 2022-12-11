@@ -6,68 +6,68 @@
     document.title = title;
 
     let sentences = [{
-        value: 'harry-potter',
-        text: 'Harry Potter'
+        key: 'harry-potter',
+        name: 'Harry Potter'
     }, {
-        value: 'eragon',
-        text: 'Eragon'
+        key: 'eragon',
+        name: 'Eragon'
     }, {
-        value: 'eldest',
-        text: 'Eldest'
+        key: 'eldest',
+        name: 'Eldest'
     }, {
-        value: 'brisingr',
-        text: 'Brisingr'
+        key: 'brisingr',
+        name: 'Brisingr'
     }, {
-        value: 'inheritance',
-        text: 'Inheritance'
+        key: 'inheritance',
+        name: 'Inheritance'
     }, {
-        value: 'lord-of-the-rings',
-        text: 'Lord of the Rings'
+        key: 'lord-of-the-rings',
+        name: 'Lord of the Rings'
     }, {
-        value: 'the-hobbit',
-        text: 'The Hobbit'
+        key: 'the-hobbit',
+        name: 'The Hobbit'
     }, {
-        value: 'the-fellowship-of-the-ring',
-        text: 'The Fellowship of the Ring'
+        key: 'the-fellowship-of-the-ring',
+        name: 'The Fellowship of the Ring'
     }, {
-        value: 'the-two-towers',
-        text: 'The Two Towers'
+        key: 'the-two-towers',
+        name: 'The Two Towers'
     }, {
-        value: 'the-return-of-the-king',
-        text: 'The Return of the King'
+        key: 'the-return-of-the-king',
+        name: 'The Return of the King'
     }, {
-        value: 'northern-lights',
-        text: 'Northern Lights'
+        key: 'northern-lights',
+        name: 'Northern Lights'
     }, {
-        value: 'the-subtle-knife',
-        text: 'The Subtle Knife'
+        key: 'the-subtle-knife',
+        name: 'The Subtle Knife'
     }, {
-        value: 'the-amber-spyglass',
-        text: 'The Amber Spyglass'
+        key: 'the-amber-spyglass',
+        name: 'The Amber Spyglass'
     }, {
-        value: 'the-lion-the-witch-and-the-wardrobe',
-        text: 'The Lion the Witch and the Wardrobe'
+        key: 'the-lion-the-witch-and-the-wardrobe',
+        name: 'The Lion the Witch and the Wardrobe'
     }, {
-        value: 'prince-caspian',
-        text: 'Prince Caspian'
+        key: 'prince-caspian',
+        name: 'Prince Caspian'
     }, {
-        value: 'the-voyage-of-the-dawn-treader',
-        text: 'The Voyage of the Dawn Treader'
+        key: 'the-voyage-of-the-dawn-treader',
+        name: 'The Voyage of the Dawn Treader'
     }, {
-        value: 'the-silver-chair',
-        text: 'The Silver Chair'
+        key: 'the-silver-chair',
+        name: 'The Silver Chair'
     }, {
-        value: 'the-horse-and-his-boy',
-        text: 'The Horse and His Boy'
+        key: 'the-horse-and-his-boy',
+        name: 'The Horse and His Boy'
     }, {
-        value: 'the-magicians-nephew',
-        text: 'The Magicians Nephew'
+        key: 'the-magicians-nephew',
+        name: 'The Magicians Nephew'
     }, {
-        value: 'the-last-battle', 
-        text: 'The Last Battle'
+        key: 'the-last-battle', 
+        name: 'The Last Battle'
     }, {
-        value: 'klaus',
-        text: 'Klaus'
+        key: 'klaus',
+        name: 'Klaus'
     }];
 
     let text = document.createElement('input');
@@ -115,7 +115,7 @@
     words.innerHTML = '';
     for (let i = 0; i < sentences.length; i++) {
         const option = document.createElement('option');
-        option.textContent = `${sentences[i].text}`;
+        option.textContent = `${sentences[i].name}`;
         words.appendChild(option);
     }
     words.addEventListener('change', function() { plot() }, false); 
