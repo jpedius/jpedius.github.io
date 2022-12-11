@@ -108,6 +108,13 @@
     text.classList.add('q02');
     text.type = 'text';
 
+    let previousOrNext = 0;
+    let howMany = sentences[0].key;
+    for (let i=0; i<howMany.length; i++) {
+        howMany[i] = shuffle(howMany[i]);
+    }
+    setText();
+    
     function plot() {
         let src = "/tutorial/storage/plot/" + sentences.value + ".txt";
         $.get(src, function(data) {
@@ -131,13 +138,6 @@
             text.value = howMany[previousOrNext];
         }, "text");
     }
-    
-    let previousOrNext = 0;
-    let howMany = sentences[0].key;
-    for (let i=0; i<howMany.length; i++) {
-        howMany[i] = shuffle(howMany[i]);
-    }
-    setText();
 
     function setText() {
         text.value = howMany[previousOrNext];
