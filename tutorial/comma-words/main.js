@@ -70,52 +70,19 @@
         text: 'Klaus'
     }];
 
-
-
-
-/*
-
-
-  function plot() {
-    let src = "/tutorial/storage/plot/" + letSelectPlot.value + ".txt";
-    $.get(src, function(data) {
-
-      if (word.checked) {
-        howMany = data.split(' ').map(x => x.trim());
-      }
-      else {
-        let p = period.checked      ? '\\.' : '';
-        let e = explanation.checked ? '!'   : '';
-        let q = question.checked    ? '\\?' : '';
-        let c = comma.checked       ? ','   : '';
-        let all = p + e + q + c;
-        let re = new RegExp("[^" + all + "]+[" + all + "]+", 'g')
-        howMany = data.match( re ).map(x => x.trim());
-      }
-
-      if (toRandom.checked) {
-        howMany = shuffle(howMany);
-      }
-
-      previousOrNext = 0;        
-      letSelectText.value = howMany[previousOrNext];
-    }, "text");
-  };
-
-
-*/
     let text = document.createElement('input');
     text.classList.add('q01');
     text.type = 'text';
 
     let previousOrNext = 0;
-    let howMany = ['H', 'W']; //sentences[0].value;
+    let howMany = ['Hello', 'World']; //sentences[0].value;
     setText();
     //plot();
     
     function plot() {
         let src = "/tutorial/storage/plot/" + words.value + ".txt";
         $.get(src, function(data) {
+            
             if (toWord.checked) {
                 howMany = data.split(' ').map(x => x.trim());
             }
@@ -128,6 +95,7 @@
                 let re = new RegExp("[^" + all + "]+[" + all + "]+", 'g')
                 howMany = data.match( re ).map(x => x.trim());
             }
+            
             if (toRandom.checked) {
                 howMany = shuffle(howMany);
             }
@@ -148,11 +116,7 @@
         option.textContent = `${sentences[i].text}`;
         words.appendChild(option);
     }
-    words.addEventListener('change', function() {
-        previousOrNext = 0;
-        howMany = sentences[words.options.selectedIndex].value;
-        setText();
-    }, false); 
+    words.addEventListener('change', function() { plot() }, false); 
     words.classList.add('q02');
   
     let previous = document.createElement('button');
