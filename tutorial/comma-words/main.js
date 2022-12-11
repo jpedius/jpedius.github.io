@@ -105,7 +105,7 @@
 
 */
     let text = document.createElement('input');
-    text.classList.add('q02');
+    text.classList.add('q01');
     text.type = 'text';
 
     let previousOrNext = 0;
@@ -153,7 +153,7 @@
         howMany = sentences[words.options.selectedIndex].value;
         setText();
     }, false); 
-    words.classList.add('q01');
+    words.classList.add('q02');
   
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
@@ -202,59 +202,59 @@
     let forExplanation = document.createElement('label');
     forExplanation.htmlFor = 'explanation';
     forExplanation.innerHTML = 'Explanation';
-    forExplanation.classList.add('q06');
+    forExplanation.classList.add('q08');
 
     let explanation = document.createElement('input');
     explanation.type = 'checkbox';
     explanation.checked = 'checked';
-    explanation.classList.add('q07');
+    explanation.classList.add('q09');
     explanation.addEventListener('change', function() { plot() }, false);
  
     let forQuestion = document.createElement('label');
     forQuestion.htmlFor = 'question';
     forQuestion.innerHTML = 'Question';
-    forQuestion.classList.add('q06');
+    forQuestion.classList.add('q10');
 
     let question = document.createElement('input');
     question.type = 'checkbox';
     question.checked = 'checked';
-    question.classList.add('q07');
+    question.classList.add('q11');
     question.addEventListener('change', function() { plot() }, false);
     
     let forComma = document.createElement('label');
     forComma.htmlFor = 'comma';
     forComma.innerHTML = 'Comma';
-    forComma.classList.add('q06');
+    forComma.classList.add('q12');
 
     let comma = document.createElement('input');
     comma.type = 'checkbox';
-    comma.classList.add('q07');
+    comma.classList.add('q13');
     comma.addEventListener('change', function() { plot() }, false);
     
     let forWord = document.createElement('label');
     forWord.htmlFor = 'toWord';
     forWord.innerHTML = 'Word';
-    forWord.classList.add('q06');
+    forWord.classList.add('q14');
 
     let toWord = document.createElement('input');
     toWord.type = 'checkbox';
-    toWord.classList.add('q07');
+    toWord.classList.add('q15');
     toWord.addEventListener('change', function() { plot() }, false);
  
     let forRandom = document.createElement('label');
     forRandom.htmlFor = 'toRandom';
     forRandom.innerHTML = 'Random';
-    forRandom.classList.add('q06');
+    forRandom.classList.add('q16');
 
     let toRandom = document.createElement('input');
     toRandom.type = 'checkbox';
-    toRandom.classList.add('q07');
+    toRandom.classList.add('q17');
     toRandom.addEventListener('change', function() { plot() }, false); 
 
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
     forRate.innerHTML = 'Rate';
-    forRate.classList.add('q06');
+    forRate.classList.add('q18');
 
     let rate = document.createElement('input');
     rate.type = 'range';
@@ -262,12 +262,12 @@
     rate.max = 2;
     rate.defaultValue = '1';
     rate.step = 0.1;
-    rate.classList.add('q07');
+    rate.classList.add('q19');
 
     let forPitch = document.createElement('label');
     forPitch.htmlFor = 'pitch';
     forPitch.innerHTML = 'Pitch';
-    forPitch.classList.add('q08');
+    forPitch.classList.add('q20');
 
     let pitch = document.createElement('input');
     pitch.type = 'range';
@@ -275,7 +275,7 @@
     pitch.max = 2;
     pitch.defaultValue = '1';
     pitch.step = 0.1;
-    pitch.classList.add('q09');
+    pitch.classList.add('q21');
 
     // "Microsoft Zira - English (United States)"
     // "Samantha"
@@ -283,7 +283,7 @@
     // "Tessa"
 
     let voice = document.createElement('select');
-    voice.classList.add('q10');
+    voice.classList.add('q22');
 
     const synth = window.speechSynthesis;
     let voices = [];
@@ -390,53 +390,53 @@
     }
 
     let root = document.querySelector('#root');
-    root.classList.add('q11');
+    root.classList.add('q23');
 
     let h1Title = document.createElement('h1');
     h1Title.innerHTML = title;
-    h1Title.classList.add('q12');
+    h1Title.classList.add('q24');
     root.appendChild(h1Title);
 
     let divWords = document.createElement('div');
-    divWords.classList.add('q19');
+    divWords.classList.add('q25');
     divWords.appendChild(words);
     root.appendChild(divWords);
 
     let divText = document.createElement('div');
-    divText.classList.add('q13');
+    divText.classList.add('q26');
     divText.appendChild(text);
     root.appendChild(divText);
 
     let divButton = document.createElement('div');    
-    divButton.classList.add('q14');
+    divButton.classList.add('q27');
     divButton.appendChild(previous);
     divButton.appendChild(play);
     divButton.appendChild(next);
     root.appendChild(divButton);
 
     let divPeriodExplanationQuestionComma = document.createElement('div');
-    divPeriodExplanationQuestionComma.classList.add('q15');
+    divPeriodExplanationQuestionComma.classList.add('q28');
     
     let spanPeriod = document.createElement('span');
-    spanPeriod.classList.add('q16'); 
+    spanPeriod.classList.add('q29'); 
     spanPeriod.appendChild(forPeriod);
     spanPeriod.appendChild(period);
     divPeriodExplanationQuestionComma.appendChild(spanPeriod); 
     
     let spanQuestion = document.createElement('span');
-    spanQuestion.classList.add('q16');
+    spanQuestion.classList.add('q30');
     spanQuestion.appendChild(forQuestion);
     spanQuestion.appendChild(question);
     divPeriodExplanationQuestionComma.appendChild(spanQuestion); 
 
     let spanExplanation = document.createElement('span');
-    spanExplanation.classList.add('q16');
+    spanExplanation.classList.add('q31');
     spanExplanation.appendChild(forExplanation);
     spanExplanation.appendChild(explanation);
     divPeriodExplanationQuestionComma.appendChild(spanExplanation);
   
     let spanComma = document.createElement('span');
-    spanComma.classList.add('q16');
+    spanComma.classList.add('q32');
     spanComma.appendChild(forComma);
     spanComma.appendChild(comma);
     divPeriodExplanationQuestionComma.appendChild(spanComma);
@@ -444,16 +444,16 @@
     root.appendChild(divPeriodExplanationQuestionComma);
 
     let divWordRandom = document.createElement('div');
-    divWordRandom.classList.add('q15');
+    divWordRandom.classList.add('q33');
     
     let spanWord = document.createElement('span');
-    spanWord.classList.add('q16');
+    spanWord.classList.add('q34');
     spanWord.appendChild(forWord);
     spanWord.appendChild(toWord);
     divPeriodExplanationQuestionComma.appendChild(spanWord);
     
     let spanRandom = document.createElement('span');
-    spanRandom.classList.add('q16');
+    spanRandom.classList.add('q35');
     spanRandom.appendChild(forRandom);
     spanRandom.appendChild(toRandom);
     divPeriodExplanationQuestionComma.appendChild(spanRandom);
@@ -461,16 +461,16 @@
     root.appendChild(divWordRandom);
 
     let divRatePitch = document.createElement('div');
-    divRatePitch.classList.add('q15');
+    divRatePitch.classList.add('q36');
 
     let spanRate = document.createElement('span');
-    spanRate.classList.add('q16');
+    spanRate.classList.add('q37');
     spanRate.appendChild(forRate);
     spanRate.appendChild(rate);
     divRatePitch.appendChild(spanRate);
 
     let spanPitch = document.createElement('span');
-    spanPitch.classList.add('q17');
+    spanPitch.classList.add('q38');
     spanPitch.appendChild(forPitch);
     spanPitch.appendChild(pitch);
     divRatePitch.appendChild(spanPitch); 
@@ -478,7 +478,7 @@
     root.appendChild(divRatePitch);
 
     let divVoice = document.createElement('div');
-    divVoice.classList.add('q18');
+    divVoice.classList.add('q39');
     divVoice.appendChild(voice);
     root.appendChild(divVoice);
 
