@@ -73,9 +73,12 @@
     let previousOrNext = 0;
     let howMany = ['Hello', 'World'];
  
-    let text = document.createElement('input');
+    //let text = document.createElement('input');
+    //text.classList.add('q01');
+    //text.type = 'text';
+    
+    let text = document.createElement('textarea');
     text.classList.add('q01');
-    text.type = 'text';
     
     function setText() {
         text.value = howMany[previousOrNext];
