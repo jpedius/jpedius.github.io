@@ -118,7 +118,7 @@
         option.textContent = `${sentences[i].name}`;
         option.defaultValue = `${sentences[i].key}`;
         option.value = option.defaultValue;
-        console.log(option, option.textContent, option.defaultValue, option.value);
+        //console.log(option, option.textContent, option.defaultValue, option.value);
         words.appendChild(option);
     }
     words.addEventListener('change', function() { plot() }, false); 
