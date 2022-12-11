@@ -452,7 +452,7 @@
     
     let spanWord = document.createElement('span');
     spanWord.classList.add('q16');
-    spanWord.appendChild(spanWord);
+    spanWord.appendChild(forWord);
     spanWord.appendChild(toWord);
     divPeriodExplanationQuestionComma.appendChild(spanWord);
     
