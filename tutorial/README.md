@@ -15,9 +15,3 @@
 [Write Words](write-words/)
 
 [Medicine](medicine/)
-
-[Talk News](talk-news/)
-
-[Plot Words](plot-words/)
-
-[Individual Words](individual-words/)
