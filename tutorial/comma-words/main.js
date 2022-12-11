@@ -116,7 +116,7 @@
         //let src = "/tutorial/storage/plot/" + sentences.value + ".txt";
         /*
         $.get(src, function(data) {
-            if (word.checked) {
+            if (toWord.checked) {
                 howMany = data.split(' ').map(x => x.trim());
             }
             else {
@@ -234,15 +234,15 @@
     comma.addEventListener('change', function() { plot() }, false);
     
     let forWord = document.createElement('label');
-    forWord.htmlFor = 'word';
+    forWord.htmlFor = 'toWord';
     forWord.innerHTML = 'Word';
     forWord.classList.add('q06');
 
-    let word = document.createElement('input');
-    word.type = 'checkbox';
-    word.checked = 'checked';
-    word.classList.add('q07');
-    word.addEventListener('change', function() { plot() }, false);
+    let toWord = document.createElement('input');
+    toWord.type = 'checkbox';
+    toWord.checked = 'checked';
+    toWord.classList.add('q07');
+    toWord.addEventListener('change', function() { plot() }, false);
  
     let forRandom = document.createElement('label');
     forRandom.htmlFor = 'toRandom';
@@ -452,8 +452,8 @@
     
     let spanWord = document.createElement('span');
     spanWord.classList.add('q16');
-    spanWord.appendChild(word);
     spanWord.appendChild(spanWord);
+    spanWord.appendChild(toWord);
     divPeriodExplanationQuestionComma.appendChild(spanWord);
     
     let spanRandom = document.createElement('span');
