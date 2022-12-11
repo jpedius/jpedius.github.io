@@ -93,7 +93,7 @@
         howMany = data.match( re ).map(x => x.trim());
       }
 
-      if (random.checked) {
+      if (toRandom.checked) {
         howMany = shuffle(howMany);
       }
 
@@ -127,7 +127,7 @@
                 let re = new RegExp("[^" + all + "]+[" + all + "]+", 'g')
                 howMany = data.match( re ).map(x => x.trim());
             }
-            if (random.checked) {
+            if (toRandom.checked) {
                 howMany = shuffle(howMany);
             }
             
@@ -243,15 +243,15 @@
     word.addEventListener('change', function() { plot() }, false);
  
     let forRandom = document.createElement('label');
-    forRandom.htmlFor = 'random';
+    forRandom.htmlFor = 'toRandom';
     forRandom.innerHTML = 'Random';
     forRandom.classList.add('q06');
 
-    let random = document.createElement('input');
-    random.type = 'checkbox';
-    random.checked = 'checked';
-    random.classList.add('q07');
-    random.addEventListener('change', function() { plot() }, false); 
+    let toRandom = document.createElement('input');
+    toRandom.type = 'checkbox';
+    toRandom.checked = 'checked';
+    toRandom.classList.add('q07');
+    toRandom.addEventListener('change', function() { plot() }, false); 
 
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
@@ -457,7 +457,7 @@
     let spanRandom = document.createElement('span');
     spanRandom.classList.add('q16');
     spanRandom.appendChild(forRandom);
-    spanRandom.appendChild(random);
+    spanRandom.appendChild(toRandom);
     divPeriodExplanationQuestionComma.appendChild(spanRandom);
     
     root.appendChild(divWordRandom);
