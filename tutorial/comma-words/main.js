@@ -199,8 +199,8 @@
     period.addEventListener('change', function() { plot() }, false);
 
     let forExplanation = document.createElement('label');
-    forExplanation.htmlFor = 'period';
-    forExplanation.innerHTML = 'Period';
+    forExplanation.htmlFor = 'explanation';
+    forExplanation.innerHTML = 'Explanation';
     forExplanation.classList.add('q06');
 
     let explanation = document.createElement('input');
@@ -210,8 +210,8 @@
     explanation.addEventListener('change', function() { plot() }, false);
  
     let forQuestion = document.createElement('label');
-    forQuestion.htmlFor = 'period';
-    forQuestion.innerHTML = 'Period';
+    forQuestion.htmlFor = 'question';
+    forQuestion.innerHTML = 'Question';
     forQuestion.classList.add('q06');
 
     let question = document.createElement('input');
@@ -221,8 +221,8 @@
     question.addEventListener('change', function() { plot() }, false);
     
     let forComma = document.createElement('label');
-    forComma.htmlFor = 'period';
-    forComma.innerHTML = 'Period';
+    forComma.htmlFor = 'comma';
+    forComma.innerHTML = 'Comma';
     forComma.classList.add('q06');
 
     let comma = document.createElement('input');
@@ -232,8 +232,8 @@
     comma.addEventListener('change', function() { plot() }, false);
     
     let forWord = document.createElement('label');
-    forWord.htmlFor = 'period';
-    forWord.innerHTML = 'Period';
+    forWord.htmlFor = 'word';
+    forWord.innerHTML = 'Word';
     forWord.classList.add('q06');
 
     let word = document.createElement('input');
@@ -243,8 +243,8 @@
     word.addEventListener('change', function() { plot() }, false);
  
     let forRandom = document.createElement('label');
-    forRandom.htmlFor = 'period';
-    forRandom.innerHTML = 'Period';
+    forRandom.htmlFor = 'random';
+    forRandom.innerHTML = 'Random';
     forRandom.classList.add('q06');
 
     let random = document.createElement('input');
