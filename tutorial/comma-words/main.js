@@ -116,7 +116,7 @@
     for (let i = 0; i < sentences.length; i++) {
         const option = document.createElement('option');
         option.textContent = `${sentences[i].name}`;
-        option.value = `${sentences[i].key}`;
+        option.defaultValue = `${sentences[i].key}`;
         words.appendChild(option);
     }
     words.addEventListener('change', function() { plot() }, false); 
