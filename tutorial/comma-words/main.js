@@ -81,6 +81,7 @@
     
     function plot() {
         let src = "/tutorial/storage/plot/" + words.value + ".txt";
+        console.log(src);
         $.get(src, function(data) {
             
             if (toWord.checked) {
@@ -104,7 +105,7 @@
             text.value = howMany[previousOrNext]; 
         }, "text");
     }
-    plot();
+    //plot();
 
     function setText() {
         text.value = howMany[previousOrNext];
