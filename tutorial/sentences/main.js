@@ -146,7 +146,17 @@
     for (let i=0; i<howMany.length; i++) {
         howMany[i] = shuffle(howMany[i]);
     }
-    setText();
+    //setText();
+
+    function setText() {
+        let b = howMany[previousOrNext];
+        let a = '';
+        for (let i=0; i<b.length; i++) {
+            a += b[i] + ' ';
+        }
+        readonly.value = a.trim();
+        text.value = '';
+    }
 
     let words = document.createElement('select');
     words.innerHTML = '';
@@ -161,7 +171,7 @@
         howMany = shuffle(howMany);
         for (let i=0; i<howMany.length; i++) {
             howMany[i] = shuffle(howMany[i]);
-        }
+        } 
         setText();
     }, false); 
     words.classList.add('q01');
@@ -180,8 +190,7 @@
     let play = document.createElement('button');
     play.innerHTML = 'Play';
     play.classList.add('q04');
-    play.addEventListener('click', function() {
-        //console.log(howMany[previousOrNext].length);
+    play.addEventListener('click', function() { 
         if (text.value !== '') {
             if (howMany[previousOrNext].length === 1) {
                 speak(readonly.value + ' ' + text.value);
@@ -203,16 +212,6 @@
         previousOrNext++;
         setText();
     }, false);
-
-    function setText() {
-        let b = howMany[previousOrNext];
-        let a = '';
-        for (let i=0; i<b.length; i++) {
-            a += b[i] + ' ';
-        }
-        readonly.value = a.trim();
-        text.value = '';
-    }
 
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
@@ -331,14 +330,34 @@
             synth.speak(utterThis);
         }
     }
+ 
+    function shuffle(array) {
+
+        let items = JSON.parse(JSON.stringify(array));
+        let currentIndex = items.length, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (currentIndex !== 0) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [items[currentIndex], items[randomIndex]] = [
+                items[randomIndex], items[currentIndex]];
+        }
+
+        return items;
+    }  
 
     let root = document.querySelector('#root');
     root.classList.add('q11');
 
-    let h1 = document.createElement('h1');
-    h1.innerHTML = title;
-    h1.classList.add('q12');
-    root.appendChild(h1);
+    let h1Title = document.createElement('h1');
+    h1Title.innerHTML = title;
+    h1Title.classList.add('q12');
+    root.appendChild(h1Title);
 
     let divWords = document.createElement('div');
     divWords.classList.add('q19');
@@ -383,30 +402,5 @@
     divVoice.classList.add('q18');
     divVoice.appendChild(voice);
     root.appendChild(divVoice);
-
-    //console.log(sentences);
-    //console.log(words, words.className, words.classList);   
-    //console.log(title, root, h1, previous, next, play);
-    //console.log(forRate, rate, forPitch, pitch, voice);
-    
-    function shuffle(array) {
-
-        let items = JSON.parse(JSON.stringify(array));
-        let currentIndex = items.length, randomIndex;
-
-        // While there remain elements to shuffle...
-        while (currentIndex !== 0) {
-
-            // Pick a remaining element...
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
-
-            // And swap it with the current element.
-            [items[currentIndex], items[randomIndex]] = [
-                items[randomIndex], items[currentIndex]];
-        }
-
-        return items;
-    }
 
 })(jQuery);
