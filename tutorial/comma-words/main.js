@@ -111,7 +111,7 @@
     let previousOrNext = 0;
     let howMany = ['H', 'W']; //sentences[0].value;
     setText();
-    plot();
+    //plot();
     
     function plot() {
         let src = "/tutorial/storage/plot/" + words.value + ".txt";
