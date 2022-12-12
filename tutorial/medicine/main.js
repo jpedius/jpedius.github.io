@@ -94,7 +94,7 @@
     showName.innerHTML = 'Name';
     showName.classList.add('q01');
     showName.addEventListener('click', function() {
-        //inputName = !inputName;
+        inputName = !inputName;
         //inputName ? "-----" : howMany[previousOrNext].name;
     }, false);
     
@@ -103,7 +103,7 @@
     showImage.innerHTML = 'Image';
     showImage.classList.add('q01');
     showImage.addEventListener('click', function() {
-        //inputImage = !inputImage;
+        inputImage = !inputImage;
         //inputImage ? "img/blank.jpg" : howMany[previousOrNext].image;
     }, false);
     
@@ -112,11 +112,11 @@
     showDescription.innerHTML = 'Description';
     showDescription.classList.add('q01');
     showDescription.addEventListener('click', function() {
-        console.log(inputDescription); 
         inputDescription = !inputDescription;
-        console.log(inputDescription);
+        //inputDescription === true ? 
         //inputDescription ? "-----" : howMany[previousOrNext].description;
-        console.log(howMany[previousOrNext].description);
+        console.log(inputDescription === true ? 'ssss' : 'dddd');
+        //console.log(howMany[previousOrNext].description);
     }, false);
 
     let forRate = document.createElement('label');
