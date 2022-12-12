@@ -57,7 +57,7 @@
     
     let previousOrNext = 0;
     let howMany = items2[0];
-    console.log(howMany, howMany.length);
+    console.log(howMany, medicine, howMany.length);
     //howMany = shuffle(howMany);
     setText();
 
