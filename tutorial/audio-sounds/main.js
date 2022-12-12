@@ -141,32 +141,8 @@ jQuery(function($) {
     h1Title.innerHTML = title;
     h1Title.classList.add('q12');
     root.appendChild(h1Title);
-    
-    let toShowHide = document.createElement('button');
-    toShowHide.classList.add('q11');
-    toShowHide.type = 'button';
-    toShowHide.innerHTML = 'Show';
-    let toHide = 1;
-    toShowHide.addEventListener('click', () => {
-        if (toHide) {
-            toShowHide.innerHTML = 'Hide';
-            //for (let i of sounds.length) {
-            //    console.log(i);
-            //    i.children[0].style.display = 'inline';
-            //}
-            toHide = 0;
-        }
-        else {
-            toShowHide.innerHTML = 'Show';
-            //for (let i of sounds.length) {
-            //    console.log(i);
-            //    i.children[0].style.display = 'none';
-            //}
-            toHide = 1;
-        }
-    });
-    root.appendChild(toShowHide);
 
+    let toLetter = [];
     for (let i=0; i<sounds.length; i++) {
 
         let divSounds = document.createElement('div');
@@ -198,8 +174,40 @@ jQuery(function($) {
         divSounds.appendChild(toSpan);
 
         root.appendChild(divSounds);
+        
+        toLetter.push(divSounds);
     }
 
+    let toShowHide = document.createElement('button');
+    toShowHide.classList.add('q11');
+    toShowHide.type = 'button';
+    toShowHide.innerHTML = 'Show';
+    for (let i of toLetter.length) {
+        console.log(i);
+    //    i.children[0].style.display = 'none';
+    }
+                
+    let toHide = 1;
+    toShowHide.addEventListener('click', () => {
+        if (toHide) {
+            toShowHide.innerHTML = 'Hide';
+            for (let i of toLetter.length) {
+                console.log(i);
+            //    i.children[0].style.display = 'inline';
+            }
+            toHide = 0;
+        }
+        else {
+            toShowHide.innerHTML = 'Show';
+            for (let i of toLetter.length) {
+                console.log(i);
+            //    i.children[0].style.display = 'none';
+            }
+            toHide = 1;
+        }
+    });
+    root.appendChild(toShowHide);
+ 
     function shuffle(array) {
 
         let items = JSON.parse(JSON.stringify(array));
