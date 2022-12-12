@@ -56,6 +56,8 @@
     console.log(howMany, medicine, howMany.length);
     howMany = shuffle(howMany);
     setText();
+    
+    console.log('001', name, image, description);
 
     function setText() {
 
