@@ -41,6 +41,7 @@
 
     let image = document.createElement('img');
     image.classList.add('q02a');
+    image.src = 'img/blank.jpg';
     
     let description = document.createElement('input');
     description.classList.add('q02');
@@ -102,9 +103,6 @@
         else {
             name.value = howMany[previousOrNext].name;
         }  
-        //return name.value
-        //    ? '-----'
-        //    : howMany[previousOrNext].name;
         console.log(inputName, name.value); 
     }, false);
     
@@ -119,10 +117,7 @@
         }
         else {
             image.value = howMany[previousOrNext].image;
-        }   
-        //image.src
-        //    ? 'img/blank.jpg'
-        //    : howMany[previousOrNext].image;
+        }
         console.log(inputImage, image.src); 
     }, false);
     
@@ -138,9 +133,6 @@
         else {
             description.value = howMany[previousOrNext].description;
         }
-        //description.value
-        //    ? '-----'
-        //    : howMany[previousOrNext].description;
         console.log(inputDescription, description.value);
     }, false);
 
