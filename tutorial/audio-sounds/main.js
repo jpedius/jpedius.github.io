@@ -149,6 +149,7 @@ jQuery(function($) {
         let toAudio = document.createElement('audio');
         toAudio.classList.add('q19');
         toAudio.src = file + sounds[i].mp3
+        console.log(toAudio.src, file, sounds[i]);
         divSounds.appendChild(toAudio);
 
         let toButton = document.createElement('button');
