@@ -53,7 +53,7 @@
     let previousOrNext = 0;
     let howMany = medicine;
     console.log(howMany, medicine, howMany.length);
-    //howMany = shuffle(howMany);
+    howMany = shuffle(howMany);
     setText();
 
     function setText() {
