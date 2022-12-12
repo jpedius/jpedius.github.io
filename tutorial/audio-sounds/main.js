@@ -132,6 +132,7 @@ jQuery(function($) {
     }];
 
     const sounds = consonant.concat(vowel);
+    sounds = shuffle(sounds);
 
     let root = document.querySelector('#root');
     root.classList.add('q11');
@@ -140,29 +141,47 @@ jQuery(function($) {
     h1Title.innerHTML = title;
     h1Title.classList.add('q12');
     root.appendChild(h1Title);
+    
+    let toShowHide = document.createElement('button');
+    toShowHide.classList.add('q11');
+    toShowHide.type = 'button';
+    toShowHide.innerHTML = 'Show';
+    let toHide = 1;
+    toShowHide.addEventListener('click', () => {
+    
+        if (toHide) {
+            toShowHide.innerHTML = 'Hide';
+            for (let i of sounds.length) {
+                i.children[0].style.display = 'inline';
+            }
+            toHide = 0;
+        }
+        else {
+            toShowHide.innerHTML = 'Show';
+            for (let i of sounds.length) {
+                i.children[0].style.display = 'none';
+            }
+            toHide = 1;
+        }
+    });
+    root.appendChild(toShowHide);
 
-    console.log(sounds.length);
-    
     for (let i=0; i<sounds.length; i++) {
-    
-        //console.log(i, sounds.length);
-    
+
         let divSounds = document.createElement('div');
         divSounds.classList.add('q19');
 
         let toAudio = document.createElement('audio');
         toAudio.classList.add('q19');
         toAudio.src = file + sounds[i].mp3
-        //console.log(toAudio.src, file, sounds[i]);
         divSounds.appendChild(toAudio);
 
         let toButton = document.createElement('button');
         toButton.classList.add('q19');
         toButton.type = 'button';
         toButton.innerHTML = 'Play';
-        let a = 0;
         toButton.addEventListener('click', () => {
-            divSounds.children[a].play();
+            divSounds.children[0].play();
         });
         divSounds.appendChild(toButton);
 
@@ -178,51 +197,31 @@ jQuery(function($) {
         divSounds.appendChild(toSpan);
 
         root.appendChild(divSounds);
-    } 
+    }
 
+    function shuffle(array) {
+
+        let items = JSON.parse(JSON.stringify(array));
+        let currentIndex = items.length, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (currentIndex !== 0) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [items[currentIndex], items[randomIndex]] = [
+                items[randomIndex], items[currentIndex]];
+        }
+
+        return items;
+    }
+ 
 /*
 
 
-  function shuffle(array) {
-
-    let items = JSON.parse(JSON.stringify(array));
-    let currentIndex = items.length, randomIndex;
-
-    // While there remain elements to shuffle...
-    while (currentIndex !== 0) {
-
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      // And swap it with the current element.
-      [items[currentIndex], items[randomIndex]] = [
-        items[randomIndex], items[currentIndex]];
-    }
-
-    return items;
-  };
-
-  function audio_paragraph(id, mp3, letter) {
-
-    let p = document.createElement('p');
-
-    p.innerHTML = `
-      <audio src="` + mp3 + `"></audio>
-      <button type="button" class="text-a" id="` + id + `">Play</button> 
-      <input type="text" class="text-a" size="10" />
-      <span class="text-a"> ` + letter + ` </span>
-    `;
-
-    let audio = 0;
-    let button = 1;
-
-    p.children[button].addEventListener('click', () => {
-      p.children[audio].play();
-    });
-
-    return p
-  }
 
   function show_hide_button(letters, items) {
 
