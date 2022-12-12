@@ -51,7 +51,7 @@
     description.autocapitalize = 'off';
     
     let previousOrNext = 0;
-    let howMany = medicine[0].name;
+    let howMany = medicine[0];
     //howMany = shuffle(howMany);
     setText();
 
@@ -113,6 +113,7 @@
     showDescription.classList.add('q01');
     showDescription.addEventListener('click', function() {
         inputDescription = !inputDescription;
+        inputDescription === true ? '-----' : howMany[previousOrNext];
         //inputDescription === true ? 
         //inputDescription ? "-----" : howMany[previousOrNext].description;
         console.log(inputDescription === true ? '-----' : howMany[previousOrNext]);
