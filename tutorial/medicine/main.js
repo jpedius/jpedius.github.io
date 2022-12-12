@@ -57,7 +57,8 @@
     howMany = shuffle(howMany);
     setText();
     
-    console.log('001', name, image, description);
+    console.log('002', name, image, description);
+    console.log(name.value, image.src, description.value);
 
     function setText() {
 
@@ -94,37 +95,29 @@
     }, false);
 
     let showName = document.createElement('button');
-    let inputName = false;
+    let inputName = true;
     showName.innerHTML = 'Name';
     showName.classList.add('q01');
     showName.addEventListener('click', function() {
         inputName = !inputName;
-        if (inputName === true) {
-            name.value = '-----';
-        }
-        else {
-            name.value = howMany[previousOrNext].name;
-        }  
-        console.log(inputName, name.value); 
+        name.value = inputName
+            ? '-----'
+            : howMany[previousOrNext].name;
     }, false);
     
     let showImage = document.createElement('button');
-    let inputImage = true; 
+    let inputImage = false; 
     showImage.innerHTML = 'Image';
     showImage.classList.add('q01');
     showImage.addEventListener('click', function() {
         inputImage = !inputImage;
-        if (inputImage === true) {
-            image.value = 'img/blank.jpg';
-        }
-        else {
-            image.value = howMany[previousOrNext].image;
-        }
-        console.log(inputImage, image.src); 
+        image.value = inputImage
+            ? 'img/blank.jpg'
+            : howMany[previousOrNext].image; 
     }, false);
     
     let showDescription = document.createElement('button');
-    let inputDescription = true;
+    let inputDescription = false;
     showDescription.innerHTML = 'Description';
     showDescription.classList.add('q01');
     showDescription.addEventListener('click', function() {
@@ -132,15 +125,6 @@
         description.value = inputDescription
             ? '-----'
             : howMany[previousOrNext].description;
-        /* 
-        if (inputDescription === true) {
-            description.value = '-----';
-        }
-        else {
-            description.value = howMany[previousOrNext].description;
-        }
-        */
-        console.log(inputDescription, description.value);
     }, false);
 
     let forRate = document.createElement('label');
