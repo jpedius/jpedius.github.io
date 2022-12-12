@@ -50,13 +50,8 @@
     description.autocorrect = 'off';
     description.autocapitalize = 'off';
     
-    let items2 = [];
-    for (const i of medicine) {
-        items2.push(i);
-    }
-    
     let previousOrNext = 0;
-    let howMany = items2[0];
+    let howMany = medicine;
     console.log(howMany, medicine, howMany.length);
     //howMany = shuffle(howMany);
     setText();
