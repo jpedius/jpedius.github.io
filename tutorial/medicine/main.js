@@ -32,7 +32,7 @@
     }];
 
     let name = document.createElement('input');
-    name.classList.add('q02a');
+    name.classList.add('q01');
     name.type = 'text';
     name.readonly = 'readonly';
     name.autocomplete = 'off';
@@ -40,10 +40,10 @@
     name.autocapitalize = 'off';
 
     let image = document.createElement('img');
-    image.classList.add('q02a');
+    image.classList.add('q02');
     
     let description = document.createElement('input');
-    description.classList.add('q02');
+    description.classList.add('q03');
     description.type = 'text';
     description.readonly = 'readonly';
     description.autocomplete = 'off';
@@ -63,7 +63,7 @@
     image.src = 'img/blank.jpg';
     description.value = '-----';
 
-    console.log('006', name, image, description);
+    console.log('007', name, image, description);
     console.log(name.value, image.src, description.value);
 
     function setText() {
@@ -82,7 +82,7 @@
 
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
-    previous.classList.add('q03');
+    previous.classList.add('q04');
     previous.addEventListener('click', function() {
         if (previousOrNext <= 0) {
             previousOrNext = howMany.length;
@@ -93,7 +93,7 @@
     
     let play = document.createElement('button');
     play.innerHTML = 'Play';
-    play.classList.add('q04');
+    play.classList.add('q05');
     play.addEventListener('click', function() {
         speak(howMany[previousOrNext].name);
         name.blur(); 
@@ -101,7 +101,7 @@
 
     let next = document.createElement('button');
     next.innerHTML = 'Next';
-    next.classList.add('q05');
+    next.classList.add('q06');
     next.addEventListener('click', function() {
         if (previousOrNext >= howMany.length - 1) {
             previousOrNext = -1;
@@ -112,7 +112,7 @@
 
     let showName = document.createElement('button');
     showName.innerHTML = 'Name';
-    showName.classList.add('q01');
+    showName.classList.add('q07');
     showName.addEventListener('click', function() {
         inputName = !inputName;
         name.value = inputName
@@ -122,7 +122,7 @@
     
     let showImage = document.createElement('button');
     showImage.innerHTML = 'Image';
-    showImage.classList.add('q01');
+    showImage.classList.add('q08');
     showImage.addEventListener('click', function() {
         inputImage = !inputImage;
         image.src = inputImage
@@ -132,7 +132,7 @@
     
     let showDescription = document.createElement('button');
     showDescription.innerHTML = 'Description';
-    showDescription.classList.add('q01');
+    showDescription.classList.add('q08');
     showDescription.addEventListener('click', function() {
         inputDescription = !inputDescription;
         description.value = inputDescription
@@ -143,7 +143,7 @@
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
     forRate.innerHTML = 'Rate';
-    forRate.classList.add('q06');
+    forRate.classList.add('q09');
 
     let rate = document.createElement('input');
     rate.type = 'range';
@@ -151,12 +151,12 @@
     rate.max = 2;
     rate.defaultValue = '1';
     rate.step = 0.1;
-    rate.classList.add('q07');
+    rate.classList.add('q10');
 
     let forPitch = document.createElement('label');
     forPitch.htmlFor = 'pitch';
     forPitch.innerHTML = 'Pitch';
-    forPitch.classList.add('q08');
+    forPitch.classList.add('q11');
 
     let pitch = document.createElement('input');
     pitch.type = 'range';
@@ -164,7 +164,7 @@
     pitch.max = 2;
     pitch.defaultValue = '1';
     pitch.step = 0.1;
-    pitch.classList.add('q09');
+    pitch.classList.add('q12');
 
     // "Microsoft Zira - English (United States)"
     // "Samantha"
@@ -172,7 +172,7 @@
     // "Tessa"
 
     let voice = document.createElement('select');
-    voice.classList.add('q10');
+    voice.classList.add('q13');
 
     const synth = window.speechSynthesis;
     let voices = [];
@@ -279,53 +279,53 @@
     }  
 
     let root = document.querySelector('#root');
-    root.classList.add('q11');
+    root.classList.add('q14');
 
     let h1Title = document.createElement('h1');
     h1Title.innerHTML = title;
-    h1Title.classList.add('q12');
+    h1Title.classList.add('q15');
     root.appendChild(h1Title);
 
     let divName = document.createElement('div');
-    divName.classList.add('q19');
+    divName.classList.add('q16');
     divName.appendChild(name);
     root.appendChild(divName);
 
     let divImage = document.createElement('div');
-    divImage.classList.add('q13a');
+    divImage.classList.add('q17');
     divImage.appendChild(image);
     root.appendChild(divImage);
     
     let divDescription = document.createElement('div');
-    divDescription.classList.add('q13');
+    divDescription.classList.add('q18');
     divDescription.appendChild(description);
     root.appendChild(divDescription);
 
     let divButton = document.createElement('div');    
-    divButton.classList.add('q14');
+    divButton.classList.add('q19');
     divButton.appendChild(previous);
     divButton.appendChild(play);
     divButton.appendChild(next);
     root.appendChild(divButton);
 
     let divShowButton = document.createElement('div');    
-    divShowButton.classList.add('q14');
+    divShowButton.classList.add('q20');
     divShowButton.appendChild(showName);
     divShowButton.appendChild(showImage);
     divShowButton.appendChild(showDescription);
     root.appendChild(divShowButton); 
 
     let divRatePitch = document.createElement('div');
-    divRatePitch.classList.add('q15');
+    divRatePitch.classList.add('q21');
 
     let spanRate = document.createElement('span');
-    spanRate.classList.add('q16');
+    spanRate.classList.add('q22');
     spanRate.appendChild(forRate);
     spanRate.appendChild(rate);
     divRatePitch.appendChild(spanRate);
 
     let spanPitch = document.createElement('span');
-    spanPitch.classList.add('q17');
+    spanPitch.classList.add('q23');
     spanPitch.appendChild(forPitch);
     spanPitch.appendChild(pitch);
     divRatePitch.appendChild(spanPitch); 
@@ -333,7 +333,7 @@
     root.appendChild(divRatePitch);
 
     let divVoice = document.createElement('div');
-    divVoice.classList.add('q18');
+    divVoice.classList.add('q24');
     divVoice.appendChild(voice);
     root.appendChild(divVoice);
   
