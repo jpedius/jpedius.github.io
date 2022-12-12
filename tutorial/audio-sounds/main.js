@@ -135,26 +135,26 @@ jQuery(function($) {
     sounds = shuffle(sounds);
 
     let root = document.querySelector('#root');
-    root.classList.add('q11');
+    root.classList.add('q01');
 
     let h1Title = document.createElement('h1');
     h1Title.innerHTML = title;
-    h1Title.classList.add('q12');
+    h1Title.classList.add('q02');
     root.appendChild(h1Title);
 
     let toLetter = [];
     for (let i=0; i<sounds.length; i++) {
 
         let divSounds = document.createElement('div');
-        divSounds.classList.add('q19');
+        divSounds.classList.add('q03');
 
         let toAudio = document.createElement('audio');
-        toAudio.classList.add('q19');
+        toAudio.classList.add('q04');
         toAudio.src = file + sounds[i].mp3
         divSounds.appendChild(toAudio);
 
         let toButton = document.createElement('button');
-        toButton.classList.add('q19');
+        toButton.classList.add('q05');
         toButton.type = 'button';
         toButton.innerHTML = 'Play';
         toButton.addEventListener('click', () => {
@@ -163,13 +163,13 @@ jQuery(function($) {
         divSounds.appendChild(toButton);
 
         let toInput = document.createElement('input');
-        toInput.classList.add('q19');
+        toInput.classList.add('q06');
         toInput.type = 'text';
         toInput.size = 10;
         divSounds.appendChild(toInput);
 
         let toSpan = document.createElement('span');
-        toSpan.classList.add('q19');
+        toSpan.classList.add('q07');
         toSpan.innerHTML = ' ' + sounds[i].letter + ' ';
         divSounds.appendChild(toSpan);
 
@@ -180,13 +180,13 @@ jQuery(function($) {
     console.log(toLetter);
     
     let toShowHide = document.createElement('button');
-    toShowHide.classList.add('q11');
+    toShowHide.classList.add('q08');
     toShowHide.type = 'button';
     toShowHide.innerHTML = 'Show';
-    for (let i of toLetter.length) {
-        console.log(i);
+    //for (let i of toLetter.length) {
+    //    console.log(i);
     //    i.children[0].style.display = 'none';
-    }
+    //}
                 
     let toHide = 1;
     toShowHide.addEventListener('click', () => {
