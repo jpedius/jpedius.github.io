@@ -131,7 +131,7 @@ jQuery(function($) {
         mp3: "vowel-or.mp3",
     }];
 
-    const sounds = consonant; // + vowel;
+    const sounds = consonant.concat(vowel);
 
     let root = document.querySelector('#root');
     root.classList.add('q11');
