@@ -57,7 +57,7 @@
     howMany = shuffle(howMany);
     setText();
     
-    console.log('002', name, image, description);
+    console.log('003', name, image, description);
     console.log(name.value, image.src, description.value);
 
     function setText() {
@@ -111,7 +111,7 @@
     showImage.classList.add('q01');
     showImage.addEventListener('click', function() {
         inputImage = !inputImage;
-        image.value = inputImage
+        image.src = inputImage
             ? 'img/blank.jpg'
             : howMany[previousOrNext].image; 
     }, false);
