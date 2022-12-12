@@ -268,7 +268,7 @@
     root.appendChild(divName);
 
     let divImage = document.createElement('div');
-    4divImage.classList.add('q13a');
+    divImage.classList.add('q13a');
     divImage.appendChild(image);
     root.appendChild(divImage);
     
