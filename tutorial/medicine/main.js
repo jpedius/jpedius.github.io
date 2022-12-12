@@ -115,7 +115,7 @@
         console.log(inputDescription); 
         inputDescription = !inputDescription;
         console.log(inputDescription);
-        inputDescription ? "-----" : howMany[previousOrNext].description;
+        //inputDescription ? "-----" : howMany[previousOrNext].description;
         console.log(howMany[previousOrNext].description);
     }, false);
 
