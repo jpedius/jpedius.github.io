@@ -154,6 +154,7 @@ jQuery(function($) {
         let toButton = document.createElement('button');
         toButton.classList.add('q19');
         toButton.type = 'button';
+        toButton.innerHTML = 'Play';
         let a = 0;
         toButton.addEventListener('click', () => {
             divSounds.children[a].play();
