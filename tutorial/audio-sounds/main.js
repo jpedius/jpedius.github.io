@@ -2,6 +2,9 @@
 
 jQuery(function($) {
 
+    let title = 'Audio Sounds';
+    document.title = title;
+ 
     const file = '/tutorial/audio-sounds/file/';
     
     const consonant = [{ 
