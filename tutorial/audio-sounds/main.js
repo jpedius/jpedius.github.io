@@ -177,7 +177,8 @@ jQuery(function($) {
         
         toLetter.push(divSounds);
     }
-
+    console.log(toLetter);
+    
     let toShowHide = document.createElement('button');
     toShowHide.classList.add('q11');
     toShowHide.type = 'button';
