@@ -62,7 +62,7 @@
     image.src = 'img/blank.jpg';
     description.value = '-----';
 
-    console.log('009', name, image, description);
+    console.log('010', name, image, description);
     console.log(name.value, image.src, description.value);
 
     function setText() {
@@ -116,8 +116,8 @@
     showName.addEventListener('click', function() {
         inputName = !inputName;
         name.value = inputName
-            ? '-----'
-            : howMany[previousOrNext].name;
+            ? howMany[previousOrNext].name
+            : '-----';
     }, false);
     
     let showImage = document.createElement('button');
@@ -126,8 +126,8 @@
     showImage.addEventListener('click', function() {
         inputImage = !inputImage;
         image.src = inputImage
-            ? 'img/blank.jpg'
-            : howMany[previousOrNext].image; 
+            ? howMany[previousOrNext].image
+            : 'img/blank.jpg'; 
     }, false);
     
     let showDescription = document.createElement('button');
