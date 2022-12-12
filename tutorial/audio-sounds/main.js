@@ -150,18 +150,18 @@ jQuery(function($) {
     toShowHide.addEventListener('click', () => {
         if (toHide) {
             toShowHide.innerHTML = 'Hide';
-            for (let i of sounds.length) {
-                console.log(i);
-                i.children[0].style.display = 'inline';
-            }
+            //for (let i of sounds.length) {
+            //    console.log(i);
+            //    i.children[0].style.display = 'inline';
+            //}
             toHide = 0;
         }
         else {
             toShowHide.innerHTML = 'Show';
-            for (let i of sounds.length) {
-                console.log(i);
-                i.children[0].style.display = 'none';
-            }
+            //for (let i of sounds.length) {
+            //    console.log(i);
+            //    i.children[0].style.display = 'none';
+            //}
             toHide = 1;
         }
     });
