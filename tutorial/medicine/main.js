@@ -62,7 +62,7 @@
     image.src = 'img/blank.jpg';
     description.value = '-----';
 
-    console.log('008', name, image, description);
+    console.log('009', name, image, description);
     console.log(name.value, image.src, description.value);
 
     function setText() {
@@ -136,8 +136,8 @@
     showDescription.addEventListener('click', function() {
         inputDescription = !inputDescription;
         description.value = inputDescription
-            ? '-----'
-            : howMany[previousOrNext].description;
+            ? howMany[previousOrNext].description
+            : '-----';
     }, false);
 
     let forRate = document.createElement('label');
