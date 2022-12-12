@@ -45,26 +45,18 @@
     let description = document.createElement('input');
     description.classList.add('q02');
     description.type = 'text';
+    description.readonly = 'readonly';
     description.autocomplete = 'off';
     description.autocorrect = 'off';
     description.autocapitalize = 'off';
     
     let previousOrNext = 0;
-    let howMany = medicine[0];
+    let howMany = medicine[0].name;
     howMany = shuffle(howMany);
-    for (let i=0; i<howMany.length; i++) {
-        howMany[i] = shuffle(howMany[i]);
-    }
     setText();
 
     function setText() {
-        let b = howMany[previousOrNext];
-        let a = '';
-        for (let i=0; i<b.length; i++) {
-            a += b[i] + ' ';
-        }
-        readonly.value = a.trim();
-        text.value = '';
+
     }
 
     let previous = document.createElement('button');
@@ -82,15 +74,7 @@
     play.innerHTML = 'Play';
     play.classList.add('q04');
     play.addEventListener('click', function() { 
-        if (text.value !== '') {
-            if (howMany[previousOrNext].length === 1) {
-                speak(readonly.value + ' ' + text.value);
-            }
-            else {
-                speak(text.value);
-            }
-            text.blur();
-        }
+
     }, false);
 
     let next = document.createElement('button');
@@ -106,7 +90,7 @@
 
     let showName = document.createElement('button');
     let inputName = false;
-    showName.innerHTML = 'Image';
+    showName.innerHTML = 'Name';
     showName.classList.add('q01');
     showName.addEventListener('click', function() {
         inputName = !inputName;
@@ -124,7 +108,7 @@
     
     let showDescription = document.createElement('button');
     let inputDescription = true;
-    showDescription.innerHTML = 'Image';
+    showDescription.innerHTML = 'Description';
     showDescription.classList.add('q01');
     showDescription.addEventListener('click', function() {
         inputDescription = !inputDescription;
@@ -283,7 +267,7 @@
     root.appendChild(divName);
 
     let divImage = document.createElement('div');
-    divImage.classList.add('q13a');
+    4divImage.classList.add('q13a');
     divImage.appendChild(image);
     root.appendChild(divImage);
     
