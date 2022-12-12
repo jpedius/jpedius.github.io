@@ -33,7 +33,6 @@
 
     let name = document.createElement('input');
     name.classList.add('q02a');
-    name.value = '-----';
     name.type = 'text';
     name.readonly = 'readonly';
     name.autocomplete = 'off';
@@ -42,11 +41,9 @@
 
     let image = document.createElement('img');
     image.classList.add('q02a');
-    image.src = 'img/blank.jpg';
     
     let description = document.createElement('input');
     description.classList.add('q02');
-    description.value = '-----';
     description.type = 'text';
     description.readonly = 'readonly';
     description.autocomplete = 'off';
@@ -55,11 +52,14 @@
     
     let previousOrNext = 0;
     let howMany = medicine;
-    console.log(howMany, medicine, howMany.length);
     howMany = shuffle(howMany);
     setText();
     
-    console.log('004', name, image, description);
+    name.value = howMany[previousOrNext].name;
+    image.src = 'img/blank.jpg';
+    description.value = '-----';
+
+    console.log('005', name, image, description);
     console.log(name.value, image.src, description.value);
 
     function setText() {
