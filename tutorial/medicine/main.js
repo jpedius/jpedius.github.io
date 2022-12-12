@@ -99,6 +99,7 @@
         name.value
             ? '-----'
             : howMany[previousOrNext].name;
+        console.log(inputName, name.value); 
     }, false);
     
     let showImage = document.createElement('button');
@@ -107,9 +108,10 @@
     showImage.classList.add('q01');
     showImage.addEventListener('click', function() {
         inputImage = !inputImage;
-        inputImage === true
+        image.src
             ? 'img/blank.jpg'
             : howMany[previousOrNext].image;
+        console.log(inputImage, image.src); 
     }, false);
     
     let showDescription = document.createElement('button');
@@ -118,9 +120,10 @@
     showDescription.classList.add('q01');
     showDescription.addEventListener('click', function() {
         inputDescription = !inputDescription;
-        inputDescription === true
+        description.value
             ? '-----'
             : howMany[previousOrNext].description;
+        console.log(inputDescription, description.value);
     }, false);
 
     let forRate = document.createElement('label');
