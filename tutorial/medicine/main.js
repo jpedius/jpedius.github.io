@@ -123,7 +123,7 @@
         description.value
             ? '-----'
             : howMany[previousOrNext].description;
-        console.log(inputDescription, description.value);
+        console.log(inputDescription, description, description.value);
     }, false);
 
     let forRate = document.createElement('label');
