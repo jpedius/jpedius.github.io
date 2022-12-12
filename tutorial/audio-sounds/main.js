@@ -5,9 +5,9 @@ jQuery(function($) {
     let title = 'Audio Sounds';
     document.title = title;
  
-    const file = '/tutorial/audio-sounds/file/';
+    let file = '/tutorial/audio-sounds/file/';
     
-    const consonant = [{ 
+    let consonant = [{ 
         letter: "p",
         mp3: "consonant-p.mp3",
     }, { 
@@ -78,7 +78,7 @@ jQuery(function($) {
         mp3: "consonant-w.mp3",
     }];
 
-    const vowel = [{ 
+    let vowel = [{ 
         letter: "ee", 
         mp3: "vowel-ee.mp3",
     }, { 
@@ -131,7 +131,7 @@ jQuery(function($) {
         mp3: "vowel-or.mp3",
     }];
 
-    const sounds = consonant.concat(vowel);
+    let sounds = consonant.concat(vowel);
     sounds = shuffle(sounds);
 
     let root = document.querySelector('#root');
