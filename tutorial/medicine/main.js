@@ -49,7 +49,11 @@
     description.autocomplete = 'off';
     description.autocorrect = 'off';
     description.autocapitalize = 'off';
-    
+
+    let inputName = true;
+    let inputImage = false;
+    let inputDescription = false;
+ 
     let previousOrNext = 0;
     let howMany = medicine;
     howMany = shuffle(howMany);
@@ -59,7 +63,7 @@
     image.src = 'img/blank.jpg';
     description.value = '-----';
 
-    console.log('005', name, image, description);
+    console.log('006', name, image, description);
     console.log(name.value, image.src, description.value);
 
     function setText() {
@@ -107,7 +111,6 @@
     }, false);
 
     let showName = document.createElement('button');
-    let inputName = true;
     showName.innerHTML = 'Name';
     showName.classList.add('q01');
     showName.addEventListener('click', function() {
@@ -118,7 +121,6 @@
     }, false);
     
     let showImage = document.createElement('button');
-    let inputImage = false; 
     showImage.innerHTML = 'Image';
     showImage.classList.add('q01');
     showImage.addEventListener('click', function() {
@@ -129,7 +131,6 @@
     }, false);
     
     let showDescription = document.createElement('button');
-    let inputDescription = false;
     showDescription.innerHTML = 'Description';
     showDescription.classList.add('q01');
     showDescription.addEventListener('click', function() {
