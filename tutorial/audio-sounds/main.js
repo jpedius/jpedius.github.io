@@ -173,18 +173,16 @@ jQuery(function($) {
         toSpan.innerHTML = ' ' + sounds[i].letter + ' ';
         divSounds.appendChild(toSpan);
 
-        root.appendChild(divSounds);
+        //root.appendChild(divSounds);
         
         toLetter.push(divSounds);
     }
-    console.log(toLetter);
     
     let toShowHide = document.createElement('button');
     toShowHide.classList.add('q08');
     toShowHide.type = 'button';
     toShowHide.innerHTML = 'Show';
     for (let i of toLetter) {
-        console.log(i);
         i.children[0].style.display = 'none';
     }
                 
@@ -193,7 +191,6 @@ jQuery(function($) {
         if (toHide) {
             toShowHide.innerHTML = 'Hide';
             for (let i of toLetter) {
-                console.log(i);
                 i.children[0].style.display = 'inline';
             }
             toHide = 0;
@@ -201,13 +198,17 @@ jQuery(function($) {
         else {
             toShowHide.innerHTML = 'Show';
             for (let i of toLetter) {
-                console.log(i);
                 i.children[0].style.display = 'none';
             }
             toHide = 1;
         }
     });
-    root.insertBefore(toShowHide, h1Title);
+    //root.insertBefore(toShowHide, h1Title);
+ 
+    root.appendChild(toShowHide);
+    toLetter.map(function(element) {
+        root.appendChild(element);
+    }); 
  
     function shuffle(array) {
 
