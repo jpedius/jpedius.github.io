@@ -52,7 +52,7 @@
     
     let previousOrNext = 0;
     let howMany = medicine[0];
-    console.log(howMany);
+    console.log(howMany, howMany.length);
     //howMany = shuffle(howMany);
     setText();
 
