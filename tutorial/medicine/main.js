@@ -96,7 +96,9 @@
     showName.classList.add('q01');
     showName.addEventListener('click', function() {
         inputName = !inputName;
-        //inputName ? "-----" : howMany[previousOrNext].name;
+        inputName === true
+            ? '-----'
+            : howMany[previousOrNext].name;
     }, false);
     
     let showImage = document.createElement('button');
@@ -105,7 +107,9 @@
     showImage.classList.add('q01');
     showImage.addEventListener('click', function() {
         inputImage = !inputImage;
-        //inputImage ? "img/blank.jpg" : howMany[previousOrNext].image;
+        inputImage === true
+            ? 'img/blank.jpg'
+            : howMany[previousOrNext].image;
     }, false);
     
     let showDescription = document.createElement('button');
@@ -114,11 +118,9 @@
     showDescription.classList.add('q01');
     showDescription.addEventListener('click', function() {
         inputDescription = !inputDescription;
-        inputDescription === true ? '-----' : howMany[previousOrNext];
-        //inputDescription === true ? 
-        //inputDescription ? "-----" : howMany[previousOrNext].description;
-        console.log(inputDescription === true ? '-----' : howMany[previousOrNext]);
-        //console.log(howMany[previousOrNext].description);
+        inputDescription === true
+            ? '-----'
+            : howMany[previousOrNext].description;
     }, false);
 
     let forRate = document.createElement('label');
