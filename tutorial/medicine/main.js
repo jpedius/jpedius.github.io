@@ -112,8 +112,11 @@
     showDescription.innerHTML = 'Description';
     showDescription.classList.add('q01');
     showDescription.addEventListener('click', function() {
+        console.log(inputDescription); 
         inputDescription = !inputDescription;
+        console.log(inputDescription);
         inputDescription ? "-----" : howMany[previousOrNext].description;
+        console.log(howMany[previousOrNext].description);
     }, false);
 
     let forRate = document.createElement('label');
