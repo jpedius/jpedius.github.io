@@ -131,7 +131,7 @@ jQuery(function($) {
         mp3: "vowel-or.mp3",
     }];
 
-    const sounds = consonant + vowel;
+    const sounds = consonant; // + vowel;
 
     let root = document.querySelector('#root');
     root.classList.add('q11');
@@ -140,8 +140,12 @@ jQuery(function($) {
     h1Title.innerHTML = title;
     h1Title.classList.add('q12');
     root.appendChild(h1Title);
-  
+
+    console.log(sounds.length);
+    
     for (let i=0; i<sounds.length; i++) {
+    
+        //console.log(i, sounds.length);
     
         let divSounds = document.createElement('div');
         divSounds.classList.add('q19');
@@ -149,7 +153,7 @@ jQuery(function($) {
         let toAudio = document.createElement('audio');
         toAudio.classList.add('q19');
         toAudio.src = file + sounds[i].mp3
-        console.log(toAudio.src, file, sounds[i]);
+        //console.log(toAudio.src, file, sounds[i]);
         divSounds.appendChild(toAudio);
 
         let toButton = document.createElement('button');
