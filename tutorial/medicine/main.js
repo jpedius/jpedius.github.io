@@ -34,7 +34,7 @@
     let name = document.createElement('input');
     name.classList.add('q02a');
     name.type = 'text';
-    name.readonly = 'readonly';
+    //name.readonly = 'readonly';
     name.autocomplete = 'off';
     name.autocorrect = 'off';
     name.autocapitalize = 'off';
@@ -45,7 +45,7 @@
     let description = document.createElement('input');
     description.classList.add('q02');
     description.type = 'text';
-    description.readonly = 'readonly';
+    //description.readonly = 'readonly';
     description.autocomplete = 'off';
     description.autocorrect = 'off';
     description.autocapitalize = 'off';
@@ -112,11 +112,11 @@
     showDescription.innerHTML = 'Description';
     showDescription.classList.add('q01');
     showDescription.addEventListener('click', function() {
-        //console.log(inputDescription); 
-        //inputDescription = !inputDescription;
-        //console.log(inputDescription);
+        console.log(inputDescription); 
+        inputDescription = !inputDescription;
+        console.log(inputDescription);
         //inputDescription ? "-----" : howMany[previousOrNext].description;
-        //console.log(howMany[previousOrNext].description);
+        console.log(howMany[previousOrNext].description);
     }, false);
 
     let forRate = document.createElement('label');
