@@ -140,7 +140,6 @@ jQuery(function($) {
     let h1Title = document.createElement('h1');
     h1Title.innerHTML = title;
     h1Title.classList.add('q02');
-    root.appendChild(h1Title);
 
     let toLetter = [];
     for (let i=0; i<sounds.length; i++) {
@@ -202,6 +201,7 @@ jQuery(function($) {
         }
     });
  
+    root.appendChild(h1Title);
     root.appendChild(toShowHide);
     toLetter.map(function(element) {
         root.appendChild(element);
@@ -226,67 +226,4 @@ jQuery(function($) {
 
         return items;
     }
- 
-/*
-
-
-
-  function show_hide_button(letters, items) {
-
-    let button = document.createElement('button');
-
-    button.innerHTML = "Letters Show";
-    for (let i of letters) {
-      i.children[items].style.display = 'none';
-    }
-    
-    let hide = 1;
-    button.addEventListener('click', () => {
-
-      if (hide) {
-        button.innerHTML = "Letters Hide";
-        for (let i of letters) {
-          i.children[items].style.display = 'inline';
-        }
-        
-        hide = 0;
-      }
-      else {
-        button.innerHTML = "Letters Show";
-        for (let i of letters) {
-          i.children[items].style.display = 'none';
-        }
-        
-        hide = 1;
-      }
-    });
-
-    return button;
-  }
-
-  function main() {
-
-    let root = document.getElementById('root');
-
-    let sounds = shuffle(consonant.concat(vowel));
-
-    let letters = [];
-    let span = 3;
-    sounds.map(function(element, index) {
-      let p = audio_paragraph(index, element.mp3, element.letter);
-      letters.push(p);
-    });
-    let button = show_hide_button(letters, span);
-
-    root.appendChild(button);
-    letters.map(function(element) {
-      root.appendChild(element);
-    });
-
-    return root;
-  };
-
-  main();
-  
-*/ 
 });
