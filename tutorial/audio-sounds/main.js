@@ -183,31 +183,31 @@ jQuery(function($) {
     toShowHide.classList.add('q08');
     toShowHide.type = 'button';
     toShowHide.innerHTML = 'Show';
-    //for (let i of toLetter.length) {
-    //    console.log(i);
-    //    i.children[0].style.display = 'none';
-    //}
+    for (let i of toLetter) {
+        console.log(i);
+        i.children[0].style.display = 'none';
+    }
                 
     let toHide = 1;
     toShowHide.addEventListener('click', () => {
         if (toHide) {
             toShowHide.innerHTML = 'Hide';
-            for (let i of toLetter.length) {
+            for (let i of toLetter) {
                 console.log(i);
-            //    i.children[0].style.display = 'inline';
+                i.children[0].style.display = 'inline';
             }
             toHide = 0;
         }
         else {
             toShowHide.innerHTML = 'Show';
-            for (let i of toLetter.length) {
+            for (let i of toLetter) {
                 console.log(i);
-            //    i.children[0].style.display = 'none';
+                i.children[0].style.display = 'none';
             }
             toHide = 1;
         }
     });
-    root.appendChild(toShowHide);
+    root.insertBefore(toShowHide, h1Title);
  
     function shuffle(array) {
 
