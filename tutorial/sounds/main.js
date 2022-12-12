@@ -2,10 +2,10 @@
 
 jQuery(function($) {
 
-    let title = 'Audio Sounds';
+    let title = 'Sounds';
     document.title = title;
  
-    let file = '/tutorial/audio-sounds/file/';
+    let file = '/tutorial/sounds/file/';
     
     let consonant = [{ 
         letter: "p",

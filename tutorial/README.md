@@ -1,12 +1,12 @@
 ## Tutorial
 
+[Sounds](sounds/)
+
 [Sentences](sentences/)
 
 [Words](words/)
 
 ### Backup
-
-[Audio Sounds](audio-sounds/)
 
 [Read Words](read-words/)
 
