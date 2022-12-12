@@ -115,7 +115,7 @@
         inputDescription = !inputDescription;
         //inputDescription === true ? 
         //inputDescription ? "-----" : howMany[previousOrNext].description;
-        console.log(inputDescription === true ? 'ssss' : 'dddd');
+        console.log(inputDescription === true ? '-----' : howMany[previousOrNext]);
         //console.log(howMany[previousOrNext].description);
     }, false);
 
