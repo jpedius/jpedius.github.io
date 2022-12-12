@@ -96,10 +96,10 @@
     showName.classList.add('q01');
     showName.addEventListener('click', function() {
         inputName = !inputName;
-        name.value
+        return name.value
             ? '-----'
             : howMany[previousOrNext].name;
-        console.log(inputName, name.value); 
+        //console.log(inputName, name.value); 
     }, false);
     
     let showImage = document.createElement('button');
