@@ -127,12 +127,16 @@
     showDescription.classList.add('q01');
     showDescription.addEventListener('click', function() {
         inputDescription = !inputDescription;
+        description.value = inputDescription === true
+            ? '-----' : howMany[previousOrNext].description;
+        /* 
         if (inputDescription === true) {
             description.value = '-----';
         }
         else {
             description.value = howMany[previousOrNext].description;
         }
+        */
         console.log(inputDescription, description.value);
     }, false);
 
