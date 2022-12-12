@@ -33,6 +33,7 @@
 
     let name = document.createElement('input');
     name.classList.add('q02a');
+    name.value = '-----';
     name.type = 'text';
     name.readonly = 'readonly';
     name.autocomplete = 'off';
@@ -45,6 +46,7 @@
     
     let description = document.createElement('input');
     description.classList.add('q02');
+    description.value = '-----';
     description.type = 'text';
     description.readonly = 'readonly';
     description.autocomplete = 'off';
@@ -57,11 +59,21 @@
     howMany = shuffle(howMany);
     setText();
     
-    console.log('003', name, image, description);
+    console.log('004', name, image, description);
     console.log(name.value, image.src, description.value);
 
     function setText() {
-
+        name.value = inputName
+            ? howMany[previousOrNext].name
+            : '-----';
+        image.src = inputImage
+            ? howMany[previousOrNext].image
+            : 'img/blank.jpg';
+        description.value = inputDescription
+            ? howMany[previousOrNext].description
+            : '-----';
+            
+        return howMany[previousOrNext];
     }
 
     let previous = document.createElement('button');
@@ -72,7 +84,7 @@
             previousOrNext = howMany.length;
         }
         previousOrNext--;
-        setText();
+        return setText();
     }, false);
     
     let play = document.createElement('button');
@@ -91,7 +103,7 @@
             previousOrNext = -1;
         }
         previousOrNext++;
-        setText();
+        return setText();
     }, false);
 
     let showName = document.createElement('button');
