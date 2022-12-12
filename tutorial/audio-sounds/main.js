@@ -148,10 +148,10 @@ jQuery(function($) {
     toShowHide.innerHTML = 'Show';
     let toHide = 1;
     toShowHide.addEventListener('click', () => {
-    
         if (toHide) {
             toShowHide.innerHTML = 'Hide';
             for (let i of sounds.length) {
+                console.log(i);
                 i.children[0].style.display = 'inline';
             }
             toHide = 0;
@@ -159,6 +159,7 @@ jQuery(function($) {
         else {
             toShowHide.innerHTML = 'Show';
             for (let i of sounds.length) {
+                console.log(i);
                 i.children[0].style.display = 'none';
             }
             toHide = 1;
