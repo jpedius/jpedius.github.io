@@ -52,7 +52,7 @@
     
     let previousOrNext = 0;
     let howMany = medicine[0].name;
-    howMany = shuffle(howMany);
+    //howMany = shuffle(howMany);
     setText();
 
     function setText() {
