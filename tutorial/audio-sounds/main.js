@@ -172,8 +172,6 @@ jQuery(function($) {
         toSpan.classList.add('q07');
         toSpan.innerHTML = ' ' + sounds[i].letter + ' ';
         divSounds.appendChild(toSpan);
-
-        //root.appendChild(divSounds);
         
         toLetter.push(divSounds);
     }
@@ -191,19 +189,18 @@ jQuery(function($) {
         if (toHide) {
             toShowHide.innerHTML = 'Hide';
             for (let i of toLetter) {
-                i.children[0].style.display = 'inline';
+                i.children[3].style.display = 'inline';
             }
             toHide = 0;
         }
         else {
             toShowHide.innerHTML = 'Show';
             for (let i of toLetter) {
-                i.children[0].style.display = 'none';
+                i.children[3].style.display = 'none';
             }
             toHide = 1;
         }
     });
-    //root.insertBefore(toShowHide, h1Title);
  
     root.appendChild(toShowHide);
     toLetter.map(function(element) {
