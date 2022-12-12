@@ -73,8 +73,9 @@
     let play = document.createElement('button');
     play.innerHTML = 'Play';
     play.classList.add('q04');
-    play.addEventListener('click', function() { 
-
+    play.addEventListener('click', function() {
+        speak(howMany[previousOrNext].name);
+        name.blur(); 
     }, false);
 
     let next = document.createElement('button');
