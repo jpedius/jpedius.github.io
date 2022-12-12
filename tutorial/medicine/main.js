@@ -57,13 +57,12 @@
     let previousOrNext = 0;
     let howMany = medicine;
     howMany = shuffle(howMany);
-    setText();
     
     name.value = howMany[previousOrNext].name;
     image.src = 'img/blank.jpg';
     description.value = '-----';
 
-    console.log('007', name, image, description);
+    console.log('008', name, image, description);
     console.log(name.value, image.src, description.value);
 
     function setText() {
@@ -79,7 +78,8 @@
             
         return howMany[previousOrNext];
     }
-
+    setText();
+    
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
     previous.classList.add('q04');
