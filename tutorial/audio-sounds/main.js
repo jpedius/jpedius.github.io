@@ -181,7 +181,7 @@ jQuery(function($) {
     toShowHide.type = 'button';
     toShowHide.innerHTML = 'Show';
     for (let i of toLetter) {
-        i.children[0].style.display = 'none';
+        i.children[3].style.display = 'none';
     }
                 
     let toHide = 1;
