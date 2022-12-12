@@ -96,7 +96,7 @@
     showName.classList.add('q01');
     showName.addEventListener('click', function() {
         inputName = !inputName;
-        inputName === true
+        name.value
             ? '-----'
             : howMany[previousOrNext].name;
     }, false);
