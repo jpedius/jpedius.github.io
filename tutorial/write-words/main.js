@@ -12,7 +12,7 @@ const one = document.querySelector("#one");
 
 //console.log('words', words.length, words[0].length, words[0][0].length);
 
-//console.log('howMany', howMany.length, howMany[0]);
+console.log('howMany', howMany.length, howMany[0]);
 
 const counts = {};
 
@@ -29,7 +29,10 @@ for (let i=0; i<counts.length; i++) {
 
 const n = ["c80", "b9", "d700", "a8", "a543"];
 
-let h = n.sort((a, b) => { 
+let h = n.sort((a, b) => {
+  //let a = a1.word;
+  //let b = b1.word;
+  
   if (a.length < b.length) {
     console.log('js -1 length');
     return -1;
