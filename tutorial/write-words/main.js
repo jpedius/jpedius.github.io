@@ -12,7 +12,7 @@ const one = document.querySelector("#one");
 
 //console.log('words', words.length, words[0].length, words[0][0].length);
 
-console.log('howMany', howMany.length, howMany[0]);
+//console.log('howMany', howMany.length, howMany[0]);
 
 const counts = {};
 
@@ -21,39 +21,23 @@ for (const num of howMany) {
   counts[num2] = counts[num2] ? counts[num2] + 1 : 1;
 }
 
-console.log('counts', counts, counts.length);
+//console.log('counts', counts, counts.length);
 
-for (let i=0; i<counts.length; i++) {
-  console.log('i', i);
-}
+//for (let i=0; i<counts.length; i++) {
+//  console.log('i', i);
+//}
 
-const n = ["c80", "b9", "d700", "a8", "a543"];
+const n = howMany; //["c80", "b9", "d700", "a8", "a543"];
 
 let h = n.sort((a, b) => {
-  //let a = a1.word;
-  //let b = b1.word;
-  
-  if (a.length < b.length) {
-    console.log('js -1 length');
-    return -1;
-  }
-  else if (a.length > b.length) {
-    console.log('js 1 length');
-    return 1;
-  }
-  else if (a < b) {
-    console.log('js -1');
-    return -1;
-  }
-  else if (a > b) {
-    console.log('js 1');
-    return 1;
-  }
-  console.log('js 0');
+  if (a.length < b.length) { return -1; }
+  else if (a.length > b.length) { return 1; }
+  else if (a < b) { return -1; }
+  else if (a > b) { return 1; }
   return 0;
 });
 
-console.log('h 01', h);
+console.log('h 02', h);
 
 for (let i=0; i<h.length; i++) {
   console.log("{ 'word': '" + h[i] + "' },");
