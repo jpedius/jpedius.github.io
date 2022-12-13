@@ -10,9 +10,9 @@ inputTxt.value = howMany[previousOrNext];
 
 const one = document.querySelector("#one");
 
-console.log('words', words.length, words[0].length, words[0][0].length);
+//console.log('words', words.length, words[0].length, words[0][0].length);
 
-console.log('howMany', howMany.length, howMany[0]);
+//console.log('howMany', howMany.length, howMany[0]);
 
 const counts = {};
 
