@@ -22,6 +22,11 @@ for (const num of howMany.length) {
 
 console.log('counts', counts);
 
+for (const element of counts) {
+  console.log('element', element);
+}
+
+
 function setText() {
   one.value = "";
   return inputTxt.value = howMany[previousOrNext];
