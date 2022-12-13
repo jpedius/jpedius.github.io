@@ -2,37 +2,42 @@
 
 (function($) {
 
-    let title = 'Whole Sentences';
+    let title = 'Medicine';
     document.title = title;
 
     let medicine = [{
         "name": "labetalol",
-        "image": "img/labetalol.jpg",
+        "image": "file/labetalol.jpg",
         "description": "Labetalol HCL 300 mg tablet"
     }, {
         "name": "lisinopril", 
-        "image": "img/lisinopril.jpg", 
+        "image": "file/lisinopril.jpg", 
         "description": "Lisinopril 20 mg tablet"
     }, {
         "name": "amlodipine besylate",
-        "image": "img/amlodipine-besylate.jpg",
+        "image": "file/amlodipine-besylate.jpg",
         "description": "Amlodipine Besylate 10 mg tablet"
     }, { 
         "name": "spironolactone",
-        "image": "img/spironolactone.jpg",
+        "image": "file/spironolactone.jpg",
         "description": "Spironolactone 25 mg tablet"
     }, { 
         "name": "tamsulosin",
-        "image": "img/tamsulosin.jpg",
+        "image": "file/tamsulosin.jpg",
         "description": "Tamsulosin HCL 0.4 mg capsule"
     }, { 
         "name": "rosuvastatin calcium",
-        "image": "img/rosuvastatin-calcium.jpg",
+        "image": "file/rosuvastatin-calcium.jpg",
         "description": "Rosuvastatin Calcium 5 mg tablet"
     }];
-
+ 
+    let previousOrNext = 0;
+    let howMany = medicine;
+    howMany = shuffle(howMany);
+ 
     let name = document.createElement('input');
     name.classList.add('q01');
+    name.value = howMany[previousOrNext].name;
     name.type = 'text';
     name.readonly = 'readonly';
     name.autocomplete = 'off';
@@ -41,29 +46,23 @@
 
     let image = document.createElement('img');
     image.classList.add('q02');
+    image.src = 'file/blank.jpg';
     
     let description = document.createElement('input');
     description.classList.add('q03');
+    description.value = '-----';
     description.type = 'text';
     description.readonly = 'readonly';
     description.autocomplete = 'off';
     description.autocorrect = 'off';
     description.autocapitalize = 'off';
 
+    console.log('010', name, image, description);
+    console.log(name.value, image.src, description.value);
+ 
     let inputName = true;
     let inputImage = false;
     let inputDescription = false;
- 
-    let previousOrNext = 0;
-    let howMany = medicine;
-    howMany = shuffle(howMany);
-    
-    name.value = howMany[previousOrNext].name;
-    image.src = 'img/blank.jpg';
-    description.value = '-----';
-
-    console.log('010', name, image, description);
-    console.log(name.value, image.src, description.value);
 
     function setText() {
         name.value = inputName
@@ -71,7 +70,7 @@
             : '-----';
         image.src = inputImage
             ? howMany[previousOrNext].image
-            : 'img/blank.jpg';
+            : 'file/blank.jpg';
         description.value = inputDescription
             ? howMany[previousOrNext].description
             : '-----';
@@ -127,7 +126,7 @@
         inputImage = !inputImage;
         image.src = inputImage
             ? howMany[previousOrNext].image
-            : 'img/blank.jpg'; 
+            : 'file/blank.jpg'; 
     }, false);
     
     let showDescription = document.createElement('button');
@@ -338,111 +337,3 @@
     root.appendChild(divVoice);
   
 })(jQuery);
-
-/* 
-
-let previousOrNext = 0;
-let howMany = read_sentences(words);
-howMany = shuffle(howMany);
-
-const textWord = document.querySelector(".txt");
-textWord.value = howMany[previousOrNext].word;
-let inputWord = inputDescription;
-
-const textImage = document.querySelector(".txt2");
-textImage.src = 'img/blank.jpg'; //howMany[previousOrNext].image;
-let inputImage = true;
-
-const textDesc = document.querySelector(".txt3");
-textDesc.value = '-----'; //howMany[previousOrNext].description;
-let inputDesc = true;
-
-function setText() {
-
-  if (inputWord === true) {
-    textWord.value = '-----';
-  }
-  else {
-    textWord.value = howMany[previousOrNext].word;
-  }
-
-  if (inputImage === true) {
-    textImage.src = "img/blank.jpg";
-  }
-  else {
-    textImage.src = howMany[previousOrNext].image;
-  }
-
-  if (inputDesc === true) {
-    textDesc.value = '-----';
-  }
-  else {
-    textDesc.value = howMany[previousOrNext].description;
-  }
-
-  return howMany[previousOrNext];
-}
-
-function showWord() {
-  if (inputWord === false) {
-    textWord.value = '-----';
-    inputWord = true; 
-  }
-  else {
-    textWord.value = howMany[previousOrNext].word;
-    inputWord = false;
-  }
-}
-
-function showImage() {
-  if (inputImage === false) {
-    textImage.src = "img/blank.jpg";
-    inputImage = true; 
-  }
-  else {
-    textImage.src = howMany[previousOrNext].image;
-    inputImage = false;
-  }
-}
-
-function showDesc() {
-  if (inputDesc === false) {
-    textDesc.value = '-----';
-    inputDesc = true; 
-  }
-  else {
-    textDesc.value = howMany[previousOrNext].description;
-    inputDesc = false;
-  }
-}
-
-function play() {
-  speak(howMany[previousOrNext].word);
-  textWord.blur();
-}
-
-function read_sentences(rs) {
-  let items = [];
-  for (const i of rs) {
-    items.push(i);
-  }
-  return items;
-};
-
-function previous() {
-  if (previousOrNext <= 0) {
-    previousOrNext = howMany.length;
-  }
-  previousOrNext--;
-  return setText();
-}
-
-function next() {
-  if (previousOrNext >= howMany.length - 1) {
-    previousOrNext = -1;
-  }
-  previousOrNext++;
-  return setText();
-}
-
-*/
