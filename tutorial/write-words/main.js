@@ -30,27 +30,25 @@ for (let i=0; i<counts.length; i++) {
 const n = ["c80", "b9", "d700", "a8", "a543"];
 
 let h = n.sort((a, b) => {
-  if (a.length < b.length) {
-    return a.length - b.length;
+  if (a.length > b.length) {
+    return a;
   }
-  else if (a.length > b.length) {
-    return b.length - a.length;
+  else if (a.length < b.length) {
+    return b;
   }
-  else {
-    if (a < b) {
-      return a.length - b.length;
-    }
-    else if (a > b) {
-      return b.length - a.length;
-    }
+  else if (a > b) {
+    return a;
   }
-  return a.length - b.length;
+  else if (a < b) {
+    return b;
+  }
+  return a;
 });
 
-console.log(h);
+console.log('h', h);
 
 for (let i=0; i<h.length; i++) {
-  console.log(h[i]);
+  console.log("{ 'word': ", h[i], " },");
 }
 
 function setText() {
@@ -68,7 +66,7 @@ function show() {
     inputBinary = false;
   }
 }
-
+$b
 function play() {
   speak(howMany[previousOrNext]);
   inputTxt.blur();
