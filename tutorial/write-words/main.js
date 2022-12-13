@@ -14,7 +14,7 @@ const one = document.querySelector("#one");
 
 //console.log('howMany', howMany.length, howMany[0]);
 
-const counts = {};
+const counts = { num: 'num' };
 
 for (const num of howMany) {
   let num2 = num.length;
