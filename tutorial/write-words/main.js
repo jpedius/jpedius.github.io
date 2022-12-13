@@ -10,6 +10,8 @@ inputTxt.value = howMany[previousOrNext];
 
 const one = document.querySelector("#one");
 
+console.log(words.length, words[0].length, words[0][0].length);
+
 function setText() {
   one.value = "";
   return inputTxt.value = howMany[previousOrNext];
