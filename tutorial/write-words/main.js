@@ -23,9 +23,13 @@ for (const num of howMany) {
 
 console.log('counts', counts);
 
-for (const element of counts) {
-  console.log('element', element);
+for (let i=0; i<count; i++) {
+  console.log('i', i);
 }
+
+//for (const element of counts) {
+ // console.log('element', element);
+//}
 
 
 function setText() {
