@@ -16,7 +16,7 @@ console.log('howMany', howMany.length, howMany[0]);
 
 const counts = {};
 
-for (const num of howMany.length) {
+for (const num of howMany) {
   counts[num] = counts[num] ? counts[num] + 1 : 1;
 }
 
