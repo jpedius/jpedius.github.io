@@ -29,25 +29,25 @@ for (let i=0; i<counts.length; i++) {
 
 const n = ["c80", "b9", "d700", "a8", "a543"];
 
-let h = n.sort((a, b) => {
-  if (a.length > b.length) {
-    console.log('js a.length');
-    return a;
+let h = n.sort((a, b) => { 
+  if (a.length < b.length) {
+    console.log('js -1 length');
+    return -1;
   }
-  else if (a.length < b.length) {
-    console.log('js b.length');
-    return b;
-  }
-  else if (a > b) {
-    console.log('js a');
-    return a;
+  else if (a.length > b.length) {
+    console.log('js 1 length');
+    return 1;
   }
   else if (a < b) {
-    console.log('js b');
-    return b;
+    console.log('js -1');
+    return -1;
   }
-  console.log('js =');
-  return a;
+  else if (a > b) {
+    console.log('js 1');
+    return 1;
+  }
+  console.log('js 0');
+  return 0;
 });
 
 console.log('h 01', h);
