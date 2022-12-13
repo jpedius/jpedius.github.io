@@ -45,10 +45,10 @@ let h = n.sort((a, b) => {
   return a;
 });
 
-console.log('h', h);
+console.log('h 01', h);
 
 for (let i=0; i<h.length; i++) {
-  console.log("{ 'word': ", h[i], " },");
+  console.log("{ 'word': '" + h[i] + "' },");
 }
 
 function setText() {
