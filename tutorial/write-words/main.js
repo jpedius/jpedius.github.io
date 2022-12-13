@@ -10,7 +10,7 @@ inputTxt.value = howMany[previousOrNext];
 
 const one = document.querySelector("#one");
 
-console.log(words.length, words[0].length, words[0][0].length);
+console.log('words', words.length, words[0].length, words[0][0].length);
 
 function setText() {
   one.value = "";
@@ -40,7 +40,7 @@ function read_sentences(rs) {
       items.push(j.word);
     }
   }
-  console.log(items.length);
+  console.log('items', items.length);
   return items;
 };
 
