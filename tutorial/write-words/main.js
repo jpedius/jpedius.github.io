@@ -27,10 +27,31 @@ for (let i=0; i<counts.length; i++) {
   console.log('i', i);
 }
 
-//for (const element of counts) {
- // console.log('element', element);
-//}
+const n = ["c80", "b9", "d700", "a8", "a543"];
 
+let h = n.sort((a, b) => {
+  if (a.length < b.length) {
+    return a.length - b.length;
+  }
+  else if (a.length > b.length) {
+    return b.length - a.length;
+  }
+  else {
+    if (a < b) {
+      return a.length - b.length;
+    }
+    else if (a > b) {
+      return b.length - a.length;
+    }
+  }
+  return a.length - b.length;
+});
+
+console.log(h);
+
+for (let i=0; i<h.length; i++) {
+  console.log(h[i]);
+}
 
 function setText() {
   one.value = "";
