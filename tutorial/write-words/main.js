@@ -40,6 +40,7 @@ function read_sentences(rs) {
       items.push(j.word);
     }
   }
+  console.log(items.length);
   return items;
 };
 
