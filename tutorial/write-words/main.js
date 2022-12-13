@@ -66,7 +66,7 @@ function show() {
     inputBinary = false;
   }
 }
-$b
+
 function play() {
   speak(howMany[previousOrNext]);
   inputTxt.blur();
