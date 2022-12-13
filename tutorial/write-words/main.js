@@ -13,19 +13,20 @@ const one = document.querySelector("#one");
 //console.log('words', words.length, words[0].length, words[0][0].length);
 
 //console.log('howMany', howMany.length, howMany[0]);
-/*
+
 const counts = {};
 
 for (const num of howMany) {
   let num2 = num.length;
   counts[num2] = counts[num2] ? counts[num2] + 1 : 1;
 }
-*/
-//console.log('counts', counts, counts.length);
 
+console.log('counts', counts, counts.length);
+/*
 for (let i=0; i<howMany.length; i++) {
   console.log('i', i);
 }
+*/
 /*
 const n = howMany; //["c80", "b9", "d700", "a8", "a543"];
 
