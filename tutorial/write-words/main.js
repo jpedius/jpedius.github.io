@@ -15,7 +15,7 @@ console.log('words', words.length, words[0].length, words[0][0].length);
 console.log('howMany', howMany.length, howMany[0]);
 
 const iterator = howMany.values();
-
+console.log('iterator', iterator);
 for (const value of iterator) {
   console.log('value', value, value.length);
 }
