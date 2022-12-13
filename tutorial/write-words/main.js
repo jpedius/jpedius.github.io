@@ -23,7 +23,7 @@ for (const num of howMany) {
 
 console.log('counts', counts);
 
-for (let i=0; i<counts; i++) {
+for (let i=0; i<counts.length; i++) {
   console.log('i', i);
 }
 
