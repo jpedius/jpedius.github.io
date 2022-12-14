@@ -1,5 +1,7 @@
 ## Games
 
+[Intro](games/intro/)
+
 ### Backup
 
 [Tic Tac Toe](games/tic-tac-toe/)
