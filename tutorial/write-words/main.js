@@ -99,6 +99,16 @@
         text.blur();
     }, false);
 
+    let show = document.createElement('button');
+    show.innerHTML = 'Show';
+    show.classList.add('q07');
+    show.addEventListener('click', function() {
+        inputReadonly = !inputReadonly;
+        readonly.value = inputReadonly
+            ? howMany[previousOrNext]
+            : '-----';
+    }, false);
+ 
     let next = document.createElement('button');
     next.innerHTML = 'Next';
     next.classList.add('q05');
@@ -108,16 +118,6 @@
         }
         previousOrNext++;
         setText();
-    }, false);
-
-    let show = document.createElement('button');
-    show.innerHTML = 'Show';
-    show.classList.add('q07');
-    show.addEventListener('click', function() {
-        inputReadonly = !inputReadonly;
-        readonly.value = inputReadonly
-            ? howMany[previousOrNext]
-            : '-----';
     }, false);
  
     let forRate = document.createElement('label');
