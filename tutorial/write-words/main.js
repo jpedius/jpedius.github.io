@@ -24,13 +24,11 @@
     let howMany = [];
     //console.log(words); 
     for (let i=0; i<words.length; i++) {
-        for (let j=0; j<i; j++) {
-            howMany.push(words[i][j]);  
-        }
+        howMany = howMany.concat(words[i]);
     }
     //console.log(howMany);
     howMany = shuffle(howMany);
-    //console.log(howMany);
+    console.log(howMany);
     setText();
 
     function setText() {
