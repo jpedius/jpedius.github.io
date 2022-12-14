@@ -189,6 +189,18 @@
             synth.speak(utterThis);
         }
     }
+    
+    let multiple = document.createElement('select');
+    multiple.innerHTML = '';
+    for (let i = 0; i < words.length; i++) {
+        const option = document.createElement('option');
+        option.textContent = `${i}-${words[i]}`;
+        option.defaultValue = `${i}-${words[i]}-${words[i].length}`;
+        option.value = option.defaultValue;
+        multiple.appendChild(option);
+    }
+    multiple.addEventListener('change', function() { }, false); 
+    multiple.classList.add('q02');
  
     function shuffle(array) {
 
@@ -256,6 +268,11 @@
     divVoice.classList.add('q18');
     divVoice.appendChild(voice);
     root.appendChild(divVoice);
+    
+    let divMultiple = document.createElement('div');
+    divMultiple.classList.add('q18');
+    divMultiple.appendChild(multiple);
+    root.appendChild(divMultiple); 
 
 })(jQuery);
 
