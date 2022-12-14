@@ -263,8 +263,8 @@
     divButton.classList.add('q17');
     divButton.appendChild(previous);
     divButton.appendChild(play);
-    divButton.appendChild(next);
     divButton.appendChild(show);
+    divButton.appendChild(next);
     root.appendChild(divButton);
 
     let divRatePitch = document.createElement('div');
