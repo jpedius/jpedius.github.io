@@ -24,6 +24,7 @@
 
     let previousOrNext = 0;
     let howMany = [];
+    let inputReadonly = true;
     for (let i=0; i<words.length; i++) {
         howMany = howMany.concat(words[i]);
     }
@@ -71,7 +72,9 @@
     multiple.classList.add('q02');
     
     function setText() {
-        readonly.value = howMany[previousOrNext];
+        readonly.value = inputReadonly
+            ? howMany[previousOrNext]
+            : '-----'; 
         text.value = '';
     }
     setText();
@@ -107,6 +110,16 @@
         setText();
     }, false);
 
+    let show = document.createElement('button');
+    show.innerHTML = 'Show';
+    show.classList.add('q07');
+    show.addEventListener('click', function() {
+        inputReadonly = !inputReadonly;
+        readonly.value = inputReadonly
+            ? howMany[previousOrNext]
+            : '-----';
+    }, false);
+ 
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
     forRate.innerHTML = 'Rate';
@@ -268,6 +281,7 @@
     divButton.appendChild(previous);
     divButton.appendChild(play);
     divButton.appendChild(next);
+    divButton.appendChild(show);
     root.appendChild(divButton);
 
     let divRatePitch = document.createElement('div');
