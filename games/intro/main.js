@@ -29,9 +29,12 @@
             
             this.context = this.canvas.getContext("2d");
             
+            root.appendChild(this.canvas);
+            /*
             document.body.insertBefore(
                 this.canvas,
                 document.body.childNodes[0]);
+            */ 
         }
     } 
 
