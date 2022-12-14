@@ -23,7 +23,9 @@
     let previousOrNext = 0;
     let howMany = [];
     for (let i=0; i<words; i++) {
+        console.log(words);
         for (let j=0; j<words[i]; j++) {
+            console.log(words[i]);
             howMany.push(words[i][j]);
         } 
     }
