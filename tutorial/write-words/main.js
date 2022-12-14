@@ -47,7 +47,7 @@
         option.textContent = `${a} word (${words[i].length})`;
         option.defaultValue = `${a}-${words[i].length}`;
         option.value = option.defaultValue;
-        option.selected = 'selected';
+        option.selected = true; //'selected';
         multiple.appendChild(option);
     }
     multiple.addEventListener('change', function() {
