@@ -20,6 +20,24 @@
     text.autocorrect = 'off';
     text.autocapitalize = 'off';
     
+    let multiple = document.createElement('select');
+    multiple.innerHTML = '';
+    multiple.multiple = 'multiple';
+    multiple.hasAttribute('multiple');
+    for (let i = 0; i < words.length; i++) {
+        const option = document.createElement('option');
+        option.textContent = `${i}-${words[i].length}`;
+        option.defaultValue = `${i}-${words[i].length}`;
+        option.value = option.defaultValue;
+        multiple.appendChild(option);
+    }
+    multiple.addEventListener('change', function() {
+    
+    
+    }, false); 
+    multiple.classList.add('q02');
+    console.log('multiple', multiple);
+    
     let previousOrNext = 0;
     let howMany = [];
     //console.log(words); 
@@ -28,11 +46,12 @@
     }
     //console.log(howMany);
     howMany = shuffle(howMany);
-    console.log(howMany);
+    console.log('howMany', howMany);
     setText();
 
     function setText() {
         let b = howMany[previousOrNext];
+        console.log('b', b);
         let a = '';
         for (let i=0; i<b.length; i++) {
             a += b[i] + ' ';
@@ -190,20 +209,6 @@
             synth.speak(utterThis);
         }
     }
-    
-    let multiple = document.createElement('select');
-    multiple.innerHTML = '';
-    multiple.multiple = 'multiple';
-    multiple.hasAttribute('multiple');
-    for (let i = 0; i < words.length; i++) {
-        const option = document.createElement('option');
-        option.textContent = `${i}-${words[i].length}`;
-        option.defaultValue = `${i}-${words[i].length}`;
-        option.value = option.defaultValue;
-        multiple.appendChild(option);
-    }
-    multiple.addEventListener('change', function() { }, false); 
-    multiple.classList.add('q02');
  
     function shuffle(array) {
 
