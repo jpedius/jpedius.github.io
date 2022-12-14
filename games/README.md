@@ -1,11 +1,11 @@
 ## Games
 
-[Intro](games/intro/)
+[Intro](intro/)
 
 ### Backup
 
-[Tic Tac Toe](games/tic-tac-toe/)
+[Tic Tac Toe](tic-tac-toe/)
 
-[Cartoon Player](games/cartoon-player/)
+[Cartoon Player](cartoon-player/)
 
-[Banana Fruit](games/banana-fruit/)
+[Banana Fruit](banana-fruit/)
