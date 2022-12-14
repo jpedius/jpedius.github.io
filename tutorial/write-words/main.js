@@ -197,8 +197,8 @@
     multiple.hasAttribute('multiple');
     for (let i = 0; i < words.length; i++) {
         const option = document.createElement('option');
-        option.textContent = `${i}-${words[i]}`;
-        option.defaultValue = `${i}-${words[i]}-${words[i].length}`;
+        option.textContent = `${i}-${words[i].length}`;
+        option.defaultValue = `${i}-${words[i].length}`;
         option.value = option.defaultValue;
         multiple.appendChild(option);
     }
