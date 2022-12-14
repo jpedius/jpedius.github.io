@@ -34,7 +34,7 @@
         for (let i=0; i<b.length; i++) {
             a += b[i] + ' ';
         }
-        readonly.value = a.trim();
+        readonly.value = b; //a.trim();
         text.value = '';
     }
 
