@@ -22,6 +22,13 @@
     let title = 'Words';
     document.title = title;
 
+    let previousOrNext = 0;
+    let howMany = [];
+    for (let i=0; i<words.length; i++) {
+        howMany = howMany.concat(words[i]);
+    }
+    howMany = shuffle(howMany);
+
     let readonly = document.createElement('input');
     readonly.classList.add('q02a');
     readonly.type = 'text';
@@ -51,36 +58,26 @@
         multiple.appendChild(option);
     }
     multiple.addEventListener('change', function() {
-
+        
+        howMany = [];
+        for (let i=0; i<words.length; i++) {
+            if (multiple[i].selected === true) {
+                howMany = howMany.concat(words[i]);
+            }
+        }
+        previousOrNext = 0;
+        
+        readonly.value = howMany[previousOrNext];
+        text.value = '';
+         
     }, false); 
     multiple.classList.add('q02');
-    console.log('multiple', multiple);
-
-
-// TEST LOOP SHOWING RESULTS
-for (var i=0; i<100; i++) console.log(stringifyNumber(i));
     
-    let previousOrNext = 0;
-    let howMany = [];
-    //console.log(words); 
-    for (let i=0; i<words.length; i++) {
-        howMany = howMany.concat(words[i]);
-    }
-    //console.log(howMany);
-    howMany = shuffle(howMany);
-    console.log('howMany', howMany);
-    setText();
-
     function setText() {
-        let b = howMany[previousOrNext];
-        let a = '';
-        for (let i=0; i<b.length; i++) {
-            a += b[i] + ' ';
-        }
-        console.log('b', b, b.length);
-        readonly.value = b; //a.trim();
+        readonly.value = howMany[previousOrNext];
         text.value = '';
     }
+    setText();
 
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
