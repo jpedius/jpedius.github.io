@@ -26,7 +26,7 @@
     for (let i=0; i<words; i++) {
         console.log(words[i]);
         for (let j=0; j<words[i]; j++) {
-            console.log(i.length, j);
+            console.log(i, j, words[i][j]);
             howMany.push(words[i][j]);
         } 
     }
