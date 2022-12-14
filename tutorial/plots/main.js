@@ -2,7 +2,7 @@
 
 (function($) {
 
-    let title = 'Plot';
+    let title = 'Plots';
     document.title = title;
 
     let sentences = [{
