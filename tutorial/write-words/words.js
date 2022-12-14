@@ -1,7 +1,7 @@
 const words = [[
     'I',
     'a',
-],[ 
+], [ 
     'as',
     'at',
     'be',
@@ -905,8 +905,8 @@ const words = [[
     'organization',
     'particularly',
     'relationship',
-], /*[ 
+], [ 
     'international',
-], */[ 
+], [ 
     'administration',
 ]];
