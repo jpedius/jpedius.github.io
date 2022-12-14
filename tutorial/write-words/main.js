@@ -192,6 +192,8 @@
     
     let multiple = document.createElement('select');
     multiple.innerHTML = '';
+    multiple.multiple = 'multiple';
+    multiple.hasAttribute('multiple');
     for (let i = 0; i < words.length; i++) {
         const option = document.createElement('option');
         option.textContent = `${i}-${words[i]}`;
