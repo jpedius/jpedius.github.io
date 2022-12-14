@@ -26,13 +26,12 @@
     multiple.hasAttribute('multiple');
     for (let i = 0; i < words.length; i++) {
         const option = document.createElement('option');
-        option.textContent = `${i}-${words[i].length}`;
+        option.textContent = `${i} word (${words[i].length})`;
         option.defaultValue = `${i}-${words[i].length}`;
         option.value = option.defaultValue;
         multiple.appendChild(option);
     }
     multiple.addEventListener('change', function() {
-    
     
     }, false); 
     multiple.classList.add('q02');
@@ -51,11 +50,11 @@
 
     function setText() {
         let b = howMany[previousOrNext];
-        console.log('b', b);
         let a = '';
         for (let i=0; i<b.length; i++) {
             a += b[i] + ' ';
         }
+        console.log('b', b, b.length);
         readonly.value = b; //a.trim();
         text.value = '';
     }
