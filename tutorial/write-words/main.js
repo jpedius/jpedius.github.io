@@ -91,10 +91,9 @@
     play.innerHTML = 'Play';
     play.classList.add('q04');
     play.addEventListener('click', function() { 
-        if (text.value !== '') {
-            speak(readonly.value);
-            text.blur();
-        }
+        speak(readonly.value);
+        readonly.blur();
+        text.blur();
     }, false);
 
     let next = document.createElement('button');
