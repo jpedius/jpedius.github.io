@@ -24,7 +24,10 @@
     let howMany = [];
     console.log(words); 
     for (let i=0; i<words.length; i++) {
-        console.log(words[i]);
+        for (let j=0; j<i.length; j++) {
+            console.log(words[i][j]);    
+        }
+        
     
     
         /*
