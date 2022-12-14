@@ -22,13 +22,17 @@
     
     let previousOrNext = 0;
     let howMany = [];
-    console.log(words);
-    for (let i=0; i<words; i++) {
+    console.log(words); 
+    for (let i=0; i<words.length; i++) {
         console.log(words[i]);
+    
+    
+        /*
         for (let j=0; j<words[i]; j++) {
             console.log(i, j, words[i][j]);
             howMany.push(words[i][j]);
-        } 
+        }
+        */
     }
     howMany = shuffle(howMany);
     setText();
