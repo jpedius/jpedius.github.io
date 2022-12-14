@@ -25,19 +25,12 @@
     console.log(words); 
     for (let i=0; i<words.length; i++) {
         for (let j=0; j<i; j++) {
-            console.log(words[i][j]);    
+            howMany.push(words[i][j]);  
         }
-        
-    
-    
-        /*
-        for (let j=0; j<words[i]; j++) {
-            console.log(i, j, words[i][j]);
-            howMany.push(words[i][j]);
-        }
-        */
     }
+    console.log(howMany);
     howMany = shuffle(howMany);
+    console.log(howMany);
     setText();
 
     function setText() {
