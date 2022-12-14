@@ -22,8 +22,10 @@
     
     let previousOrNext = 0;
     let howMany = [];
-    for (const i of words) {
-        howMany.push(i.word);
+    for (let i=0; i<words; i++) {
+        for (let j=0; j<words[i]; j++) {
+            howMany.push(words[i][j]);
+        } 
     }
     howMany = shuffle(howMany);
     setText();
