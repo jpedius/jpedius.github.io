@@ -44,9 +44,10 @@
     for (let i = 0; i < words.length; i++) {
         //for (let j=0; j<99; j++) {
         console.log(words[i][0].length);
+        const a = words[i][0].length;
         const option = document.createElement('option');
-        option.textContent = `${i} word (${words[i].length})`;
-        option.defaultValue = `${i}-${words[i].length}`;
+        option.textContent = `${a} word (${words[i].length})`;
+        option.defaultValue = `${a}-${words[i].length}`;
         option.value = option.defaultValue;
         multiple.appendChild(option);
     }
