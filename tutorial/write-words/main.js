@@ -54,22 +54,19 @@
         option.textContent = `${a} word (${words[i].length})`;
         option.defaultValue = `${a}-${words[i].length}`;
         option.value = option.defaultValue;
-        option.selected = true; //'selected';
+        option.selected = true;
         multiple.appendChild(option);
     }
     multiple.addEventListener('change', function() {
-        
+        previousOrNext = 0;
         howMany = [];
         for (let i=0; i<words.length; i++) {
             if (multiple[i].selected === true) {
                 howMany = howMany.concat(words[i]);
             }
         }
-        previousOrNext = 0;
-        
-        readonly.value = howMany[previousOrNext];
-        text.value = '';
-         
+        howMany = shuffle(howMany);
+        setText();
     }, false); 
     multiple.classList.add('q02');
     
