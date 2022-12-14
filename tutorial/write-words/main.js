@@ -22,15 +22,15 @@
     
     let previousOrNext = 0;
     let howMany = [];
-    console.log(words); 
+    //console.log(words); 
     for (let i=0; i<words.length; i++) {
         for (let j=0; j<i; j++) {
             howMany.push(words[i][j]);  
         }
     }
-    console.log(howMany);
+    //console.log(howMany);
     howMany = shuffle(howMany);
-    console.log(howMany);
+    //console.log(howMany);
     setText();
 
     function setText() {
