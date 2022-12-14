@@ -1,10 +1,8 @@
 'use strict';
 
-//import { voice } from "/tutorial/whole-sentences-two/speech.js";
-
 (function($) {
 
-    let title = 'Whole Sentences';
+    let title = 'Sentences';
     document.title = title;
 
     let sentences = [{

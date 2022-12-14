@@ -14,7 +14,7 @@
     howMany = shuffle(howMany);
 
     let readonly = document.createElement('input');
-    readonly.classList.add('q02a');
+    readonly.classList.add('q01');
     readonly.type = 'text';
     readonly.readonly = 'readonly';
     readonly.autocomplete = 'off';
@@ -52,7 +52,7 @@
         howMany = shuffle(howMany);
         setText();
     }, false); 
-    multiple.classList.add('q02');
+    multiple.classList.add('q03');
     
     function setText() {
         readonly.value = inputReadonly
@@ -64,7 +64,7 @@
 
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
-    previous.classList.add('q03');
+    previous.classList.add('q04');
     previous.addEventListener('click', function() {
         if (previousOrNext <= 0) {
             previousOrNext = howMany.length;
@@ -75,7 +75,7 @@
     
     let play = document.createElement('button');
     play.innerHTML = 'Play';
-    play.classList.add('q04');
+    play.classList.add('q05');
     play.addEventListener('click', function() { 
         speak(readonly.value);
         readonly.blur();
@@ -84,7 +84,7 @@
 
     let show = document.createElement('button');
     show.innerHTML = 'Show';
-    show.classList.add('q07');
+    show.classList.add('q06');
     show.addEventListener('click', function() {
         inputReadonly = !inputReadonly;
         readonly.value = inputReadonly
@@ -94,7 +94,7 @@
  
     let next = document.createElement('button');
     next.innerHTML = 'Next';
-    next.classList.add('q05');
+    next.classList.add('q07');
     next.addEventListener('click', function() {
         if (previousOrNext >= howMany.length - 1) {
             previousOrNext = -1;
@@ -106,7 +106,7 @@
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
     forRate.innerHTML = 'Rate';
-    forRate.classList.add('q06');
+    forRate.classList.add('q08');
 
     let rate = document.createElement('input');
     rate.type = 'range';
@@ -114,12 +114,12 @@
     rate.max = 2;
     rate.defaultValue = '1';
     rate.step = 0.1;
-    rate.classList.add('q07');
+    rate.classList.add('q09');
 
     let forPitch = document.createElement('label');
     forPitch.htmlFor = 'pitch';
     forPitch.innerHTML = 'Pitch';
-    forPitch.classList.add('q08');
+    forPitch.classList.add('q10');
 
     let pitch = document.createElement('input');
     pitch.type = 'range';
@@ -127,7 +127,7 @@
     pitch.max = 2;
     pitch.defaultValue = '1';
     pitch.step = 0.1;
-    pitch.classList.add('q09');
+    pitch.classList.add('q11');
 
     // "Microsoft Zira - English (United States)"
     // "Samantha"
@@ -135,7 +135,7 @@
     // "Tessa"
 
     let voice = document.createElement('select');
-    voice.classList.add('q10');
+    voice.classList.add('q12');
 
     const synth = window.speechSynthesis;
     let voices = [];
@@ -242,25 +242,25 @@
     }  
 
     let root = document.querySelector('#root');
-    root.classList.add('q11');
+    root.classList.add('q13');
 
     let h1Title = document.createElement('h1');
     h1Title.innerHTML = title;
-    h1Title.classList.add('q12');
+    h1Title.classList.add('q14');
     root.appendChild(h1Title);
 
     let divReadonly = document.createElement('div');
-    divReadonly.classList.add('q13a');
+    divReadonly.classList.add('q15');
     divReadonly.appendChild(readonly);
     root.appendChild(divReadonly);
     
     let divText = document.createElement('div');
-    divText.classList.add('q13');
+    divText.classList.add('q16');
     divText.appendChild(text);
     root.appendChild(divText);
 
     let divButton = document.createElement('div');    
-    divButton.classList.add('q14');
+    divButton.classList.add('q17');
     divButton.appendChild(previous);
     divButton.appendChild(play);
     divButton.appendChild(next);
@@ -268,16 +268,16 @@
     root.appendChild(divButton);
 
     let divRatePitch = document.createElement('div');
-    divRatePitch.classList.add('q15');
+    divRatePitch.classList.add('q18');
 
     let spanRate = document.createElement('span');
-    spanRate.classList.add('q16');
+    spanRate.classList.add('q19');
     spanRate.appendChild(forRate);
     spanRate.appendChild(rate);
     divRatePitch.appendChild(spanRate);
 
     let spanPitch = document.createElement('span');
-    spanPitch.classList.add('q17');
+    spanPitch.classList.add('q20');
     spanPitch.appendChild(forPitch);
     spanPitch.appendChild(pitch);
     divRatePitch.appendChild(spanPitch); 
@@ -285,14 +285,13 @@
     root.appendChild(divRatePitch);
 
     let divVoice = document.createElement('div');
-    divVoice.classList.add('q18');
+    divVoice.classList.add('q21');
     divVoice.appendChild(voice);
     root.appendChild(divVoice);
     
     let divMultiple = document.createElement('div');
-    divMultiple.classList.add('q18');
+    divMultiple.classList.add('q22');
     divMultiple.appendChild(multiple);
     root.appendChild(divMultiple); 
 
 })(jQuery);
-
