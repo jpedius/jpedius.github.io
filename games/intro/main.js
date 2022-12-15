@@ -31,7 +31,7 @@
         this.update = function() { 
             let ctx = myGameArea.context;
             ctx.fillStyle = color;
-            ctx.fillRect(this.x this.y, this.width, this.height);
+            ctx.fillRect(this.x, this.y, this.width, this.height);
         } 
     }
     
