@@ -135,6 +135,13 @@
         }
     }
     
-    const g = new GameCanvas(root);
+    function GameRoot() {
+    
+        const g = new GameCanvas(root);
+        
+        const area = new GameArea();
+        g.init(area.start());
+        g.start(area.update()):
+    }
 
 })(jQuery);
