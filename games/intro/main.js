@@ -75,5 +75,64 @@
         myGameArea.init();
         myGameArea.start();
     }
+    
+    class GameArea {
+    
+        function start() {
+        
+            console.log('GameArea start', start);
+        }
+        
+        function update() {
+        
+            console.log('GameArea update', upddate);
+        }
+    }
+    /*
+    function GameRoot() {
+        g.init(area.start());
+        g.start(area.update());
+    }
+    */
+    class GameCanvas {
+    
+        constructor(root) {
+            this.root = root;
+            this.canvas = document.createElement("canvas");
+            
+            console.log(this.root, this.canvas)
+        }
+
+        init: function(start) {
+            
+            this.init = start;
+            
+            console.log(this.init)
+        }
+        
+        start: function(update) {
+        
+            this.canvas.width = 800;
+            this.canvas.height = 600;
+            
+            this.context = this.canvas.getContext("2d");
+            
+            this.root.appendChild(this.canvas);
+            
+            this.interval = setInterval(update, 20);
+            
+            console.log(this.canvas.width, this.canvas.height);
+            console.log(update);
+        }
+        
+        clear: function() {
+            this.context.clearRect(
+                0, 0, this.canvas.width, this.canvas.height);
+                
+            console.log(this.context); 
+        }
+    }
+    
+    const g = new GameCanvas(root);
 
 })(jQuery);
