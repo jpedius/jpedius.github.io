@@ -21,7 +21,7 @@
     function startGameArea() {
         myGamePiece1 = new component(30, 30, 'blue', 10, 120);
         myGamePiece2 = new component(30, 30, 'red', 110, 120);
-        myGamePiece3 = new component(30, 30, 'green', 210, 120);
+        myGamePiece3 = new component(10, 10, 'green', 210, 120);
     }
     
     function updateGameArea() {
