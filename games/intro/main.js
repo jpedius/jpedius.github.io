@@ -51,7 +51,7 @@
         
         init: function() {
             startGameArea();
-        }
+        },
         
         start: function() {
         
