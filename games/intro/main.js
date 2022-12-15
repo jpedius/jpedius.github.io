@@ -75,7 +75,7 @@
         myGameArea.init();
         myGameArea.start();
     }
-    
+/*   
     class GameArea {
     
         function start() {
@@ -88,12 +88,14 @@
             console.log('GameArea update', upddate);
         }
     }
+*/ 
     /*
     function GameRoot() {
         g.init(area.start());
         g.start(area.update());
     }
     */
+/* 
     class GameCanvas {
     
         constructor(root) {
@@ -134,5 +136,5 @@
     }
     
     const g = new GameCanvas(root);
-
+*/
 })(jQuery);
