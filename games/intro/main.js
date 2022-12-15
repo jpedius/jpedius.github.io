@@ -19,7 +19,7 @@
     let myGamePiece3;
 
     function startGameArea() {
-        myGamePiece1 = new component(30, 30, 'blue', 10, 120);
+        myGamePiece1 = new component(30, 30, 'blue', 0, 0);
         myGamePiece2 = new component(30, 30, 'red', 110, 120);
         myGamePiece3 = new component(10, 10, 'green', 210, 120);
     }
@@ -63,7 +63,7 @@
             root.appendChild(this.canvas);
             
             this.interval = setInterval(updateGameArea, 20);
-        },
+        }, 
         
         clear: function() {
             this.context.clearRect(
