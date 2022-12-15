@@ -12,15 +12,25 @@
     h1Title.innerHTML = title;
     root.appendChild(h1Title);
  
-    window.addEventListener('load', (event) => { startGame() });
+    window.addEventListener('load', (event) => { game() });
     
-    let myGamePiece;
-    
-    function startGame() {
-        myGamePiece = new component(30, 30, 'red', 10, 120);
-        myGameArea.start();
+    let myGamePiece1;
+    let myGamePiece2;
+    let myGamePiece3;
+
+    function startGameArea() {
+        myGamePiece1 = new component(30, 30, 'blue', 10, 120);
+        myGamePiece2 = new component(130, 30, 'red', 10, 120);
+        myGamePiece3 = new component(230, 30, 'green', 10, 120);
     }
     
+    function updateGameArea() {
+        myGameArea.clear(); 
+        myGamePiece1.update();
+        myGamePiece2.update();
+        myGamePiece3.update();
+    }
+     
     function component(width, height, color, x, y) {
     
         this.width = width;
@@ -35,14 +45,15 @@
         } 
     }
     
-    function updateGameArea() {
-        myGameArea.clear();
-        myGamePiece.update();
-    } 
-
     let myGameArea = {
-        canvas : document.createElement("canvas"),
-        start : function() {
+    
+        canvas: document.createElement("canvas"),
+        
+        init: function() {
+            startGameArea();
+        }
+        
+        start: function() {
         
             this.canvas.width = 800;
             this.canvas.height = 600;
@@ -53,10 +64,16 @@
             
             this.interval = setInterval(updateGameArea, 20);
         },
-        clear : function() {
+        
+        clear: function() {
             this.context.clearRect(
-            0, 0, this.canvas.width, this.canvas.height);
-        }
-    } 
+                0, 0, this.canvas.width, this.canvas.height);
+        },
+    }
+
+    function game() {
+        myGameArea.init();
+        myGameArea.start();
+    }
 
 })(jQuery);
