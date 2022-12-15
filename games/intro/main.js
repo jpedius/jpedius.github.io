@@ -75,27 +75,27 @@
         myGameArea.init();
         myGameArea.start();
     }
-/*   
+
     class GameArea {
     
-        function start() {
+        start() {
         
             console.log('GameArea start', start);
         }
         
-        function update() {
+        update() {
         
             console.log('GameArea update', upddate);
         }
     }
-*/ 
+ 
     /*
     function GameRoot() {
         g.init(area.start());
         g.start(area.update());
     }
     */
-/* 
+
     class GameCanvas {
     
         constructor(root) {
@@ -105,14 +105,14 @@
             console.log(this.root, this.canvas)
         }
 
-        function init(start) {
+        init(start) {
             
             this.init = start;
             
             console.log(this.init)
         }
         
-        function start(update) {
+        start(update) {
         
             this.canvas.width = 800;
             this.canvas.height = 600;
@@ -127,7 +127,7 @@
             console.log(update);
         }
         
-        function clear() {
+        clear() {
             this.context.clearRect(
                 0, 0, this.canvas.width, this.canvas.height);
                 
@@ -136,5 +136,5 @@
     }
     
     const g = new GameCanvas(root);
-*/
+
 })(jQuery);
