@@ -103,14 +103,14 @@
             console.log(this.root, this.canvas)
         }
 
-        init: function(start) {
+        function init(start) {
             
             this.init = start;
             
             console.log(this.init)
         }
         
-        start: function(update) {
+        function start(update) {
         
             this.canvas.width = 800;
             this.canvas.height = 600;
@@ -125,7 +125,7 @@
             console.log(update);
         }
         
-        clear: function() {
+        function clear() {
             this.context.clearRect(
                 0, 0, this.canvas.width, this.canvas.height);
                 
