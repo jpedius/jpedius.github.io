@@ -80,12 +80,12 @@
     
         start() {
         
-            console.log('GameArea start', start);
+            console.log('GameArea start');
         }
         
         update() {
         
-            console.log('GameArea update', upddate);
+            console.log('GameArea update');
         }
     }
  
@@ -140,7 +140,7 @@
         const g = new GameCanvas(root);
         
         const area = new GameArea();
-        //g.init(area.start());
+        g.init(area.start());
         //g.start(area.update()):
     }
 
