@@ -140,8 +140,8 @@
         const g = new GameCanvas(root);
         
         const area = new GameArea();
-        g.init(area.start());
-        g.start(area.update()):
+        //g.init(area.start());
+        //g.start(area.update()):
     }
 
 })(jQuery);
