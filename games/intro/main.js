@@ -85,7 +85,7 @@
         }   
     }
     
-    const game = new GameRoot(root);
+    const game = new GameCanvas(root);
     const comp = game.initialize();
     const star = game.start(comp)
 /*    
