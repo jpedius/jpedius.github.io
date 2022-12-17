@@ -66,15 +66,15 @@
             this.context = this.canvas.getContext("2d");
             
             root.appendChild(this.canvas);
-            
+            /*
             this.interval = setInterval(function {
                 this.root.clear(); 
                 c.update(this.root);
                 c.update(this.root);
                 c.update(this.root);
             }, 20);
-            
-            console.log(this.interval);
+            */
+            //console.log(this.interval);
         }
         
         clear() {
