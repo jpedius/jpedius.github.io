@@ -61,9 +61,29 @@
         myGamePiece2.update();
         myGamePiece3.update();
     } 
-        
-   
 
+    class Monster {
+ 
+        // `constructor` is a keyword and will receive the custom parameters of our monster 
+        constructor(speed) {
+            this.health = 50 // same value for all the monsters
+            this.src = "URL-TO-A-IMAGE-YOU-WANT" // same image for all the monsters
+            this.speed = speed; // our monsters will have a different speed specified by a parameter
+        }
+
+        attack = function() {
+            alert('I am a bad monster. Run for your life !');
+        };
+
+        // this is more developer-friendly than it was with Monster.prototype.toString
+        toString(){
+            return 'This function can display whatever we want';
+        }
+    }
+
+    const monster1 = new Monster(30);
+
+    console.log(monster1.toString())
 
 
 /*
