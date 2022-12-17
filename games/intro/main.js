@@ -12,7 +12,7 @@
     h1Title.innerHTML = title;
     root.appendChild(h1Title);
  
-    window.addEventListener('load', (event) => { startGame() });
+    window.addEventListener('load', (event) => { startGameArea() });
 
     let myGamePiece1;
     let myGamePiece2;
