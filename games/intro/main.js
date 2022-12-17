@@ -12,7 +12,7 @@
     h1Title.innerHTML = title;
     root.appendChild(h1Title);
  
-    window.addEventListener('load', (event) => { game() });
+    window.addEventListener('load', (event) => { qwer.one() });
     
     class GameComponent {
     
@@ -39,7 +39,7 @@
     
     class GameCanvas {
     
-        constructor(root) {
+        constructor(root b) {
             this.root = root;
             this.canvas = document.createElement("canvas");
             
@@ -67,7 +67,7 @@
             
             root.appendChild(this.canvas);
             /*
-            this.interval = setInterval(function {
+            this.interval = setInterval(function() {
                 this.root.clear(); 
                 c.update(this.root);
                 c.update(this.root);
@@ -75,6 +75,11 @@
             }, 20);
             */
             //console.log(this.interval);
+        }
+        
+        one() {
+            initialize();
+            start(comp);
         }
         
         clear() {
@@ -85,9 +90,9 @@
         }   
     }
     
-    const game = new GameCanvas(root);
-    const comp = game.initialize();
-    const star = game.start(comp)
+    const qwer = new GameCanvas(root);
+    const comp = qwer.initialize();
+    const star = qwer.start(comp);
 /*    
     
     let myGamePiece1;
