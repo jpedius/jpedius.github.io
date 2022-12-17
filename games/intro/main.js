@@ -56,7 +56,7 @@
     }
     
     function updateGameArea() {
-        myGameArea();
+        myGameArea.clear();
         myGamePiece1.update();
         myGamePiece2.update();
         myGamePiece3.update();
