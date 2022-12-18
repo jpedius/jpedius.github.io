@@ -18,7 +18,7 @@ let CANVAS_HEIGHT = canvas.height = 600;
 let playerImage = new Image();
 playerImage.src = 'shadow_dog.png';
 
-let spriteWidth = 573;
+let spriteWidth = 575;
 let spriteHeight = 523;
 
 let frameX = 0;
