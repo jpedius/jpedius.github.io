@@ -1,4 +1,4 @@
-# Games
+## Games
 
 [Intro](intro/)
 
