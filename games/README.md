@@ -2,6 +2,8 @@
 
 [Intro](intro/)
 
+[Beginners](beginners/)
+
 ### Backup
 
 [Tic Tac Toe](tic-tac-toe/)
