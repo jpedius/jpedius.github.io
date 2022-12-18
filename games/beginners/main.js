@@ -8,9 +8,61 @@ document.title = title;
 
 let root = document.querySelector('#root');
 
+let div = document.createElement('div');
+div.classList.add('control');
+root.appendChild(div);
+
+let animationStates = [{
+    name: 'idle',
+    frames: 7,
+}, {
+    name: 'jump',
+    frames: 7,
+}, {
+    name: 'fall',
+    frames: 7,
+}, {
+    name: 'run',
+    frames: 9,
+}, {
+    name: 'dizzy',
+    frames: 11,
+}, {
+    name: 'sit',
+    frames: 5,
+}, {
+    name: 'roll',
+    frames: 7,
+}, {
+    name: 'bite',
+    frames: 7,
+}, {
+    name: 'ko',
+    frames: 12,
+}, {
+    name: 'gethit',
+    frames: 4,   
+}];
+
+let playerState = 'run';
+
+let dropdown = document.createElement('select');
+for (let i=0; i<animationStates.length; i++) {
+    const option = document.createElement('option');
+    option.textContent = `${animationStates[i].name}`;
+    option.defaultValue = `${animationStates[i].name}`;
+    option.value = option.defaultValue;
+    dropdown.appendChild(option);
+}
+dropdown.addEventListener('change', function(e) {
+    playerState = e.target.value;
+}, false);
+div.appendChild(dropdown);
+
 let canvas = document.createElement('canvas');
 let ctx = canvas.getContext('2d');
 console.log(ctx);
+root.appendChild(div);
 
 let CANVAS_WIDTH = canvas.width = 600;
 let CANVAS_HEIGHT = canvas.height = 600;
@@ -21,20 +73,12 @@ playerImage.src = 'shadow_dog.png';
 let spriteWidth = 575;
 let spriteHeight = 523;
 
-let frameX = 0;
-let frameY = 0;
 let gameFrame = 0;
 let staggerFrames = 5;
 let spriteAnimations = [];
-let animationStates = [{
-    name: 'idle',
-    frames: 7,
-}, {
-    name: 'jump',
-    frames: 7,
-}];
 
 animationStates.forEach((state, index) => {
+    
     let frames = {
         loc: [],
     };
@@ -53,21 +97,18 @@ console.log(spriteAnimations);
 
 function animate() {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    //ctx.fillRect(50, 50, 100, 100);
-    let position = Math.floor(gameFrame / staggerFrames) % 6;
-    frameX = spriteWidth * position;
+
+    let position = Math.floor(
+        gameFrame / staggerFrames
+    ) % spriteAnimations[playerState].loc.length;
+    
+    let frameX = spriteWidth * position;
+    let frameY = spriteAnimations[playerState].loc[position].y;
+    
     ctx.drawImage(playerImage,
-        frameX, frameY * spriteHeight, spriteWidth, spriteHeight,
+        frameX, frameY, spriteWidth, spriteHeight,
         0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    /*
-    if (gameFrame % staggerFrames == 0) {
-        if (frameX < 6) {
-            frameX++;
-        } else {
-            frameX = 0;
-        }
-    }
-    */
+
     gameFrame++;
  
     requestAnimationFrame(animate);
