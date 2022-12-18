@@ -1,5 +1,8 @@
 'use strict';
 
+// 6876 -- 573 * 12
+// 5230 -- 523 * 10
+
 let title = 'Pixel Animation';
 document.title = title;
 
@@ -15,7 +18,7 @@ let CANVAS_HEIGHT = canvas.height = 600;
 let playerImage = new Image();
 playerImage.src = 'shadow_dog.png';
 
-let spriteWidth = 575;
+let spriteWidth = 573;
 let spriteHeight = 523;
 
 function animate() {
