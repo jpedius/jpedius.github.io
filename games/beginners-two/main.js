@@ -93,8 +93,8 @@ function animate() {
         spriteWidth,
         spriteHeight,
         // destination \canvas
-        0,
-        0,
+        150,
+        150,
         CANVAS_WIDTH / 2,
         CANVAS_HEIGHT / 2);
 
