@@ -55,7 +55,7 @@ function animate() {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     //ctx.fillRect(50, 50, 100, 100);
     let position = Math.floor(gameFrame / staggerFrames) % 6;
-    frameX = spriteImage * position;
+    frameX = spriteWidth * position;
     ctx.drawImage(playerImage,
         frameX, frameY * spriteHeight, spriteWidth, spriteHeight,
         0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
