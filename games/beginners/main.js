@@ -28,10 +28,10 @@ let staggerFrames = 5;
 let spriteAnimations = [];
 let animationStates = [{
     name: 'idle',
-    frame: 7,
+    frames: 7,
 }, {
     name: 'jump',
-    frame: 7,
+    frames: 7,
 }];
 
 animationStates.forEach((state, index) => {
