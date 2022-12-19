@@ -24,7 +24,7 @@ backgroundLayer4.src = 'backgroundLayers/layer-4.png';
 const backgroundLayer5 = new Image();
 backgroundLayer5.src = 'backgroundLayers/layer-5.png';
 
-window.addEventListener('load', function(e) {
+window.addEventListener('load', function() {
 
     const slide = document.getElementById('slide');
     slide.value = gameSpeed;
