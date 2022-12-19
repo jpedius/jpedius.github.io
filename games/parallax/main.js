@@ -63,9 +63,9 @@ window.addEventListener('load', function() {
         }
     }
 
-    const layer1 = new Layer(backgroundLayer1, 0.2);
+    const layer1 = new Layer(backgroundLayer1, 0.1);
     const layer2 = new Layer(backgroundLayer2, 0.4);
-    const layer3 = new Layer(backgroundLayer3, 0.6);
+    const layer3 = new Layer(backgroundLayer3, 0.7);
     const layer4 = new Layer(backgroundLayer4, 0.8);
     const layer5 = new Layer(backgroundLayer5, 1.0);
 
