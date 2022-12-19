@@ -20,6 +20,7 @@ const backgroundLayer5 = new Image();
 backgroundLayer5.src = 'backgroundLayers/layer-5.png';
 
 function animate() {
+    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     ctx.drawImage(backgroundLayer2, 0, 0);
     requestAnimationFrame(animate);
 }
