@@ -11,16 +11,31 @@ let gameFrame = 0;
 
 const backgroundLayer1 = new Image();
 backgroundLayer1.src = 'backgroundLayers/layer-1.png';
+
 const backgroundLayer2 = new Image();
 backgroundLayer2.src = 'backgroundLayers/layer-2.png';
+
 const backgroundLayer3 = new Image();
 backgroundLayer3.src = 'backgroundLayers/layer-3.png';
+
 const backgroundLayer4 = new Image();
 backgroundLayer4.src = 'backgroundLayers/layer-4.png';
+
 const backgroundLayer5 = new Image();
 backgroundLayer5.src = 'backgroundLayers/layer-5.png';
 
 window.addEventListener('load', function(e) {
+
+    const slide = document.getElementById('slide');
+    slide.value = gameSpeed;
+        
+    const showGameSpeed = document.getElementById('showGameSpeed');
+    showGameSpeed.innerHTML = gameSpeed;    
+    
+    slide.addEventListener('change', function(e) {
+        gameSpeed = e.target.value;
+        showGameSpeed.innerHTML = e.target.value;
+    }, false);
 
     class Layer {
 
@@ -39,7 +54,7 @@ window.addEventListener('load', function(e) {
         
         update() {
             this.speed = gameSpeed * this.speedModifier;
-            this.x = gameSpeed * this.speed % this.width;
+            this.x = gameFrame * this.speed % this.width;
         }
         
         draw() {
@@ -55,15 +70,6 @@ window.addEventListener('load', function(e) {
     const layer5 = new Layer(backgroundLayer5, 1.0);
 
     const gameObject = [layer1, layer2, layer3, layer4, layer5];
-
-    const slide = document.getElementById('slide');
-    slide.value = gameSpeed;
-    const showGameSpeed = document.getElementById('showGameSpeed');
-    showGameSpeed.innerHTML = gameSpeed;
-    slide.addEventListener('change', function(e) {
-        gameSpeed = e.target.value;
-        showGameSpeed.innerHTML = e.target.value;
-    }, false);
 
     function animate() {
         ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
