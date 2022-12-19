@@ -6,6 +6,8 @@
 
 [Beginners Two](beginners-two/)
 
+[Parallax](parallax/)
+
 ### Backup
 
 [Tic Tac Toe](tic-tac-toe/)
