@@ -60,14 +60,14 @@ window.addEventListener('load', function() {
             this.speed = gameSpeed * this.speedModifier;
             this.x = (gameFrame * this.speed) % this.width;
             
-            console.log(this.speed, this.x);
+            //console.log(this.speed, this.x);
         }
         
         draw() {
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
             ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
             
-            console.log('log: ' + this.x + ', ' + (this.x + this.width));
+            //console.log('log: ' + this.x + ', ' + (this.x + this.width));
         }
     }
 
