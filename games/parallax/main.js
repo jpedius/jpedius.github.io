@@ -24,7 +24,7 @@ backgroundLayer4.src = 'backgroundLayers/layer-4.png';
 const backgroundLayer5 = new Image();
 backgroundLayer5.src = 'backgroundLayers/layer-5.png';
 
-let sit = [true, true, true, true, true];
+let sit = [0, 0, 0, 0, 0];
 
 window.addEventListener('load', function() {
 
@@ -40,9 +40,9 @@ window.addEventListener('load', function() {
         gameSpeed = e.target.value;
         showGameSpeed.innerHTML = e.target.value;
         
-        if (sit[0] === true) {
+        if (sit[0] < 4) {
             console.log(e.target.value);
-            sit[0] = false;
+            sit[0] += 1;
         } 
     }, false);
 
@@ -65,9 +65,9 @@ window.addEventListener('load', function() {
             this.speed = gameSpeed * this.speedModifier;
             this.x = (gameFrame * this.speed) % this.width;
             
-            if (sit[1] === true) {
+            if (sit[1] < 4) {
                 console.log(this.speed, this.x);
-                sit[1] = false;
+                sit[1] += 1;
             }
         }
         
@@ -75,9 +75,9 @@ window.addEventListener('load', function() {
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
             ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
 
-            if (sit[2] === true) {
+            if (sit[2] < 4) {
                 console.log('log: ' + this.x + ', ' + (this.x + this.width));
-                sit[2] = false;
+                sit[2] += 1;
             }
         }
     }
@@ -98,16 +98,16 @@ window.addEventListener('load', function() {
             object.update();
             object.draw();
 
-            if (sit[3] === true) {
+            if (sit[3] < 4) {
                 console.log('update draw');
-                sit[3] = false;
+                sit[3] += 1;
             }
         });
         gameFrame--;
         
-        if (sit[4] === true) {
+        if (sit[4] < 4) {
             console.log(gameFrame);
-            sit[4] = false;
+            sit[4] += 1;
         }
             
         requestAnimationFrame(animate);
