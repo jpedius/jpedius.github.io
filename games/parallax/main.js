@@ -54,7 +54,7 @@ window.addEventListener('load', function() {
         
         update() {
             this.speed = gameSpeed * this.speedModifier;
-            this.x = gameFrame * this.speed % this.width;
+            this.x = (gameFrame * this.speed) % this.width;
         }
         
         draw() {
