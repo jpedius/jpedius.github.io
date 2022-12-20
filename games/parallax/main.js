@@ -85,12 +85,12 @@ window.addEventListener('load', function() {
         ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         gameObject.forEach(object => {
             object.update();
-            console.log('update'); 
+            //console.log('update'); 
             object.draw();
-            console.log('draw');
+            //console.log('draw');
         });
         gameFrame--;
-        console.log(gameFrame);
+        //console.log(gameFrame);
         requestAnimationFrame(animate);
     }
     animate();
