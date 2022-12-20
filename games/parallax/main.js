@@ -123,6 +123,8 @@ const element = document.getElementById('garbage');
 let start, previousTimeStamp;
 let done = false
 
+console.log(element);
+
 function step(timestamp) {
   if (start === undefined) {
     start = timestamp;
@@ -141,6 +143,7 @@ function step(timestamp) {
     if (!done) {
       window.requestAnimationFrame(step);
     }
+    console.log(start, previousTimeStamp, done);
   }
 }
 
