@@ -30,11 +30,15 @@ window.addEventListener('load', function() {
     slide.value = gameSpeed;
         
     const showGameSpeed = document.getElementById('showGameSpeed');
-    showGameSpeed.innerHTML = gameSpeed;    
+    showGameSpeed.innerHTML = gameSpeed;
+    
+    console.log(slide, showGameSpeed, ganeSpeed);    
     
     slide.addEventListener('change', function(e) {
         gameSpeed = e.target.value;
         showGameSpeed.innerHTML = e.target.value;
+        
+        console.log(e.target.value);
     }, false);
 
     class Layer {
@@ -55,11 +59,15 @@ window.addEventListener('load', function() {
         update() {
             this.speed = gameSpeed * this.speedModifier;
             this.x = (gameFrame * this.speed) % this.width;
+            
+            console.log(this.speed, this.x);
         }
         
         draw() {
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
             ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
+            
+            console.log('log: ' + this.x + ', ' + (this.x + this.width));
         }
     }
 
@@ -75,9 +83,12 @@ window.addEventListener('load', function() {
         ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         gameObject.forEach(object => {
             object.update();
+            console.log('update'); 
             object.draw();
+            console.log('draw');
         });
         gameFrame--;
+        console.log(gameFrame);
         requestAnimationFrame(animate);
     }
     animate();
