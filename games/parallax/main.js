@@ -38,7 +38,7 @@ window.addEventListener('load', function() {
         gameSpeed = e.target.value;
         showGameSpeed.innerHTML = e.target.value;
         
-        console.log(e.target.value);
+        //console.log(e.target.value);
     }, false);
 
     class Layer {
