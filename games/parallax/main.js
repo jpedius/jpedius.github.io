@@ -32,7 +32,7 @@ window.addEventListener('load', function() {
     const showGameSpeed = document.getElementById('showGameSpeed');
     showGameSpeed.innerHTML = gameSpeed;
     
-    console.log(slide, showGameSpeed, ganeSpeed);    
+    console.log(slide, showGameSpeed, gameSpeed);    
     
     slide.addEventListener('change', function(e) {
         gameSpeed = e.target.value;
@@ -78,6 +78,8 @@ window.addEventListener('load', function() {
     const layer5 = new Layer(backgroundLayer5, 1.0);
 
     const gameObject = [layer1, layer2, layer3, layer4, layer5];
+    
+    console.log(layer1, layer2, layer3, layer4, layer5);
 
     function animate() {
         ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
