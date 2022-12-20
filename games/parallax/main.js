@@ -24,6 +24,8 @@ backgroundLayer4.src = 'backgroundLayers/layer-4.png';
 const backgroundLayer5 = new Image();
 backgroundLayer5.src = 'backgroundLayers/layer-5.png';
 
+let sit = [true, true, true, true, true];
+
 window.addEventListener('load', function() {
 
     const slide = document.getElementById('slide');
@@ -38,7 +40,10 @@ window.addEventListener('load', function() {
         gameSpeed = e.target.value;
         showGameSpeed.innerHTML = e.target.value;
         
-        //console.log(e.target.value);
+        if (sit[0] === true) {
+            console.log(e.target.value);
+            sit[0] = false;
+        } 
     }, false);
 
     class Layer {
@@ -60,14 +65,20 @@ window.addEventListener('load', function() {
             this.speed = gameSpeed * this.speedModifier;
             this.x = (gameFrame * this.speed) % this.width;
             
-            //console.log(this.speed, this.x);
+            if (sit[1] === true) {
+                console.log(this.speed, this.x);
+                sit[1] = false;
+            }
         }
         
         draw() {
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
             ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
-            
-            //console.log('log: ' + this.x + ', ' + (this.x + this.width));
+
+            if (sit[2] === true) {
+                console.log('log: ' + this.x + ', ' + (this.x + this.width));
+                sit[2] = false;
+            }
         }
     }
 
@@ -85,12 +96,20 @@ window.addEventListener('load', function() {
         ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         gameObject.forEach(object => {
             object.update();
-            //console.log('update'); 
             object.draw();
-            //console.log('draw');
+
+            if (sit[3] === true) {
+                console.log('update draw');
+                sit[3] = false;
+            }
         });
         gameFrame--;
-        //console.log(gameFrame);
+        
+        if (sit[4] === true) {
+            console.log(gameFrame);
+            sit[4] = false;
+        }
+            
         requestAnimationFrame(animate);
     }
     animate();
