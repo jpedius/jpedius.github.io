@@ -126,27 +126,35 @@ let done = false
 console.log(element);
 
 function step(timestamp) {
-  if (start === undefined) {
-    start = timestamp;
-    }
+
+  const t0 = performance.now();
+
+  if (start === undefined) { start = timestamp; }
+
   const elapsed = timestamp - start;
-  console.log(elapsed, timestamp);
 
   if (previousTimeStamp !== timestamp) {
+    
     // Math.min() is used here to make sure the element stops at exactly 200px
     const count = Math.min(0.1 * elapsed, 200);
+    
     element.style.transform = `translateX(${count}px)`;
+    
     if (count === 200) done = true;
-    console.log('previousTimeStamp ' + previousTimeStamp);
   }
 
   if (elapsed < 2000) { // Stop the animation after 2 seconds
+    
     previousTimeStamp = timestamp;
+    
     if (!done) {
       window.requestAnimationFrame(step);
     }
-    console.log(start, previousTimeStamp, done);
+
   }
+  
+  const t1 = performance.now();
+  console.log(timestamp, start, previousTimeStamp, elapsed t0, t1);
 }
 
 window.requestAnimationFrame(step);
