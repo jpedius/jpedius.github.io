@@ -112,6 +112,7 @@ window.addEventListener('load', function() {
 
         console.log(
           'timestamp: ' + timestamp,
+          'start: ' + start,
           'elapsed: ' + elapsed,
           'count: ' + count);
         
