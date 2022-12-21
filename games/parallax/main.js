@@ -137,7 +137,7 @@ window.addEventListener('load', function() {
         if (elapsed < 2000) { // Stop the animation after 2 seconds
             previousTimeStamp = timestamp;
             if (!done) {
-              requestAnimationFrame(animate);
+              window.requestAnimationFrame(animate);
             }
         } 
     }
