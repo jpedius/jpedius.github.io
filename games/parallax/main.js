@@ -95,11 +95,11 @@ window.addEventListener('load', function() {
     
     console.log(layer1, layer2, layer3, layer4, layer5);
     
-    let start, previousTimeStamp;
-    let done = false;
+    //let start, previousTimeStamp;
+    //let done = false;
 
     function animate(timestamp) {
-    
+        /*
         if (start === undefined) { start = timestamp; }
         const elapsed = timestamp - start;
 
@@ -115,7 +115,7 @@ window.addEventListener('load', function() {
           'start: ' + start,
           'elapsed: ' + elapsed,
           'count: ' + count);
-        
+        */
         ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         gameObject.forEach(object => {
             object.update();
@@ -134,12 +134,12 @@ window.addEventListener('load', function() {
             sit[4] += 1;
         }
         */
-        if (elapsed < 2000) { // Stop the animation after 2 seconds
-            previousTimeStamp = timestamp;
-            if (!done) {
-              window.requestAnimationFrame(animate);
-            }
-        } 
+        //if (elapsed < 2000) { // Stop the animation after 2 seconds
+            //previousTimeStamp = timestamp;
+            //if (!done) {
+                requestAnimationFrame(animate);
+            //}
+        //} 
     }
     animate();
 });
