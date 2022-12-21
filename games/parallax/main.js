@@ -144,9 +144,11 @@ function step(timestamp) {
     if (count === 200) done = true;
   }
 
+  let a = 0;
+  let b = 0;
   if (elapsed < 2000) { // Stop the animation after 2 seconds
-    let a = previousTimeStamp;
-    let b = timestamp;
+    a = previousTimeStamp;
+    b = timestamp;
     previousTimeStamp = timestamp;
     
     if (!done) {
