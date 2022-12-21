@@ -96,6 +96,7 @@ window.addEventListener('load', function() {
     console.log(layer1, layer2, layer3, layer4, layer5);
 
     function animate() {
+        
         ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         gameObject.forEach(object => {
             object.update();
@@ -144,7 +145,8 @@ function step(timestamp) {
   }
 
   if (elapsed < 2000) { // Stop the animation after 2 seconds
-    
+    let a = previousTimeStamp;
+    let b = timestamp;
     previousTimeStamp = timestamp;
     
     if (!done) {
@@ -154,7 +156,7 @@ function step(timestamp) {
   }
   
   const t1 = performance.now();
-  console.log('start', timestamp, start, previousTimeStamp, elapsed, t0, t1, 'end');
+  console.log('start', timestamp, start, a, b, previousTimeStamp, elapsed, t0, t1, 'end');
 }
 
 window.requestAnimationFrame(step);
