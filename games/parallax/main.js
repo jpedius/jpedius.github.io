@@ -161,6 +161,10 @@ function step(timestamp) {
 
   }
   
+  setTimeout(() => {
+    console.log("Delayed for 100 milliseconds.");
+  }, 100);
+  
   const t1 = performance.now();
   console.log(
     'start',
