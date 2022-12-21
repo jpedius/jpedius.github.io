@@ -112,7 +112,7 @@ window.addEventListener('load', function() {
 
         console.log(
           'timestamp: ' + timestamp,
-          'elapsed: ' + elapsed
+          'elapsed: ' + elapsed,
           'count: ' + count);
         
         ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
