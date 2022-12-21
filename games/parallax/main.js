@@ -130,12 +130,14 @@ function step(timestamp) {
     start = timestamp;
     }
   const elapsed = timestamp - start;
+  console.log(elapsed, timestamp);
 
   if (previousTimeStamp !== timestamp) {
     // Math.min() is used here to make sure the element stops at exactly 200px
     const count = Math.min(0.1 * elapsed, 200);
     element.style.transform = `translateX(${count}px)`;
     if (count === 200) done = true;
+    console.log('previousTimeStamp ' + previousTimeStamp);
   }
 
   if (elapsed < 2000) { // Stop the animation after 2 seconds
@@ -148,3 +150,4 @@ function step(timestamp) {
 }
 
 window.requestAnimationFrame(step);
+
