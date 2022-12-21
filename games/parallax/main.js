@@ -94,8 +94,26 @@ window.addEventListener('load', function() {
     const gameObject = [layer1, layer2, layer3, layer4, layer5];
     
     console.log(layer1, layer2, layer3, layer4, layer5);
+    
+    let start, previousTimeStamp;
+    let done = false;
 
-    function animate() {
+    function animate(timestamp) {
+    
+        if (start === undefined) { start = timestamp; }
+        const elapsed = timestamp - start;
+
+        const count = Math.min(0.1 * elapsed, 200);
+        if (previousTimeStamp !== timestamp) {
+            // Math.min() is used here to make sure the element stops at exactly 200px
+            count = Math.min(0.1 * elapsed, 200);
+            if (count === 200) { done = true; } 
+        }
+
+        console.log(
+          'timestamp: ' + timestamp,
+          'elapsed: ' + elapsed
+          'count: ' + count);
         
         ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         gameObject.forEach(object => {
@@ -114,12 +132,17 @@ window.addEventListener('load', function() {
             console.log(gameFrame);
             sit[4] += 1;
         }
-        */   
-        requestAnimationFrame(animate);
+        */
+        if (elapsed < 2000) { // Stop the animation after 2 seconds
+            previousTimeStamp = timestamp;
+            if (!done) {
+              requestAnimationFrame(animate);
+            }
+        } 
     }
     animate();
 });
-
+/*
 const element = document.getElementById('garbage');
 let start, previousTimeStamp;
 let done = false
@@ -140,12 +163,16 @@ function step(timestamp) {
     
     // Math.min() is used here to make sure the element stops at exactly 200px
     const count = Math.min(0.1 * elapsed, 200);
+
     c = count;
     
     element.style.transform = `translateX(${count}px)`;
     d = element.style.transform;
     
-    if (count === 200) done = true;
+    if (count === 200) {
+      done = true;
+      //clearInterval();
+    } 
   }
 
   let a = 0;
@@ -160,12 +187,12 @@ function step(timestamp) {
     }
 
   }
-  
+  //setInterval
   //setTimeout(() => {
   //  console.log("Delayed for 100 milliseconds.");
   //}, 100);
   
-  
+  /*
   
   const t1 = performance.now();
   console.log(
@@ -181,7 +208,10 @@ function step(timestamp) {
     't0: ' + t0,
     't1: ' + t1,
     'end');
+  */ 
+/*
 }
 
 window.requestAnimationFrame(step);
 
+*/
