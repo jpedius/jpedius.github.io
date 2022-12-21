@@ -154,7 +154,7 @@ function step(timestamp) {
   }
   
   const t1 = performance.now();
-  console.log(timestamp, start, previousTimeStamp, elapsed t0, t1);
+  console.log(timestamp, start, previousTimeStamp, elapsed, t0, t1);
 }
 
 window.requestAnimationFrame(step);
