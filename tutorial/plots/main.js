@@ -90,7 +90,10 @@
         option.value = option.defaultValue;
         words.appendChild(option);
     }
-    words.addEventListener('change', function() { setWords() }, false); 
+    words.addEventListener('change', function() {
+        setSrc = setWords();
+        console.log(setSrc);
+    }, false); 
     words.classList.add('q02');
 
     function setWords() {
@@ -117,8 +120,10 @@
             previousOrNext = 0;        
             text.value = howMany[previousOrNext]; 
         }, "text");
+        return src;
     }
-    setWords();
+    let setSrc = setWords();
+    console.log(setSrc);
     
     function setChange() {
         console.log('start', previousOrNext, howMany);
@@ -221,8 +226,9 @@
 
     let toRandom = document.createElement('input');
     toRandom.type = 'checkbox';
+    toRandom.disabled = true;
     toRandom.classList.add('q17');
-    toRandom.addEventListener('change', function() { setChange() }, false); 
+    //toRandom.addEventListener('change', function() { setChange() }, false); 
 
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
