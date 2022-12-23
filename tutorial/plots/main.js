@@ -96,6 +96,8 @@
     }, false); 
     words.classList.add('q02');
 
+    let setSrc2 = '';
+    comsole.log('init setSrc2', setSrc2);
     function setWords() {
         let src = "/tutorial/plots/files/" + words.value + ".txt";
         $.get(src, function(data) {
@@ -118,7 +120,11 @@
             }
             
             previousOrNext = 0;        
-            text.value = howMany[previousOrNext]; 
+            text.value = howMany[previousOrNext];
+            
+            setSrc = data;
+            console.log('setSrc2', setSrc);
+            
         }, "text");
         return src;
     }
