@@ -132,9 +132,9 @@
     console.log('init src', setSrc);
     
     function setChange() {
-        console.log('start', previousOrNext, howMany, setSrc2);
+        console.log('start', previousOrNext, howMany, setSrc);
         setWords();
-        console.log('end', previousOrNext, howMany, setSrc2);
+        console.log('end', previousOrNext, howMany, setSrc);
     }
 
     let previous = document.createElement('button');
