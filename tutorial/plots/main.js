@@ -123,7 +123,7 @@
             text.value = howMany[previousOrNext];
             
             setSrc = data;
-            console.log('setSrc2', setSrc);
+            console.log('setSrc2', setSrc2);
             
         }, "text");
         return src;
