@@ -96,8 +96,6 @@
     }, false); 
     words.classList.add('q02');
 
-    //let setSrc2 = '';
-    //console.log('init setSrc2', setSrc2);
     function setWords() {
         let src = "/tutorial/plots/files/" + words.value + ".txt";
         $.get(src, function(data) {
@@ -122,19 +120,14 @@
             previousOrNext = 0;        
             text.value = howMany[previousOrNext];
             
-            //setSrc = data;
-            //console.log('setSrc2', setSrc);
-            
         }, "text");
         return src;
     }
-    let setSrc = setWords();
-    console.log('init src', setSrc);
+    setWords();
     
     function setChange() {
-        console.log('start', previousOrNext, howMany, setSrc);
         setWords();
-        console.log('end', previousOrNext, howMany, setSrc);
+        console.log('set change', previousOrNext, howMany);
     }
 
     let previous = document.createElement('button');
