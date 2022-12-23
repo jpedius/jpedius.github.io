@@ -92,7 +92,7 @@
     }
     words.addEventListener('change', function() {
         setSrc = setWords();
-        console.log(setSrc);
+        console.log('src', setSrc);
     }, false); 
     words.classList.add('q02');
 
@@ -123,7 +123,7 @@
         return src;
     }
     let setSrc = setWords();
-    console.log(setSrc);
+    console.log('init src', setSrc);
     
     function setChange() {
         console.log('start', previousOrNext, howMany);
