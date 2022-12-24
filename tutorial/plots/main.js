@@ -129,7 +129,7 @@
                 }
                 a1[i] = b1;
                 
-                console.log('b set', b, b1, 'b end');
+                console.log('b set', b, b1, b1.length, a1[i], a1[i].length, 'b end');
             }
             
             console.log('a set', a, a1, 'a end');
