@@ -125,11 +125,7 @@
                 let b = a[i].match( /[^\.!\?,]+[\.!\?,]+/g ).map(x => x.trim());
                 let b1 = [];
                 for (let j=0; j<b.length; j++) {
-                
-                    let c = b[j].split(' ');
-                    b1[j] = c;
-                    
-                    console.log('c set', c, 'c end');
+                    b1[j] = b[j].split(' ');
                 }
                 a1[i] = b1;
                 
