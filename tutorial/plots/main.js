@@ -131,7 +131,7 @@
                 a += b;
             }
             
-            setSrc = a;
+            //setSrc = a;
             console.log('src set', setSrc, 'src end');
             
         }, "text");
