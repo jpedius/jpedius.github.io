@@ -72,7 +72,7 @@
 
     let previousOrNext = 0;
     let howMany = ['Hello', 'World'];
-    let setSrc = howMany;
+    let setSrc = [];
 
     let text = document.createElement('textarea');
     text.classList.add('q01');
@@ -119,15 +119,16 @@
             text.value = howMany[previousOrNext];
             
             setSrc = [];
+            let a1 = [];
             let a = data.match( /[^\.!\?]+[\.!\?]+/g ).map(x => x.trim());
             for (let i=0; i<a.length; i++) {
                 let b = a[i].match( /[^\.!\?,]+[\.!\?,]+/g ).map(x => x.trim());
                 for (let j=0; j<b.length; j++) {
-                    setSrc[i][j] = b[j].split(' ');
+                    a1[i][j] = b[j].split(' ');
                 }
             }
             
-            console.log('src set', setSrc, 'src end');
+            console.log('src set', setSrc, a1, 'src end');
             
         }, "text");
         return src;
