@@ -119,6 +119,9 @@
             text.value = howMany[previousOrNext];
             
             let a = data.match( /[^\.!\?]+[\.!\?]+/g ).map(x => x.trim());
+            
+            
+            /*
             let a2 = [];
             for (let i=0; i<a.length; i++) {
                 
@@ -132,9 +135,9 @@
                 }
                 a2[i] += b2;
             }
-            
-            //setSrc = a;
-            console.log('src set', a, a2, setSrc, 'src end');
+            */
+            setSrc = a;
+            console.log('src set', a, setSrc, 'src end');
             
         }, "text");
         return src;
