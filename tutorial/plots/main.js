@@ -119,16 +119,17 @@
             text.value = howMany[previousOrNext];
             
             setSrc = [];
-            let a1 = [];
             let a = data.match( /[^\.!\?]+[\.!\?]+/g ).map(x => x.trim());
             for (let i=0; i<a.length; i++) {
                 let b = a[i].match( /[^\.!\?,]+[\.!\?,]+/g ).map(x => x.trim());
+                let b1 = [];
                 for (let j=0; j<b.length; j++) {
-                    a1[i][j] = b[j].split(' ');
+                    b1[j] = b[j].split(' ');
                 }
+                setSrc[i] = b1;
             }
             
-            console.log('src set', setSrc, a1, 'src end');
+            console.log('src set', setSrc, 'src end');
             
         }, "text");
         return src;
