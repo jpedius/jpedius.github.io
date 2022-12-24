@@ -140,7 +140,7 @@
                 a1[i] += b;
             }
              
-            setSrc = a;
+            setSrc = a1;
             console.log('src set', a, a1, setSrc, 'src end');
             
         }, "text");
