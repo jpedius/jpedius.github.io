@@ -119,40 +119,12 @@
             text.value = howMany[previousOrNext];
             
             setSrc = data.match( /[^\.!\?]+[\.!\?]+/g ).map(x => x.trim());
+            console.log('set src', setSrc, 'end');
             
         }, "text");
         return src;
     }
     setWords();
-    
-    function setChange() {
-        setWords();
-        
-        /*
-            
-            if (toWord.checked) {
-                howMany = data.split(' ').map(x => x.trim());
-            }
-            else {
-                let p = period.checked      ? '\\.' : '';
-                let e = explanation.checked ? '!'   : '';
-                let q = question.checked    ? '\\?' : '';
-                let c = comma.checked       ? ','   : '';
-                let all = p + e + q + c;
-                let re = new RegExp("[^" + all + "]+[" + all + "]+", 'g')
-                howMany = data.match( re ).map(x => x.trim());
-            }
-            
-            if (toRandom.checked) {
-                howMany = shuffle(howMany);
-            }
-            
-            previousOrNext = 0;        
-            text.value = howMany[previousOrNext];
-        */      
-        //console.log('set change', previousOrNext, howMany);
-        console.log('set src', setSrc, 'end');
-    }
 
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
@@ -230,7 +202,7 @@
     let comma = document.createElement('input');
     comma.type = 'checkbox';
     comma.classList.add('q13');
-    comma.addEventListener('change', function() { setChange() }, false);
+    comma.addEventListener('change', function() { setWords() }, false);
     
     let forWord = document.createElement('label');
     forWord.htmlFor = 'toWord';
@@ -240,7 +212,7 @@
     let toWord = document.createElement('input');
     toWord.type = 'checkbox';
     toWord.classList.add('q15');
-    toWord.addEventListener('change', function() { setChange() }, false);
+    toWord.addEventListener('change', function() { setWords() }, false);
  
     let forRandom = document.createElement('label');
     forRandom.htmlFor = 'toRandom';
@@ -251,7 +223,7 @@
     toRandom.type = 'checkbox';
     toRandom.disabled = true;
     toRandom.classList.add('q17');
-    //toRandom.addEventListener('change', function() { setChange() }, false); 
+    //toRandom.addEventListener('change', function() { setWords() }, false);
 
     let forRate = document.createElement('label');
     forRate.htmlFor = 'rate';
