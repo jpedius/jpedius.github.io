@@ -150,8 +150,8 @@
             previousOrNext = 0;        
             text.value = howMany[previousOrNext];
         */      
-        console.log('set change', previousOrNext, howMany);
-        console.log('set src', setSrc);
+        //console.log('set change', previousOrNext, howMany);
+        console.log('set src', setSrc, 'end');
     }
 
     let previous = document.createElement('button');
