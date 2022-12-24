@@ -118,8 +118,7 @@
             previousOrNext = 0;        
             text.value = howMany[previousOrNext];
             
-            let re2 = new RegExp("[^\.!\?]+[\.!\?]+", 'g');
-            setSrc = data.match( re2 ).map(x => x.trim());
+            setSrc = data.match( /[^\.!\?]+[\.!\?]+/g ).map(x => x.trim());
             
         }, "text");
         return src;
