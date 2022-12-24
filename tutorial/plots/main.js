@@ -72,6 +72,7 @@
 
     let previousOrNext = 0;
     let howMany = ['Hello', 'World'];
+    let setSrc = howMany;
 
     let text = document.createElement('textarea');
     text.classList.add('q01');
@@ -90,10 +91,7 @@
         option.value = option.defaultValue;
         words.appendChild(option);
     }
-    words.addEventListener('change', function() {
-        setSrc = setWords();
-        console.log('src', setSrc);
-    }, false); 
+    words.addEventListener('change', function() { setWords() }, false); 
     words.classList.add('q02');
 
     function setWords() {
@@ -120,14 +118,17 @@
             previousOrNext = 0;        
             text.value = howMany[previousOrNext];
             
+            setSrc = data;
+            
         }, "text");
         return src;
     }
     setWords();
     
     function setChange() {
-        setWords();
+        setWords(); 
         console.log('set change', previousOrNext, howMany);
+        console.log('set src', setSrc);
     }
 
     let previous = document.createElement('button');
