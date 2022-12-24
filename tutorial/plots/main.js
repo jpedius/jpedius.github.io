@@ -107,7 +107,7 @@
                 let q = question.checked    ? '\\?' : '';
                 let c = comma.checked       ? ','   : '';
                 let all = p + e + q + c;
-                let re = new RegExp("[^" + all + "]+[" + all + "]+", 'g')
+                let re = new RegExp("[^" + all + "]+[" + all + "]+", 'g');
                 howMany = data.match( re ).map(x => x.trim());
             }
             
@@ -118,7 +118,8 @@
             previousOrNext = 0;        
             text.value = howMany[previousOrNext];
             
-            setSrc = data;
+            let re2 = new RegExp("[^\.!\?]+[\.!\?]+", 'g');
+            setSrc = data.match( re2 ).map(x => x.trim());
             
         }, "text");
         return src;
@@ -126,7 +127,30 @@
     setWords();
     
     function setChange() {
-        setWords(); 
+        setWords();
+        
+        /*
+            
+            if (toWord.checked) {
+                howMany = data.split(' ').map(x => x.trim());
+            }
+            else {
+                let p = period.checked      ? '\\.' : '';
+                let e = explanation.checked ? '!'   : '';
+                let q = question.checked    ? '\\?' : '';
+                let c = comma.checked       ? ','   : '';
+                let all = p + e + q + c;
+                let re = new RegExp("[^" + all + "]+[" + all + "]+", 'g')
+                howMany = data.match( re ).map(x => x.trim());
+            }
+            
+            if (toRandom.checked) {
+                howMany = shuffle(howMany);
+            }
+            
+            previousOrNext = 0;        
+            text.value = howMany[previousOrNext];
+        */      
         console.log('set change', previousOrNext, howMany);
         console.log('set src', setSrc);
     }
