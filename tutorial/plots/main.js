@@ -126,8 +126,8 @@
                 
                 for (let j=0; j<a.length; j++) {
                 
-                    let b = setSrc[i][j].split(' ');
-                    console.log('b set', b, 'b end');
+                    let b = a[j].split(' ');
+                    console.log('b set', a, b, 'b end');
                 }
             }
             console.log('src set', setSrc, 'src end');
