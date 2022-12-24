@@ -126,11 +126,12 @@
                 for (let j=0; j<b.length; j++) {
                 
                     let c = b[j].split(' ');
-                    b[j] += c;
+                    b += c;
                     console.log('c set', c, 'c end');
                 }
-                setSrc[i] += b;  
+                a += b;
             }
+            setSrc = a;
             console.log('src set', setSrc, 'src end');
             
         }, "text");
