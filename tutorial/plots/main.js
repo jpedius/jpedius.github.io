@@ -132,7 +132,7 @@
                 console.log('b set', b, b1, 'b end');
             }
             
-            console.log('a set', a, 'a end');
+            console.log('a set', a, a1, 'a end');
             
             setSrc = a;
             console.log('src set', setSrc, 'src end');
