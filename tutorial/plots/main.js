@@ -123,7 +123,7 @@
             for (let i=0; i<a.length; i++) {
                 
                 let b = a[i].match( /[^\.!\?,]+[\.!\?,]+/g ).map(x => x.trim());
-                
+                console.log('b set', a1[i], b, 'b end');
                 
                 
                 
