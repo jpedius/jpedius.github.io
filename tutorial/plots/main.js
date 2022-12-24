@@ -121,7 +121,7 @@
             setSrc = data.match( /[^\.!\?]+[\.!\?]+/g ).map(x => x.trim());
             for (let i=0; i<setSrc.length; i++) {
                 
-                let a = setSrc[i].match( /[^,]+[,]+/g ).map(x => x.trim());
+                let a = setSrc[i].match( /[^\.!\?,]+[\.!\?,]+/g ).map(x => x.trim());
                 console.log('a set', setSrc[i], a, 'a end');
                 
                 for (let j=0; j<a; j++) {
