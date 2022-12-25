@@ -141,10 +141,10 @@
         let w = toWord.checked;
         let c = comma.checked;
         
-        if (w === 'checked') {
+        if (w === true) {
             console.log('w');
         }
-        else if (c === 'checked') {
+        else if (c === true) {
             console.log('c');
         }
         else {
