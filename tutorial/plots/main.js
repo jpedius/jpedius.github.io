@@ -135,6 +135,25 @@
         return src;
     }
     setWords();
+    
+    function setChange() {
+    
+        let w = toWord.checked;
+        let c = comma.checked;
+        
+        if (w === 'checked') {
+            console.log('w');
+        }
+        else if (c === 'checked') {
+            console.log('c');
+        }
+        else {
+            console.log('-');
+        }
+        
+        console.log('setChange', w, c);
+    }
+    setChange();
 
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
@@ -212,7 +231,7 @@
     let comma = document.createElement('input');
     comma.type = 'checkbox';
     comma.classList.add('q13');
-    comma.addEventListener('change', function() { setWords() }, false);
+    comma.addEventListener('change', function() { setChange() }, false);
     
     let forWord = document.createElement('label');
     forWord.htmlFor = 'toWord';
@@ -222,7 +241,7 @@
     let toWord = document.createElement('input');
     toWord.type = 'checkbox';
     toWord.classList.add('q15');
-    toWord.addEventListener('change', function() { setWords() }, false);
+    toWord.addEventListener('change', function() { setChange() }, false);
  
     let forRandom = document.createElement('label');
     forRandom.htmlFor = 'toRandom';
