@@ -150,10 +150,10 @@
         else {
             console.log('-');
         }
-        
-        console.log('setChange', w, c);
+    
+        console.log('setChange'); 
     }
-    setChange();
+    //setChange();
 
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
