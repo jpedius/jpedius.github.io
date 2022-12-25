@@ -151,7 +151,7 @@
             console.log('-');
         }
     
-        console.log('setChange'); 
+        console.log('setChange', w, c); 
     }
     //setChange();
 
