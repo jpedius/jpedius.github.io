@@ -143,9 +143,11 @@
         
         if (w === true) {
             
-            howMany = setSrc.flat();
-            previousOrNext = 0;        
-            text.value = howMany[previousOrNext];
+            setWords();
+            
+            //howMany = setSrc.flat();
+            //previousOrNext = 0;        
+            //text.value = howMany[previousOrNext];
             
             console.log('w');
         }
