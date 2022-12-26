@@ -152,7 +152,8 @@
             console.log('w',
                 setSrc.flat(0),
                 setSrc.flat(1),
-                setSrc.flat(2));
+                setSrc.flat(2),
+                howMany);
         }
         else if (c === true) {
         
