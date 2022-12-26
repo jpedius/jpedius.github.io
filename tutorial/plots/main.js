@@ -138,10 +138,13 @@
     
     function setChange() {
     
+        setWords();
+        
         let w = toWord.checked;
         let c = comma.checked;
         
         if (w === true) {
+            
             console.log('w');
         }
         else if (c === true) {
@@ -151,6 +154,9 @@
             console.log('-');
         }
     
+        //previousOrNext = 0;        
+        //text.value = howMany[previousOrNext];
+        
         console.log('setChange', w, c); 
     }
     //setChange();
