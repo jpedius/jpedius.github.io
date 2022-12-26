@@ -149,7 +149,7 @@
             //previousOrNext = 0;        
             //text.value = howMany[previousOrNext];
             
-            console.log('w');
+            console.log('w', setSrc.flat());
         }
         else if (c === true) {
         
