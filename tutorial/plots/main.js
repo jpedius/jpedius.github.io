@@ -145,16 +145,14 @@
             
             setWords();
             
-            //howMany = setSrc.flat();
+            //howMany = setSrc.flat(2);
             //previousOrNext = 0;        
             //text.value = howMany[previousOrNext];
             
             console.log('w',
                 setSrc.flat(0),
                 setSrc.flat(1),
-                setSrc.flat(2),
-                setSrc.flat(3),
-                setSrc.flat(Infinity));
+                setSrc.flat(2));
         }
         else if (c === true) {
         
