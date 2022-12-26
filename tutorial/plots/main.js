@@ -137,20 +137,28 @@
     setWords();
     
     function setChange() {
-    
-        setWords();
         
         let w = toWord.checked;
         let c = comma.checked;
         
         if (w === true) {
             
+            howMany = setSrc.flat();
+            previousOrNext = 0;        
+            text.value = howMany[previousOrNext];
+            
             console.log('w');
         }
         else if (c === true) {
+        
+            setWords();
+            
             console.log('c');
         }
         else {
+        
+            setWords();
+            
             console.log('-');
         }
     
