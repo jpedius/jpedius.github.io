@@ -159,7 +159,11 @@
         
             setWords();
             
-            console.log('c');
+            let a = [];
+            for (let i=0; i<setSrc.length; i++) {
+                a[i] = setSrc[i].join(' ');
+            }
+            console.log('c', a);
         }
         else {
         
