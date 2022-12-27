@@ -72,7 +72,6 @@
 
     let previousOrNext = 0;
     let howMany = ['Hello', 'World'];
-    let setSrc = [[]];
 
     let text = document.createElement('textarea');
     text.classList.add('q01');
@@ -117,67 +116,11 @@
             
             previousOrNext = 0;        
             text.value = howMany[previousOrNext];
-            
-            setSrc = [[]];
-            let a = data.match( /[^\.!\?]+[\.!\?]+/g ).map(x => x.trim());
-            for (let i=0; i<a.length; i++) {
-                let b = a[i].match( /[^\.!\?,]+[\.!\?,]+/g ).map(x => x.trim());
-                let b1 = [];
-                for (let j=0; j<b.length; j++) {
-                    b1[j] = b[j].split(' ');
-                }
-                setSrc[i] = b1;
-            }
-            
-            console.log('src set', setSrc, 'src end');
-            
+
         }, "text");
         return src;
     }
     setWords();
-    
-    function setChange() {
-        
-        let w = toWord.checked;
-        let c = comma.checked;
-        
-        if (w === true) {
-            
-            setWords();
-            
-            //howMany = setSrc.flat(2);
-            //previousOrNext = 0;        
-            //text.value = howMany[previousOrNext];
-            
-            console.log('w',
-                setSrc.flat(0),
-                setSrc.flat(1),
-                setSrc.flat(2),
-                howMany);
-        }
-        else if (c === true) {
-        
-            setWords();
-            
-            let a = [];
-            for (let i=0; i<setSrc.length; i++) {
-                a[i] = setSrc[i].join(' ');
-            }
-            console.log('c', a);
-        }
-        else {
-        
-            setWords();
-            
-            console.log('-');
-        }
-    
-        //previousOrNext = 0;        
-        //text.value = howMany[previousOrNext];
-        
-        console.log('setChange', w, c); 
-    }
-    //setChange();
 
     let previous = document.createElement('button');
     previous.innerHTML = 'Previous';
@@ -255,7 +198,7 @@
     let comma = document.createElement('input');
     comma.type = 'checkbox';
     comma.classList.add('q13');
-    comma.addEventListener('change', function() { setChange() }, false);
+    comma.addEventListener('change', function() { setWords() }, false);
     
     let forWord = document.createElement('label');
     forWord.htmlFor = 'toWord';
@@ -265,7 +208,7 @@
     let toWord = document.createElement('input');
     toWord.type = 'checkbox';
     toWord.classList.add('q15');
-    toWord.addEventListener('change', function() { setChange() }, false);
+    toWord.addEventListener('change', function() { setWords() }, false);
  
     let forRandom = document.createElement('label');
     forRandom.htmlFor = 'toRandom';
