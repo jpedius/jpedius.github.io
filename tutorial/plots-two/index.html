@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plots Two</title>
+  <link href="normalize.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="root">
+    <h1 class="plotsTitleH1">Plots Two</h1>
+    <div class="plotsSentencesDiv">
+      <select class="plotsSentencesSelect" onchange="setSentences()">
+        <option value="harry-potter">Harry Potter</option>
+        <option value="eragon">Eragon</option>
+        <option value="eldest">Eldest</option>
+        <option value="brisingr">Brisingr</option>
+        <option value="inheritance">Inheritance</option>
+        <option value="lord-of-the-rings">Lord of the Rings</option>
+        <option value="the-hobbit">The Hobbit</option>
+        <option value="the-fellowship-of-the-ring">The Fellowship of the Ring</option>
+        <option value="the-two-towers">The Two Towers</option>
+        <option value="the-return-of-the-king">The Return of the King</option>
+        <option value="northern-lights">Northern Lights</option>
+        <option value="the-subtle-knife">The Subtle Knife</option>
+        <option value="the-amber-spyglass">The Amber Spyglass</option>
+        <option value="the-lion-the-witch-and-the-wardrobe">The Lion the Witch and the Wardrobe</option>
+        <option value="prince-caspian">Prince Caspian</option>
+        <option value="the-voyage-of-the-dawn-treader">The Voyage of the Dawn Treader</option>
+        <option value="the-silver-chair">The Silver Chair</option>
+        <option value="the-horse-and-his-boy">The Horse and His Boy</option>
+        <option value="the-magicians-nephew">The Magicians Nephew</option>
+        <option value="the-last-battle">The Last Battle</option>
+        <option value="klaus">Klaus</option>
+      </select>
+    </div>
+    <div class="plotsTextDiv">
+      <textarea class="plotsTextTextarea" id="text" onchange="setText()"></textarea>
+    </div>
+    <div class="plotsButtonsDiv">
+      <button class="plotsPreviousButton" onclick="setPrevious()">Previous</button>
+      <button class="plotsPlayButton" onclick="setPlay()">Play</button>
+      <button class="plotsNextButton" onclick="setNext()">Next</button>
+    </div>
+    <div class="plotsWordsDiv">
+      <select class="plotsWordsSelect" id="words" onchange="setWords()">
+        <option value="whole">The whole sentence</option>
+        <option value="comma">The comma separated sentence</option>
+        <option value="words">The individual words</option>
+      </select>
+    </div>
+    <!--
+    <div class="plotsCheckboxsDiv"> 
+      <span class="plotsPeriodSpan">
+        <label for="period" class="plotsPeriodLabel">Period</label>
+        <input type="checkbox" checked disabled class="plotsPeriodInput">
+      </span>
+      <span class="plotsQuestionSpan">
+        <label for="question" class="plotsQuestionLabel ">Question</label>
+        <input type="checkbox" checked disabled class="plotsQuestionInput"> 
+      </span>
+      <span class="plotsExplanationSpan">
+        <label for="explanation" class="plotsExplanationLabel">Explanation</label>
+        <input type="checkbox" checked disabled class="plotsExplanationInput">
+      </span>
+      <span class="plotsCommaSpan">
+        <label for="comma" class="plotsCommaLabel">Comma</label>
+        <input type="checkbox" class="plotsCommaInput" onchange="setComma()"> 
+      </span>
+      <span class="plotsWordSpan">
+        <label for="word" class="plotsWordLabel">Word</label>
+        <input type="checkbox" class="plotsWordInput" onchange="setWord()">  
+      </span>
+    </div>
+    -->
+    <div class="plotsRangesDiv">
+      <span class="plotsRateSpan">
+        <label for="rate" class="plotsRateLabel">Rate</label>
+        <input type="range" min="0.5" max="2" default="1" step="0.1" class="plotsRateInput" id="rate">
+      </span>
+      <span class="plotsPitchSpan">
+        <label for="pitch" class="plotsPitchLabel">Pitch</label>
+        <input type="range" min="0" max="2" default="1" step="0.1" class="plotsPitchInput" id="pitch">
+      </span>
+    </div>
+    <div class="plotsVoiceDiv">
+      <select class="plotsVoiceSelect" id="voice"></select>
+    </div>     
+  </div>
+  <script type="text/javascript" src="jquery-3.6.1.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
