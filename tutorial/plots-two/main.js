@@ -4,6 +4,7 @@
 
     let text = document.getElementById('text');
     let words = document.getElementById('words');
+    let sentences = document.getElementById('sentences');
     
     let howMany = [];
     let previousOrNext = 0;
@@ -35,7 +36,7 @@
         
     function setSentences() {
 
-        let src = '/tutorial/plots-two/files/' + words.value + '.txt';
+        let src = '/tutorial/plots-two/files/' + sentences.value + '.txt';
         console.log('src', src);
         
         $.get(src, function(data) {
