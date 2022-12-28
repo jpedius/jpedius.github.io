@@ -10,7 +10,7 @@
     
     let source = [];
 
-    function setWords() {
+    function setWordsTwo() {
         /*
         if ('whole' === words.value) {
             console.log('whole', words.value);
@@ -36,6 +36,8 @@
     function setSentences() {
 
         let src = '/tutorial/plots-two/files/' + words.value + '.txt';
+        console.log('src', src);
+        
         $.get(src, function(data) {
             
             source = src.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
