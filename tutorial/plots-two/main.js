@@ -17,7 +17,7 @@
             
             source = src.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
                 x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map((y) => (
-                    y.trim().split(' ');
+                    y.trim().split(' ')
                 ))
             ));
             
