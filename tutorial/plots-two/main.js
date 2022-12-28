@@ -24,10 +24,13 @@
             howMany = [];
             previousOrNext = 0;
         
-            text.value = howMany[previousOrNext];  
+            text.value = howMany[previousOrNext];
+            
+            console.log('source', source);
         
         }, 'text');
     }
+    setSentences();
 
     function setText() {
         
