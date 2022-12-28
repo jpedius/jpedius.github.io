@@ -86,7 +86,6 @@
     let pitch = document.getElementById('pitch');
     let rate = document.getElementById('rate');
     let voice = document.getElementById('voice');
-    console.log('voice', voice);
 
     const synth = window.speechSynthesis;
     let voices = [];
@@ -128,8 +127,6 @@
                 }
 
                 voice.appendChild(option);
-                
-                console.log('voice option', voice, option);
             }
         }
     }
