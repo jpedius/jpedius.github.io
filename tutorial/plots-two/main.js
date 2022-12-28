@@ -66,7 +66,7 @@
     }
 
     function setWords() {
-        
+        /*
         if ('whole' === words.value) {
             console.log('whole', words.value);
         }
@@ -80,6 +80,7 @@
         previousOrNext = 0;
         
         text.value = howMany[previousOrNext];
+        */
     }
  
     // "Microsoft Zira - English (United States)"
