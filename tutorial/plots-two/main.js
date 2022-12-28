@@ -64,7 +64,7 @@
         
         text.value = howMany[previousOrNext];
     }
-    
+
     function setWords() {
         
         if ('whole' === words.value) {
