@@ -76,6 +76,9 @@
         }
         else if ('comma' === words.value) {
             console.log('comma', words.value);
+            for (let i=0; i<source.length; i++) {
+                console.log('i', i, source[i]);
+            }
         }
         else if ('words' === words.value) {
             console.log('words', words.value);
