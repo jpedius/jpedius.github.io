@@ -3,12 +3,23 @@
 (function($) {
 
     let text = document.getElementById('text');
+    text.addEventListener('change', setText, false);
+    
     let sentences = document.getElementById('sentences');
+    sentences.addEventListener('change', setSentences, false);
+    
     let previous = document.getElementById('previous');
+    previous.addEventListener('click', setPrevious, false);
+    
     let play = document.getElementById('play');
+    play.addEventListener('click', setPlay, false);
+    
     let next = document.getElementById('next');
+    next.addEventListener('click', setNext, false);
+    
     let words = document.getElementById('words');
-
+    words.addEventListener('change', setWords, false);
+    
     let howMany = [];
     let previousOrNext = 0;
     
