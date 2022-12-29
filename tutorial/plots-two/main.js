@@ -11,28 +11,7 @@
     
     let source = [];
 
-    function setWordsTwo() {
-        /*
-        if ('whole' === words.value) {
-            console.log('whole', words.value);
-        }
-        else if ('comma' === words.value) {
-            console.log('comma', words.value);
-        }
-        else if ('words' === words.value) {
-            console.log('words', words.value);
-            howMany = source.flat(2);
-        }
-        previousOrNext = 0;
-        
-        text.value = howMany[previousOrNext];
-        */
-    }
-
-    function setText() {
-        
-        text.value = howMany[previousOrNext];
-    }
+    setSentences(); 
         
     function setSentences() {
 
@@ -40,7 +19,7 @@
         console.log('src', src);
         
         $.get(src, function(data) {
-            
+            /*
             source = src.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
                 x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map((y) => (
                     y.trim().split(' ')
@@ -53,10 +32,14 @@
             text.value = howMany[previousOrNext];
             
             console.log('source', source);
-        
+            */
         }, 'text');
     }
-    setSentences();
+
+    function setText() {
+        
+        text.value = howMany[previousOrNext];
+    }
 
     function setPrevious() {
         
@@ -85,6 +68,23 @@
         
         text.value = howMany[previousOrNext];
     }
+    
+    function setWords() {
+
+        if ('whole' === words.value) {
+            console.log('whole', words.value);
+        }
+        else if ('comma' === words.value) {
+            console.log('comma', words.value);
+        }
+        else if ('words' === words.value) {
+            console.log('words', words.value);
+            howMany = source.flat(2);
+        }
+        previousOrNext = 0;
+        
+        text.value = howMany[previousOrNext];
+    } 
  
     // "Microsoft Zira - English (United States)"
     // "Samantha"
