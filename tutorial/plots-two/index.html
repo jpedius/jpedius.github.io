@@ -11,7 +11,7 @@
   <div id="root">
     <h1 class="plotsTitleH1">Plots Two</h1>
     <div class="plotsSentencesDiv">
-      <select class="plotsSentencesSelect" id="sentences" onclick="setSentences">
+      <select class="plotsSentencesSelect" id="sentences" onchange="setSentences();">
         <option value="harry-potter">Harry Potter</option>
         <option value="eragon">Eragon</option>
         <option value="eldest">Eldest</option>
@@ -36,15 +36,15 @@
       </select>
     </div>
     <div class="plotsTextDiv">
-      <textarea class="plotsTextTextarea" id="text" onclick="setText()"></textarea>
+      <textarea class="plotsTextTextarea" id="text" onchange="setText();"></textarea>
     </div>
     <div class="plotsButtonsDiv">
-      <button class="plotsPreviousButton" onclick="setPrevious()">Previous</button>
-      <button class="plotsPlayButton" onclick="setPlay()">Play</button>
-      <button class="plotsNextButton" onclick="setNext()">Next</button>
+      <button class="plotsPreviousButton" onclick="setPrevious();">Previous</button>
+      <button class="plotsPlayButton" onclick="setPlay();">Play</button>
+      <button class="plotsNextButton" onclick="setNext();">Next</button>
     </div>
     <div class="plotsWordsDiv">
-      <select class="plotsWordsSelect" id="words" onclick="setWords()">
+      <select class="plotsWordsSelect" id="words" onchange="setWords();">
         <option value="whole">The whole sentence</option>
         <option value="comma">The comma separated sentence</option>
         <option value="words">The individual words</option>
