@@ -3,9 +3,12 @@
 (function($) {
 
     let text = document.getElementById('text');
-    let words = document.getElementById('words');
     let sentences = document.getElementById('sentences');
-    
+    let previous = document.getElementById('previous');
+    let play = document.getElementById('play');
+    let next = document.getElementById('next');
+    let words = document.getElementById('words');
+
     let howMany = [];
     let previousOrNext = 0;
     
