@@ -19,13 +19,13 @@
         console.log('src', src);
         
         $.get(src, function(data) {
-            /*
+
             source = src.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
                 x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map((y) => (
                     y.trim().split(' ')
                 ))
             ));
-            
+            /*
             howMany = [];
             previousOrNext = 0;
         
