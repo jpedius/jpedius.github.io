@@ -11,7 +11,7 @@
     
     let source = [];
 
-    setSentences(); 
+    //setSentences(); 
         
     function setSentences() {
 
