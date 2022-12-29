@@ -30,9 +30,9 @@
             previousOrNext = 0;
         
             text.value = howMany[previousOrNext];
-            
-            console.log('source', source);
             */
+            console.log('source', source);
+
         }, 'text');
     }
 
