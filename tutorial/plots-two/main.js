@@ -2,11 +2,11 @@
 
 (function($) {
 
-    let text = document.getElementById('text');
-    text.addEventListener('change', setText, false);
-    
     let sentences = document.getElementById('sentences');
     sentences.addEventListener('change', setSentences, false);
+    
+    let text = document.getElementById('text');
+    text.addEventListener('change', setText, false);
     
     let previous = document.getElementById('previous');
     previous.addEventListener('click', setPrevious, false);
@@ -32,13 +32,13 @@
     
     let file = '';
     let source = [];
-
-    //setSentences(); 
         
     function setSentences() {
 
         //src.sentences = '/tutorial/plots-two/files/' + sentences.value + '.txt';
-        src.sentences = sentences.dataset.tutorial + sentences.value + sentences.dataset.txt;
+        src.sentences = sentences.dataset.tutorial
+            + sentences.value
+            + sentences.dataset.txt;
         console.log('src', src);
         /*
         $.get(src, function(data) {
