@@ -36,30 +36,9 @@
     let source = [];
         
     function setSentences() {
-
-        //src.sentences = '/tutorial/plots-two/files/' + sentences.value + '.txt';
         src.sentences = sentences.dataset.tutorial
             + sentences.value
             + sentences.dataset.txt;
-        console.log('src', src);
-        /*
-        $.get(src, function(data) {
-
-            file = src.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
-                x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map((y) => (
-                    y.trim().split(' ')
-                ))
-            ));
-            
-            howMany = [];
-            previousOrNext = 0;
-        
-            text.value = howMany[previousOrNext];
-            
-            console.log('file', file);
-
-        }, 'text');
-        */
     }
 
     function setText() {
@@ -73,6 +52,8 @@
             previousOrNext = howMany.length;
         }
         previousOrNext--;
+        
+        console.log('setPrevious', previousOrNext, howMany, howMany.length);
         
         text.value = howMany[previousOrNext];
     }
@@ -97,26 +78,6 @@
     
     function setWords() {
         src.words = words.value;
-        
-        console.log('src words', src);
-        /*
-        if ('whole' === words.value) {
-            console.log('whole', words.value);
-        }
-        else if ('comma' === words.value) {
-            console.log('comma', words.value);
-            for (let i=0; i<source.length; i++) {
-                console.log('i', i, source[i]);
-            }
-        }
-        else if ('words' === words.value) {
-            console.log('words', words.value);
-            howMany = source.flat(2);
-        }
-        previousOrNext = 0;
-        
-        text.value = howMany[previousOrNext];
-        */
     } 
  
     // "Microsoft Zira - English (United States)"
