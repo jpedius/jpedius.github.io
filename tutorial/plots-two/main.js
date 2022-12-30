@@ -63,6 +63,7 @@
             speak(howMany[previousOrNext]);
             text.blur();
         }
+        setText();
     }
     
     function setNext() {
