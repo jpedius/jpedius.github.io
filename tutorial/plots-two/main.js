@@ -23,6 +23,8 @@
     let src = {
 
         sentences: sentences.dataset.tutorial + sentences.value + sentences.dataset.txt,
+        
+        words: words.value,
     };
     
     console.log('src', src);
@@ -94,7 +96,8 @@
     }
     
     function setWords() {
-
+        src.words = words.value;
+        /*
         if ('whole' === words.value) {
             console.log('whole', words.value);
         }
@@ -111,6 +114,7 @@
         previousOrNext = 0;
         
         text.value = howMany[previousOrNext];
+        */
     } 
  
     // "Microsoft Zira - English (United States)"
