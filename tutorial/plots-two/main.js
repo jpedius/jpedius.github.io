@@ -25,6 +25,8 @@
         sentences: '/tutorial/plots-two/files/' + sentences.value + '.txt',
     };
     
+    console.log('src', src);
+    
     let howMany = [];
     let previousOrNext = 0;
     
