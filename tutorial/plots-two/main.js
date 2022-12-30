@@ -53,7 +53,12 @@
         }
         previousOrNext--;
         
-        console.log('setPrevious', previousOrNext, previousOrNext.length, howMany, howMany.length);
+        console.log('setPrevious',
+            'a', previousOrNext,
+            'b', previousOrNext.length,
+            'c', howMany,
+            'd', howMany.length,
+            'e');
         
         text.value = howMany[previousOrNext];
     }
