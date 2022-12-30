@@ -22,7 +22,7 @@
     
     let src = {
 
-        sentences: '/tutorial/plots-two/files/' + sentences.value + '.txt',
+        sentences: sentences.dataset.tutorial + sentences.value + sentences.dataset.txt,
     };
     
     console.log('src', src);
@@ -37,8 +37,8 @@
         
     function setSentences() {
 
-        src.sentences = '/tutorial/plots-two/files/' + sentences.value + '.txt';
-        
+        //src.sentences = '/tutorial/plots-two/files/' + sentences.value + '.txt';
+        src.sentences = sentences.dataset.tutorial + sentences.value + sentences.dataset.txt;
         console.log('src', src);
         /*
         $.get(src, function(data) {
