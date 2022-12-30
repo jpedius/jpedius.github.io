@@ -23,6 +23,7 @@
     let howMany = [];
     let previousOrNext = 0;
     
+    let file = '';
     let source = [];
 
     //setSentences(); 
@@ -34,18 +35,18 @@
         
         $.get(src, function(data) {
 
-            source = src.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
+            file = src.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
                 x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map((y) => (
                     y.trim().split(' ')
                 ))
             ));
             
-            howMany = source;
+            howMany = [];
             previousOrNext = 0;
         
             text.value = howMany[previousOrNext];
             
-            console.log('source', source);
+            console.log('file', file);
 
         }, 'text');
     }
