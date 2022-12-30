@@ -22,49 +22,43 @@
     
     let src = {
 
-        sentences: sentences.dataset.tutorial + sentences.value + sentences.dataset.txt,
+        sentences: (sentences.dataset.tutorial
+            + sentences.value
+            + sentences.dataset.txt),
         
         words: words.value,
     };
     
-    console.log('src sentences', src);
+    console.log('src', src);
     
     let howMany = [];
     let previousOrNext = 0;
-    
-    let file = '';
-    let source = [];
         
     function setSentences() {
-        src.sentences = sentences.dataset.tutorial
+        src.sentences = (sentences.dataset.tutorial
             + sentences.value
-            + sentences.dataset.txt;
+            + sentences.dataset.txt);
+        setText(); 
+        //text.value = howMany[previousOrNext];
     }
 
     function setText() {
         
         text.value = howMany[previousOrNext];
+        
+        console.log('src text', src);
     }
 
     function setPrevious() {
-        
         if (previousOrNext <= 0) {
             previousOrNext = howMany.length;
         }
         previousOrNext--;
-        
-        console.log('setPrevious',
-            'a', previousOrNext,
-            'b', previousOrNext.length,
-            'c', howMany,
-            'd', howMany.length,
-            'e');
-        
-        text.value = howMany[previousOrNext];
+        setText(); 
+        //text.value = howMany[previousOrNext];
     }
     
     function setPlay() {
-        
         if (text.value !== '') {
             speak(howMany[previousOrNext]);
             text.blur();
@@ -72,17 +66,18 @@
     }
     
     function setNext() {
-        
         if (previousOrNext >= howMany.length - 1) {
             previousOrNext = -1;
         }
         previousOrNext++;
-        
-        text.value = howMany[previousOrNext];
+        setText(); 
+        //text.value = howMany[previousOrNext];
     }
     
     function setWords() {
         src.words = words.value;
+        setText(); 
+        //text.value = howMany[previousOrNext];
     } 
  
     // "Microsoft Zira - English (United States)"
