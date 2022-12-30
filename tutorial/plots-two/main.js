@@ -27,7 +27,7 @@
         words: words.value,
     };
     
-    console.log('src', src);
+    console.log('src sentences', src);
     
     let howMany = [];
     let previousOrNext = 0;
@@ -97,6 +97,8 @@
     
     function setWords() {
         src.words = words.value;
+        
+        console.log('src words', src);
         /*
         if ('whole' === words.value) {
             console.log('whole', words.value);
