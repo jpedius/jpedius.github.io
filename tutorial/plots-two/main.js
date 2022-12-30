@@ -40,7 +40,7 @@
                 ))
             ));
             
-            howMany = [];
+            howMany = source;
             previousOrNext = 0;
         
             text.value = howMany[previousOrNext];
