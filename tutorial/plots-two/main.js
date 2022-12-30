@@ -20,6 +20,11 @@
     let words = document.getElementById('words');
     words.addEventListener('change', setWords, false);
     
+    let src = {
+
+        sentences: '',
+    };
+    
     let howMany = [];
     let previousOrNext = 0;
     
@@ -30,9 +35,10 @@
         
     function setSentences() {
 
-        let src = '/tutorial/plots-two/files/' + sentences.value + '.txt';
-        console.log('src', src);
+        src.sentences = '/tutorial/plots-two/files/' + sentences.value + '.txt';
         
+        console.log('src', src);
+        /*
         $.get(src, function(data) {
 
             file = src.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
@@ -49,6 +55,7 @@
             console.log('file', file);
 
         }, 'text');
+        */
     }
 
     function setText() {
