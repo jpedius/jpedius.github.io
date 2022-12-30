@@ -22,7 +22,7 @@
     
     let src = {
 
-        sentences: '/tutorial/plots-two/files/' + sentences.value + '.txt';,
+        sentences: '/tutorial/plots-two/files/' + sentences.value + '.txt',
     };
     
     let howMany = [];
