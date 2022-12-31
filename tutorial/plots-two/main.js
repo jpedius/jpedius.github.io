@@ -60,10 +60,11 @@
                 });
             });
             
+            setWords();
             
-            previousOrNext = 0;
+            //previousOrNext = 0;
             
-            text.value = howMany[previousOrNext];
+            //text.value = howMany[previousOrNext];
             
             //console.log('src text', src, howMany);
 
