@@ -52,6 +52,18 @@
                 ))
             ));
             
+            if ('whole' === words.value) {
+                console.log('whole', words.value);
+            }
+            else if ('comma' === words.value) {
+                console.log('comma', words.value);
+            }
+            else if ('words' === words.value) {
+                console.log('words', words.value);
+                howMany = src.text.flat(2);
+            }
+            previousOrNext = 0;
+            
             console.log('src text', src);
         }, 'text');
         
