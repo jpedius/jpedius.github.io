@@ -40,7 +40,8 @@
         src.sentences = (sentences.dataset.tutorial
             + sentences.value
             + sentences.dataset.txt);
-        text.value = howMany[previousOrNext];
+        //text.value = howMany[previousOrNext];
+        setText();
     }
 
     function setText() {
@@ -71,9 +72,11 @@
             }
             else if ('comma' === words.value) {
                 console.log('comma', words.value);
-                howMany = src.text.map((x) => (
-                    x.map((y) => ( y.join(' ') ))
-                ))
+                howMany = src.text.map(function (x) {
+                    return x.map(function (y) {
+                        return y.join(' ');
+                    });
+                });
             }
             else if ('words' === words.value) {
                 console.log('words', words.value);
