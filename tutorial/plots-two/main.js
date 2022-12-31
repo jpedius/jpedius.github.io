@@ -25,6 +25,8 @@
         sentences: (sentences.dataset.tutorial
             + sentences.value
             + sentences.dataset.txt),
+            
+        text:'',
         
         words: words.value,
     };
@@ -43,10 +45,18 @@
     }
 
     function setText() {
+        $.get(src.sentences, function(data) {
+            
+            src.text = src.sentences.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
+                x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map((y) => (
+                    y.trim().split(' ')
+                ))
+            ));
+            
+            console.log('src text', src);
+        }, 'text');
         
-        text.value = howMany[previousOrNext];
-        
-        console.log('src text', src);
+        //text.value = howMany[previousOrNext];
     }
 
     function setPrevious() {
@@ -63,7 +73,7 @@
             speak(howMany[previousOrNext]);
             text.blur();
         }
-        setText();
+        //setText();
     }
     
     function setNext() {
