@@ -47,12 +47,18 @@
     function setText() {
     
         $.get(src.sentences, function(data) {
-            
+            /*
             src.text = data.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
                 x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map((y) => (
                     y.trim().split(' ')
                 ))
             ));
+            */
+            src.text = data.trim().match( /[^\.!\?]+[\.!\?]+/g ).map(function (x) {
+                return x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map(function (y) {
+                    return y.trim().split(' ');
+                });
+            });
             
             if ('whole' === words.value) {
                 //console.log('whole', words.value);
