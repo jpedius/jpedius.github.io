@@ -60,24 +60,7 @@
                 });
             });
             
-            if ('whole' === words.value) {
-                //console.log('whole', words.value);
-                howMany = src.text.map(function (x) {
-                    return x.map(function (y) {
-                        return y.join(' ');
-                    }).join(' ');
-                });
-            }
-            else if ('comma' === words.value) {
-                //console.log('comma', words.value);
-                howMany = src.text.flat(1).map(function (x) {
-                    return x.join(' ');
-                });
-            }
-            else if ('words' === words.value) {
-                //console.log('words', words.value);
-                howMany = src.text.flat(2);
-            }
+            
             previousOrNext = 0;
             
             text.value = howMany[previousOrNext];
@@ -89,14 +72,17 @@
     setText();
 
     function setPrevious() {
+    
         if (previousOrNext <= 0) {
             previousOrNext = howMany.length;
         }
         previousOrNext--;
+ 
         text.value = howMany[previousOrNext];
     }
     
     function setPlay() {
+    
         if (text.value !== '') {
             speak(howMany[previousOrNext]);
             text.blur();
@@ -104,17 +90,37 @@
     }
     
     function setNext() {
+ 
         if (previousOrNext >= howMany.length - 1) {
             previousOrNext = -1;
         }
         previousOrNext++;
+ 
         text.value = howMany[previousOrNext];
     }
     
     function setWords() {
+        
         src.words = words.value;
-        //text.value = howMany[previousOrNext];
-        setText();
+        
+        if ('whole' === words.value) {
+            howMany = src.text.map(function (x) {
+                return x.map(function (y) {
+                    return y.join(' ');
+                }).join(' ');
+            });
+        }
+        else if ('comma' === words.value) {
+            howMany = src.text.flat(1).map(function (x) {
+                return x.join(' ');
+            });
+        }
+        else if ('words' === words.value) {
+            howMany = src.text.flat(2);
+        }
+        previousOrNext = 0;
+        
+        text.value = howMany[previousOrNext];
     } 
  
     // "Microsoft Zira - English (United States)"
