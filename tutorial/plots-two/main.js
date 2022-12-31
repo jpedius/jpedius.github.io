@@ -31,8 +31,6 @@
         words: words.value,
     };
     
-    //console.log('src', src);
-    
     let howMany = [];
     let previousOrNext = 0;
         
@@ -47,13 +45,7 @@
     function setText() {
     
         $.get(src.sentences, function(data) {
-            /*
-            src.text = data.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
-                x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map((y) => (
-                    y.trim().split(' ')
-                ))
-            ));
-            */
+
             src.text = data.trim().match( /[^\.!\?]+[\.!\?]+/g ).map(function (x) {
                 return x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map(function (y) {
                     return y.trim().split(' ');
@@ -61,12 +53,6 @@
             });
             
             setWords();
-            
-            //previousOrNext = 0;
-            
-            //text.value = howMany[previousOrNext];
-            
-            //console.log('src text', src, howMany);
 
         }, 'text');
     }
