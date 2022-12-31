@@ -54,6 +54,11 @@
             
             if ('whole' === words.value) {
                 console.log('whole', words.value);
+                let a = '';
+                for (let i=0; i<src.text; i++) {
+                    a += src.text[i] + ' ';
+                }
+                howMany = a;
             }
             else if ('comma' === words.value) {
                 console.log('comma', words.value);
