@@ -58,22 +58,8 @@
                 howMany = src.text.map(function (x) {
                     return x.map(function (y) {
                         return y.join(' ');
-                    }).join('');
+                    }).join(' ');
                 });
-                //console.log('src.text.join', src.text.map((x) => {
-                //    x.map((y) => {
-                //        console.log('as', y.join(' '))
-                //    })
-                //}));
-                //howMany = '';
-                //for (let i=0; i<src.text; i++) {
-                    //console.log('[i]', src.text[i]);
-                    //for (let j=0; j<i.length; j++) {
-                    //    console.log('[i][j]', src.text[i][j]);
-                    //    howMany += src.text[i][j] + ' ';
-                    //} 
-                //}
-                //console.log('howMany', howMany);
             }
             else if ('comma' === words.value) {
                 console.log('comma', words.value);
@@ -89,10 +75,11 @@
             }
             previousOrNext = 0;
             
+            text.value = howMany[previousOrNext];
+            
             console.log('src text', src, howMany);
+
         }, 'text');
-        
-        //text.value = howMany[previousOrNext];
     }
     setText();
 
