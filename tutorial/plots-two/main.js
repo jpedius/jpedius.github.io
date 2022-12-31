@@ -54,11 +54,11 @@
             
             if ('whole' === words.value) {
                 console.log('whole', words.value);
-                console.log('src.text.join', src.text.map((x) => {
-                    x.map((y) => {
-                        console.log('as', y.join(' '))
-                    })
-                }));
+                //console.log('src.text.join', src.text.map((x) => {
+                //    x.map((y) => {
+                //        console.log('as', y.join(' '))
+                //    })
+                //}));
                 //howMany = '';
                 //for (let i=0; i<src.text; i++) {
                     //console.log('[i]', src.text[i]);
