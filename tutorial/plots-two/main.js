@@ -54,15 +54,19 @@
             
             if ('whole' === words.value) {
                 console.log('whole', words.value);
-                
+                console.log('src.text.join', src.text.map((x) => {
+                    x.map((y) => {
+                        y.join(' ')
+                    })
+                }));
                 //howMany = '';
-                for (let i=0; i<src.text; i++) {
-                    console.log('[i]', src.text[i]);
+                //for (let i=0; i<src.text; i++) {
+                    //console.log('[i]', src.text[i]);
                     //for (let j=0; j<i.length; j++) {
                     //    console.log('[i][j]', src.text[i][j]);
                     //    howMany += src.text[i][j] + ' ';
                     //} 
-                }
+                //}
                 //console.log('howMany', howMany);
             }
             else if ('comma' === words.value) {
