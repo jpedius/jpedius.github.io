@@ -31,7 +31,7 @@
         words: words.value,
     };
     
-    console.log('src', src);
+    //console.log('src', src);
     
     let howMany = [];
     let previousOrNext = 0;
@@ -45,6 +45,7 @@
     }
 
     function setText() {
+    
         $.get(src.sentences, function(data) {
             
             src.text = data.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
@@ -54,7 +55,7 @@
             ));
             
             if ('whole' === words.value) {
-                console.log('whole', words.value);
+                //console.log('whole', words.value);
                 howMany = src.text.map(function (x) {
                     return x.map(function (y) {
                         return y.join(' ');
@@ -62,20 +63,20 @@
                 });
             }
             else if ('comma' === words.value) {
-                console.log('comma', words.value);
+                //console.log('comma', words.value);
                 howMany = src.text.flat(1).map(function (x) {
                     return x.join(' ');
                 });
             }
             else if ('words' === words.value) {
-                console.log('words', words.value);
+                //console.log('words', words.value);
                 howMany = src.text.flat(2);
             }
             previousOrNext = 0;
             
             text.value = howMany[previousOrNext];
             
-            console.log('src text', src, howMany);
+            //console.log('src text', src, howMany);
 
         }, 'text');
     }
