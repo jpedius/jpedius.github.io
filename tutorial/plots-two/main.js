@@ -60,6 +60,7 @@
                         a += src.text[i][j] + ' ';
                     } 
                 }
+                console.log('a', a);
                 howMany = a;
             }
             else if ('comma' === words.value) {
