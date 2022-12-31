@@ -46,8 +46,11 @@
     
         $.get(src.sentences, function(data) {
 
-            src.text = data.trim().match( /[^\.!\?]+[\.!\?]+/g ).map(function (x) {
-                return x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map(function (y) {
+            let reWhole = /[^\.!\?]+[\.!\?]+/g;
+            let reComma = /[^\.!\?,]+[\.!\?,]+/g;
+
+            src.text = data.trim().match(reWhole).map(function (x) {
+                return x.trim().match(reComma).map(function (y) {
                     return y.trim().split(' ');
                 });
             });
