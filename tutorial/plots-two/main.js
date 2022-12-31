@@ -64,9 +64,9 @@
             else if ('comma' === words.value) {
                 console.log('comma', words.value);
                 howMany = src.text.map(function (x) {
-                    return x.map(function (y) {
+                    return x.flat(1).map(function (y) {
                         return y.join(' ');
-                    }).flat(1);
+                    });
                 });
             }
             else if ('words' === words.value) {
