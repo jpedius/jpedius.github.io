@@ -56,7 +56,7 @@
                 console.log('whole', words.value);
                 console.log('src.text.join', src.text.map((x) => {
                     x.map((y) => {
-                        y.join(' ')
+                        console.log('as', y.join(' '))
                     })
                 }));
                 //howMany = '';
