@@ -40,8 +40,7 @@
         src.sentences = (sentences.dataset.tutorial
             + sentences.value
             + sentences.dataset.txt);
-        setText(); 
-        //text.value = howMany[previousOrNext];
+        text.value = howMany[previousOrNext];
     }
 
     function setText() {
@@ -58,14 +57,14 @@
         
         //text.value = howMany[previousOrNext];
     }
+    setText();
 
     function setPrevious() {
         if (previousOrNext <= 0) {
             previousOrNext = howMany.length;
         }
         previousOrNext--;
-        setText(); 
-        //text.value = howMany[previousOrNext];
+        text.value = howMany[previousOrNext];
     }
     
     function setPlay() {
@@ -73,7 +72,6 @@
             speak(howMany[previousOrNext]);
             text.blur();
         }
-        //setText();
     }
     
     function setNext() {
@@ -81,14 +79,12 @@
             previousOrNext = -1;
         }
         previousOrNext++;
-        setText(); 
-        //text.value = howMany[previousOrNext];
+        text.value = howMany[previousOrNext];
     }
     
     function setWords() {
         src.words = words.value;
-        setText(); 
-        //text.value = howMany[previousOrNext];
+        text.value = howMany[previousOrNext];
     } 
  
     // "Microsoft Zira - English (United States)"
