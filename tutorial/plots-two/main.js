@@ -71,6 +71,9 @@
             }
             else if ('comma' === words.value) {
                 console.log('comma', words.value);
+                howMany = src.text.map((x) => {
+                    x.map((y) => { y.join(' ') })
+                })
             }
             else if ('words' === words.value) {
                 console.log('words', words.value);
@@ -78,7 +81,7 @@
             }
             previousOrNext = 0;
             
-            console.log('src text', src);
+            console.log('src text', src, howMany);
         }, 'text');
         
         //text.value = howMany[previousOrNext];
