@@ -56,7 +56,9 @@
                 console.log('whole', words.value);
                 let a = '';
                 for (let i=0; i<src.text; i++) {
-                    a += src.text[i] + ' ';
+                    for (let j=0; j<i.length; j++) {
+                        a += src.text[i][j] + ' ';
+                    } 
                 }
                 howMany = a;
             }
