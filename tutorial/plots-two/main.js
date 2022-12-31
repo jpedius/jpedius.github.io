@@ -47,7 +47,7 @@
     function setText() {
         $.get(src.sentences, function(data) {
             
-            src.text = q.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
+            src.text = let q.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
                 x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map((y) => (
                     y.trim().split(' ')
                 ))
