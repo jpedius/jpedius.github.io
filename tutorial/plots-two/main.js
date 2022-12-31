@@ -29,6 +29,8 @@
         text:'',
         
         words: words.value,
+        
+        arr: '',
     };
     
     console.log('src', src);
@@ -47,7 +49,7 @@
     function setText() {
         $.get(src.sentences, function(data) {
             
-            src.text = src.sentences.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
+            src.text = src.arr.match( /[^\.!\?]+[\.!\?]+/g ).map((x) => (
                 x.trim().match( /[^\.!\?,]+[\.!\?,]+/g ).map((y) => (
                     y.trim().split(' ')
                 ))
