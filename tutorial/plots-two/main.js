@@ -66,7 +66,7 @@
                 howMany = src.text.map(function (x) {
                     return x.map(function (y) {
                         return y.join(' ');
-                    });
+                    }).flat(1);
                 });
             }
             else if ('words' === words.value) {
