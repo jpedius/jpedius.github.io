@@ -113,7 +113,8 @@
     
     function setWords() {
         src.words = words.value;
-        text.value = howMany[previousOrNext];
+        //text.value = howMany[previousOrNext];
+        setText();
     } 
  
     // "Microsoft Zira - English (United States)"
