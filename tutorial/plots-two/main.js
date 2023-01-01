@@ -35,10 +35,12 @@
     let previousOrNext = 0;
         
     function setSentences() {
+    
         src.sentences = (sentences.dataset.tutorial
             + sentences.value
             + sentences.dataset.txt);
-        //text.value = howMany[previousOrNext];
+        
+         //text.value = howMany[previousOrNext];
         setText();
     }
 
@@ -60,6 +62,15 @@
         }, 'text');
     }
     setText();
+    
+    const myRequest = new Request('/tutorial/plots-two/files/klaus.txt');
+
+    fetch(myRequest)
+        .then((response) => response.text())
+        .then((data) => {
+            console.log('data', data);
+        })
+        .catch(console.error);
 
     function setPrevious() {
     
