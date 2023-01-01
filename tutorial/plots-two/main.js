@@ -63,25 +63,34 @@
     }
     setText();
     
-    const myRequest = new Request('files/klaus.txt');
+    let link.onclick = function((e) => {
+        e.preventDefault();
+        const linkData = e.target.getAttribute("data-page");
+        getData(linkData);
+      });
+    
+    function getData() {
+        
+        const myRequest = new Request('files/klaus.txt');
 
-    console.log('myRequest', myRequest);
+        console.log('myRequest', myRequest);
 
-    fetch(myRequest)
-        .then((response) => {
-            console.log('response', response);
-            if (!response.ok) {
-                throw new Error(`HTTP error, status = ${response.status}`);
-            }
-            return response.text();
-        })
-        .then((data) => {
-            console.log('data', data);
-        })
-        .catch((error) => {
-            console.error(`Error: ${error.message}`);
-        });
-
+        fetch(myRequest)
+            .then((response) => {
+                console.log('response', response);
+                if (!response.ok) {
+                    throw new Error(`HTTP error, status = ${response.status}`);
+                }
+                return response.text();
+            })
+            .then((data) => {
+                console.log('data', data);
+            })
+            .catch((error) => {
+                console.error(`Error: ${error.message}`);
+            });
+    }
+    
     function setPrevious() {
     
         if (previousOrNext <= 0) {
