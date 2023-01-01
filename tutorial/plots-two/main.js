@@ -64,7 +64,7 @@
     setText();
     
     let link = document.getElementById('words2');
-    link.addEventListener('click', qqq, false);
+    link.addEventListener('click', getData, false);
     
     function qqq(e) {
         e.preventDefault();
