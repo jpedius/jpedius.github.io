@@ -64,11 +64,13 @@
     setText();
     
     let link = document.getElementById('words2');
-    link.addEventListener('click', function((e) => {
+    link.addEventListener('click', qqq, false);
+    
+    function qqq(e) {
         e.preventDefault();
         const linkData = e.target.getAttribute("data-page");
         getData(linkData);
-    }), false);
+    };
     
     function getData() {
         
