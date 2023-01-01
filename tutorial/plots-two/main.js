@@ -68,11 +68,16 @@
     console.log('myRequest', myRequest);
 
     fetch(myRequest)
-        .then((response) => response.json())
+        .then((response) => {
+            console.log('response', response);
+            response.json();
+        })
         .then((data) => {
             console.log('data', data);
         })
-        .catch(console.error);
+        .catch(
+            console.error
+        );
 
     function setPrevious() {
     
