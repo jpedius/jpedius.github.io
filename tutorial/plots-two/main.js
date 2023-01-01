@@ -63,7 +63,7 @@
     }
     setText();
     
-    const myRequest = new Request('/tutorial/plots-two/files/klaus.txt');
+    const myRequest = new Request('files/klaus.txt');
 
     console.log('myRequest', myRequest);
 
