@@ -65,6 +65,8 @@
     
     const myRequest = new Request('/tutorial/plots-two/files/klaus.txt');
 
+    console.log('myRequest', myRequest);
+
     fetch(myRequest)
         .then((response) => response.json())
         .then((data) => {
