@@ -70,7 +70,7 @@
     fetch(myRequest)
         .then((response) => {
             console.log('response', response);
-            response.json();
+            response.text();
         })
         .then((data) => {
             console.log('data', data);
