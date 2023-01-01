@@ -64,11 +64,11 @@
     setText();
     
     let link = document.getElementById('words2');
-    link.onclick = function((e) => {
+    link.addEventListener('change', function((e) => {
         e.preventDefault();
         const linkData = e.target.getAttribute("data-page");
         getData(linkData);
-      });
+    }), false);
     
     function getData() {
         
