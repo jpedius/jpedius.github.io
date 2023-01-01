@@ -64,7 +64,7 @@
     setText();
     
     let link = document.getElementById('words2');
-    link.addEventListener('change', function((e) => {
+    link.addEventListener('click', function((e) => {
         e.preventDefault();
         const linkData = e.target.getAttribute("data-page");
         getData(linkData);
