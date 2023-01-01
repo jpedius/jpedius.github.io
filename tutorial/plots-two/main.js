@@ -70,14 +70,17 @@
     fetch(myRequest)
         .then((response) => {
             console.log('response', response);
-            response.text();
+            if (!response.ok) {
+                throw new Error(`HTTP error, status = ${response.status}`);
+            }
+            return response.text();
         })
         .then((data) => {
             console.log('data', data);
         })
-        .catch(
-            console.error
-        );
+        .catch((error) => {
+            console.error(`Error: ${error.message}`);
+        });
 
     function setPrevious() {
     
