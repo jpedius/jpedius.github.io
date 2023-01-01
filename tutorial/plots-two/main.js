@@ -63,7 +63,8 @@
     }
     setText();
     
-    let link.onclick = function((e) => {
+    let link = document.getElementById('words2');
+    link.onclick = function((e) => {
         e.preventDefault();
         const linkData = e.target.getAttribute("data-page");
         getData(linkData);
