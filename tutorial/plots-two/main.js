@@ -62,15 +62,9 @@
         }, 'text');
     }
     setText();
-    
+    /*
     let link = document.getElementById('words2');
     link.addEventListener('click', getData, false);
-    
-    function qqq(e) {
-        e.preventDefault();
-        const linkData = e.target.getAttribute("data-page");
-        getData(linkData);
-    };
     
     function getData() {
         
@@ -93,7 +87,7 @@
                 console.error(`Error: ${error.message}`);
             });
     }
-    
+    */
     function setPrevious() {
     
         if (previousOrNext <= 0) {
