@@ -70,7 +70,7 @@
             + sentences.value
             + sentences.dataset.txt);
             
-        let my = Request(src.sentences2);
+        let my = new Request(src.sentences2);
         fetch(my)
             .then((response) => {
                 console.log('response', response);
