@@ -22,7 +22,7 @@
     
     let src = {
 
-        sentences: (sentences.dataset.tutorial
+        sentences: (sentences.dataset.files
             + sentences.value
             + sentences.dataset.txt),
             
@@ -36,7 +36,7 @@
     
     function setText() {
 
-        src.sentences = (sentences.dataset.tutorial
+        src.sentences = (sentences.dataset.files
             + sentences.value
             + sentences.dataset.txt);
 
