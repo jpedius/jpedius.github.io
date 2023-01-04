@@ -71,7 +71,7 @@
             + sentences.dataset.txt);
             
         let my = Request(src.sentences2);
-        let a = fetch(my)
+        fetch(my)
             .then((response) => {
                 console.log('response', response);
                 if (!response.ok) {
@@ -85,7 +85,6 @@
             .catch((error) => {
                 console.error(`Error: ${error.message}`);
             });
-        console.log('a', a); 
     }
     setText2();
     /*
