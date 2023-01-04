@@ -42,6 +42,7 @@
         
          //text.value = howMany[previousOrNext];
         setText();
+        setText2();
     }
 
     function setText() {
@@ -62,6 +63,31 @@
         }, 'text');
     }
     setText();
+    
+    function setText2() {
+
+        src.sentences2 = (sentences.dataset.tutorial2
+            + sentences.value
+            + sentences.dataset.txt);
+            
+        let my = Request(src.sentences2);
+        let a = fetch(my)
+            .then((response) => {
+                console.log('response', response);
+                if (!response.ok) {
+                    throw new Error(`HTTP error, status = ${response.status}`);
+                }
+                return response.text();
+            })
+            .then((data) => {
+                console.log('data', data);
+            })
+            .catch((error) => {
+                console.error(`Error: ${error.message}`);
+            });
+        console.log('a', a); 
+    }
+    setText2();
     /*
     let link = document.getElementById('words2');
     link.addEventListener('click', getData, false);
