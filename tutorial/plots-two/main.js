@@ -39,9 +39,8 @@
         src.sentences = (sentences.dataset.tutorial
             + sentences.value
             + sentences.dataset.txt);
-            
-        let my = new Request(src.sentences);
-        fetch(my)
+
+        fetch(new Request(src.sentences))
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(`HTTP error, status = ${response.status}`);
