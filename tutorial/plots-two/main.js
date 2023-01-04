@@ -71,9 +71,9 @@
             + sentences.dataset.txt);
             
         let my = new Request(src.sentences2);
-        fetch(my)
+        let a = fetch(my)
             .then((response) => {
-                console.log('response', response);
+                //console.log('response', response);
                 if (!response.ok) {
                     throw new Error(`HTTP error, status = ${response.status}`);
                 }
@@ -85,6 +85,7 @@
             .catch((error) => {
                 console.error(`Error: ${error.message}`);
             });
+        console.log('a', a); 
     }
     setText2();
     /*
