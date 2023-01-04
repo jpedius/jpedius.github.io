@@ -8,6 +8,4 @@
 
 [Plots](plots/)
 
-[Plots Two](plots-two/)
-
 [Medicine](medicine/)
