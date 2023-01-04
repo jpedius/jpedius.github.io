@@ -71,7 +71,7 @@
             + sentences.dataset.txt);
             
         let my = new Request(src.sentences2);
-        let a = fetch(my)
+        fetch(my)
             .then((response) => {
                 //console.log('response', response);
                 if (!response.ok) {
@@ -81,11 +81,21 @@
             })
             .then((data) => {
                 console.log('data', data);
+                
+                let reWhole = /[^\.!\?]+[\.!\?]+/g;
+                let reComma = /[^\.!\?,]+[\.!\?,]+/g;
+
+                src.text2 = data.trim().match(reWhole).map(function (x) {
+                    return x.trim().match(reComma).map(function (y) {
+                        return y.trim().split(' ');
+                    });
+                });
+                
+                console.log('src', src);
             })
             .catch((error) => {
                 console.error(`Error: ${error.message}`);
             });
-        console.log('a', a); 
     }
     setText2();
     /*
