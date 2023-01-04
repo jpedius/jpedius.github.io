@@ -42,10 +42,10 @@
         
          //text.value = howMany[previousOrNext];
         setText();
-        setText2();
+        //setText2();
     }
 
-    function setText() {
+    function setText3() {
     
         $.get(src.sentences, function(data) {
 
@@ -62,15 +62,15 @@
 
         }, 'text');
     }
-    setText();
+    //setText();
     
-    function setText2() {
+    function setText() {
 
-        src.sentences2 = (sentences.dataset.tutorial2
+        src.sentences = (sentences.dataset.tutorial2
             + sentences.value
             + sentences.dataset.txt);
             
-        let my = new Request(src.sentences2);
+        let my = new Request(src.sentences);
         fetch(my)
             .then((response) => {
                 //console.log('response', response);
@@ -85,11 +85,13 @@
                 let reWhole = /[^\.!\?]+[\.!\?]+/g;
                 let reComma = /[^\.!\?,]+[\.!\?,]+/g;
 
-                src.text2 = data.trim().match(reWhole).map(function (x) {
+                src.text = data.trim().match(reWhole).map(function (x) {
                     return x.trim().match(reComma).map(function (y) {
                         return y.trim().split(' ');
                     });
                 });
+                
+                setWords();
                 
                 console.log('src', src);
             })
@@ -97,7 +99,7 @@
                 console.error(`Error: ${error.message}`);
             });
     }
-    setText2();
+    setText();
     /*
     let link = document.getElementById('words2');
     link.addEventListener('click', getData, false);
