@@ -8,6 +8,8 @@
 
 [Parallax](parallax/)
 
+[Connect Four](connect-four/)
+
 ### Backup
 
 [Tic Tac Toe](tic-tac-toe/)
