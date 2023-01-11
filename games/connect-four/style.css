@@ -17,10 +17,16 @@
 	/*padding: 20px;*/
 	/*font-size: 30px;*/
 	
-	content: '🎮 ';
-	
 	text-align: center;
 	
 	width: 100px;
 	height: 100px;
 }		
+
+.whale::after {
+	content: '🐳';
+}
+
+.octopus::after {
+	content: '🐙';
+}
