@@ -22,7 +22,11 @@
 	
 	width: 100px;
 	height: 100px;
-}		
+}
+
+.disabled {
+    cursor: not-allowed;
+}
 
 .whale::after {
 	content: '🐳';
