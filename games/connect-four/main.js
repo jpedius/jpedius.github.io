@@ -32,6 +32,7 @@ document.addEventListener('click', event => {
         console.log('target', target);
         console.log('class list', target.classList);
         console.log('a', document);
+        console.log('row/column', target.dataset.row, target.dataset.column);
         
         target.classList.add('disabled');
         target.classList.add(game.turn ? 'whale' : 'octopus');
