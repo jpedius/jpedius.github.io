@@ -1,5 +1,7 @@
 'use strict';
 
+// Version 6.20
+
 const game = {
 
     turn: true,
