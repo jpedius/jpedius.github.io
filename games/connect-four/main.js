@@ -10,12 +10,13 @@ const game = {
 }
  
 let a = [
-    0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0,
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
 ];
 
 console.log('a', a);
@@ -30,6 +31,7 @@ document.addEventListener('click', event => {
     
         console.log('target', target);
         console.log('class list', target.classList);
+        console.log('a', document);
         
         target.classList.add('disabled');
         target.classList.add(game.turn ? 'whale' : 'octopus');
