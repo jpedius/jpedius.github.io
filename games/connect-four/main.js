@@ -5,6 +5,8 @@
 const game = {
 
     turn: true,
+    whale: [],
+    octopus: [],
 }
  
 let a = [
@@ -34,4 +36,17 @@ document.addEventListener('click', event => {
 
         game.turn = !game.turn;
     } 
+});
+
+document.querySelector('.restart').addEventListener('click', () => {
+
+    document.querySelector('.grid-over').classList.remove('visible');
+
+    document.querySelectorAll('.grid-item').forEach(item => {
+        item.classList.remove('disabled', 'whale', 'octopus');
+    });
+
+    game.turn = true;
+    game.whale = [];
+    game.octopus = [];
 });
