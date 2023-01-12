@@ -4,7 +4,7 @@
 
 let root = document.querySelector('#root');
 
-console.log(root);
+console.log(root.children[0]);
 
 const game = {
     turn: true,
