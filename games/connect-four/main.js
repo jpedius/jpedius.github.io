@@ -11,6 +11,13 @@ document.addEventListener('click', event => {
 
     const target = event.target;
     
+    const container = target.classList.contains('grid-container');
+    const item = target.classList.contains('grid-item');
+    
+    if (item && !container) {
+        console.log('item', item);
+    } 
+    
     const isCell = target.classList.contains('grid-container');
     const isCell2 = target.classList.contains('grid-item'); // item
     
