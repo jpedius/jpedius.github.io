@@ -31,7 +31,8 @@ document.addEventListener('click', event => {
             let b = [];
             for (let a=0; a<items.length; a++) {
                 if (items[a].dataset.row == i) {
-                    b += items[a].dataset.row;
+                    let c = Number(items[a].dataset.row);
+                    b += c;
                 }
             }
             console.log('b', b);
