@@ -6,6 +6,13 @@ let root = document.querySelector('#root');
 
 console.log(root.children[0]);
 
+let c = root.children[0];
+
+let it = c.children;
+for (ii=0; ii<it.length; ii++) {
+    console.log(it[ii]);
+}
+
 const game = {
     turn: true,
     connect: [0, 0, 0, 0, 0, 0, 0],
