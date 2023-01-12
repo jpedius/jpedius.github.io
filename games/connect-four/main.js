@@ -22,23 +22,15 @@ document.addEventListener('click', event => {
         
         let i = Number(target.dataset.row);
         
-        if (game.connect[i] < 5) {
-            console.log('game:', game.connect[i]);
-        }
-        else {
-            console.log('well:', i, game.connect[i]);
-        }
-        
-        game.connect[i] = game.connect[i] + 1;
-        
-        
-        
-        // console.log('row/column', target.dataset.row, target.dataset.column, game.connect[i]);
-        
-        target.classList.add('disabled');
-        target.classList.add(game.turn ? 'whale' : 'octopus');
+        if (game.connect[i] < 6) {
 
-        game.turn = !game.turn;
+            game.connect[i] = game.connect[i] + 1;
+            
+            target.classList.add('disabled');
+            target.classList.add(game.turn ? 'whale' : 'octopus');
+
+            game.turn = !game.turn;
+        }
     } 
 });
 
