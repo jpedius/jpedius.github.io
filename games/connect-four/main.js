@@ -21,7 +21,7 @@ document.addEventListener('click', event => {
         
         if (game.connect[i] < 6) {
 
-            
+            console.log('q');
             
             game.connect[i] += 1;
             game.turn = !game.turn;
