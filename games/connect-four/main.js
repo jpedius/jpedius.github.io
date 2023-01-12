@@ -18,12 +18,8 @@ document.addEventListener('click', event => {
     
         let i = Number(target.dataset.row);
         let j = Number(target.dataset.column);
-        
-        //game.connect[]
-        console.log('i/j', i, j);
-        console.log('r/c', target.dataset.row, target.dataset.column);
-    
-        //console.log('item', item);
+
+        console.log('i/j', i, j, game.connect[i]);
     } 
     
     const isCell = target.classList.contains('grid-container');
