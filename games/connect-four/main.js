@@ -2,6 +2,10 @@
 
 // Version 6.20
 
+let root = document.querySelector('#root');
+
+console.log(root);
+
 const game = {
     turn: true,
     connect: [0, 0, 0, 0, 0, 0, 0],
