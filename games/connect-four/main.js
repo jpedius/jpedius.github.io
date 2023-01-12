@@ -10,10 +10,12 @@ function game_item() {
     
     let items = container.children;
     
+    console.log(items);
+    
     let row_column = [];
     
     for (let i=0; i<items; i++) {
-        console.log(item[i]);
+        console.log(items[i]);
     }
     
     return row_column;
