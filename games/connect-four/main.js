@@ -2,29 +2,11 @@
 
 // Version 6.20
 
-function game_item() {
+let root = document.querySelector('#root');
+let items = root.children[0].children;
 
-    let root = document.querySelector('#root');
+console.log(items);
     
-    let container = root.children[0];
-    
-    let items = container.children;
-    
-    console.log(items);
-    
-    let row_column = [];
-    
-    for (let i=0; i<items.length; i++) {
-        row_column[i] = items[i];
-        console.log(items[i]);
-    }
-
-    return row_column;
-}
-
-let w = game_item();
-console.log(w);
-
 const game = {
     turn: true,
     connect: [0, 0, 0, 0, 0, 0, 0],
