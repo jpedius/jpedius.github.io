@@ -2,15 +2,24 @@
 
 // Version 6.20
 
-let root = document.querySelector('#root');
+function game_item() {
 
-console.log(root.children[0]);
+    let root = document.querySelector('#root');
+    
+    let container = root.children[0];
+    
+    let items = container.children;
+    
+    let row_column = [];
+    
+    for (let i=0; i<items; i++) {
+        console.log(item[i]);
+    }
+    
+    return row_column;
+}
 
-let c = root.children[0];
-
-let it = c.children;
-
-console.log(it);
+game_item();
 
 const game = {
     turn: true,
