@@ -21,6 +21,7 @@ document.addEventListener('click', event => {
     //  && !isDisabled
     console.log('target', target);
     console.log('cell', isCell, isCell2);
+    console.log('r/c', target.dataset.row, target.dataset.column);
 
     if (isCell) {
         
