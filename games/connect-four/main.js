@@ -13,6 +13,8 @@ document.addEventListener('click', event => {
     
     const isCell = target.classList.contains('grid-item');
     const isDisabled = target.classList.contains('disabled');
+    
+    console.log('isCell', isCell);
 
     if (isCell && !isDisabled) {
         
