@@ -14,7 +14,7 @@ function game_item() {
     
     let row_column = [];
     
-    for (let i=0; i<items; i++) {
+    for (let i=0; i<items.length; i++) {
         console.log(items[i]);
     }
     
