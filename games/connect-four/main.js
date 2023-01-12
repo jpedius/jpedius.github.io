@@ -57,6 +57,9 @@ document.querySelector('.restart').addEventListener('click', () => {
     });
 
     game.turn = true;
+    for (let i=0; i<b.length; i++) {
+        b[i] = 0;
+    }
     game.whale = [];
     game.octopus = [];
 });
