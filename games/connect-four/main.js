@@ -19,6 +19,8 @@ document.addEventListener('click', event => {
     //console.log('isCell', isCell);
     
     //  && !isDisabled
+    console.log('target', target);
+    console.log('cell', isCell, isCell2);
 
     if (isCell) {
         
@@ -28,9 +30,6 @@ document.addEventListener('click', event => {
 
             target.classList.add('disabled');
             target.classList.add(game.turn ? 'whale' : 'octopus');
-            
-            console.log('target', target);
-            console.log('cell', isCell, isCell2);
 
             game.connect[i] = game.connect[i] + 1;
 
