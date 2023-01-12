@@ -11,7 +11,8 @@ document.addEventListener('click', event => {
 
     const target = event.target;
     
-    const isCell = target.classList.contains('grid-item');
+    const isCell = target.classList.contains('grid-container'); // item
+    
     const isDisabled = target.classList.contains('disabled');
     
     //console.log('isCell', isCell);
@@ -33,7 +34,8 @@ document.addEventListener('click', event => {
 
             game.turn = !game.turn;
         }
-    } 
+    }
+    else if (
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
