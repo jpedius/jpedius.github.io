@@ -9,9 +9,8 @@ console.log(root.children[0]);
 let c = root.children[0];
 
 let it = c.children;
-for (ii=0; ii<it.length; ii++) {
-    console.log(it[ii]);
-}
+
+console.log(it);
 
 const game = {
     turn: true,
