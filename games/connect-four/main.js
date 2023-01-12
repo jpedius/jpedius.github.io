@@ -24,10 +24,12 @@ document.addEventListener('click', event => {
         
         if (game.connect[i] < 6) {
 
-            game.connect[i] = game.connect[i] + 1;
-            
             target.classList.add('disabled');
             target.classList.add(game.turn ? 'whale' : 'octopus');
+            
+            console.log('target', target);
+
+            game.connect[i] = game.connect[i] + 1;
 
             game.turn = !game.turn;
         }
