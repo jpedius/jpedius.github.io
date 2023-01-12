@@ -15,7 +15,10 @@ document.addEventListener('click', event => {
     const item = target.classList.contains('grid-item');
     
     if (item && !container) {
-        console.log('item', item);
+    
+        console.log('r/c', target.dataset.row, target.dataset.column);
+    
+        //console.log('item', item);
     } 
     
     const isCell = target.classList.contains('grid-container');
@@ -26,9 +29,9 @@ document.addEventListener('click', event => {
     //console.log('isCell', isCell);
     
     //  && !isDisabled
-    console.log('target', target);
-    console.log('cell', isCell, isCell2);
-    console.log('r/c', target.dataset.row, target.dataset.column);
+    //console.log('target', target);
+    //console.log('cell', isCell, isCell2);
+    
 
     if (isCell) {
         
