@@ -11,7 +11,8 @@ document.addEventListener('click', event => {
 
     const target = event.target;
     
-    const isCell = target.classList.contains('grid-container'); // item
+    const isCell = target.classList.contains('grid-container');
+    const isCell2 = target.classList.contains('grid-item'); // item
     
     const isDisabled = target.classList.contains('disabled');
     
@@ -29,6 +30,7 @@ document.addEventListener('click', event => {
             target.classList.add(game.turn ? 'whale' : 'octopus');
             
             console.log('target', target);
+            console.log('cell', isCell, isCell2);
 
             game.connect[i] = game.connect[i] + 1;
 
