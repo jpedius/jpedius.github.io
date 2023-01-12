@@ -15,11 +15,20 @@ document.addEventListener('click', event => {
     const isDisabled = target.classList.contains('disabled');
     
     console.log('isCell', isCell);
+    
+    //  && !isDisabled
 
-    if (isCell && !isDisabled) {
+    if (isCell) {
         
         let i = Number(target.dataset.row);
+        
+        if (i < 5) {
+            console.log('i', i);
+        }
+        
         game.connect[i] = game.connect[i] + 1;
+        
+        
         
         console.log('row/column', target.dataset.row, target.dataset.column, game.connect[i]);
         
