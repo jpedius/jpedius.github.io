@@ -14,7 +14,7 @@ document.addEventListener('click', event => {
     const isCell = target.classList.contains('grid-item');
     const isDisabled = target.classList.contains('disabled');
     
-    console.log('isCell', isCell);
+    //console.log('isCell', isCell);
     
     //  && !isDisabled
 
@@ -22,15 +22,18 @@ document.addEventListener('click', event => {
         
         let i = Number(target.dataset.row);
         
-        if (i < 5) {
-            console.log('i', i);
+        if (game.connect[i] < 5) {
+            console.log('game:', game.connect[i]);
+        }
+        else {
+            console.log('well:', i, game.connect[i]);
         }
         
         game.connect[i] = game.connect[i] + 1;
         
         
         
-        console.log('row/column', target.dataset.row, target.dataset.column, game.connect[i]);
+        // console.log('row/column', target.dataset.row, target.dataset.column, game.connect[i]);
         
         target.classList.add('disabled');
         target.classList.add(game.turn ? 'whale' : 'octopus');
