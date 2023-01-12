@@ -20,15 +20,18 @@ document.addEventListener('click', event => {
         let j = Number(target.dataset.column);
         
         if (game.connect[i] < 6) {
-        
+
+            
+            
             game.connect[i] += 1;
+            game.turn = !game.turn;
         }
 
         console.log('i/j', i, j, game.connect[i]);
     } 
     
-    const isCell = target.classList.contains('grid-container');
-    const isCell2 = target.classList.contains('grid-item'); // item
+    //const isCell = target.classList.contains('grid-container');
+    //const isCell2 = target.classList.contains('grid-item'); // item
     
     const isDisabled = target.classList.contains('disabled');
     
@@ -38,7 +41,7 @@ document.addEventListener('click', event => {
     //console.log('target', target);
     //console.log('cell', isCell, isCell2);
     
-
+    /*
     if (isCell) {
         
         let i = Number(target.dataset.row);
@@ -53,6 +56,7 @@ document.addEventListener('click', event => {
             game.turn = !game.turn;
         }
     }
+    */
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
