@@ -16,6 +16,11 @@ document.addEventListener('click', event => {
     
     if (item && !container) {
     
+        let i = Number(target.dataset.row);
+        let j = Number(target.dataset.column);
+        
+        //game.connect[]
+        console.log('i/j', i, j);
         console.log('r/c', target.dataset.row, target.dataset.column);
     
         //console.log('item', item);
