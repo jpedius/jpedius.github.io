@@ -19,6 +19,8 @@ let a = [
     [0, 0, 0, 0, 0, 0],
 ];
 
+let b = [0, 0, 0, 0, 0, 0, 0];
+
 console.log('a', a);
 
 document.addEventListener('click', event => {
@@ -31,8 +33,13 @@ document.addEventListener('click', event => {
     
         console.log('target', target);
         console.log('class list', target.classList);
-        console.log('a', document);
+        console.log('b', b);
         console.log('row/column', target.dataset.row, target.dataset.column);
+        
+        let c = Number(target.dataset.row);
+        b[c] = b[c] + 1;
+        
+        console.log('b[c]', b[c]);
         
         target.classList.add('disabled');
         target.classList.add(game.turn ? 'whale' : 'octopus');
