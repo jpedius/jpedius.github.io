@@ -30,9 +30,12 @@ document.addEventListener('click', event => {
             
             let b = [];
             for (let a=0; a<items.length; a++) {
-                if (items[a].dataset.row == i) {
-                    let c = Number(items[a].dataset.row);
-                    b[a] = c;
+                
+                let c = Number(items[a].dataset.row);
+                let d = Number(items[a].dataset.column);
+                
+                if (c === i) {
+                    b[a] = [c, d];
                 }
             }
             console.log('b', b);
