@@ -35,7 +35,6 @@ document.addEventListener('click', event => {
             game.turn = !game.turn;
         }
     }
-    else if (
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
