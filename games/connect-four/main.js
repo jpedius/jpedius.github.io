@@ -28,6 +28,11 @@ document.addEventListener('click', event => {
 
             console.log('q', i);
             
+            let cell = items[0];
+            
+            cell.classList.add('disabled');
+            cell.classList.add(game.turn ? 'whale' : 'octopus');
+            
             game.connect[i] += 1;
             game.turn = !game.turn;
         }
