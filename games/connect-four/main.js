@@ -15,13 +15,15 @@ function game_item() {
     let row_column = [];
     
     for (let i=0; i<items.length; i++) {
+        row_column[i] = items[i];
         console.log(items[i]);
     }
-    
+
     return row_column;
 }
 
-game_item();
+let w = game_item();
+console.log(w);
 
 const game = {
     turn: true,
