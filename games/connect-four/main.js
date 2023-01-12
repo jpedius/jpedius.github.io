@@ -28,6 +28,14 @@ document.addEventListener('click', event => {
 
             console.log('q', i);
             
+            let b = [];
+            for (let a=0; a<items.length; a++) {
+                if (items[a].dataset.row == i) {
+                    b += items[a].dataset.row;
+                }
+            }
+            console.log('b', b);
+            
             let cell = items[i];
             
             cell.classList.add('disabled');
