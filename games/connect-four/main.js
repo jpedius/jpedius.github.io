@@ -18,6 +18,11 @@ document.addEventListener('click', event => {
     
         let i = Number(target.dataset.row);
         let j = Number(target.dataset.column);
+        
+        if (game.connect[i] < 6) {
+        
+            game.connect[i] += 1;
+        }
 
         console.log('i/j', i, j, game.connect[i]);
     } 
