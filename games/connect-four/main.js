@@ -9,11 +9,8 @@ const game = {
     turn: true,
     winner: null,
     connect: [0, 0, 0, 0, 0, 0, 0],
-}
-
-function winning_game(cell) {
-
-    let a = [
+    
+    a: [
         [false, false, false, true],
         [false, false, false, true],
         [false, false, false, true],
@@ -61,12 +58,14 @@ function winning_game(cell) {
         [true,  true,  false, false],
         [true,  true,  false, false],
         [true,  true,  false, false],
-    ];
+    ],
+}
+
+function winning_game(cell) {
+
+    //game.a[]
     
-    let row = Number(cell.dataset.row);
-    let column = Number(cell.dataset.column);
-    
-    console.log(cell, row, column);
+    console.log(cell);
 
     return null;
 }
