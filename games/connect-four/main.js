@@ -3,7 +3,7 @@
 let root = document.querySelector('#root');
 let items = root.children[0].children;
 let len = root.children[0].dataset.length;
-console(len);
+console.log(len);
 
 const game = {
  
