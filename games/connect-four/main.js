@@ -65,7 +65,7 @@ function winning_game(cell, len) {
 
     //game.a[]
     
-    console.log(cell, len);
+    console.log(cell, len, game.a[len]);
 
     return null;
 }
