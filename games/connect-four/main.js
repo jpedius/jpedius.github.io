@@ -61,11 +61,11 @@ const game = {
     ],
 }
 
-function winning_game(cell) {
+function winning_game(cell, len) {
 
     //game.a[]
     
-    console.log(cell);
+    console.log(cell, len);
 
     return null;
 }
@@ -84,7 +84,8 @@ document.addEventListener('click', event => {
         if (game.connect[targetRow] < num) {
 
             let cellItem = null;
-
+            let cellLen = -1;
+            
             for (let i=0; i<items.length; i++) {
 
                 let cellRow = Number(items[i].dataset.row);
@@ -93,6 +94,7 @@ document.addEventListener('click', event => {
                 if (cellRow === targetRow) {
                     if (cellColumn === game.connect[targetRow]) {
                         cellItem = items[i];
+                        cellLen = i;
                     } 
                 }
             }
@@ -104,7 +106,7 @@ document.addEventListener('click', event => {
 
                 game.connect[targetRow] += 1;
                 
-                game.winner = winning_game(cellItem);
+                game.winner = winning_game(cellItem, cellLen);
 
                 if (game.winner === null) {
                     game.turn = !game.turn;
