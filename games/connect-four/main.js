@@ -38,7 +38,7 @@ document.addEventListener('click', event => {
                 }
             }
 
-            if (b === null) {
+            if (b !== null) {
                 
                 //let cell = b;
                 
@@ -91,6 +91,7 @@ document.querySelector('.restart').addEventListener('click', () => {
     });
 
     game.turn = true;
+    
     for (let i=0; i<game.connect.length; i++) {
         game.connect[i] = 0;
     }
