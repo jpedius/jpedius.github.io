@@ -38,7 +38,7 @@ document.addEventListener('click', event => {
             }
             console.log('b', b);
             
-            let cell = items[i];
+            let cell = b;
             
             cell.classList.add('disabled');
             cell.classList.add(game.turn ? 'whale' : 'octopus');
