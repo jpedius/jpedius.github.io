@@ -5,7 +5,7 @@
 let root = document.querySelector('#root');
 let items = root.children[0].children;
 
-console.log(items);
+//console.log(items);
     
 const game = {
     turn: true,
@@ -22,38 +22,41 @@ document.addEventListener('click', event => {
     if (item && !container) {
     
         let i = Number(target.dataset.row);
-        let j = Number(target.dataset.column);
+        //let j = Number(target.dataset.column);
         
         if (game.connect[i] < 6) {
             
-            let b = 0;
+            let b = null;
+            
             for (let a=0; a<items.length; a++) {
                 
                 let c = Number(items[a].dataset.row);
                 let d = Number(items[a].dataset.column);
                 
                 if (c === i && d === game.connect[i]) {
-                    b = items[a]; // [c, d];
+                    b = items[a];
                 }
             }
-            console.log('b', b);
-            
-            let cell = b;
-            
-            cell.classList.add('disabled');
-            cell.classList.add(game.turn ? 'whale' : 'octopus');
-            
-            game.connect[i] += 1;
-            game.turn = !game.turn;
-        }
 
-        //console.log('i/j', i, j, game.connect[i]);
+            if (b === null) {
+                
+                //let cell = b;
+                
+                b.classList.add('disabled');
+                b.classList.add(game.turn ? 'whale' : 'octopus');
+                
+                game.connect[i] += 1;
+                game.turn = !game.turn;
+            }
+            
+            console.log('b', b);
+        }
     } 
     
     //const isCell = target.classList.contains('grid-container');
     //const isCell2 = target.classList.contains('grid-item'); // item
     
-    const isDisabled = target.classList.contains('disabled');
+    //const isDisabled = target.classList.contains('disabled');
     
     //console.log('isCell', isCell);
     
