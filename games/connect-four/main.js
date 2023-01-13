@@ -28,14 +28,14 @@ document.addEventListener('click', event => {
 
             console.log('q', i);
             
-            let b = [];
+            let b = 0;
             for (let a=0; a<items.length; a++) {
                 
                 let c = Number(items[a].dataset.row);
                 let d = Number(items[a].dataset.column);
                 
                 if (c === i && d === game.connect[i]) {
-                    b[a] = [c, d];
+                    b = [0, c, d];
                 }
             }
             console.log('b', b);
