@@ -65,7 +65,7 @@ function winning_game(cell, len) {
 
     //game.a[]
     
-    console.log(cell, len, game.a[len]);
+    console.log(cell, len, game.turn, game.a[len]);
 
     return null;
 }
@@ -106,7 +106,7 @@ document.addEventListener('click', event => {
 
                 game.connect[targetRow] += 1;
                 
-                game.winner = winning_game(cellItem, cellLen);
+                game.winner = winning_game(cellItem, cellLen, game.turn);
 
                 if (game.winner === null) {
                     game.turn = !game.turn;
