@@ -7,10 +7,15 @@ let num = Number(root.children[0].dataset.length);
 const game = {
  
     turn: true,
+    winner: null,
     connect: [0, 0, 0, 0, 0, 0, 0],
-    winner: false,
 }
- 
+
+function winning_game() {
+
+    return null;
+}
+
 document.addEventListener('click', event => {
 
     const target = event.target;
@@ -18,7 +23,7 @@ document.addEventListener('click', event => {
     const container = target.classList.contains('grid-container');
     const item = target.classList.contains('grid-item');
 
-    if (item && !container && !game.winner) {
+    if (item && !container && game.winner === null) {
 
         let targetRow = Number(target.dataset.row);
 
@@ -43,11 +48,10 @@ document.addEventListener('click', event => {
                 cellItem.classList.add('disabled');
                 cellItem.classList.add(game.turn ? 'whale' : 'octopus');
 
-                game.connect[targetRow] += 1;
                 game.turn = !game.turn;
+                game.winner = winning_game();
+                game.connect[targetRow] += 1;
             }
-            
-            
         }
     }
 });
@@ -61,7 +65,7 @@ document.querySelector('.restart').addEventListener('click', () => {
     });
 
     game.turn = true;
-
+    game.winner = null;
     for (let i=0; i<game.connect.length; i++) {
         game.connect[i] = 0;
     }
