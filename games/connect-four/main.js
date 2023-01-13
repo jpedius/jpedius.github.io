@@ -35,7 +35,7 @@ document.addEventListener('click', event => {
                 let d = Number(items[a].dataset.column);
                 
                 if (c === i && d === game.connect[i]) {
-                    b = [0, c, d];
+                    b = items[a]; // [c, d];
                 }
             }
             console.log('b', b);
