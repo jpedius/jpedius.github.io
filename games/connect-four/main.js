@@ -2,8 +2,7 @@
 
 let root = document.querySelector('#root');
 let items = root.children[0].children;
-let len = root.children[0].dataset.length;
-console.log(len);
+let num = Number(root.children[0].dataset.length);
 
 const game = {
  
@@ -22,7 +21,7 @@ document.addEventListener('click', event => {
 
         let targetRow = Number(target.dataset.row);
 
-        if (game.connect[targetRow] < 6) {
+        if (game.connect[targetRow] < num) {
 
             let cellItem = null;
 
