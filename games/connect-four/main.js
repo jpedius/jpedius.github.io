@@ -63,7 +63,10 @@ function winning_game(cell) {
         [true,  true,  false, false],
     ];
     
-    console.log(cell, a);
+    let row = Number(cell.dataset.row);
+    let column = Number(cell.dataset.column);
+    
+    console.log(cell, row, column);
 
     return null;
 }
