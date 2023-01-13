@@ -11,7 +11,59 @@ const game = {
     connect: [0, 0, 0, 0, 0, 0, 0],
 }
 
-function winning_game() {
+function winning_game(cell) {
+
+    let a = [
+        [false, false, false, true],
+        [false, false, false, true],
+        [false, false, false, true],
+        [false, false, false, true],
+        [false, false, false, false],
+        [false, false, false, false],
+        [false, false, false, false],
+        
+        [false, false, false, true],
+        [false, false, false, true],
+        [false, false, false, true],
+        [false, false, false, true],
+        [false, false, false, false],
+        [false, false, false, false],
+        [false, false, false, false],
+
+        [false, false, false, true],
+        [false, false, false, true],
+        [false, false, false, true],
+        [false, false, false, true],
+        [false, false, false, false],
+        [false, false, false, false],
+        [false, false, false, false],
+
+        [false, true,  true,  true],
+        [false, true,  true,  true],
+        [false, true,  true,  true],
+        [true,  true,  true,  true],
+        [true,  true,  false, false],
+        [true,  true,  false, false],
+        [true,  true,  false, false],
+
+        [false, true,  true,  true],
+        [false, true,  true,  true],
+        [false, true,  true,  true],
+        [true,  true,  true,  true],
+        [true,  true,  false, false],
+        [true,  true,  false, false],
+        [true,  true,  false, false],
+
+        [false, true,  true,  true],
+        [false, true,  true,  true],
+        [false, true,  true,  true],
+        [true,  true,  true,  true],
+        [true,  true,  false, false],
+        [true,  true,  false, false],
+        [true,  true,  false, false],
+    ];
+    
+    console.log(cell, a);
 
     return null;
 }
@@ -48,9 +100,13 @@ document.addEventListener('click', event => {
                 cellItem.classList.add('disabled');
                 cellItem.classList.add(game.turn ? 'whale' : 'octopus');
 
-                game.turn = !game.turn;
-                game.winner = winning_game();
                 game.connect[targetRow] += 1;
+                
+                game.winner = winning_game(cellItem);
+
+                if (game.winner === null) {
+                    game.turn = !game.turn;
+                } 
             }
         }
     }
