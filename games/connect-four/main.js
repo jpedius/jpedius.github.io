@@ -65,8 +65,10 @@ function winning_game(cell, len) {
 
     //game.a[]
     
-    console.log(cell, len, game.turn, game.a[len]);
-
+    for (let i=0; i<game.a; i++) {
+        console.log(cell, len, game.turn, game.a[i]);
+    }
+    
     return null;
 }
 
