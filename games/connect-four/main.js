@@ -25,8 +25,6 @@ document.addEventListener('click', event => {
         let j = Number(target.dataset.column);
         
         if (game.connect[i] < 6) {
-
-            console.log('q', i);
             
             let b = 0;
             for (let a=0; a<items.length; a++) {
@@ -49,7 +47,7 @@ document.addEventListener('click', event => {
             game.turn = !game.turn;
         }
 
-        console.log('i/j', i, j, game.connect[i]);
+        //console.log('i/j', i, j, game.connect[i]);
     } 
     
     //const isCell = target.classList.contains('grid-container');
