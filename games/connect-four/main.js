@@ -8,6 +8,7 @@ const game = {
  
     turn: true,
     connect: [0, 0, 0, 0, 0, 0, 0],
+    winner: false,
 }
  
 document.addEventListener('click', event => {
@@ -17,7 +18,7 @@ document.addEventListener('click', event => {
     const container = target.classList.contains('grid-container');
     const item = target.classList.contains('grid-item');
 
-    if (item && !container) {
+    if (item && !container && !game.winner) {
 
         let targetRow = Number(target.dataset.row);
 
@@ -45,6 +46,8 @@ document.addEventListener('click', event => {
                 game.connect[targetRow] += 1;
                 game.turn = !game.turn;
             }
+            
+            
         }
     }
 });
