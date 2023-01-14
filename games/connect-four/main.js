@@ -70,15 +70,15 @@ function game_items(cell) {
 
     console.log(game, cell);
 
+    let b = 0;
     for (let i=0; i<game.connect.length; i++) {
         
         if (game.connect[i].classList.contains('disabled')) {
         
-            let a = game.turn ? 'whale' : 'octopus';
-            let b = 0;
-            if (game.connect[i].classList.contains(a)) {
-            
-                console.log(a, b);
+            let turn = game.turn ? 'whale' : 'octopus';
+            if (game.connect[i].classList.contains(turn)) {
+
+                console.log(turn, b);
                 b += 1;
             }
         }
