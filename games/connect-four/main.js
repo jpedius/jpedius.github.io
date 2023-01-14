@@ -76,18 +76,42 @@ function game_items(cell) {
             if (game.connect[i].classList.contains(turn)) {
 
                 let pos = game.position[i];
-                
+                /*
+                let q = [
+                    [0, -6, -12, -18],
+                    [0, -7, -14, -21],
+                    [0, -8, -16, -24],
+                    [0, 1, 2, 3],
+                ];
+                    
+                for (let z=0; z<pos.length; z++) {
+                    if (pos[z] === true) {
+                        let y = 0;
+                        for (let j=0; j<x.length; j++) {
+                            if (game.connect[i + q[j]].classList.contains(turn)) {
+                                y += 1;
+                            }
+                        }
+                        if (y === 4) {
+                            game.winner = turn;
+                        }
+                        
+                        console.log(turn, pos[0], x);
+                    }
+                }
+                */
                 if (pos[0] === true) {
                 
-                    let x = [0, 6, 12, 18];
+                    let x = [0, -6, -12, -18];
                     let y = 0;
                     for (let j=0; j<x.length; j++) {
-                        if (game.connect[i - x[j]].classList.contains(turn)) {
+                        if (game.connect[i + x[j]].classList.contains(turn)) {
                             y += 1;
                         }
                     }
                     if (y === 4) {
                         game.winner = turn;
+                        return turn;
                     }
                     
                     console.log(turn, pos[0], x);
@@ -95,15 +119,16 @@ function game_items(cell) {
                 
                 if (pos[1] === true) {
                 
-                    let x = [0, 7, 14, 21];
+                    let x = [0, -7, -14, -21];
                     let y = 0;
                     for (let j=0; j<x.length; j++) {
-                        if (game.connect[i - x[j]].classList.contains(turn)) {
+                        if (game.connect[i + x[j]].classList.contains(turn)) {
                             y += 1;
                         }
                     }
                     if (y === 4) {
                         game.winner = turn;
+                        return turn;
                     }
                     
                     console.log(turn, pos[1], x);
@@ -111,15 +136,16 @@ function game_items(cell) {
                 
                 if (pos[2] === true) {
                 
-                    let x = [0, 8, 16, 24];
+                    let x = [0, -8, -16, -24];
                     let y = 0;
                     for (let j=0; j<x.length; j++) {
-                        if (game.connect[i - x[j]].classList.contains(turn)) {
+                        if (game.connect[i + x[j]].classList.contains(turn)) {
                             y += 1;
                         }
                     }
                     if (y === 4) {
                         game.winner = turn;
+                        return turn;
                     }
                     
                     console.log(turn, pos[2], x);
@@ -136,6 +162,7 @@ function game_items(cell) {
                     }
                     if (y === 4) {
                         game.winner = turn;
+                        return turn;
                     }
                     
                     console.log(turn, pos[3], x);
