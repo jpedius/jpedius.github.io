@@ -67,8 +67,10 @@ function winning_game(cell, len) {
     console.log(cell, len, game.turn);
     for (let i=0; i<game.a.length; i++) {
         let j = items[i].classList.contains('disabled');
-        if (j) {
-            console.log(game.a[i], j);
+        for (let k=0; k<4; k++) {
+            if (game.a[i][k] === true) {
+                console.log('true', game.a[i][k], k);
+            }
         }
     }
     
