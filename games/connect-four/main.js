@@ -70,6 +70,20 @@ function game_items(cell) {
 
     console.log(game, cell);
 
+    for (let i=0; i<game.connect.length; i++) {
+        
+        if (game.connect[i].classList.contains('disabled')) {
+        
+            let a = game.turn ? 'whale' : 'octopus';
+            let b = 0;
+            if (game.connect[i].classList.contains(a)) {
+            
+                console.log(a, b);
+                b += 1;
+            }
+        }
+    } 
+    
     return null;
 }
  
