@@ -74,15 +74,23 @@ document.addEventListener('click', event => {
     
     if (items && !container && game.winner === null) {
     
-        console.log(items);
+        let targetRow = Number(target.dataset.row);
+        
+        
+        
+        console.log(targetRow);
         
         for (let i=0; i<game.connect.length; i++) {
         
-            console.log('it');
-            
-            if (game.connect[i].classList.contains('disabled')) {
         
-                console.log(game.connect[i]);
+            if (game.connect[i]) {
+                
+                console.log('it');
+                
+                if (game.connect[i].classList.contains('disabled')) {
+            
+                    console.log(game.connect[i]);
+                }
             }
         } 
     }
