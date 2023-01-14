@@ -68,9 +68,6 @@ const game = {
 
 function game_items(cell) {
 
-    console.log(game, cell);
-
-    let b = 0;
     for (let i=0; i<game.connect.length; i++) {
         
         if (game.connect[i].classList.contains('disabled')) {
@@ -79,8 +76,34 @@ function game_items(cell) {
             if (game.connect[i].classList.contains(turn)) {
 
                 let pos = game.position[i];
-                console.log(turn, b, pos);
-                b += 1;
+                
+                if (pos[0] === true) {
+                
+                    let x = [0, 6, 12, 18];
+                    
+                    console.log(turn, pos[0], x);
+                }
+                
+                if (pos[1] === true) {
+                
+                    let x = [0, 7, 14, 21];
+                    
+                    console.log(turn, pos[1], x);
+                }
+                
+                if (pos[2] === true) {
+                
+                    let x = [0, 8, 16, 24];
+                    
+                    console.log(turn, pos[2], x);
+                }
+                
+                if (pos[3] === true) {
+                
+                    let x = [0, 1, 2, 3];
+                    
+                    console.log(turn, pos[3], x);
+                }
             }
         }
     } 
