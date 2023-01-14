@@ -78,7 +78,8 @@ function game_items(cell) {
             let turn = game.turn ? 'whale' : 'octopus';
             if (game.connect[i].classList.contains(turn)) {
 
-                console.log(turn, b);
+                let pos = game.position[i];
+                console.log(turn, b, pos);
                 b += 1;
             }
         }
