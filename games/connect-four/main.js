@@ -74,7 +74,11 @@ document.addEventListener('click', event => {
     
     if (items && !container && game.winner === null) {
     
+        console.log(items);
+        
         for (let i=0; i<game.connect.length; i++) {
+        
+            console.log('it');
             
             if (game.connect[i].classList.contains('disabled')) {
         
