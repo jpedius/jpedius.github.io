@@ -65,6 +65,13 @@ const game = {
         [true,  true,  false, false],
     ],
 };
+
+function game_items(cell) {
+
+    console.log(game, cell);
+
+    return null;
+}
  
 document.addEventListener('click', event => {
 
@@ -79,17 +86,12 @@ document.addEventListener('click', event => {
         if (game.level[targetRow] < game.number) {
         
             let cell = null;
-            
             for (let i=0; i<game.connect.length; i++) {
-                //if (game.connect[i].classList.contains('disabled')) {
-                    let row = Number(game.connect[i].dataset.row);
-                    let column = Number(game.connect[i].dataset.column);
-                    if (row === targetRow) {
-                        if (column === game.level[targetRow]) {
-                            cell = game.connect[i];
-                        } 
-                    }
-                //} 
+                let row = Number(game.connect[i].dataset.row);
+                let column = Number(game.connect[i].dataset.column);
+                if (row === targetRow && column === game.level[targetRow]) {
+                    cell = game.connect[i];
+                }
             }
             
             if (cell !== null) {
@@ -97,7 +99,7 @@ document.addEventListener('click', event => {
                 cell.classList.add(game.turn ? 'whale' : 'octopus');
                 game.level[targetRow] += 1;
                 
-                console.log(game);
+                game.winner = game_items(cell);
                 
                 if (game.winner === null) {
                     game.turn = !game.turn;
@@ -118,7 +120,6 @@ document.querySelector('.restart').addEventListener('click', () => {
     for (let i=0; i<game.level.length; i++) {
         game.level[i] = 0;
     }
-    
 });
 
     
@@ -317,7 +318,7 @@ document.addEventListener('click', event => {
     }
 });
 
-document.querySelector('.restart').addEventListener('click', () => {
+document.yquerySelector('.restart').addEventListener('click', () => {
 
     //document.querySelector('.grid-over').classList.remove('visible');
 
