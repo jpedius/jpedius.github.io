@@ -76,20 +76,33 @@ document.addEventListener('click', event => {
     if (items && !container && game.winner === null) {
     
         let targetRow = Number(target.dataset.row);
+        if (game.level[targetRow] < game.number) {
         
-        console.log(targetRow);
-        
-        for (let i=0; i<game.connect.length; i++) {
-        
-            if (game.connect[i]) {
-                
-                console.log('it');
-                
-                if (game.connect[i].classList.contains('disabled')) {
+            let cell = null;
             
-                    console.log(game.connect[i]);
-                }
+            for (let i=0; i<game.connect.length; i++) {
+                if (game.connect[i].classList.contains('disabled')) {
+                    let row = Number(game.connect[i].dataset.row);
+                    let column = Number(game.connect[i].dataset.column);
+                    if (row === targetRow) {
+                        if (column === game.level[targetRow]) {
+                            cell = game.connect[i];
+                        } 
+                    }
+                } 
             }
+            
+            if (cell !== null) {
+                cell.classList.add('disabled');
+                cell.classList.add(game.turn ? 'whale' : 'octopus');
+                game.level[targetRow] += 1;
+                
+                console.log(game);
+                
+                if (game.winner === null) {
+                    game.turn = !game.turn;
+                } 
+            } 
         } 
     }
 });
@@ -102,6 +115,10 @@ document.querySelector('.restart').addEventListener('click', () => {
 
     game.turn = true;
     game.winner = null;
+    for (let i=0; i<game.level.length; i++) {
+        game.level[i] = 0;
+    }
+    
 });
 
     
