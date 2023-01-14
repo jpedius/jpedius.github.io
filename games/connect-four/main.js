@@ -12,7 +12,8 @@ const game = {
     
     connect: root.children[0].children,
     
-    // level
+    level: [0, 0, 0, 0, 0, 0, 0],
+    
     position: [
         
         [false, false, false, true],
@@ -76,12 +77,9 @@ document.addEventListener('click', event => {
     
         let targetRow = Number(target.dataset.row);
         
-        
-        
         console.log(targetRow);
         
         for (let i=0; i<game.connect.length; i++) {
-        
         
             if (game.connect[i]) {
                 
