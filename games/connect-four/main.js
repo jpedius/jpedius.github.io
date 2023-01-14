@@ -76,6 +76,8 @@ function game_items(cell) {
             if (game.connect[i].classList.contains(turn)) {
 
                 let pos = game.position[i];
+                
+                console.log(game.connect[i], pos); 
                 /*
                 let q = [
                     [0, -6, -12, -18],
