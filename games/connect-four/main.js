@@ -81,7 +81,7 @@ document.addEventListener('click', event => {
             let cell = null;
             
             for (let i=0; i<game.connect.length; i++) {
-                if (game.connect[i].classList.contains('disabled')) {
+                //if (game.connect[i].classList.contains('disabled')) {
                     let row = Number(game.connect[i].dataset.row);
                     let column = Number(game.connect[i].dataset.column);
                     if (row === targetRow) {
@@ -89,7 +89,7 @@ document.addEventListener('click', event => {
                             cell = game.connect[i];
                         } 
                     }
-                } 
+                //} 
             }
             
             if (cell !== null) {
