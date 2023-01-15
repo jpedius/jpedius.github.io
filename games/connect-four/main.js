@@ -112,6 +112,9 @@ document.addEventListener('click', event => {
 
     const container = target.classList.contains('grid-container');
     const items = target.classList.contains('grid-item');
+    const text = target.classList.contains('game-over-text');
+    console.log(text);
+    
     let all = 0;
     
     if (items && !container && game.winner === null) {
