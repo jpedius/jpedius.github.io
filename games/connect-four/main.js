@@ -86,9 +86,14 @@ function game_items(cell) {
                   
                 for (let z=0; z<pos.length; z++) {
                 
-                    console.log(pos[i], q[z]);
-                    /*
                     if (pos[z] === true) {
+                    
+                        console.log('a', pos[i], q[z], true);
+                    }
+                    
+                    console.log('b', pos[i], q[z]);
+                    /*
+                    
                         let y = 0;
                         for (let j=0; j<x.length; j++) {
                             if (game.connect[i + q[j]].classList.contains(turn)) {
@@ -100,7 +105,6 @@ function game_items(cell) {
                         }
                         
                         console.log(turn, pos[0], x);
-                    }
                     */
                 }
                 
@@ -119,7 +123,7 @@ function game_items(cell) {
                         return turn;
                     }
                     
-                    console.log(turn, pos[0], x);
+                    //console.log(turn, pos[0], x);
                 }
                 
                 if (pos[1] === true) {
@@ -137,7 +141,7 @@ function game_items(cell) {
                         return turn;
                     }
                     
-                    console.log(turn, pos[1], x);
+                    //console.log(turn, pos[1], x);
                 }
                 
                 if (pos[2] === true) {
@@ -155,7 +159,7 @@ function game_items(cell) {
                         return turn;
                     }
                     
-                    console.log(turn, pos[2], x);
+                    //console.log(turn, pos[2], x);
                 }
                 
                 if (pos[3] === true) {
