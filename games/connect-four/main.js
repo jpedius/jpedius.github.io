@@ -73,6 +73,7 @@ function game_items(all) {
         
         if (game.connect[i].classList.contains('disabled')) {
         
+            all += 1;
             let turn = game.turn ? 'whale' : 'octopus';
             if (game.connect[i].classList.contains(turn)) {
 
@@ -92,15 +93,11 @@ function game_items(all) {
                             let y = game.connect[x].classList.contains(turn);
                             if (y === true) { step += 1; }
                         }
-                        if (step === 4) {
-                            //game.winner = turn;
-                            return turn;
-                        }
+                        if (step === 4) { return turn; }
                     }
                 }
             }
         }
-        all += 1;
     }
     
     return null;
@@ -113,15 +110,16 @@ document.addEventListener('click', event => {
     const container = target.classList.contains('grid-container');
     const items = target.classList.contains('grid-item');
     const text = target.classList.contains('game-over-text');
-    console.log(text);
-    
+
+    console.log('@', text);
+ 
     let all = 0;
-    
+
     if (items && !container && game.winner === null) {
-    
+
         let targetRow = Number(target.dataset.row);
         if (game.level[targetRow] < game.number) {
-        
+
             let cell = null;
             for (let i=0; i<game.connect.length; i++) {
                 let row = Number(game.connect[i].dataset.row);
@@ -130,23 +128,21 @@ document.addEventListener('click', event => {
                     cell = game.connect[i];
                 }
             }
-            
+
             if (cell !== null) {
                 cell.classList.add('disabled');
                 cell.classList.add(game.turn ? 'whale' : 'octopus');
                 game.level[targetRow] += 1;
-                
                 game.winner = game_items(all);
-                
                 if (game.winner === null) {
                     game.turn = !game.turn;
-                } 
-            } 
-        } 
+                }
+            }
+        }
     }
     
-    if (all === 42) {
-        console.log(all);
+    if (all === 5) {
+        console.log('!', all);
     }
 });
 
