@@ -68,6 +68,7 @@ const game = {
 
 function game_items(cell) {
 
+    let all = 0;
     for (let i=0; i<game.connect.length; i++) {
         
         if (game.connect[i].classList.contains('disabled')) {
@@ -99,7 +100,12 @@ function game_items(cell) {
                 }
             }
         }
-    } 
+        all += 1;
+    }
+    
+    if (all === 42) {
+        console.log(all);
+    }
     
     return null;
 }
