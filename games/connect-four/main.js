@@ -158,8 +158,8 @@ document.querySelector('.restart').addEventListener('click', () => {
 
     game.turn = true;
     game.winner = null;
-    game.all = '';
-    for (let i=0; i<game.level.length; i++) {
+    game.all = 'Still Playing';
+    tfor (let i=0; i<game.level.length; i++) {
         game.level[i] = 0;
     }
 });
