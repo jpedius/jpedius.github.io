@@ -8,6 +8,8 @@ const game = {
     
     winner: null,
     
+    all: '',
+    
     number: Number(root.children[0].dataset.length),
     
     connect: root.children[0].children,
@@ -119,8 +121,6 @@ document.addEventListener('click', event => {
     const items = target.classList.contains('grid-item');
     const text = target.classList.contains('game-over-text');
 
-    let all = '';
-
     if (items && !container && game.winner === null) {
 
         let targetRow = Number(target.dataset.row);
@@ -139,7 +139,7 @@ document.addEventListener('click', event => {
                 cell.classList.add('disabled');
                 cell.classList.add(game.turn ? 'whale' : 'octopus');
                 game.level[targetRow] += 1;
-                [game.winner, all] = game_items();
+                [game.winner, game.all] = game_items();
                 if (game.winner === null) {
                     game.turn = !game.turn;
                 }
@@ -148,7 +148,7 @@ document.addEventListener('click', event => {
     }
 
     //if (all === 5) {
-        console.log('@', all);
+        console.log('@', game.all);
     //}
 });
 
@@ -160,6 +160,7 @@ document.querySelector('.restart').addEventListener('click', () => {
 
     game.turn = true;
     game.winner = null;
+    game.all = '';
     for (let i=0; i<game.level.length; i++) {
         game.level[i] = 0;
     }
