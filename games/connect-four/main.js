@@ -8,7 +8,14 @@ const game = {
     
     winner: null,
     
-    all: 'Still Playing',
+    draw: [
+        'Still Playing',
+        'Whale Won',
+        'Octopus Won',
+        'A Draw',
+    ],
+    
+    all: 0, 
     
     number: Number(root.children[0].dataset.length),
     
@@ -97,8 +104,8 @@ function game_items() {
                             if (y === true) { step += 1; }
                         }
                         if (step === 4) {
-                            let x = game.turn ? 'Whale Won' : 'Octopus Won';
-                            return [turn, x];
+                            //let x = game.turn ? 1 : 2; //'Whale Won' : 'Octopus Won';
+                            return [turn, (game.turn ? 1 : 2)];
                         }
                     }
                 }
@@ -107,10 +114,10 @@ function game_items() {
     }
     
     if (all === 42) {
-        return [null, 'A Draw'];
+        return [null, 3]; //'A Draw'];
     }
     
-    return [null, 'Still Playing'];
+    return [null, 0]; //'Still Playing'];
 }
 
 document.addEventListener('click', event => {
@@ -147,13 +154,16 @@ document.addEventListener('click', event => {
         }
     }
 
+    
     if (text) {
-        target.innerText = game.all;
+        target.innerText = game.draw[game.all];
         console.log(text, target, game.all);
     } 
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
+
+    
 
     document.querySelectorAll('.grid-item').forEach(item => {
         item.classList.remove('disabled', 'whale', 'octopus');
@@ -161,7 +171,7 @@ document.querySelector('.restart').addEventListener('click', () => {
 
     game.turn = true;
     game.winner = null;
-    game.all = 'Still Playing';
+    game.all = 0;
     for (let i=0; i<game.level.length; i++) {
         game.level[i] = 0;
     }
