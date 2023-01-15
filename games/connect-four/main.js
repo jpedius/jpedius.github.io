@@ -66,15 +66,15 @@ const game = {
     ],
 };
 
-function game_items(all) {
+function game_items() {
 
-    all = 0;
+    let all = 0;
     for (let i=0; i<game.connect.length; i++) {
         
         if (game.connect[i].classList.contains('disabled')) {
         
             all += 1;
-            console.log('$', all);
+
             let turn = game.turn ? 'whale' : 'octopus';
             if (game.connect[i].classList.contains(turn)) {
 
@@ -94,14 +94,16 @@ function game_items(all) {
                             let y = game.connect[x].classList.contains(turn);
                             if (y === true) { step += 1; }
                         }
-                        if (step === 4) { return turn; }
+                        if (step === 4) {
+                            return [turn, all];
+                        }
                     }
                 }
             }
         }
     }
     
-    return null;
+    return [null, all];
 }
  
 document.addEventListener('click', event => {
@@ -112,8 +114,6 @@ document.addEventListener('click', event => {
     const items = target.classList.contains('grid-item');
     const text = target.classList.contains('game-over-text');
 
-    console.log('@', text);
- 
     let all = 0;
 
     if (items && !container && game.winner === null) {
@@ -134,8 +134,7 @@ document.addEventListener('click', event => {
                 cell.classList.add('disabled');
                 cell.classList.add(game.turn ? 'whale' : 'octopus');
                 game.level[targetRow] += 1;
-                game.winner = game_items(all);
-                console.log('%', all);
+                [game.winner, all] = game_items();
                 if (game.winner === null) {
                     game.turn = !game.turn;
                 }
@@ -144,8 +143,10 @@ document.addEventListener('click', event => {
     }
     
     if (all === 5) {
-        console.log('!', all);
+        console.log('@', all);
     }
+    
+    console.log('!!', all);
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
