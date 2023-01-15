@@ -148,6 +148,7 @@ document.addEventListener('click', event => {
     }
 
     if (text) {
+        target.innerText = game.all;
         console.log(text, target, game.all);
     } 
 });
