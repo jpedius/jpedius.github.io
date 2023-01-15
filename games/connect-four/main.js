@@ -91,7 +91,7 @@ function game_items(cell) {
                         for (let k=0; k<idx[j].length; k++) {
                         
                             let x = i + idx[j][k];
-                            console.log('@', i, idx[j][k], i + idx[j][k]);
+                            console.log('!', i, idx[j][k], i + idx[j][k]);
                         
                         
                             //let w = i + idx[j][k];
