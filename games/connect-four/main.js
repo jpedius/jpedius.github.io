@@ -89,9 +89,7 @@ function game_items(cell) {
                     
                         let y = 0;
                         for (let k=0; k<idx.length; k++) {
-                            let w = Number(i) + Number(idx[k]);
-                            console.log(w);
-                            let x = game.connect[w].classList.contains(turn);
+                            let x = game.connect[i + idx[k]].classList.contains(turn);
                             console.log(x);
                             if (x) { y += 1; }
                             console.log(y);
