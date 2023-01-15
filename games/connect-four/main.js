@@ -97,7 +97,7 @@ function game_items() {
                             if (y === true) { step += 1; }
                         }
                         if (step === 4) {
-                            let x = turn : 'Whale One' ? 'Octopus One';
+                            let x = turn ? 'Whale One' : 'Octopus One';
                             return [turn, x];
                         }
                     }
