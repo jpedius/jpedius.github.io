@@ -90,7 +90,8 @@ function game_items(cell) {
                         let step = 0;
                         for (let k=0; k<idx[j].length; k++) {
                         
-                            console.log(idx[j][k]);
+                            let x = i + idx[j][k];
+                            console.log(i, idx[j][k], i + idx[j][k]);
                         
                         
                             //let w = i + idx[j][k];
