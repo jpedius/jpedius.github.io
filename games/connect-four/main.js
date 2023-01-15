@@ -90,9 +90,11 @@ function game_items(cell) {
                         let y = 0;
                         for (let k=0; k<idx.length; k++) {
                             let w = i + idx[k];
+                            console.log(w);
                             let x = game.connect[w].classList.contains(turn);
-                            if (x) { y += 1; }
                             console.log(x);
+                            if (x) { y += 1; }
+                            console.log(y);
                         }
                         if (y === 4) { game.winner = turn; }
                         
