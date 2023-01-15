@@ -8,7 +8,7 @@ const game = {
     
     winner: null,
     
-    all: '',
+    all: 'Still Playing',
     
     number: Number(root.children[0].dataset.length),
     
