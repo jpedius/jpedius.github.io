@@ -86,19 +86,21 @@ function game_items(cell) {
                 for (let j=0; j<pos.length; j++) {
                 
                     if (pos[j] === true) {
-                        /*
+                        
                         let y = 0;
                         for (let k=0; k<idx[j].length; k++) {
-                            let w = i + idx[j][k];
-                            console.log(w);
-                            let x = game.connect[w].classList.contains(turn);
-                            console.log(x);
-                            if (x) { y += 1; }
-                            console.log(y);
+                        
+                            console.log(idx[j][k]);
+                        
+                        
+                            //let w = i + idx[j][k];
+                            //console.log(w);
+                            //let x = game.connect[w].classList.contains(turn);
+                            //console.log(x);
+                            //if (x) { y += 1; }
+                            //console.log(y);
                         }
                         if (y === 4) { game.winner = turn; }
-                        */
-                        console.log('a', pos[j], idx[j]);
                     }
                 }
                 /*
