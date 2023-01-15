@@ -104,7 +104,6 @@ function game_items() {
                             if (y === true) { step += 1; }
                         }
                         if (step === 4) {
-                            //let x = game.turn ? 1 : 2; //'Whale Won' : 'Octopus Won';
                             return [turn, (game.turn ? 1 : 2)];
                         }
                     }
@@ -113,11 +112,8 @@ function game_items() {
         }
     }
     
-    if (all === 42) {
-        return [null, 3]; //'A Draw'];
-    }
-    
-    return [null, 0]; //'Still Playing'];
+    if (all === 42) { return [null, 3]; }
+    return [null, 0];
 }
 
 document.addEventListener('click', event => {
@@ -154,16 +150,10 @@ document.addEventListener('click', event => {
         }
     }
 
-    
-    if (text) {
-        target.innerText = game.draw[game.all];
-        console.log(text, target, game.all);
-    } 
+    if (text) { target.innerText = game.draw[game.all]; } 
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
-
-    
 
     document.querySelectorAll('.grid-item').forEach(item => {
         item.classList.remove('disabled', 'whale', 'octopus');
