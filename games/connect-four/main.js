@@ -104,7 +104,7 @@ function game_items(cell) {
                 */
                 if (pos[0] === true) {
                 
-                    let x = [0, -6, -12, -18];
+                    let x = [0, -8, -16, -24];
                     let y = 0;
                     for (let j=0; j<x.length; j++) {
                         if (game.connect[i + x[j]].classList.contains(turn)) {
@@ -140,7 +140,7 @@ function game_items(cell) {
                 
                 if (pos[2] === true) {
                 
-                    let x = [0, -8, -16, -24];
+                    let x = [0, -6, -12, -18];
                     let y = 0;
                     for (let j=0; j<x.length; j++) {
                         if (game.connect[i + x[j]].classList.contains(turn)) {
