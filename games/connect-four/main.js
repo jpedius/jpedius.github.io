@@ -95,7 +95,8 @@ function game_items() {
                             if (y === true) { step += 1; }
                         }
                         if (step === 4) {
-                            return [turn, all];
+                            let x = turn : 'Whale One' ? 'Octopus One';
+                            return [turn, x];
                         }
                     }
                 }
@@ -103,9 +104,13 @@ function game_items() {
         }
     }
     
-    return [null, all];
+    if (all === 42) {
+        return [null, 'A Draw'];
+    }
+    
+    return [null, ''];
 }
- 
+
 document.addEventListener('click', event => {
 
     const target = event.target;
@@ -114,7 +119,7 @@ document.addEventListener('click', event => {
     const items = target.classList.contains('grid-item');
     const text = target.classList.contains('game-over-text');
 
-    let all = 0;
+    let all = '';
 
     if (items && !container && game.winner === null) {
 
@@ -141,12 +146,10 @@ document.addEventListener('click', event => {
             }
         }
     }
-    
-    if (all === 5) {
+
+    //if (all === 5) {
         console.log('@', all);
-    }
-    
-    console.log('!!', all);
+    //}
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
