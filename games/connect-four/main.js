@@ -87,7 +87,7 @@ function game_items(cell) {
                 
                     if (pos[j] === true) {
                         
-                        let y = 0;
+                        let step = 0;
                         for (let k=0; k<idx[j].length; k++) {
                         
                             console.log(idx[j][k]);
@@ -100,7 +100,7 @@ function game_items(cell) {
                             //if (x) { y += 1; }
                             //console.log(y);
                         }
-                        if (y === 4) { game.winner = turn; }
+                        if (step === 4) { game.winner = turn; }
                     }
                 }
                 /*
