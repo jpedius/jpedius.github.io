@@ -76,38 +76,30 @@ function game_items(cell) {
             if (game.connect[i].classList.contains(turn)) {
 
                 let pos = game.position[i];
-                
-                let q = [
+                let idx = [
                     [0, -8, -16, -24],
                     [0, -7, -14, -21],
                     [0, -6, -12, -18],
                     [0,  1,   2,   3],
                 ];
                   
-                for (let z=0; z<pos.length; z++) {
+                for (let j=0; j<pos.length; j++) {
                 
-                    if (pos[z] === true) {
-                    
-                        console.log('a', pos[i], q[z], true);
-                    }
-                    
-                    console.log('b', pos[i], q[z]);
-                    /*
+                    if (pos[j] === true) {
                     
                         let y = 0;
-                        for (let j=0; j<x.length; j++) {
-                            if (game.connect[i + q[j]].classList.contains(turn)) {
-                                y += 1;
-                            }
+                        for (let k=0; k<idx.length; k++) {
+                            let w = i + idx[k];
+                            let x = game.connect[w].classList.contains(turn);
+                            if (x) { y += 1; }
+                            console.log(x);
                         }
-                        if (y === 4) {
-                            game.winner = turn;
-                        }
+                        if (y === 4) { game.winner = turn; }
                         
-                        console.log(turn, pos[0], x);
-                    */
+                        console.log('a', pos[j], idx[j]);
+                    }
                 }
-                
+                /*
                 if (pos[0] === true) {
                 
                     let x = [0, -8, -16, -24];
@@ -179,6 +171,7 @@ function game_items(cell) {
                     
                     //console.log(turn, pos[3], x);
                 }
+                */
             }
         }
     } 
