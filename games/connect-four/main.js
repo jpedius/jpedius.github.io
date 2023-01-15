@@ -92,9 +92,7 @@ function game_items(cell) {
                         
                             let x = i + idx[j][k];
                             let y = game.connect[x].classList.contains(turn);
-                            if (y === true) {
-                                step += 1;
-                            }
+                            if (y === true) { step += 1; }
                             console.log('!', i + idx[j][k], y, step);
                         
                         
@@ -105,7 +103,10 @@ function game_items(cell) {
                             //if (x) { y += 1; }
                             //console.log(y);
                         }
-                        if (step === 4) { game.winner = turn; }
+                        if (step === 4) {
+                            game.winner = turn;
+                            return turn;
+                        }
                     }
                 }
                 /*
