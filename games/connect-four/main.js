@@ -152,7 +152,7 @@ document.addEventListener('click', event => {
 
     if (text) { target.innerText = game.draw[game.all]; }
     
-    console.log(root);
+    console.log(root, root.children[1]);
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
