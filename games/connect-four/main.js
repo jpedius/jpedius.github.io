@@ -66,9 +66,9 @@ const game = {
     ],
 };
 
-function game_items(cell) {
+function game_items(all) {
 
-    let all = 0;
+    all = 0;
     for (let i=0; i<game.connect.length; i++) {
         
         if (game.connect[i].classList.contains('disabled')) {
@@ -93,7 +93,7 @@ function game_items(cell) {
                             if (y === true) { step += 1; }
                         }
                         if (step === 4) {
-                            game.winner = turn;
+                            //game.winner = turn;
                             return turn;
                         }
                     }
@@ -101,10 +101,6 @@ function game_items(cell) {
             }
         }
         all += 1;
-    }
-    
-    if (all === 42) {
-        console.log(all);
     }
     
     return null;
@@ -116,6 +112,7 @@ document.addEventListener('click', event => {
 
     const container = target.classList.contains('grid-container');
     const items = target.classList.contains('grid-item');
+    let all = 0;
     
     if (items && !container && game.winner === null) {
     
@@ -136,13 +133,17 @@ document.addEventListener('click', event => {
                 cell.classList.add(game.turn ? 'whale' : 'octopus');
                 game.level[targetRow] += 1;
                 
-                game.winner = game_items(cell);
+                game.winner = game_items(all);
                 
                 if (game.winner === null) {
                     game.turn = !game.turn;
                 } 
             } 
         } 
+    }
+    
+    if (all === 42) {
+        console.log(all);
     }
 });
 
