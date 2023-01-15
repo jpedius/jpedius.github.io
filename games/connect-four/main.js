@@ -108,6 +108,7 @@ function game_items(cell) {
                     let y = 0;
                     for (let j=0; j<x.length; j++) {
                         if (game.connect[i + x[j]].classList.contains(turn)) {
+                            console.log(i + x[j], i, j);
                             y += 1;
                         }
                     }
@@ -125,6 +126,7 @@ function game_items(cell) {
                     let y = 0;
                     for (let j=0; j<x.length; j++) {
                         if (game.connect[i + x[j]].classList.contains(turn)) {
+                            console.log(i + x[j], i, j);
                             y += 1;
                         }
                     }
@@ -142,6 +144,7 @@ function game_items(cell) {
                     let y = 0;
                     for (let j=0; j<x.length; j++) {
                         if (game.connect[i + x[j]].classList.contains(turn)) {
+                            console.log(i + x[j], i, j);
                             y += 1;
                         }
                     }
@@ -159,6 +162,7 @@ function game_items(cell) {
                     let y = 0;
                     for (let j=0; j<x.length; j++) {
                         if (game.connect[i + x[j]].classList.contains(turn)) {
+                            console.log(i + x[j], i, j);
                             y += 1;
                         }
                     }
