@@ -122,7 +122,7 @@ document.addEventListener('click', event => {
 
     const container = target.classList.contains('grid-container');
     const items = target.classList.contains('grid-item');
-    //const text = root.children[1].children[0].children;
+    const text = root.children[1].children[0];
 
     if (items && !container && game.winner === null) {
 
@@ -150,7 +150,7 @@ document.addEventListener('click', event => {
         }
     }
 
-    //text.innerText = game.draw[game.all];
+    text.innerText = game.draw[game.all];
      
     console.log(root.children[1].children);
     console.log(root.children[1].children[0]);
