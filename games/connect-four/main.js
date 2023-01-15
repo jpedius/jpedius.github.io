@@ -97,7 +97,7 @@ function game_items() {
                             if (y === true) { step += 1; }
                         }
                         if (step === 4) {
-                            let x = game.turn ? 'Whale One' : 'Octopus One';
+                            let x = game.turn ? 'Whale Won' : 'Octopus Won';
                             return [turn, x];
                         }
                     }
@@ -110,7 +110,7 @@ function game_items() {
         return [null, 'A Draw'];
     }
     
-    return [null, ''];
+    return [null, 'Still Playing'];
 }
 
 document.addEventListener('click', event => {
