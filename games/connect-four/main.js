@@ -150,7 +150,9 @@ document.addEventListener('click', event => {
         }
     }
 
-    if (text) { target.innerText = game.draw[game.all]; } 
+    if (text) { target.innerText = game.draw[game.all]; }
+    
+    console.log(root);
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
