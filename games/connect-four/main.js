@@ -1,6 +1,7 @@
 'use strict';
 
 const root = document.querySelector('#root');
+const text = root.children[1].children[0];
 
 const game = {
 
@@ -75,6 +76,8 @@ const game = {
     ],
 };
 
+text.innerText = game.draw[game.all];
+
 function game_items() {
 
     let all = 0;
@@ -122,7 +125,6 @@ document.addEventListener('click', event => {
 
     const container = target.classList.contains('grid-container');
     const items = target.classList.contains('grid-item');
-    const text = root.children[1].children[0];
 
     if (items && !container && game.winner === null) {
 
@@ -151,10 +153,6 @@ document.addEventListener('click', event => {
     }
 
     text.innerText = game.draw[game.all];
-     
-    console.log(root.children[1].children);
-    console.log(root.children[1].children[0]);
-    console.log(root.children[1].children[0].children);
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
@@ -169,4 +167,6 @@ document.querySelector('.restart').addEventListener('click', () => {
     for (let i=0; i<game.level.length; i++) {
         game.level[i] = 0;
     }
+    
+    
 });
