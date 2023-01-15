@@ -147,7 +147,9 @@ document.addEventListener('click', event => {
         }
     }
 
-    console.log(text, game.all);
+    if (text) {
+        console.log(text, game.all);
+    } 
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
