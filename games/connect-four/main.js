@@ -74,6 +74,7 @@ function game_items(all) {
         if (game.connect[i].classList.contains('disabled')) {
         
             all += 1;
+            console.log('$', all);
             let turn = game.turn ? 'whale' : 'octopus';
             if (game.connect[i].classList.contains(turn)) {
 
@@ -134,6 +135,7 @@ document.addEventListener('click', event => {
                 cell.classList.add(game.turn ? 'whale' : 'octopus');
                 game.level[targetRow] += 1;
                 game.winner = game_items(all);
+                console.log('%', all);
                 if (game.winner === null) {
                     game.turn = !game.turn;
                 }
