@@ -148,7 +148,7 @@ document.addEventListener('click', event => {
     }
 
     if (text) {
-        console.log(text, game.all);
+        console.log(text, target, game.all);
     } 
 });
 
