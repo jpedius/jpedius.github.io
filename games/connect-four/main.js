@@ -1,7 +1,6 @@
 'use strict';
 
 const root = document.querySelector('#root');
-const text = root.children[1].children[0];
 
 const game = {
 
@@ -10,7 +9,7 @@ const game = {
     winner: null,
     
     draw: [
-        'Still Playing',
+        'Playing...',
         'Whale Won',
         'Octopus Won',
         'A Draw',
@@ -76,6 +75,7 @@ const game = {
     ],
 };
 
+const text = root.children[1].children[0];
 text.innerText = game.draw[game.all];
 
 function game_items() {
@@ -167,6 +167,4 @@ document.querySelector('.restart').addEventListener('click', () => {
     for (let i=0; i<game.level.length; i++) {
         game.level[i] = 0;
     }
-    
-    
 });
