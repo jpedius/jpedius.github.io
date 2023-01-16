@@ -169,8 +169,8 @@ document.querySelector('.restart').addEventListener('click', () => {
     }
 });
 
-localStorage.setItem('name', 'JP McDowell');
-localStorage.setItem('url', 'https://jpedius.github.io/games/connect-four-multi/');
+//localStorage.setItem('name', 'JP McDowell');
+//localStorage.setItem('url', 'https://jpedius.github.io/games/connect-four-multi/');
 
 let key = new Date();;
 let data = {
@@ -184,7 +184,6 @@ let a = JSON.stringify(data);
 localStorage.setItem('data', a);
 
 let b = localStorage.getItem('data');
-
 let c = JSON.parse(b);
 
-console.log(localStorage, a, b, c);
+console.log(localStorage, data, a, b, c);
