@@ -10,6 +10,8 @@
 
 [Connect Four](connect-four/)
 
+[Connect Four Multi](connect-four-multi/)
+
 ### Backup
 
 [Tic Tac Toe](tic-tac-toe/)
