@@ -154,8 +154,11 @@ document.addEventListener('click', event => {
 
     text.innerText = game.draw[game.all];
     
-    localStorage.setItem("name", "John Doe");
-    localStorage.getItem("name");
+    localStorage.setItem('name', 'JP McDowell');
+    localStorage.setItem('url', 'https://jpedius.github.io/games/connect-four-multi/');
+    
+    //localStorage.getItem("name");
+    
     console.log(localStorage);
 });
 
