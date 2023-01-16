@@ -153,6 +153,10 @@ document.addEventListener('click', event => {
     }
 
     text.innerText = game.draw[game.all];
+    
+    localStorage.setItem("name", "John Doe");
+    localStorage.getItem("name");
+    console.log(localStorage);
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
