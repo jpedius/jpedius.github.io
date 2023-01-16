@@ -183,4 +183,6 @@ let data = {
 let a = JSON.stringify(data);
 localStorage.setItem('data', a);
 
-console.log(localStorage, a);
+let b = localStorage.getItem('data');
+
+console.log(localStorage, a, b);
