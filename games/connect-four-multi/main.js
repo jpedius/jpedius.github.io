@@ -177,12 +177,10 @@ let data = {
   'url': 'https://jpedius.github.io/games/connect-four-multi/'
 }
 
-let data2 = ['JP McDowell', 'https://jpedius.github.io/games/connect-four-multi/', ';']
+let data2 = ['JP McDowell', ';', ',']
 
 let a = JSON.stringify(data);
 
-//localStorage.setItem('data', new Object(data));
-
-localStorage.setItem('data', data2.toString());
+localStorage.setItem('data', a);
 
 console.log(localStorage, a);
