@@ -153,13 +153,6 @@ document.addEventListener('click', event => {
     }
 
     text.innerText = game.draw[game.all];
-    
-    localStorage.setItem('name', 'JP McDowell');
-    localStorage.setItem('url', 'https://jpedius.github.io/games/connect-four-multi/');
-    
-    //localStorage.getItem("name");
-    
-    console.log(localStorage);
 });
 
 document.querySelector('.restart').addEventListener('click', () => {
@@ -175,3 +168,17 @@ document.querySelector('.restart').addEventListener('click', () => {
         game.level[i] = 0;
     }
 });
+
+localStorage.setItem('name', 'JP McDowell');
+localStorage.setItem('url', 'https://jpedius.github.io/games/connect-four-multi/');
+
+let data = {
+  'name': 'JP McDowell',
+  'url': 'https://jpedius.github.io/games/connect-four-multi/'
+}
+
+localStorage.setItem('data', "data");
+
+localStorage.setItem('data2', data);
+
+console.log(localStorage);
