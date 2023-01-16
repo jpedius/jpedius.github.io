@@ -177,8 +177,10 @@ let data = {
   'url': 'https://jpedius.github.io/games/connect-four-multi/'
 }
 
-localStorage.setItem('data', "data");
+let data2 = ['JP McDowell', 'https://jpedius.github.io/games/connect-four-multi/']
 
-localStorage.setItem('data2', data);
+//localStorage.setItem('data', new Object(data));
+
+localStorage.setItem('data', data2.toString());
 
 console.log(localStorage);
