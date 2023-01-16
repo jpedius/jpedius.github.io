@@ -172,9 +172,13 @@ document.querySelector('.restart').addEventListener('click', () => {
 localStorage.setItem('name', 'JP McDowell');
 localStorage.setItem('url', 'https://jpedius.github.io/games/connect-four-multi/');
 
+let key = new Date();;
 let data = {
-  'name': 'JP McDowell',
-  'url': 'https://jpedius.github.io/games/connect-four-multi/',
+    'key': key,
+    'data': {
+        'name': 'JP McDowell',
+        'url': 'https://jpedius.github.io/games/connect-four-multi/',
+    },
 };
 let a = JSON.stringify(data);
 localStorage.setItem('data', a);
