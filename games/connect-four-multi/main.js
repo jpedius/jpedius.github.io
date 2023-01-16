@@ -179,8 +179,10 @@ let data = {
 
 let data2 = ['JP McDowell', 'https://jpedius.github.io/games/connect-four-multi/', ';']
 
+let a = JSON.stringify(data);
+
 //localStorage.setItem('data', new Object(data));
 
 localStorage.setItem('data', data2.toString());
 
-console.log(localStorage);
+console.log(localStorage, a);
