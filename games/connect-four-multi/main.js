@@ -185,4 +185,6 @@ localStorage.setItem('data', a);
 
 let b = localStorage.getItem('data');
 
-console.log(localStorage, a, b);
+let c = JSON.parse(b);
+
+console.log(localStorage, a, b, c);
