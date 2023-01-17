@@ -188,4 +188,8 @@ let c = JSON.parse(b);
 
 let d = Math.random();
 
-console.log(sessionStorage, localStorage, key, data, a, b, c, d);
+let params = (new URL(document.location)).searchParams;
+let name = params.get('key');
+//let age = parseInt(params.get('age')); // is the number 18
+
+console.log(sessionStorage, localStorage, key, data, a, b, c, d, name);
