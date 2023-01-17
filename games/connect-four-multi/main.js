@@ -172,7 +172,7 @@ document.querySelector('.restart').addEventListener('click', () => {
 sessionStorage.setItem('name', 'JP McDowell');
 sessionStorage.setItem('url', 'https://jpedius.github.io/games/connect-four-multi/');
 
-let key = new Date();;
+let key = new Date().toISOString();
 let data = {
     'key': key,
     'data': {
