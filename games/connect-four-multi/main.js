@@ -169,6 +169,13 @@ document.querySelector('.restart').addEventListener('click', () => {
     }
 });
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+  // The maximum is exclusive and the minimum is inclusive
+}
+
 sessionStorage.setItem('name', 'JP McDowell');
 sessionStorage.setItem('url', 'https://jpedius.github.io/games/connect-four-multi/');
 
@@ -187,9 +194,10 @@ let b = localStorage.getItem('data');
 let c = JSON.parse(b);
 
 let d = Math.random();
+let d2 = getRandomInt(1000000, 9999999);
 
 let params = (new URL(document.location)).searchParams;
 let name = params.get('key');
 //let age = parseInt(params.get('age')); // is the number 18
 
-console.log(sessionStorage, localStorage, key, data, a, b, c, d, name);
+console.log(sessionStorage, localStorage, key, data, a, b, c, d, d2, name);
