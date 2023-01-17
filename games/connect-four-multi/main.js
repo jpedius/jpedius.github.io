@@ -186,4 +186,6 @@ localStorage.setItem('data', a);
 let b = localStorage.getItem('data');
 let c = JSON.parse(b);
 
-console.log(sessionStorage, localStorage, data, a, b, c);
+let d = Math.random();
+
+console.log(sessionStorage, localStorage, key, data, a, b, c, d);
