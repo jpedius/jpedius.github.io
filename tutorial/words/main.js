@@ -79,7 +79,7 @@
     play.addEventListener('click', function() { 
         speak(readonly.value);
         readonly.blur();
-        text.blur();
+        //text.blur();
     }, false);
 
     let show = document.createElement('button');
