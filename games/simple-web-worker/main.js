@@ -8,12 +8,12 @@ if (window.Worker) {
 
   first.onchange = function() {
     myWorker.postMessage([first.value, second.value]);
-    console.log('Message posted to worker');
+    console.log('Message posted to worker 1');
   }
 
   second.onchange = function() {
     myWorker.postMessage([first.value, second.value]);
-    console.log('Message posted to worker');
+    console.log('Message posted to worker 2');
   }
 
   myWorker.onmessage = function(e) {
