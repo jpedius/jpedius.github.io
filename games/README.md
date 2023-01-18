@@ -12,6 +12,8 @@
 
 [Connect Four Multi](connect-four-multi/)
 
+[Simple Web Worker](simple-web-worker/)
+
 [Simple Shared Worker](simple-shared-worker/)
 
 ### Backup
