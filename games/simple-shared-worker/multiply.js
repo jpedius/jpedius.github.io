@@ -8,17 +8,17 @@ if (!!window.SharedWorker) {
 
   first.onchange = function () {
     myWorker.port.postMessage([first.value, second.value]);
-    console.log("Message posted to worker");
+    console.log("Message posted to worker (three)");
   };
 
   second.onchange = function () {
     myWorker.port.postMessage([first.value, second.value]);
-    console.log("Message posted to worker");
+    console.log("Message posted to worker (four)");
   };
 
   myWorker.port.onmessage = function (e) {
     result1.textContent = e.data;
-    console.log("Message received from worker");
+    console.log("Message received from worker (five)");
     console.log(e.lastEventId);
   };
 }

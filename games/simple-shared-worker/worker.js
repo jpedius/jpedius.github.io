@@ -3,6 +3,7 @@ onconnect = function (event) {
 
   port.onmessage = function (e) {
     const workerResult = `Result: ${e.data[0] * e.data[1]}`;
+    console.log('W: ' + workerResult);
     port.postMessage(workerResult);
   };
 };

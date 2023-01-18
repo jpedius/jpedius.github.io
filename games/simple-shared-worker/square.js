@@ -7,11 +7,11 @@ if (!!window.SharedWorker) {
 
   squareNumber.onchange = function () {
     myWorker.port.postMessage([squareNumber.value, squareNumber.value]);
-    console.log("Message posted to worker");
+    console.log("Message posted to worker (one)");
   };
 
   myWorker.port.onmessage = function (event) {
     result2.textContent = event.data;
-    console.log("Message received from worker");
+    console.log("Message received from worker (two)");
   };
 }
