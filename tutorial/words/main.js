@@ -77,9 +77,9 @@
     play.innerHTML = 'Play';
     play.classList.add('q05');
     play.addEventListener('click', function() { 
-        speak(readonly.value);
+        speak(howMany[previousOrNext]);
         readonly.blur();
-        //text.blur();
+        text.blur();
     }, false);
 
     let show = document.createElement('button');
