@@ -1,58 +1,27 @@
-.sSpan {
-	border: none;
-	outline: none;
-	background: #008;
-	font-size: 20px;
-	color: #eee;
-	cursor: pointer;
-	margin: 10px;
-	padding: 40px 30px;	
+.grid-container {
+	
+	display: grid;
+	gap: 5px 4px;
+	grid-template-columns: repeat(3, 100px);
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+	/*padding: 10px;*/
 }
 
-.sDiv {
-	background: #fff;
-	margin: 10px;
-	padding: 40px 30px;
-}
-
-#game {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-}
-
-.grid-cell {
-    border: 1px solid #000;
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 112px;
-}
-
-.grid-cell:not(.disabled):hover {
-    background: #eee;
-}
-
-.grid-cell:nth-child(-n + 3) {
-    border-top: none;
-}
-
-.grid-cell:nth-child(3n + 1) {
-    border-left: none;
-}
-
-.grid-cell:nth-child(3n + 3) {
-    border-right: none;
-}
-
-.grid-cell:nth-last-of-type(-n + 3) {
-    border-bottom: none;
+.grid-item {
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	/*padding: 20px;*/
+	
+	font-size: 80px;
+	
+	text-align: center;
+	
+	width: 100px;
+	height: 100px;
 }
 
 .disabled {
@@ -60,32 +29,9 @@
 }
 
 .x::after {
-    content: '❌';
+	content: '❌';
 }
 
 .o::after {
-    content: '⭕';
-}
-
-.game-over {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: rgb(0 0 0 / 50%) 0 0 0 9999px;
-}
-
-.game-over-text {
-    position: absolute;
-    top: -200px;
-    font-size: 60px;
-    font-family: sans-serif;
-    font-weight: bold;
-    text-align: center;
-    transform: translateX(-30%);
-}
-
-.visible {
-    display: block;
+	content: '⭕';
 }
