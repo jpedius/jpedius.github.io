@@ -1,13 +1,7 @@
 'use strict';
 
-jQuery(function($) {
-
-    let title = 'Sounds';
-    document.title = title;
- 
-    let file = '/tutorial/sounds/file/';
-    
-    let consonant = [{ 
+let consonant = [
+    { 
         letter: "p",
         mp3: "consonant-p.mp3",
     }, { 
@@ -76,9 +70,11 @@ jQuery(function($) {
     }, { 
         letter: "w", 
         mp3: "consonant-w.mp3",
-    }];
+    }
+];
 
-    let vowel = [{ 
+let vowel = [
+    { 
         letter: "ee", 
         mp3: "vowel-ee.mp3",
     }, { 
@@ -129,101 +125,120 @@ jQuery(function($) {
     }, { 
         letter: "or", 
         mp3: "vowel-or.mp3",
-    }];
-
-    let sounds = consonant.concat(vowel);
-    sounds = shuffle(sounds);
-
-    let root = document.querySelector('#root');
-    root.classList.add('q01');
-
-    let h1Title = document.createElement('h1');
-    h1Title.innerHTML = title;
-    h1Title.classList.add('q02');
-
-    let toLetter = [];
-    for (let i=0; i<sounds.length; i++) {
-
-        let divSounds = document.createElement('div');
-        divSounds.classList.add('q03');
-
-        let toAudio = document.createElement('audio');
-        toAudio.classList.add('q04');
-        toAudio.src = file + sounds[i].mp3
-        divSounds.appendChild(toAudio);
-
-        let toButton = document.createElement('button');
-        toButton.classList.add('q05');
-        toButton.type = 'button';
-        toButton.innerHTML = 'Play';
-        toButton.addEventListener('click', () => {
-            divSounds.children[0].play();
-        });
-        divSounds.appendChild(toButton);
-
-        let toInput = document.createElement('input');
-        toInput.classList.add('q06');
-        toInput.type = 'text';
-        toInput.size = 10;
-        divSounds.appendChild(toInput);
-
-        let toSpan = document.createElement('span');
-        toSpan.classList.add('q07');
-        toSpan.innerHTML = ' ' + sounds[i].letter + ' ';
-        divSounds.appendChild(toSpan);
-        
-        toLetter.push(divSounds);
     }
-    
-    let toShowHide = document.createElement('button');
-    toShowHide.classList.add('q08');
-    toShowHide.type = 'button';
-    toShowHide.innerHTML = 'Show';
-    for (let i of toLetter) {
-        i.children[3].style.display = 'none';
+];
+
+function shuffle(array) {
+
+    let items = JSON.parse(JSON.stringify(array));
+    let currentIndex = items.length, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (currentIndex !== 0) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [items[currentIndex], items[randomIndex]] = [
+            items[randomIndex], items[currentIndex]];
     }
-                
-    let toHide = 1;
-    toShowHide.addEventListener('click', () => {
-        if (toHide) {
-            toShowHide.innerHTML = 'Hide';
-            for (let i of toLetter) {
-                i.children[3].style.display = 'inline';
-            }
-            toHide = 0;
+
+    return items;
+}
+
+let sounds = consonant.concat(vowel);
+sounds = shuffle(sounds);
+
+function sound_element(element, mp3, letter, showHide) {
+
+    let div = document.createElement('div');
+    div.classList.add('soundLetterDiv');
+
+    let audio = document.createElement('audio');
+    audio.src = mp3;
+    audio.classList.add('soundLetterAudio');
+
+    let play = document.createElement('button');
+    play.classList.add('soundPlayButton');
+    play.innerHTML = 'Play';
+    play.addEventListener('click', () => {
+        audio.play();
+    });
+
+    let show = document.createElement('button');
+    show.classList.add('soundShowButton');
+    show.innerHTML = 'Show';
+
+    let input = document.createElement('input');
+    input.type = 'text';
+    input.size = 10;
+    input.classList.add('soundTextInput');   
+
+    let span = document.createElement('span');
+    span.classList.add('soundLetterSpan');
+    span.innerHTML = ' ' + letter + ' ';
+
+    show.addEventListener('click', () => {
+        if (showHide === true) {
+            show.innerHTML = 'Hide';
+            span.style.display = 'inline';
+            showHide = false;
         }
         else {
-            toShowHide.innerHTML = 'Show';
-            for (let i of toLetter) {
-                i.children[3].style.display = 'none';
-            }
-            toHide = 1;
+            show.innerHTML = 'Show';
+            span.style.display = 'none';
+            showHide = true;
         }
     });
- 
-    root.appendChild(h1Title);
-    root.appendChild(toShowHide);
-    toLetter.map(function(element) {
-        root.appendChild(element);
-    }); 
- 
-    function shuffle(array) {
 
-        let items = JSON.parse(JSON.stringify(array));
-        let currentIndex = items.length, randomIndex;
+    div.appendChild(audio);
+    div.appendChild(play);
+    div.appendChild(show);
+    div.appendChild(input);
+    div.appendChild(span);
+    element.appendChild(div);
 
-        // While there remain elements to shuffle...
-        while (currentIndex !== 0) {
+    return [show, span];
+}
 
-            // Pick a remaining element...
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
+let root = document.querySelector('#root');
+let div = root.children[2];
 
-            // And swap it with the current element.
-            [items[currentIndex], items[randomIndex]] = [
-                items[randomIndex], items[currentIndex]];
+const app = {
+    showHideAll: true,
+    showHide: [],
+    showElement: [],
+    spanElement: [],
+};
+
+for (let i=0; i<sounds.length; i++) {
+
+    let file = 'file/' + sounds[i].mp3;
+    let letter = sounds[i].letter;
+
+    app.showHide[i] = true;
+    let a = sound_element(div, file, letter, true);
+    [app.showElement[i], app.spanElement[i]] = a;
+}
+
+let button = root.children[1].children[0];
+button.addEventListener('click', () => {
+
+    for (let i=0; i<sounds.length; i++) {
+        if (app.showHide[i] === true) {
+            app.showElement[i].innerHTML = 'Hide';
+            app.spanElement[i].style.display = 'inline';
+            app.showHide[i] = false;
         }
-
-        return items;
+        else {
+            app.showElement[i].innerHTML = 'Show';
+            app.spanElement[i].style.display = 'none';
+            app.showHide[i] = true;
+        }
     }
+
+    app.showHideAll = !app.showHideAll;
+    button.innerHTML = app.showHideAll ? 'Show All' : 'Hide All';
 });

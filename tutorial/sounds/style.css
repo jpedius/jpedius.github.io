@@ -1,55 +1,27 @@
-.q01 {
+.soundTitleH1,
+.soundShowAllDiv,
+.soundLetterAllDiv,
+.soundLetterDiv,
+.soundLetterAudio,
+.soundTextInput,
+.soundLetterSpan {
+	
 	margin: 10px 10px 10px 10px;
 	padding: 10px 0px 10px 0px;
 	
 	font-size: 20px;	
 }
 
-.q02 {
-	margin: 10px 10px 10px 10px;
-	padding: 10px 0px 10px 0px;
+.soundShowAllButton,
+.soundPlayButton,
+.soundShowButton {
 	
-	font-size: 20px;	
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	
+	font-size: 20px;
 }
 
-.q03 {
-	margin: 10px 10px 10px 10px;
-	padding: 10px 0px 10px 0px;
-	
-	font-size: 20px;	
-}
-
-.q04 {
-	margin: 10px 10px 10px 10px;
-	padding: 10px 0px 10px 0px;
-	
-	font-size: 20px;	
-}
-
-.q05 {
-	margin: 10px 10px 10px 10px;
-	padding: 10px 0px 10px 0px;
-	
-	font-size: 20px;	
-}
-
-.q06 {
-	margin: 10px 10px 10px 10px;
-	padding: 10px 0px 10px 0px;
-	
-	font-size: 20px;	
-}
-
-.q07 {
-	margin: 10px 10px 10px 10px;
-	padding: 10px 0px 10px 0px;
-	
-	font-size: 20px;	
-}
-
-.q08 {
-	margin: 10px 10px 10px 10px;
-	padding: 10px 0px 10px 0px;
-	
-	font-size: 20px;	
+.soundLetterSpan {
+	display: none;
 }
