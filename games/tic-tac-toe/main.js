@@ -65,6 +65,9 @@ document.addEventListener('click', event => {
             xo += game.position[i];
         }
         console.log(xo);
+        for (let i=0; i<game.levels.length; i++) {
+            console.log(game.levels[i]);
+        }
         if (xo === 9) {
             console.log(game.allow[3]);
             game.winner = 3;
