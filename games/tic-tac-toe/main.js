@@ -64,14 +64,26 @@ document.addEventListener('click', event => {
 
         for (let i=0; i<game.levels.length; i++) {
             
+            let a = game.turn ? 2 : 1;
+            
             let x = game.levels[i][0];
             let y = game.levels[i][1];
             let z = game.levels[i][2];
             
-            //if (game.winner === 0) {
-                console.log(game.turn ? 2 : 1);
-            //} 
-            console.log('a', game.levels[i], x, y, z);
+            let r = game.position[x];
+            let s = game.position[y];
+            let t = game.position[z];
+            
+            console.log('!',
+                game.turn ? 2 : 1,
+                game.levels[i],
+                game.levels[i][0],
+                game.levels[i][1],
+                game.levels[i][2],
+                game.position[x],
+                game.position[y],
+                game.position[z],
+            );
         }
         
         if (xo === 9 && game.winner === 0) { game.winner = 3; }
