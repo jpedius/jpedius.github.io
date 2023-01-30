@@ -60,8 +60,11 @@ document.addEventListener('click', event => {
         }
         
         console.log(game.position.length);
-        if (game.position.length === 9) {
-            
+        let xo = 0;
+        for (let i=0; i<game.position.length; i++) {
+            xo += game.position[i];
+        }
+        if (xo === 9) {
             game.winner = game.allow[3];
         }
     }
