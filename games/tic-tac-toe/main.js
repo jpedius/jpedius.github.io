@@ -15,6 +15,12 @@ const game = {
         'A Draw',
     ],
     
+    position: [
+        0, 0, 0,
+        0, 0, 0,
+        0, 0, 0,
+    ],
+    
     levels: [
         [0, 1, 2],
         [3, 4, 5],
@@ -41,6 +47,9 @@ document.addEventListener('click', event => {
 
     if (items && !container && game.winner === 0) {
     
+        item.dataset.pos = 
+        item.classList.add('disabled');
+        item.classList.add(game.turn ? 'x' : 'o');
     }
 
     text.innerText = game.allow[game.winner];
@@ -54,9 +63,9 @@ document.querySelector('.restart').addEventListener('click', () => {
 
     game.turn = true;
     game.winner = 0;
-    //for (let i=0; i<game.levels.length; i++) {
-    //    game.levels[i] = 0;
-    //}
+    for (let i=0; i<game.position.length; i++) {
+        game.position[i] = 0;
+    }
 });
 
 /*    
