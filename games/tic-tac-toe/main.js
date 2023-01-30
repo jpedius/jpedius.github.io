@@ -70,7 +70,7 @@ document.addEventListener('click', event => {
             let y = game.levels[i][1];
             let z = game.levels[i][2];
             
-            console.log(x, y, z);
+            console.log('a', x, y, z);
         }
         
         if (xo === 9 && game.winner === 0) { game.winner = 3; }
