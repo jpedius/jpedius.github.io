@@ -59,8 +59,9 @@ document.addEventListener('click', event => {
             console.log(game, a);
         }
         
+        console.log(game.position.length);
         if (game.position.length === 9) {
-            console.log(game.position.length);
+            
             game.winner = game.allow[3];
         }
     }
