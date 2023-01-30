@@ -47,10 +47,12 @@ document.addEventListener('click', event => {
 
     if (items && !container && game.winner === 0) {
     
+        if (!(Number(target.dataset.pos))) {
         //[items.dataset.pos]
         //items.classList.add('disabled');
         //items.classList.add(game.turn ? 'x' : 'o');
-        console.log(items, target, target.dataset.pos);
+            console.log(items, target, Number(target.dataset.pos));
+        }
     }
 
     text.innerText = game.allow[game.winner];
