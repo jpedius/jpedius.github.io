@@ -31,7 +31,7 @@ const game = {
         [2, 5, 8],
         
         [0, 4, 8],
-        [2, 4, 8],    
+        [2, 4, 6],    
     ],
 };
 
@@ -64,13 +64,12 @@ document.addEventListener('click', event => {
 
         for (let i=0; i<game.levels.length; i++) {
             
-            //console.log(game.levels[i]);
-            
             let x = game.levels[i][0];
             let y = game.levels[i][1];
             let z = game.levels[i][2];
             
-            console.log('a', x, y, z);
+            
+            console.log('a', game.levels[i], x, y, z);
         }
         
         if (xo === 9 && game.winner === 0) { game.winner = 3; }
