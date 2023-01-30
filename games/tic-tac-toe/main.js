@@ -54,9 +54,7 @@ document.addEventListener('click', event => {
             target.classList.add(game.turn ? 'x' : 'o');
             console.log(items, target, a);
             console.log(target.classList.contains('disabled'));
-            if (game.winner === null) {
-                game.turn = !game.turn;
-            }
+            game.turn = !game.turn;
         }
     }
 
