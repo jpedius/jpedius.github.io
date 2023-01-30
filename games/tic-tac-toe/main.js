@@ -58,6 +58,11 @@ document.addEventListener('click', event => {
             
             console.log(game, a);
         }
+        
+        if (game.position.length === 9) {
+            console.log(game.position.length);
+            game.winner = game.allow[3];
+        }
     }
 
     text.innerText = game.allow[game.winner];
