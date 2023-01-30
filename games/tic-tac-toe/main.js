@@ -47,12 +47,13 @@ document.addEventListener('click', event => {
 
     if (items && !container && game.winner === 0) {
     
-        let a = Number(target.dataset.pos);
-        //if (!()) {
-        //[items.dataset.pos]
-        target.classList.add('disabled');
-        target.classList.add(game.turn ? 'x' : 'o');
-        console.log(items, target, a);
+        //if (!target.classList.contains('disabled')) {
+            console.log(target.classList.contains('disabled'));
+            let a = Number(target.dataset.pos);
+            target.classList.add('disabled');
+            target.classList.add(game.turn ? 'x' : 'o');
+            console.log(items, target, a);
+            console.log(target.classList.contains('disabled'));
         //}
     }
 
