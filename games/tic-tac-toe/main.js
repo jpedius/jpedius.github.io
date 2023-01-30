@@ -56,17 +56,19 @@ document.addEventListener('click', event => {
             let a = Number(target.dataset.pos);
             game.position[a] = 1;
             
-            console.log(game, a);
+            //console.log(game, a);
         }
         
-        console.log(game.position.length);
+        //console.log(game.position.length);
         let xo = 0;
         for (let i=0; i<game.position.length; i++) {
             xo += game.position[i];
         }
         console.log(xo);
         if (xo === 9) {
-            game.winner = game.allow[3];
+            console.log(game.allow[3]);
+            game.winner = 3;
+            //game.allow[game.winner] 
         }
     }
 
