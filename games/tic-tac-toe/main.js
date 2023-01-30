@@ -68,7 +68,9 @@ document.addEventListener('click', event => {
             let y = game.levels[i][1];
             let z = game.levels[i][2];
             
-            
+            //if (game.winner === 0) {
+                console.log(game.winner ? 2 : 1);
+            //} 
             console.log('a', game.levels[i], x, y, z);
         }
         
