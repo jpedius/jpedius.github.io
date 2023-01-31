@@ -71,32 +71,17 @@ document.addEventListener('click', event => {
             let y = game.levels[i][1];
             let z = game.levels[i][2];
             
-            let r = game.position[x];
-            let s = game.position[y];
-            let t = game.position[z];
-            
-            b += r;
-            b += s;
-            b += t;
-            
-            
+            b += game.position[x];
+            b += game.position[y];
+            b += game.position[z];
             
             console.log(
-                '!',
-                game.turn ? 2 : 1,
-                //game.levels[i],
+                '! ' + game.turn ? 2 : 1,
                 '@ ' + game.levels[i][0] + ' ' + game.levels[i][1] + ' ' + game.levels[i][2],
-                '# ' + game.position[x] + ' ' + game.position[y] + ' ' + game.position[z],
-                '$',
-                //game.levels[i][0] === game.position[x],
-                //game.levels[i][1] === game.position[y],
-                //game.levels[i][2] === game.position[z],
+                '# ' + game.position[x]  + ' ' + game.position[y]  + ' ' + game.position[z],
+                '$ ' + b,
                 
-                b,
-                '%',
             );
-            
-            
         }
         
         if (xo === 9 && game.winner === 0) { game.winner = 3; }
