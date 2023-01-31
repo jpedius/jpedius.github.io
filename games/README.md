@@ -1,5 +1,11 @@
 ## Games
 
+[Tic Tac Toe](tic-tac-toe/)
+
+[Connect Four](connect-four/)
+
+### Backup
+
 [Intro](intro/)
 
 [Beginners](beginners/)
@@ -7,13 +13,5 @@
 [Beginners Two](beginners-two/)
 
 [Parallax](parallax/)
-
-[Connect Four](connect-four/)
-
-[Connect Four Multi](connect-four-multi/)
-
-### Backup
-
-[Tic Tac Toe](tic-tac-toe/)
 
 [Cartoon Player](cartoon-player/)
