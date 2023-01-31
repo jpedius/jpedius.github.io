@@ -62,7 +62,6 @@ document.addEventListener('click', event => {
             xo += game.position[i];
         }
 
-        let b = 0;
         for (let i=0; i<game.levels.length; i++) {
             
             let a = game.turn ? 2 : 1;
@@ -71,6 +70,7 @@ document.addEventListener('click', event => {
             let y = game.levels[i][1];
             let z = game.levels[i][2];
             
+            let b = 0;
             b += game.position[x];
             b += game.position[y];
             b += game.position[z];
