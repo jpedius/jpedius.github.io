@@ -57,11 +57,12 @@ document.addEventListener('click', event => {
             
             target.classList.add('disabled');
             target.classList.add(game.turn ? 'x' : 'o');
-            game.turn = !game.turn;
             
             let a = Number(target.dataset.pos);
             game.position[a] = 1;
             game.abc[a] = game.turn ? 'x' : 'o';
+            
+            game.turn = !game.turn;
         }
         
         let xo = 0;
