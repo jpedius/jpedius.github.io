@@ -76,7 +76,7 @@ document.addEventListener('click', event => {
             b += game.position[z];
             
             console.log(
-                '! ' + game.turn ? 2 : 1,
+                '! ' + (game.turn ? 2 : 1),
                 '@ ' + game.levels[i][0] + ' ' + game.levels[i][1] + ' ' + game.levels[i][2],
                 '# ' + game.position[x]  + ' ' + game.position[y]  + ' ' + game.position[z],
                 '$ ' + b,
