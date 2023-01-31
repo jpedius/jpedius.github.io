@@ -75,9 +75,9 @@ document.addEventListener('click', event => {
             let s = game.position[y];
             let t = game.position[z];
             
-            b += x;
-            b += y;
-            b += z;
+            b += r;
+            b += s;
+            b += t;
             
             
             
