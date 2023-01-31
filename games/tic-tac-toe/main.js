@@ -88,11 +88,11 @@ document.addEventListener('click', event => {
                 //game.position[y],
                 //game.position[z],
                 
-                game.levels[i][0] === game.position[x],
-                game.levels[i][1] === game.position[y],
-                game.levels[i][2] === game.position[z],
+                //game.levels[i][0] === game.position[x],
+                //game.levels[i][1] === game.position[y],
+                //game.levels[i][2] === game.position[z],
                 
-                //((x === r) && (y === s) && (z === t)),
+                ((x === r) && (y === s) && (z === t)),
             );
             
             
