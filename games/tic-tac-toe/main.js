@@ -94,7 +94,7 @@ document.addEventListener('click', event => {
                 );
                 
                 if (r === 'xxx' || r === 'ooo') {
-                    game.winner = game.turn ? 1 : 2;
+                    game.winner = game.turn ? 2 : 1;
                     break;
                 }
             } 
