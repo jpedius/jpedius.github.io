@@ -62,6 +62,7 @@ document.addEventListener('click', event => {
             xo += game.position[i];
         }
 
+        let b = 0;
         for (let i=0; i<game.levels.length; i++) {
             
             let a = game.turn ? 2 : 1;
@@ -74,9 +75,14 @@ document.addEventListener('click', event => {
             let s = game.position[y];
             let t = game.position[z];
             
+            b += x;
+            b += y;
+            b += z;
             
             
-            console.log('!',
+            
+            console.log(
+                '!',
                 game.turn ? 2 : 1,
                 //game.levels[i],
                 '@',
@@ -92,7 +98,7 @@ document.addEventListener('click', event => {
                 //game.levels[i][1] === game.position[y],
                 //game.levels[i][2] === game.position[z],
                 
-                ((x === r) && (y === s) && (z === t)),
+                b,
                 '%',
             );
             
