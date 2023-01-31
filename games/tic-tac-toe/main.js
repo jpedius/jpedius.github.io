@@ -114,6 +114,7 @@ document.querySelector('.restart').addEventListener('click', () => {
     game.winner = 0;
     for (let i=0; i<game.position.length; i++) {
         game.position[i] = 0;
+        game.abc[i] = null;
     }
 });
 
