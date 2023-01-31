@@ -21,6 +21,12 @@ const game = {
         0, 0, 0,
     ],
     
+    abc: [
+        null, null, null,
+        null, null, null,
+        null, null, null,
+    ],
+    
     levels: [
         [0, 1, 2],
         [3, 4, 5],
@@ -55,6 +61,7 @@ document.addEventListener('click', event => {
             
             let a = Number(target.dataset.pos);
             game.position[a] = 1;
+            game.abc[a] = game.turn ? 'x' : 'o';
         }
         
         let xo = 0;
@@ -70,21 +77,22 @@ document.addEventListener('click', event => {
             let y = game.levels[i][1];
             let z = game.levels[i][2];
             
-            let b = 0;
-            b += game.position[x];
-            b += game.position[y];
-            b += game.position[z];
+            let r = game.abc[x];
+            let s = game.abc[y];
+            let t = game.abc[z];
             
             let c = game.position[x]
                   + game.position[y]
                   + game.position[z];
 
             if (c === 3) {
+            
+                
                 console.log(
-                    '! ' + (game.turn ? 2 : 1),
+                    '! ' + game.abc[x] + ' ' + game.abc[y] + ' ' + game.abc[z],
                     '@ ' + x + ' ' + y + ' ' + z,
                     '# ' + game.position[x]  + ' ' + game.position[y]  + ' ' + game.position[z],
-                    '$ ' + b + ' ' + c,
+                    '$ ' + r + ' ' + s + ' ' + t + ' ' + c,
                 );
             } 
         }
