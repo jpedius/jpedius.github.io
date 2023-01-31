@@ -84,6 +84,8 @@ document.addEventListener('click', event => {
 
             if (c === 3) {
 
+                let r = game.abc[x] + game.abc[y] + game.abc[z];
+                
                 console.log(
                     //'! ' + game.abc[x] + ' ' + game.abc[y] + ' ' + game.abc[z],
                     '@ ' + x + ' ' + y + ' ' + z,
@@ -91,7 +93,6 @@ document.addEventListener('click', event => {
                     '$ ' + r + ' ' + c,
                 );
                 
-                let r = game.abc[x] + game.abc[y] + game.abc[z];
                 if (r === 'xxx' || r === 'ooo') {
                     game.winner = game.turn ? 1 : 2;
                     break;
