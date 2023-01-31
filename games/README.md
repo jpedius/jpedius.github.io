@@ -4,6 +4,8 @@
 
 [Connect Four](connect-four/)
 
+[Dominos](dominos/)
+
 ### Backup
 
 [Intro](intro/)
