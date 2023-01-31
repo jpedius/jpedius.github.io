@@ -99,7 +99,6 @@ document.querySelector('.restart').addEventListener('click', () => {
 
     document.querySelectorAll('.grid-item').forEach(item => {
         item.classList.remove('disabled', 'x', 'o');
-        console.log(item);  
     });
 
     game.turn = true;
@@ -108,5 +107,4 @@ document.querySelector('.restart').addEventListener('click', () => {
         game.position[i] = 0;
         game.xo[i] = null;
     }
-    console.log(game);
 });
