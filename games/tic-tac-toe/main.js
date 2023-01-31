@@ -75,14 +75,18 @@ document.addEventListener('click', event => {
             b += game.position[y];
             b += game.position[z];
             
-            let c = game.position[x] + game.position[y] + game.position[z];
-            
-            console.log(
-                '! ' + (game.turn ? 2 : 1),
-                '@ ' + game.levels[i][0] + ' ' + game.levels[i][1] + ' ' + game.levels[i][2],
-                '# ' + game.position[x]  + ' ' + game.position[y]  + ' ' + game.position[z],
-                '$ ' + b + ' ' + c,
-            );
+            let c = game.position[x]
+                  + game.position[y]
+                  + game.position[z];
+
+            if (c === 3) {
+                console.log(
+                    '! ' + (game.turn ? 2 : 1),
+                    '@ ' + x + ' ' + y + ' ' + z,
+                    '# ' + game.position[x]  + ' ' + game.position[y]  + ' ' + game.position[z],
+                    '$ ' + b + ' ' + c,
+                );
+            } 
         }
         
         if (xo === 9 && game.winner === 0) { game.winner = 3; }
