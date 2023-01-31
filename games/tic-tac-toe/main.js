@@ -55,12 +55,14 @@ document.addEventListener('click', event => {
     
         if (!target.classList.contains('disabled')) {
             
+            let turn = game.turn ? 'x' : 'o';
+            
             target.classList.add('disabled');
-            target.classList.add(game.turn ? 'x' : 'o');
+            target.classList.add(turn);
             
             let a = Number(target.dataset.pos);
             game.position[a] = 1;
-            game.xo[a] = game.turn ? 'x' : 'o';
+            game.xo[a] = turn;
             
             game.turn = !game.turn;
         }
