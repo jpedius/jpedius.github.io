@@ -38,9 +38,9 @@ function deck(cards, suits) {
     for (let i=0; i<cards.length; i++) {
         for (let j=0; j<suits.length; j++) {
         
-            a[d] += { cards: cards[i], suits: suits[j], len: d };
+            let b = { cards: cards[i], suits: suits[j], len: d };
             //console.log('!', i, j, d);
-            console.log(a[d]);
+            console.log(b);
             d++;
         }
     }
