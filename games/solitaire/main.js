@@ -30,7 +30,7 @@ const game = {
 
 function deck(cards, suits) {
 
-    lat d = [];
+    let d = [];
     for (let i=0; i<cards.length; i++) {
         for (let j=0; j<suits.length; j++) {
             console.log(d[i * j]);
