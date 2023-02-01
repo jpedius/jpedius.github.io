@@ -32,13 +32,12 @@ deck(game.cards, game.suits);
 
 function deck(cards, suits) {
 
-    let d = [];
+    let d = 0;
     console.log(cards, suits);
     for (let i=0; i<cards.length; i++) {
         for (let j=0; j<suits.length; j++) {
-            d[i*j]++;
-            console.log('!', i, j, i*j);
-            //d[i * j]++;
+            console.log('!', i, j, d, i*j);
+            d++;
         }
     }
     console.log(d);
