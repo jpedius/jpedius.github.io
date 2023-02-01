@@ -36,7 +36,8 @@ function deck(cards, suits) {
     console.log(cards, suits);
     for (let i=0; i<cards.length; i++) {
         for (let j=0; j<suits.length; j++) {
-            console.log(i, j, d[i*j]);
+            d[i*j]++;
+            console.log('!', i, j, d[i*j]);
             //d[i * j]++;
         }
     }
