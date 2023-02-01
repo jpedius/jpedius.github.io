@@ -4,6 +4,8 @@
 
 [Connect Four](connect-four/)
 
+[Solitaire](solitaire/)
+
 [Dominos](dominos/)
 
 ### Backup
