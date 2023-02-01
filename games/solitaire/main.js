@@ -35,10 +35,10 @@ function deck(cards, suits) {
     let d = 0;
     let a = [];
     console.log(cards, suits);
-    for (let i=0; i<cards.length; i++) {
-        for (let j=0; j<suits.length; j++) {
+    for (let i=0; i<suits.length; i++) {
+        for (let j=0; j<cards.length; j++) {
         
-            let b = { cards: cards[i], suits: suits[j], len: d };
+            let b = { cards: cards[j], suits: suits[i], len: d };
             //console.log('!', i, j, d);
             console.log(b);
             d++;
