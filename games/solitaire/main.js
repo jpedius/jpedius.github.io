@@ -45,7 +45,7 @@ function deck(cards, suits) {
             d++;
         }
     }
-    console.log(d);
+    console.log(a, d);
 }
 
 function shuffle(array) {
