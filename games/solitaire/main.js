@@ -36,9 +36,13 @@ function deck(cards, suits) {
     let d = 0;
     for (let i=0; i<suits.length; i++) {
         for (let j=0; j<cards.length; j++) {
-            let num = a.length - 1;
-            a[num] = { cards: cards[j], suits: suits[i], num: num };
-            console.log(num);
+            //let num = a.length - 1;
+            a[d] = {
+                cards: cards[j],
+                suits: suits[i],
+                num: d
+            };
+            //console.log(num);
             d++;
         }
     }
