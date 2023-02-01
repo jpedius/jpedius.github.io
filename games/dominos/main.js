@@ -25,7 +25,7 @@ const game = {
 
 //document.querySelector('.start-game').addEventListener('click', () => {
 
-    let g = true ? game.set[55] : game.set[91];
+    let g = true ? game.set[0] : game.set[1];
     
     
     //g = shuffle(g);
