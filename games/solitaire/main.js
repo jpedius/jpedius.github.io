@@ -40,6 +40,7 @@ function deck(cards, suits) {
         
             let b = { cards: cards[j], suits: suits[i], len: d };
             //console.log('!', i, j, d);
+            a[d] = b;
             console.log(b);
             d++;
         }
