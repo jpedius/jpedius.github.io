@@ -32,20 +32,16 @@ deck(game.cards, game.suits);
 
 function deck(cards, suits) {
 
-    let d = 0;
     let a = [];
-    console.log(cards, suits);
+    let d = 0;
     for (let i=0; i<suits.length; i++) {
         for (let j=0; j<cards.length; j++) {
-        
-            let b = { cards: cards[j], suits: suits[i], len: d };
-            //console.log('!', i, j, d);
-            a[d] = b;
-            console.log(b);
+            a[d] = { cards: cards[j], suits: suits[i], num: d };
             d++;
         }
     }
     console.log(a, d);
+    return a;
 }
 
 function shuffle(array) {
