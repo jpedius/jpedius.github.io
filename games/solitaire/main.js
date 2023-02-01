@@ -28,17 +28,18 @@ const game = {
     ],
 };
 
-deck(game.cards, game.suits);
+let a = deck(game.cards, game.suits);
+a = shuffle(a);
 
 function deck(cards, suits) {
 
-    let item = [];
+    let items = [];
     let len = 0;
     
     for (let i=0; i<suits.length; i++) {
         for (let j=0; j<cards.length; j++) {
             
-            item[len] = {
+            items[len] = {
                 cards: cards[j],
                 suits: suits[i],
                 num: len,
@@ -47,13 +48,14 @@ function deck(cards, suits) {
         }
     }
     console.log(item, len);
-    return item;
+    return items;
 }
 
 function shuffle(array) {
 
     let items = JSON.parse(JSON.stringify(array));
     let currentIndex = items.length, randomIndex;
+    console.log(currentIndex);
 
     // While there remain elements to shuffle...
     while (currentIndex !== 0) {
