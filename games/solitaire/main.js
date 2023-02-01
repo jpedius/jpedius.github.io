@@ -55,7 +55,7 @@ function shuffle(array) {
 
     let items = JSON.parse(JSON.stringify(array));
     let currentIndex = items.length, randomIndex;
-    console.log(currentIndex);
+    console.log('!', currentIndex);
 
     // While there remain elements to shuffle...
     while (currentIndex !== 0) {
