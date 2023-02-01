@@ -28,6 +28,8 @@ const game = {
     ],
 };
 
+deck(game.cards, game.suits);
+
 function deck(cards, suits) {
 
     let d = [];
