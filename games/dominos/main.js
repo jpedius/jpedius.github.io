@@ -23,15 +23,17 @@ const game = {
     set: [55, 91],
 };
 
-//document.querySelector('.start-game').addEventListener('click', () => {
+document.querySelector('.start-game').addEventListener('click', () => {
 
     let g = true ? game.set[0] : game.set[1];
+    
+    
     
     
     //g = shuffle(g);
     
     console.log(g);
-//});
+});
 
 function shuffle(array) {
 
