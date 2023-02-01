@@ -47,7 +47,7 @@ function deck(cards, suits) {
             len++;
         }
     }
-    console.log(item, len);
+    console.log(items, len);
     return items;
 }
 
