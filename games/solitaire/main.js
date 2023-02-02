@@ -74,7 +74,7 @@ let c = 1;
 
 for (let i=0; i<7; i++) {
     for (let j=0; j<c; j++) {
-        console.log(i, j, c);
+        console.log('!', i, j, c);
     }
     c += 1;
 }
