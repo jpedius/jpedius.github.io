@@ -33,11 +33,8 @@ function shuffle(array) {
         current--;
         
         [items[current], items[rand]] = [items[rand], items[current]];
-        
-        q += '!' + items[current] + ' ' + items[rand] + ' \n';
     }
 
-    console.log(q);
     return items;
 }
 
@@ -70,7 +67,6 @@ const game = {
 };
 
 let a = deck(game.cards, game.suits);
-console.log('!', a);
 a = shuffle(a);
 console.log('@', a);
 
