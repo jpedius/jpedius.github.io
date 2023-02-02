@@ -26,7 +26,6 @@ function shuffle(array) {
     let current = items.length;
     let rand = 0;
 
-    let q = '';
     while (current !== 0) {
         
         rand = Math.floor(Math.random() * current);
@@ -36,6 +35,20 @@ function shuffle(array) {
     }
 
     return items;
+}
+
+function rows(array, stack) {
+
+    let number = 1;
+    
+    for (let i=0; i<array.length; i++) {
+        for (let j=0; j<number; j++) {
+            array[i][j] = stack.pop();
+        }
+        number += 1;
+    }
+    
+    return array;
 }
 
 const root = document.querySelector('#root');
@@ -64,19 +77,23 @@ const game = {
         'Heart',
         'Spade',
     ],
+    
+    rows: [[], [], [], [], [], [], []],
 };
 
 let a = deck(game.cards, game.suits);
 a = shuffle(a);
+let b = rows(game.rows, a);
 
+/*
 let b = [[], [], [], [], [], [], []];
-let c = 1;
 
-for (let i=0; i<7; i++) {
+let c = 1;
+for (let i=0; i<b.length; i++) {
     for (let j=0; j<c; j++) {
         b[i][j] = a.pop();
     }
     c += 1;
 }
-
-console.log(a);
+*/
+console.log(a, b, game);
