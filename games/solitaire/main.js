@@ -33,9 +33,11 @@ function shuffle(array) {
         current -= 1;
         
         [items[current], items[rand]] = [items[rand], items[current]];
+        
+        console.log(items[current], items[rand], current, rand);
     }
 
-    console.log(items);
+    //console.log(items);
     return items;
 }
 
