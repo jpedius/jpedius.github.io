@@ -68,15 +68,15 @@ const game = {
 
 let a = deck(game.cards, game.suits);
 a = shuffle(a);
-console.log('@', a);
 
 let b = [[], [], [], [], [], [], []];
 let c = 1;
 
 for (let i=0; i<7; i++) {
     for (let j=0; j<c; j++) {
-        //b[i][j] = a.shift();
-        console.log('!', i, j, c, a);
+        b[i][j] = a.pop(); //a.shift();
+        //console.log('!', i, j, c, a);
     }
+    console.log(c, b[i]);
     c += 1;
 }
