@@ -68,3 +68,13 @@ let a = deck(game.cards, game.suits);
 console.log('!', a);
 a = shuffle(a);
 console.log('@', a);
+
+let b = [[], [], [], [], [], [], []];
+let c = 1;
+
+for (let i=0; i<b.length; i++) {
+    for (let j=0; i<c; i++) {
+        console.log(c);
+    }
+    c += 1;
+}
