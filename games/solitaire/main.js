@@ -25,10 +25,11 @@ function shuffle(array) {
 
     let items = [...array];    
     let current = items.length;
+    let rand = 0;
 
     while (current !== 0) {
         
-        let rand = Math.floor(Math.random() * current);
+        rand = Math.floor(Math.random() * current);
         current -= 1;
         
         [items[current], items[rand]] = [items[rand], items[current]];
