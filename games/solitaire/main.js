@@ -29,7 +29,9 @@ const game = {
 };
 
 let a = deck(game.cards, game.suits);
+console.log('!', a);
 a = shuffle(a);
+console.log('@', a);
 
 function deck(cards, suits) {
 
@@ -51,26 +53,26 @@ function deck(cards, suits) {
     return items;
 }
 
-function shuffle(array) {
-
-    let items = JSON.parse(JSON.stringify(array));
+function shuffle(items) {
+/*
+    let items = array; //JSON.parse(JSON.stringify(array));
     
     console.log(array);
     console.log(JSON.stringify(array));
     console.log(JSON.parse(JSON.stringify(array)));
-    
-    let currentIndex = items.length, randomIndex;
+*/    
+    let current = items.length;
+    //let rand;
 
     // While there remain elements to shuffle...
-    while (currentIndex !== 0) {
+    while (current !== 0) {
 
         // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
+        let rand = Math.floor(Math.random() * current);
+        current--;
 
         // And swap it with the current element.
-        [items[currentIndex],items[randomIndex]] = [
-            items[randomIndex],items[currentIndex]];
+        [items[current], items[rand]] = [items[rand], items[current]];
     }
 
     return items;
