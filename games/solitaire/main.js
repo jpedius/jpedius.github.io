@@ -53,7 +53,9 @@ function deck(cards, suits) {
     return items;
 }
 
-function shuffle(items) {
+function shuffle(array) {
+
+    let items = [...array];
 /*
     let items = array; //JSON.parse(JSON.stringify(array));
     
