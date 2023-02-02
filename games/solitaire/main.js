@@ -86,10 +86,19 @@ const game = {
     }],
     
     rows: [[], [], [], [], [], [], []],
+    
+    player: [],
+    repeat: [],
+    
+    function q() {
+        return 0;
+    }
 };
 
 let a = deck(game.cards, game.suits);
 a = shuffle(a);
 let b = rows(game.rows, a);
+
+console.log(game.q());
 
 console.log(a, b);
