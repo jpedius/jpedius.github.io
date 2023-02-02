@@ -13,11 +13,11 @@ function deck(cards, suits) {
                 suits: suits[i],
                 num: current,
             };
-            console.log(items[current]);
             current += 1;
         }
     }
     
+    console.log(items);
     return items;
 }
 
@@ -34,6 +34,7 @@ function shuffle(array) {
         [items[current], items[rand]] = [items[rand], items[current]];
     }
 
+    console.log(items);
     return items;
 }
 
