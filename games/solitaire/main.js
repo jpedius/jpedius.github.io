@@ -47,15 +47,19 @@ function deck(cards, suits) {
             len++;
         }
     }
-    console.log(items, len);
+    
     return items;
 }
 
 function shuffle(array) {
 
     let items = JSON.parse(JSON.stringify(array));
+    
+    console.log(array);
+    console.log(JSON.stringify(array));
+    console.log(JSON.parse(JSON.stringify(array)));
+    
     let currentIndex = items.length, randomIndex;
-    console.log('!', currentIndex);
 
     // While there remain elements to shuffle...
     while (currentIndex !== 0) {
