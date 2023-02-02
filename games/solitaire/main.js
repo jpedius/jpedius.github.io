@@ -13,7 +13,8 @@ function deck(cards, suits) {
                 suits: suits[i],
                 num: current,
             };
-            current++;
+            console.log(items[current]);
+            current += 1;
         }
     }
     
@@ -28,7 +29,7 @@ function shuffle(array) {
     while (current !== 0) {
         
         let rand = Math.floor(Math.random() * current);
-        current--;
+        current -= 1;
         
         [items[current], items[rand]] = [items[rand], items[current]];
     }
