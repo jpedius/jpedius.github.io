@@ -1,5 +1,41 @@
 'use strict';
 
+function deck(cards, suits) {
+
+    let items = [];
+    let current = 0;
+    
+    for (let i=0; i<suits.length; i++) {
+        for (let j=0; j<cards.length; j++) {
+            
+            items[current] = {
+                cards: cards[j],
+                suits: suits[i],
+                num: current,
+            };
+            current++;
+        }
+    }
+    
+    return items;
+}
+
+function shuffle(array) {
+
+    let items = [...array];    
+    let current = items.length;
+
+    while (current !== 0) {
+        
+        let rand = Math.floor(Math.random() * current);
+        current--;
+        
+        [items[current], items[rand]] = [items[rand], items[current]];
+    }
+
+    return items;
+}
+
 const root = document.querySelector('#root');
 
 const game = {
@@ -32,38 +68,3 @@ let a = deck(game.cards, game.suits);
 console.log('!', a);
 a = shuffle(a);
 console.log('@', a);
-
-function deck(cards, suits) {
-
-    let items = [];
-    let len = 0;
-    
-    for (let i=0; i<suits.length; i++) {
-        for (let j=0; j<cards.length; j++) {
-            
-            items[len] = {
-                cards: cards[j],
-                suits: suits[i],
-                num: len,
-            };
-            console.log(items.length);
-            len++;
-        }
-    }
-    
-    return items;
-}
-
-function shuffle(array) {
-
-    let items = [...array];    
-    let current = items.length;
-
-    while (current !== 0) {
-        let rand = Math.floor(Math.random() * current);
-        current--;
-        [items[current], items[rand]] = [items[rand], items[current]];
-    }
-
-    return items;
-}
