@@ -30,7 +30,7 @@ function shuffle(array) {
     while (current !== 0) {
         
         rand = Math.floor(Math.random() * current);
-        current -= 1;
+        current--;
         
         [items[current], items[rand]] = [items[rand], items[current]];
         
