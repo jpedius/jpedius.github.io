@@ -46,6 +46,7 @@ function deck(cards, suits) {
                 suits: suits[i],
                 num: len,
             };
+            console.log(items.length);
             len++;
         }
     }
@@ -55,25 +56,12 @@ function deck(cards, suits) {
 
 function shuffle(array) {
 
-    let items = [...array];
-/*
-    let items = array; //JSON.parse(JSON.stringify(array));
-    
-    console.log(array);
-    console.log(JSON.stringify(array));
-    console.log(JSON.parse(JSON.stringify(array)));
-*/    
+    let items = [...array];    
     let current = items.length;
-    //let rand;
 
-    // While there remain elements to shuffle...
     while (current !== 0) {
-
-        // Pick a remaining element...
         let rand = Math.floor(Math.random() * current);
         current--;
-
-        // And swap it with the current element.
         [items[current], items[rand]] = [items[rand], items[current]];
     }
 
