@@ -71,12 +71,19 @@ const game = {
         'King',
     ],
     
-    suits: [
-        'Club',
-        'Diamond',  
-        'Heart',
-        'Spade',
-    ],
+    suits: [{
+        name: 'Club',
+        num: 0,
+    }, { 
+        name: 'Diamond',
+        num: 0,
+    }, { 
+        name: 'Heart',
+        num: 0,
+    }, { 
+        name: 'Spade',
+        num: 0,
+    }],
     
     rows: [[], [], [], [], [], [], []],
 };
@@ -85,15 +92,4 @@ let a = deck(game.cards, game.suits);
 a = shuffle(a);
 let b = rows(game.rows, a);
 
-/*
-let b = [[], [], [], [], [], [], []];
-
-let c = 1;
-for (let i=0; i<b.length; i++) {
-    for (let j=0; j<c; j++) {
-        b[i][j] = a.pop();
-    }
-    c += 1;
-}
-*/
-console.log(a, b, game);
+console.log(a, b);
