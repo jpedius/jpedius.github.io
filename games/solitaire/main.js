@@ -72,8 +72,8 @@ console.log('@', a);
 let b = [[], [], [], [], [], [], []];
 let c = 1;
 
-for (let i=0; i<b.length; i++) {
-    for (let j=0; i<c; i++) {
+for (let i=0; i<7; i++) {
+    for (let j=0; j<c; j++) {
         console.log(i, j, c);
     }
     c += 1;
