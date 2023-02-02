@@ -75,7 +75,7 @@ let c = 1;
 
 for (let i=0; i<7; i++) {
     for (let j=0; j<c; j++) {
-        b[i][j] = a.shift();
+        //b[i][j] = a.shift();
         console.log('!', i, j, c, a);
     }
     c += 1;
