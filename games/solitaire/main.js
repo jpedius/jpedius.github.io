@@ -34,7 +34,7 @@ function shuffle(array) {
         
         [items[current], items[rand]] = [items[rand], items[current]];
         
-        q += '!' + items[current] + ' ' + items[rand] + ' ';
+        q += '!' + items[current] + ' ' + items[rand] + ' \n';
     }
 
     console.log(q);
