@@ -2,4 +2,6 @@
 
 [Tutorial](tutorial/)
 
+[Tutorial Two](tutorial-two/)
+
 [Games](games/)
