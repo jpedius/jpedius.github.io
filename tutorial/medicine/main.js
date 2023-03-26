@@ -2,9 +2,6 @@
 
 (function($) {
 
-    let title = 'Medicine';
-    document.title = title;
-
     let medicine = [{
         "name": "labetalol",
         "image": "file/labetalol.jpg",
