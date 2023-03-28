@@ -62,7 +62,8 @@ function clickNext() {
 }
 
 function setPlay() {
-
+	let talk = [];
+	return talk;
 }
 
 function setText() {
