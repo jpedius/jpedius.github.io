@@ -1,6 +1,6 @@
 'use strict';
 
-let howMany = sentences;
+let howMany = []; //sentences;
 howMany = shuffle(howMany);
 for (let i=0; i<howMany.length; i++) {
 	howMany[i] = shuffle(howMany[i]);
