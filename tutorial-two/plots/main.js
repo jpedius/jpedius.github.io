@@ -1,6 +1,6 @@
 'use strict';
 
-let howMany = [];
+let howMany = []; //plots;
 howMany = shuffle(howMany);
 for (let i=0; i<howMany.length; i++) {
 	howMany[i] = shuffle(howMany[i]);
@@ -72,6 +72,7 @@ function setText() {
 
 function consoleLog() {
 
+	console.log(plots);
 	console.log(previous);
 	console.log(play);
 	console.log(next);

@@ -72,6 +72,7 @@ function setText() {
 
 function consoleLog() {
 
+	console.log(sentences);
 	console.log(previous);
 	console.log(play);
 	console.log(next);
