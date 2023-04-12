@@ -8,15 +8,6 @@ for (let i=0; i<howMany.length; i++) {
 
 let previousOrNext = 0;
 
-let previous = document.getElementById('previous');
-previous.addEventListener('click', clickPrevious, false);
-
-let play = document.getElementById('play');
-play.addEventListener('click', clickPlay, false);
-
-let next = document.getElementById('next');
-next.addEventListener('click', clickNext, false);
-
 function shuffle(array) {
 
 	let items = JSON.parse(JSON.stringify(array));
@@ -66,16 +57,25 @@ function setPlay() {
 	return talk;
 }
 
+function clickShowHide(tag, show) {
+	console.log(tag, show);
+}
+
 function setText() {
 
+}
+
+function clickMode() {
+	let element = document.body;
+	element.classList.toggle('darkModeButton');
 }
 
 function consoleLog() {
 
 	console.log(medicine);
-	console.log(previous);
-	console.log(play);
-	console.log(next);
+	console.log(text);
+	console.log(image);
+	console.log(description);
 	console.log(pitch);
 	console.log(rate);
 	console.log(voice);

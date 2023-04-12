@@ -1,16 +1,78 @@
+.rootDiv {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.textDiv,
+.imageDiv,
+.descriptionDiv,
 .buttonsDiv,
 .previousButton,
 .playButton,
 .nextButton,
+.textButton,
+.imageButton,
+.descriptionButton,
 .rateDiv,
-.rateLabel,
-.rateInput,
 .pitchDiv,
-.pitchLabel,
-.pitchInput,
 .voiceDiv,
 .voiceSelect {
 	font-size: 20px;
-	margin: 10px 10px 10px 10px;
-	padding: 10px 10px 10px 10px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.textLabel,
+.imageLabel,
+.descriptionLabel,
+.rateLabel,
+.pitchLabel {
+	display: inline-block;
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+	width: 120px;
+}
+
+.textInput,
+.descriptionInput {
+	border: none;
+	border-color: transparent;
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+
+.rateInput,
+.pitchInput {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.imageImg {
+	font-size: 20px;
+	height: 250px;	
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+	width: 250px;
+}
+
+body {
+	background-color: white;
+	color: black;
+}
+
+.darkModeButton {
+	background-color: black;
+	color: white;
+}
+
+.modeDiv,
+.modeButton {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
 }
