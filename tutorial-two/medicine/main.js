@@ -13,8 +13,6 @@ let textButton = document.getElementById('textButton');
 let imageButton = document.getElementById('imageButton');
 let descriptionButton = document.getElementById('descriptionButton');
 
-let modeButton = document.getElementById('modeButton');
-
 let textShowHide = true;
 let imageShowHide = false;
 let descriptionShowHide = false;
