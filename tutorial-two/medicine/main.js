@@ -1,12 +1,25 @@
 'use strict';
 
-let howMany = []; //medicine;
+let howMany = medicine;
 howMany = shuffle(howMany);
-for (let i=0; i<howMany.length; i++) {
-	howMany[i] = shuffle(howMany[i]);
-}
 
 let previousOrNext = 0;
+
+let text = document.getElementById('text');
+let image = document.getElementById('image');
+let description = document.getElementById('description');
+
+let textButton = document.getElementById('textButton');
+let imageButton = document.getElementById('imageButton');
+let descriptionButton = document.getElementById('descriptionButton');
+
+let modeButton = document.getElementById('modeButton');
+
+let textShowHide = true;
+let imageShowHide = false;
+let descriptionShowHide = false;
+
+setValues();
 
 function shuffle(array) {
 
@@ -28,57 +41,70 @@ function shuffle(array) {
 	return items;
 }  
 
-function clickPrevious() {
+function clickButtonPrevious() {
 	if (previousOrNext <= 0) {
 		previousOrNext = howMany.length;
 	}
 	previousOrNext--;
-	setText();
+	return setValues();
 }
 
-function clickPlay() {
-	let talk = setPlay();
-	if (talk.length !== '') {
-		speak(talk);
-		setText();
-	}
+function clickButtonPlay() {
+	speak(howMany[previousOrNext].name);
 }
 
-function clickNext() {
+function clickButtonNext() {
 	if (previousOrNext >= howMany.length - 1) {
 		previousOrNext = -1;
 	}
 	previousOrNext++;
-	setText();
+	return setValues();
 }
 
-function setPlay() {
-	let talk = [];
-	return talk;
+function setValues() {
+    text.value = textShowHide
+        ? howMany[previousOrNext].name
+        : '-----';
+    image.src = imageShowHide
+        ? howMany[previousOrNext].image
+        : 'files/blank-black.jpg';
+    description.value = descriptionShowHide
+        ? howMany[previousOrNext].description
+        : '-----';
+    return howMany[previousOrNext];
 }
 
-function clickShowHide(tag, show) {
-	console.log(tag, show);
+function clickButtonText() {
+	textShowHide = !textShowHide;
+	text.value = textShowHide
+		? howMany[previousOrNext].name
+		: '-----';
+	textButton.innerHTML = textShowHide
+		? 'Text Hide'
+		: 'Text Show';
 }
 
-function setText() {
-
+function clickButtonImage() {
+	imageShowHide = !imageShowHide;
+	image.src = imageShowHide
+		? howMany[previousOrNext].image
+		: 'files/blank-black.jpg';
+	imageButton.innerHTML = imageShowHide
+		? 'Image Hide'
+		: 'Image Show';
 }
 
-function clickMode() {
+function clickButtonDescription() {
+	descriptionShowHide = !descriptionShowHide;
+	description.value = descriptionShowHide
+		? howMany[previousOrNext].description
+		: '-----';
+	descriptionButton.innerHTML = descriptionShowHide
+		? 'Description Hide'
+		: 'Description Show';
+}
+
+function clickButtonMode() {
 	let element = document.body;
 	element.classList.toggle('darkModeButton');
 }
-
-function consoleLog() {
-
-	console.log(medicine);
-	console.log(text);
-	console.log(image);
-	console.log(description);
-	console.log(pitch);
-	console.log(rate);
-	console.log(voice);
-	console.log(voices);
-}
-consoleLog();

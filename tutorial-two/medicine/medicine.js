@@ -1,6 +1,6 @@
 let medicine = [{
     name: "labetalol",
-    image: "file/labetalol.jpg",
+    image: "files/labetalol.jpg",
     description: "Labetalol HCL 300 mg tablet",
     pronunciation: {
         ipa: "/ləˈbɛtəlɔːl/",
@@ -8,7 +8,7 @@ let medicine = [{
     }
 }, {
     name: "lisinopril", 
-    image: "file/lisinopril.jpg", 
+    image: "files/lisinopril.jpg", 
     description: "Lisinopril 20 mg tablet",
     pronunciation: {
         ipa: "/laɪˈsɪnəprɪl/",
@@ -16,7 +16,7 @@ let medicine = [{
     }
 }, {
     name: "amlodipine besylate",
-    image: "file/amlodipine-besylate.jpg",
+    image: "files/amlodipine-besylate.jpg",
     description: "Amlodipine Besylate 10 mg tablet",
     pronunciation: {
         ipa: "/æmˈloʊdɪˌpiːn/", // besylate
@@ -24,7 +24,7 @@ let medicine = [{
     }
 }, { 
     name: "spironolactone",
-    image: "file/spironolactone.jpg",
+    image: "files/spironolactone.jpg",
     description: "Spironolactone 25 mg tablet",
     pronunciation: {
         ipa: "/ˌspaɪroʊnoʊˈlæktoʊn/",
@@ -32,7 +32,7 @@ let medicine = [{
     }
 }, { 
     name: "tamsulosin",
-    image: "file/tamsulosin.jpg",
+    image: "files/tamsulosin.jpg",
     description: "Tamsulosin HCL 0.4 mg capsule",
     pronunciation: {
         ipa: "/tæmˈsuːləsɪn/",
@@ -40,7 +40,7 @@ let medicine = [{
     }
 }, { 
     name: "rosuvastatin calcium",
-    image: "file/rosuvastatin-calcium.jpg",
+    image: "files/rosuvastatin-calcium.jpg",
     description: "Rosuvastatin Calcium 5 mg tablet",
     pronunciation: { 
         ipa: "/roʊˈsuːvəstætɪn/", // calcium kˈælsi͡əm 

@@ -13,7 +13,7 @@
   <div class="rootDiv" id="root">
     <div class="textDiv">
       <label for="text" class="textLabel">Text</label>
-      <input type="text" readonly="readonly" class="textInput" id="text" autocomplete="off" autocorrect="off" autocapitalize="off" size="40" />
+      <input type="text" readonly="readonly" class="textInput" id="text" autocomplete="off" autocorrect="off" autocapitalize="off" size="30" />
     </div>
     <div class="imageDiv">
       <label for="image" class="imageLabel">Image</label>
@@ -21,21 +21,21 @@
     </div>
     <div class="descriptionDiv">
       <label for="description" class="descriptionLabel">Description</label>
-      <input type="text" readonly="readonly" class="descriptionInput" id="description" autocomplete="off" autocorrect="off" autocapitalize="off" size="40" />
+      <input type="text" readonly="readonly" class="descriptionInput" id="description" autocomplete="off" autocorrect="off" autocapitalize="off" size="30" />
     </div>
     <div class="buttonsDiv">
-      <button class="previousButton" onclick="clickPrevious()">Previous</button>
-      <button class="playButton" onclick="clickPlay()">Play</button>
-      <button class="nextButton" onclick="clickNext()">Next</button>
+      <button class="previousButton" onclick="clickButtonPrevious()">Previous</button>
+      <button class="playButton" onclick="clickButtonPlay()">Play</button>
+      <button class="nextButton" onclick="clickButtonNext()">Next</button>
     </div>
     <div class="buttonsDiv">
-      <button class="textButton" onclick="clickShowHide('text', true)">Text Hide</button>
-      <button class="imageButton" onclick="clickShowHide('image', false)">Image Show</button>
-      <button class="descriptionButton" onclick="clickShowHide('description', false)">Description Show</button>
+      <button class="textButton" id="textButton" onclick="clickButtonText()">Text Hide</button>
+      <button class="imageButton" id="imageButton" onclick="clickButtonImage()">Image Show</button>
+      <button class="descriptionButton" id="descriptionButton" onclick="clickButtonDescription()">Description Show</button>
     </div>
     <div class="rateDiv">
       <label for="rate" class="rateLabel">Rate</label>
-      <input type="range" min="0.5" max="2" step="0.1" value="0.6" class="rateInput" id="rate" />
+      <input type="range" min="0.5" max="2" step="0.1" value="0.7" class="rateInput" id="rate" />
     </div>
     <div class="pitchDiv">
       <label for="pitch" class="pitchLabel">Pitch</label>
@@ -45,7 +45,7 @@
       <select class="voiceSelect" id="voice"></select>
     </div>
     <div class="modeDiv">
-      <button class="modeButton" onclick="clickMode()">Toggle Mode</button>
+      <button class="modeButton" id="modeButton" onclick="clickButtonMode()">Toggle Mode</button>
     </div>
   </div>
   <!-- -->
