@@ -1,4 +1,4 @@
-let sentences = [{
+let allSentences = [{
     name: "Sentence One",
     key: [
         ["I", "feel", "great"],

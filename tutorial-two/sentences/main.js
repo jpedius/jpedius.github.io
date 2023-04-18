@@ -1,6 +1,6 @@
 'use strict';
 
-let howMany = []; //sentences;
+let howMany = allSentences[0].key;
 howMany = shuffle(howMany);
 for (let i=0; i<howMany.length; i++) {
 	howMany[i] = shuffle(howMany[i]);
@@ -8,14 +8,8 @@ for (let i=0; i<howMany.length; i++) {
 
 let previousOrNext = 0;
 
-let previous = document.getElementById('previous');
-previous.addEventListener('click', clickPrevious, false);
-
-let play = document.getElementById('play');
-play.addEventListener('click', clickPlay, false);
-
-let next = document.getElementById('next');
-next.addEventListener('click', clickNext, false);
+setSelectSentences();
+setValues();
 
 function shuffle(array) {
 
@@ -35,50 +29,61 @@ function shuffle(array) {
 	}
 
 	return items;
-}  
+}
 
-function clickPrevious() {
+function setSelectSentences() {
+	sentences.innerHTML = '';
+	for (let i = 0; i < allSentences.length; i++) {
+		const option = document.createElement('option');
+		option.textContent = `${allSentences[i].name}`;
+		sentences.appendChild(option);
+	}
+}
+
+function clickSelectSentences() {
+	previousOrNext = 0;
+	howMany = allSentences[sentences.options.selectedIndex].key;
+	howMany = shuffle(howMany);
+	for (let i=0; i<howMany.length; i++) {
+		howMany[i] = shuffle(howMany[i]);
+	}
+	return setValues();
+}
+
+function clickButtonPrevious() {
 	if (previousOrNext <= 0) {
 		previousOrNext = howMany.length;
 	}
 	previousOrNext--;
-	setText();
+	return setValues();
 }
 
-function clickPlay() {
-	let talk = setPlay();
-	if (talk.length !== '') {
-		speak(talk);
-		setText();
+function clickButtonPlay() {
+	if (howMany[previousOrNext].length === 1) {
+		speak(readonly.value + ' ' + text.value);
+	} else if (text.value !== '') {
+		speak(text.value);
 	}
 }
 
-function clickNext() {
+function clickButtonNext() {
 	if (previousOrNext >= howMany.length - 1) {
 		previousOrNext = -1;
 	}
 	previousOrNext++;
-	setText();
+	return setValues();
 }
 
-function setPlay() {
-	let talk = [];
-	return talk;
+function setValues() {
+	let value = '';
+	for (let i=0; i<howMany[previousOrNext].length; i++) {
+		value += howMany[previousOrNext][i] + ' ';
+	}
+	readonly.value = value.trim();
+	text.value = '';
 }
 
-function setText() {
-
+function clickButtonMode() {
+	let element = document.body;
+	element.classList.toggle('darkModeButton');
 }
-
-function consoleLog() {
-
-	console.log(sentences);
-	console.log(previous);
-	console.log(play);
-	console.log(next);
-	console.log(pitch);
-	console.log(rate);
-	console.log(voice);
-	console.log(voices);
-}
-consoleLog();
