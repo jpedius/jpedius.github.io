@@ -1,4 +1,4 @@
-const words = [[
+const allWords = [[
     'I',
     'a',
 ], [ 

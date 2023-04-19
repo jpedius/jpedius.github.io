@@ -10,24 +10,40 @@
 <body>
 
   <!-- -->
-  <div id="root">
+  <div class="rootDiv" id="root">
+    <div class="readonlyDiv">
+      <label for="readonly" class="readonlyLabel">Readonly</label>
+      <input type="text" readonly="readonly" class="readonlyInput" id="readonly" autocomplete="off" autocorrect="off" autocapitalize="off" size="30" />
+    </div>
+    <div class="textDiv">
+      <label for="text" class="textLabel">Text</label>
+      <input type="text" class="textInput" id="text" autocomplete="off" autocorrect="off" autocapitalize="off" size="30" />
+    </div>
     <div class="buttonsDiv">
-      <button class="previousButton" id="previous">Previous</button>
-      <button class="playButton" id="play">Play</button>
-      <button class="nextButton" id="next">Next</button>
+      <button class="previousButton" onclick="clickButtonPrevious()">Previous</button>
+      <button class="playButton" onclick="clickButtonPlay()">Play</button>
+      <button class="showButton" onclick="clickButtonShow()">Show</button>
+      <button class="nextButton" onclick="clickButtonNext()">Next</button>
+    </div>
+    <div class="numberDiv">
+      <label for="number" class="numberLabel">Number</label>
+      <input type="range" min="0" max="14" step="1" value="0" class="numberInput" id="number" />
+    </div>
+    <div class="wordsDiv" id="words">
     </div>
     <div class="rateDiv">
       <label for="rate" class="rateLabel">Rate</label>
-      <input type="range" min="0.5" max="2" default="0.6"
-        step="0.1" class="rateInput" id="rate">
+      <input type="range" min="0.5" max="2" step="0.1" value="0.7" class="rateInput" id="rate" />
     </div>
     <div class="pitchDiv">
       <label for="pitch" class="pitchLabel">Pitch</label>
-      <input type="range" min="0" max="2" default="1"
-        step="0.1" class="pitchInput" id="pitch">
+      <input type="range" min="0" max="2" step="0.1" value="1" class="pitchInput" id="pitch" />
     </div>
     <div class="voiceDiv">
       <select class="voiceSelect" id="voice"></select>
+    </div>
+    <div class="modeDiv">
+      <button class="modeButton" onclick="clickButtonMode()">Toggle Mode</button>
     </div>
   </div>
   <!-- -->

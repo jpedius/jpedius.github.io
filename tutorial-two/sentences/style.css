@@ -41,12 +41,15 @@
 	padding: 5px 5px 5px 5px;
 }
 
-
 .rateInput,
 .pitchInput {
 	font-size: 20px;
 	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
+}
+
+input[type="range"] {
+	width: 250px;
+	margin: 0;
 }
 
 body {
