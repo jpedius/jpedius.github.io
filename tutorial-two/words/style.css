@@ -23,6 +23,7 @@
 .previousButton,
 .playButton,
 .showButton,
+.checkButton,
 .nextButton,
 .rateDiv,
 .pitchDiv,
@@ -53,7 +54,6 @@
 	margin: 5px 5px 5px 5px;
 	padding: 5px 5px 5px 5px;
 }
-
 
 .numberInput,
 .rateInput,

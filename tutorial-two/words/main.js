@@ -1,21 +1,22 @@
 'use strict';
 
-let howMany = []; //words;
-howMany = shuffle(howMany);
-for (let i=0; i<howMany.length; i++) {
-	howMany[i] = shuffle(howMany[i]);
+let howMany = [];
+for (let i=0; i<allWords.length; i++) {
+    howMany = howMany.concat(allWords[i]);
 }
+howMany = shuffle(howMany);
 
 let previousOrNext = 0;
 
-let previous = document.getElementById('previous');
-previous.addEventListener('click', clickPrevious, false);
+let show = true;
 
-let play = document.getElementById('play');
-play.addEventListener('click', clickPlay, false);
+let readonly = document.getElementById('readonly');
 
-let next = document.getElementById('next');
-next.addEventListener('click', clickNext, false);
+let words = document.getElementById('words');
+
+let checkboxes = setCheckboxes(words);
+
+setValues();
 
 function shuffle(array) {
 
@@ -37,48 +38,135 @@ function shuffle(array) {
 	return items;
 }  
 
-function clickPrevious() {
+function addElement(element, key, value) {
+
+	const div = document.createElement('div');
+	div.classList.add('wordsGrid');
+
+	const checkbox = document.createElement('input');
+	checkbox.type = 'checkbox';
+	checkbox.checked = 'checked';
+	checkbox.classList.add('wordsCheckbox');
+
+	const label = document.createElement('label');
+	label.for = key;
+	label.innerHTML = value;
+	label.classList.add('wordsLabel')
+
+	div.appendChild(checkbox);
+	div.appendChild(label);
+
+	element.appendChild(div);
+
+	return {
+		div: div,
+		checkbox: checkbox,
+		label: label,
+	};
+}
+
+function setCheckboxes(words) {
+
+	let checkboxes = [{
+		key: 'one',
+		value: 'One',
+	}, {
+		key: 'two',
+		value: 'Two',
+	}, {
+		key: 'three',
+		value: 'Three',
+	}, {
+		key: 'four',
+		value: 'Four',
+	}, {
+		key: 'five',
+		value: 'Five',
+	}, {
+		key: 'six',
+		value: 'Six',
+	}, {
+		key: 'seven',
+		value: 'Seven',
+	}, {
+		key: 'eight',
+		value: 'Eight',
+	}, {
+		key: 'nine',
+		value: 'Nine',
+	}, {
+		key: 'ten',
+		value: 'Ten',
+	}, {
+		key: 'eleven',
+		value: 'Eleven',
+	}, {
+		key: 'twelve',
+		value: 'Twelve',
+	}, {
+		key: 'thirteen',
+		value: 'Thirteen',
+	}, {
+		key: 'fourteen',
+		value: 'Fourteen',
+	}];
+
+	let elements = [];
+	for (let i=0; i<checkboxes.length; i++) {
+		elements.push(Object.assign(checkboxes[i],
+			addElement(words, checkboxes[i].key, checkboxes[i].value)));
+	}
+
+	return elements;
+}
+
+function clickButtonPrevious() {
 	if (previousOrNext <= 0) {
 		previousOrNext = howMany.length;
 	}
 	previousOrNext--;
-	setText();
+	return setValues();
 }
 
-function clickPlay() {
-	let talk = setPlay();
-	if (talk.length !== '') {
-		speak(talk);
-		setText();
+function clickButtonPlay() {
+	speak(howMany[previousOrNext]);
+}
+
+function clickButtonShow() {
+	show = !show;
+	readonly.value = show
+		? howMany[previousOrNext]
+		: '-----';
+}
+
+function clickButtonCheck() {
+	previousOrNext = 0;
+	howMany = [];
+	for (let i=0; i<allWords.length; i++) {
+		if (checkboxes[i].checkbox.checked) {
+			howMany = howMany.concat(allWords[i]);
+		}
 	}
+	howMany = shuffle(howMany);
+	return setValues();
 }
 
-function clickNext() {
+function clickButtonNext() {
 	if (previousOrNext >= howMany.length - 1) {
 		previousOrNext = -1;
 	}
 	previousOrNext++;
-	setText();
+	return setValues();
 }
 
-function setPlay() {
-	let talk = [];
-	return talk;
+function setValues() {
+    readonly.value = show
+        ? howMany[previousOrNext]
+        : '-----';
+	text.value = '';
 }
 
-function setText() {
-
+function clickButtonMode() {
+	let element = document.body;
+	element.classList.toggle('darkModeButton');
 }
-
-function consoleLog() {
-
-	console.log(words);
-	console.log(previous);
-	console.log(play);
-	console.log(next);
-	console.log(pitch);
-	console.log(rate);
-	console.log(voice);
-	console.log(voices);
-}
-consoleLog();
