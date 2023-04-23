@@ -10,10 +10,19 @@
 <body>
 
   <!-- -->
-  <div id="root">
+  <div class="rootDiv" id="root">
+    <div class="allDiv">
+      <button class="allButton" onclick="clickButtonAll()">All Sounds</button>
+    </div>
+    <div class="soundsDiv" id="audioSounds">
+    </div>
+    <div class="modeDiv">
+      <button class="modeButton" onclick="clickButtonMode()">Toggle Mode</button>
+    </div>
   </div>
   <!-- -->
 
+  <script type="text/javascript" src="sounds.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

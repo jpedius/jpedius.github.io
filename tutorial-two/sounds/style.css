@@ -1,0 +1,43 @@
+.rootDiv,
+.allDiv,
+.allButton,
+.letterAudio,
+.letterButton,
+.letterInput {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.letterSpan {
+	display: none;
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.soundsDiv {
+	display: grid;
+	font-size: 20px;
+	grid-template-columns: repeat(3, 300px);
+	gap: 5px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+body {
+	background-color: white;
+	color: black;
+}
+
+.darkModeButton {
+	background-color: black;
+	color: white;
+}
+
+.modeDiv,
+.modeButton {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
