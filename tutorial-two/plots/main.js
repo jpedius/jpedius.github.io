@@ -1,21 +1,19 @@
 'use strict';
 
-let howMany = []; //plots;
-howMany = shuffle(howMany);
-for (let i=0; i<howMany.length; i++) {
-	howMany[i] = shuffle(howMany[i]);
-}
+let src = {
 
+    sentences: (sentences.dataset.files
+        + sentences.value
+        + sentences.dataset.txt),
+        
+    text:'',
+    words: words.value,
+};
+
+let howMany = [];
 let previousOrNext = 0;
 
-let previous = document.getElementById('previous');
-previous.addEventListener('click', clickPrevious, false);
-
-let play = document.getElementById('play');
-play.addEventListener('click', clickPlay, false);
-
-let next = document.getElementById('next');
-next.addEventListener('click', clickNext, false);
+clickSelectSentences();
 
 function shuffle(array) {
 
@@ -35,50 +33,78 @@ function shuffle(array) {
 	}
 
 	return items;
-}  
+}
 
-function clickPrevious() {
+function clickSelectSentences() {
+
+    src.sentences = (sentences.dataset.files
+        + sentences.value
+        + sentences.dataset.txt);
+
+    fetch(new Request(src.plots))
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error, status = ${response.status}`);
+            }
+            return response.text();
+        })
+        .then((data) => {
+
+            let reWhole = /[^\.!\?]+[\.!\?]+/g;
+            let reComma = /[^\.!\?,]+[\.!\?,]+/g;
+
+            src.text = data.trim().match(reWhole).map(function (x) {
+                return x.trim().match(reComma).map(function (y) {
+                    return y.trim().split(' ');
+                });
+            });
+            
+            src.words = words.value;
+            if ('whole' === words.value) {
+                howMany = src.text.map(function (x) {
+                    return x.map(function (y) {
+                        return y.join(' ');
+                    }).join(' ');
+                });
+            }
+            else if ('comma' === words.value) {
+                howMany = src.text.flat(1).map(function (x) {
+                    return x.join(' ');
+                });
+            }
+            else if ('words' === words.value) {
+                howMany = src.text.flat(2);
+            }
+            previousOrNext = 0;
+            
+            text.value = howMany[previousOrNext];
+        })
+        .catch((error) => {
+            console.error(`Error: ${error.message}`);
+        });
+}
+
+function clickButtonPrevious() {
 	if (previousOrNext <= 0) {
 		previousOrNext = howMany.length;
 	}
 	previousOrNext--;
-	setText();
+	text.value = howMany[previousOrNext];
 }
 
-function clickPlay() {
-	let talk = setPlay();
-	if (talk.length !== '') {
-		speak(talk);
-		setText();
-	}
+function clickButtonPlay() {
+	speak(text.value);
 }
 
-function clickNext() {
+function clickButtonNext() {
 	if (previousOrNext >= howMany.length - 1) {
 		previousOrNext = -1;
 	}
 	previousOrNext++;
-	setText();
+	text.value = howMany[previousOrNext];
 }
 
-function setPlay() {
-	let talk = [];
-	return talk;
+function clickButtonMode() {
+	let element = document.body;
+	element.classList.toggle('darkModeButton');
 }
-
-function setText() {
-
-}
-
-function consoleLog() {
-
-	console.log(plots);
-	console.log(previous);
-	console.log(play);
-	console.log(next);
-	console.log(pitch);
-	console.log(rate);
-	console.log(voice);
-	console.log(voices);
-}
-consoleLog();
