@@ -15,10 +15,6 @@ let previousOrNext = 0;
 
 clickSelectSentences();
 
-console.log(src);
-console.log(howMany);
-console.log(previousOrNext);
-
 function shuffle(array) {
 
 	let items = JSON.parse(JSON.stringify(array));
@@ -44,8 +40,6 @@ function clickSelectSentences() {
     src.sentences = (sentences.dataset.files
         + sentences.value
         + sentences.dataset.txt);
-
-    console.log(src);
 
     fetch(new Request(src.sentences))
         .then((response) => {
