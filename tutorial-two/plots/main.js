@@ -15,7 +15,9 @@ let previousOrNext = 0;
 
 clickSelectSentences();
 
-console.log(src, howMany, previousOrNext);
+console.log(src);
+console.log(howMany);
+console.log(previousOrNext);
 
 function shuffle(array) {
 
@@ -45,7 +47,7 @@ function clickSelectSentences() {
 
     console.log(src);
 
-    fetch(new Request(src.plots))
+    fetch(new Request(src.sentences))
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error, status = ${response.status}`);
