@@ -1,42 +1,18 @@
 'use strict';
 
-let howMany = [];
-for (let i=0; i<allWords.length; i++) {
-    howMany = howMany.concat(allWords[i]);
-}
-howMany = shuffle(howMany);
-
-let previousOrNext = 0;
-
-let show = true;
-
-let readonly = document.getElementById('readonly');
-
 let words = document.getElementById('words');
-
 let checkboxes = setCheckboxes(words);
 
-setValues();
+let show = false;
+let readonly = document.getElementById('readonly');
+let text = document.getElementById('text');
 
-function shuffle(array) {
+let label = document.getElementById('label');
+let number = document.getElementById('number');
 
-	let items = JSON.parse(JSON.stringify(array));
-	let currentIndex = items.length, randomIndex;
-
-	// While there remain elements to shuffle...
-	while (currentIndex !== 0) {
-
-		// Pick a remaining element...
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex--;
-
-		// And swap it with the current element.
-		[items[currentIndex], items[randomIndex]] = [
-		items[randomIndex], items[currentIndex]];
-	}
-
-	return items;
-}  
+let previousOrNext = 0;
+let howMany = [];
+howMany = clickButtonCheck();
 
 function addElement(element, key, value) {
 
@@ -120,35 +96,46 @@ function setCheckboxes(words) {
 	return elements;
 }
 
+function shuffle(array) {
+
+	let items = JSON.parse(JSON.stringify(array));
+	let currentIndex = items.length, randomIndex;
+
+	// While there remain elements to shuffle...
+	while (currentIndex !== 0) {
+
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex--;
+
+		// And swap it with the current element.
+		[items[currentIndex], items[randomIndex]] = [
+		items[randomIndex], items[currentIndex]];
+	}
+
+	return items;
+}  
+
 function clickButtonPrevious() {
 	if (previousOrNext <= 0) {
 		previousOrNext = howMany.length;
 	}
 	previousOrNext--;
-	return setValues();
+    readonly.value = show
+        ? howMany[previousOrNext].id
+        : howMany[previousOrNext].missing;
+	text.value = '';
 }
 
 function clickButtonPlay() {
-	speak(howMany[previousOrNext]);
+	speak(howMany[previousOrNext].id);
 }
 
 function clickButtonShow() {
 	show = !show;
 	readonly.value = show
-		? howMany[previousOrNext]
-		: '-----';
-}
-
-function clickButtonCheck() {
-	previousOrNext = 0;
-	howMany = [];
-	for (let i=0; i<allWords.length; i++) {
-		if (checkboxes[i].checkbox.checked) {
-			howMany = howMany.concat(allWords[i]);
-		}
-	}
-	howMany = shuffle(howMany);
-	return setValues();
+		? howMany[previousOrNext].id
+		: howMany[previousOrNext].missing;
 }
 
 function clickButtonNext() {
@@ -156,14 +143,66 @@ function clickButtonNext() {
 		previousOrNext = -1;
 	}
 	previousOrNext++;
-	return setValues();
+    readonly.value = show
+        ? howMany[previousOrNext].id
+        : howMany[previousOrNext].missing;
+	text.value = '';
 }
 
-function setValues() {
-    readonly.value = show
-        ? howMany[previousOrNext]
-        : '-----';
+function clickButtonCheck() {
+
+	label.innerHTML = 'Number: ' + number.value;
+
+	let myNumber = Number(number.value);
+
+	let myPreviousOrNext = 0;
+	let myHowMany = [];
+
+	for (let i=0; i<allWords.length; i++) {
+
+		if (checkboxes[i].checkbox.checked) {
+
+			let a = [];
+			for (let j=0; j<allWords[i].length; j++) {
+				
+				let myWords = allWords[i][j];
+				let myMissing = myWords;
+
+				if (myNumber >= myWords.length) {
+					myMissing = ''
+					for (let l=0; l<myWords.length; l++) {
+						myMissing += '-';
+					}
+				}
+				else if (myNumber < myWords.length) {
+					let n = [];
+					for (let l=0; l<myMissing.length; l++) {
+						n.push(l);
+					}
+					n = shuffle(n);
+					for (let l=0; l<myNumber; l++) {
+						myMissing = myMissing.slice(0, n[l]) + '-' + myMissing.slice(n[l]+1);
+					}
+				}
+
+				a.push({
+					'id': myWords,
+					'missing': myMissing,
+				});
+			}
+
+			myHowMany = myHowMany.concat(a);
+		}
+	}
+	myHowMany = shuffle(myHowMany);
+	
+	readonly.value = show
+	    ? myHowMany[myPreviousOrNext].id
+	    : myHowMany[myPreviousOrNext].missing;
 	text.value = '';
+
+	howMany = myHowMany;
+	return howMany;
 }
 
 function clickButtonMode() {
