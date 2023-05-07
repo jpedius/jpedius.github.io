@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japanese</title>
+  <link href="normalize.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- -->
+  <div class="rootDiv" id="root">
+    <div class="sentencesDiv">
+      <select class="sentencesSelect" onchange="clickSelectSentences()" id="sentences">
+        <option>Hiragana</option>
+        <option>Katakana</option>
+      </select>
+    </div>
+    <div class="textDiv">
+      <label for="text" class="textLabel">Text</label>
+      <input type="text" readonly="readonly" class="textInput" id="text" autocomplete="off" autocorrect="off" autocapitalize="off" size="30" />
+    </div>
+    <div class="imageDiv">
+      <label for="image" class="imageLabel">GIF</label>
+      <img src="files/hiragana-あ.gif" class="imageImg" id="gif" />
+    </div>
+    <div class="imageDiv">
+      <label for="image" class="imageLabel">PNG</label>
+      <img src="files/hiragana-あ.png" class="imageImg" id="png" />
+    </div>
+    <div class="buttonsDiv">
+      <button class="previousButton" onclick="clickButtonPrevious()">Previous</button>
+      <button class="nextButton" onclick="clickButtonNext()">Next</button>
+    </div>
+    <div class="modeDiv">
+      <button class="modeButton" onclick="clickButtonMode()">Toggle Mode</button>
+    </div>
+  </div>
+  <!-- -->
+
+  <script type="text/javascript" src="japanese.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

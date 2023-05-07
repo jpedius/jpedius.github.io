@@ -1,7 +1,11 @@
 ## jpedius.github.io
 
-[Tutorial](tutorial/)
+[Tutorial](tutorial-two/)
 
-[Tutorial Two](tutorial-two/)
+[Japanese](japanese/)
+
+## Old Stuff
+
+[Old Tutorial](tutorial/)
 
 [Games](games/)

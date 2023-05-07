@@ -1,0 +1,60 @@
+.rootDiv {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.sentencesDiv,
+.sentencesSelect,
+.textDiv,
+.imageDiv,
+.buttonsDiv,
+.previousButton,
+.playButton,
+.nextButton {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.textLabel,
+.imageLabel {
+	display: inline-block;
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+	width: 120px;
+}
+
+.textInput {
+	border: none;
+	border-color: transparent;
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.imageImg {
+	font-size: 20px;
+	/*height: 250px;*/	
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+	/*width: 250px;*/
+}
+
+body {
+	background-color: white;
+	color: black;
+}
+
+.darkModeButton {
+	background-color: black;
+	color: white;
+}
+
+.modeDiv,
+.modeButton {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
