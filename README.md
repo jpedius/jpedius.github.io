@@ -8,4 +8,4 @@
 
 [Old Tutorial](tutorial/)
 
-[Games](games/)
+[Old Games](old-games/)
