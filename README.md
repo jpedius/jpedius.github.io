@@ -2,6 +2,8 @@
 
 [Tutorial](tutorial-two/)
 
+[Games](games/)
+
 [Japanese](japanese/)
 
 ## Old Stuff
