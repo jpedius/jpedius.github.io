@@ -8,4 +8,8 @@
 
 [Sounds](sounds/)
 
+[Vocabulary](vocabulary/)
+
+[Vocabulary Two](vocabulary-two/)
+
 [Words](words/)
