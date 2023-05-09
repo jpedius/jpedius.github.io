@@ -47,9 +47,6 @@ function populateVoiceList() {
             else if (voices[i].name === "Samantha") {
                 option.defaultSelected = true;
             }
-            else if (voices[i].name === "Tessa") {
-                option.defaultSelected = true;
-            }
 
             voice.appendChild(option);
         }
