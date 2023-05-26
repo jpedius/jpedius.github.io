@@ -14,6 +14,6 @@
 
 ## Code
 
-[Sublime Text Regular Expression Cheat Sheet](regex/) 
+[Sublime Text Regular Expression Cheat Sheet](regex.md) 
 
 jdhao/Sublime_text_regex_cheat_sheet.md
