@@ -39,7 +39,7 @@ function clickButtonPrevious() {
 }
 
 function clickButtonPlay() {
-	speak(howMany[previousOrNext]);
+	speak(howMany[previousOrNext].state);
 }
 
 function clickButtonNext() {
@@ -53,13 +53,13 @@ function clickButtonNext() {
 function clickButtonText() {
 	textShowHide = !textShowHide;
 	text.value = textShowHide
-		? howMany[previousOrNext]
+		? howMany[previousOrNext].state
 		: '-----';
 }
 
 function setValues() {
     text.value = textShowHide
-        ? howMany[previousOrNext]
+        ? howMany[previousOrNext].state
         : '-----';
     return howMany[previousOrNext];
 }
