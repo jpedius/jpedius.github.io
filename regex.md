@@ -52,6 +52,7 @@ An expression of the form `[[:name:]]` matches the named character class `name`.
 |`word`| Any word character (alphanumeric characters plus the underscore). |
 
 ## "Single character" character class
+
 | class name | Description |
 |------------|-------------|
 |   `\d`       |   Equal to `[[:digit:]]`|
@@ -66,6 +67,7 @@ An expression of the form `[[:name:]]` matches the named character class `name`.
 
 # Regex groups
 ## Defining groups
+
 | expression | Description |
 |------------|-------------|
 |   `(?<NAME>expression)`         |  Define a regex group named `NAME` which you can later refer to with `\g{NAME}`    |
@@ -75,6 +77,7 @@ An expression of the form `[[:name:]]` matches the named character class `name`.
 |`(?<!pattern)`|Negative lookbehind, consumes zero characters, the following RE will only match if not preceded with this fixed length RE. |
 
 ## Matching groups
+
 | expression | Description |
 |------------|-------------|
 |   `\1`         |        Refer to first regex group     |
