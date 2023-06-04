@@ -68,3 +68,11 @@ function clickButtonMode() {
 	let element = document.body;
 	element.classList.toggle('darkModeButton');
 }
+
+function populateStorage() {
+	localStorage.setItem("bgcolor", "red");
+	localStorage.setItem("font", "Helvetica");
+	localStorage.setItem("image", "myCat.png");
+}
+
+let a = populateStorage()
