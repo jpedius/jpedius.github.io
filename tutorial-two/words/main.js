@@ -22,16 +22,17 @@ function addElement(element, key, value) {
 	const checkbox = document.createElement('input');
 	checkbox.type = 'checkbox';
 	checkbox.checked = 'checked';
+	checkbox.id = 'type' + value;
 	checkbox.classList.add('wordsCheckbox');
 
 	const label = document.createElement('label');
 	label.for = key;
-	label.innerHTML = value;
-	label.classList.add('wordsLabel')
-
-	div.appendChild(checkbox);
+	label.classList.add('wordsLabel');
+	label.appendChild(checkbox);	
+	
+	checkbox.after(value)
+	
 	div.appendChild(label);
-
 	element.appendChild(div);
 
 	return {
@@ -117,6 +118,7 @@ function shuffle(array) {
 }  
 
 function clickButtonPrevious() {
+	setStorage();
 	if (previousOrNext <= 0) {
 		previousOrNext = howMany.length;
 	}
@@ -139,6 +141,7 @@ function clickButtonShow() {
 }
 
 function clickButtonNext() {
+	setStorage();
 	if (previousOrNext >= howMany.length - 1) {
 		previousOrNext = -1;
 	}
@@ -201,6 +204,7 @@ function clickButtonCheck() {
 	    : myHowMany[myPreviousOrNext].missing;
 	text.value = '';
 
+	previousOrNext = myPreviousOrNext;
 	howMany = myHowMany;
 	return howMany;
 }
@@ -208,4 +212,71 @@ function clickButtonCheck() {
 function clickButtonMode() {
 	let element = document.body;
 	element.classList.toggle('darkModeButton');
+}
+
+sessionStorage.clear();
+sessionStorage.setItem('key', '');
+let data = sessionStorage.getItem('key');
+
+let now = formatDate()
+
+function formatDate() {
+
+    const date = new Date();
+
+    let month = (date.getMonth()+1).toString();
+    let day   = date.getDate().toString();
+    let year  = date.getFullYear().toString();
+    let hour  = date.getHours().toString();
+    let min   = date.getMinutes().toString();
+    let sec   = date.getSeconds().toString();
+
+    let time = [month, day, hour, min, sec];
+    for (let i=0; i<time.length; i++) {
+    	if (time[i].length < 2) {
+    		time[i] = '0' + time[i]
+    	}
+    }
+
+    return [year, time[0], time[1], time[2] + time[3] + time[4]].join('-');
+}
+
+function setStorage() {
+	if (text.value !== '') {
+		data += howMany[previousOrNext].id + ','
+			+ text.value + ','
+			+ howMany[previousOrNext].missing + '\n';
+		sessionStorage.setItem('key', data);
+	}
+	return data;
+}
+
+async function clickButtonSave() {
+ 
+	let src = data;
+	if (text.value !== '') { 
+		src += howMany[previousOrNext].id + ','
+			+ text.value + ','
+			+ howMany[previousOrNext].missing + '\n';
+	}
+
+	let txtBlob = new Blob([src], {type: 'text/plain'});
+  
+	const pickerOptions = {
+		suggestedName: `${now.toLowerCase()}.txt`,
+		types: [{
+			description: 'Simple Text File',
+			accept: { 'text/plain': ['.txt'], },
+		}],
+	};
+
+	try {
+		const fileHandle = await window.showSaveFilePicker(pickerOptions);
+		const writableFileStream = await fileHandle.createWritable();
+		await writableFileStream.write(txtBlob);
+		await writableFileStream.close();
+	}
+	catch (error) {
+		console.log(error);
+	}
 }
