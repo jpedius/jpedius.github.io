@@ -4,7 +4,7 @@
 
 [Games](games/)
 
-[Japanese](japanese/)
+[Language](language/)
 
 ## Old Stuff
 
