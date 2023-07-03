@@ -8,6 +8,7 @@
 .sentencesSelect,
 .textDiv,
 .imageDiv,
+.randomDiv,
 .buttonsDiv,
 .previousButton,
 .playButton,
@@ -18,7 +19,8 @@
 }
 
 .textLabel,
-.imageLabel {
+.imageLabel,
+.randomLabel {
 	display: inline-block;
 	font-size: 20px;
 	margin: 5px 5px 5px 5px;
@@ -29,7 +31,7 @@
 .textInput {
 	border: none;
 	border-color: transparent;
-	font-size: 20px;
+	font-size: 80px;
 	margin: 5px 5px 5px 5px;
 	padding: 5px 5px 5px 5px;
 }
@@ -40,6 +42,11 @@
 	margin: 5px 5px 5px 5px;
 	padding: 5px 5px 5px 5px;
 	/*width: 250px;*/
+}
+
+.randomInput {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
 }
 
 body {

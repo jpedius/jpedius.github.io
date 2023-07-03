@@ -1,13 +1,16 @@
+'use strict';
+
 let all = [hiragana[0], katakana[0]];
 
 let howMany = all[0];
-//howMany = shuffle(howMany);
-
 let previousOrNext = 0;
 
 let text = document.getElementById('text');
 let gif = document.getElementById('gif');
 let png = document.getElementById('png');
+
+let random = document.getElementById('random');
+let randomCheck = false;
 
 setValues();
 
@@ -32,9 +35,11 @@ function shuffle(array) {
 }
 
 function clickSelectSentences() {
-	previousOrNext = 0;
+	//previousOrNext = 0;
 	howMany = all[sentences.options.selectedIndex];
-	//howMany = shuffle(howMany);
+	if (randomCheck == true) {
+		howMany = shuffle(howMany);
+	}
 	return setValues();
 } 
 
@@ -52,6 +57,11 @@ function clickButtonNext() {
 	}
 	previousOrNext++;
 	return setValues();
+}
+
+function clickCheckRandom() {
+	randomCheck = !randomCheck;
+	clickSelectSentences();
 }
 
 function setValues() {

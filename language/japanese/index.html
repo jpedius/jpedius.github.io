@@ -11,15 +11,9 @@
 
   <!-- -->
   <div class="rootDiv" id="root">
-    <div class="sentencesDiv">
-      <select class="sentencesSelect" onchange="clickSelectSentences()" id="sentences">
-        <option>Hiragana</option>
-        <option>Katakana</option>
-      </select>
-    </div>
     <div class="textDiv">
       <label for="text" class="textLabel">Text</label>
-      <input type="text" readonly="readonly" class="textInput" id="text" autocomplete="off" autocorrect="off" autocapitalize="off" size="30" />
+      <input type="text" readonly="readonly" class="textInput" id="text" autocomplete="off" autocorrect="off" autocapitalize="off" size="4" />
     </div>
     <div class="imageDiv">
       <label for="image" class="imageLabel">GIF</label>
@@ -28,6 +22,16 @@
     <div class="imageDiv">
       <label for="image" class="imageLabel">PNG</label>
       <img src="files/hiragana-あ.png" class="imageImg" id="png" />
+    </div>
+    <div class="sentencesDiv">
+      <select class="sentencesSelect" onchange="clickSelectSentences()" id="sentences">
+        <option>Hiragana</option>
+        <option>Katakana</option>
+      </select>
+    </div>
+    <div class="randomDiv">
+      <label for="random" class="randomLabel">Random</label>
+      <input type="checkbox" class="randomInput" id="random" onchange="clickCheckRandom()">
     </div>
     <div class="buttonsDiv">
       <button class="previousButton" onclick="clickButtonPrevious()">Previous</button>
