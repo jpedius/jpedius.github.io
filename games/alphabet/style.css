@@ -1,0 +1,71 @@
+.rootDiv {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.sentencesDiv,
+.sentencesSelect,
+.textDiv,
+.buttonsDiv,
+.previousButton,
+.playButton,
+.textButton,
+.nextButton,
+.randomDiv,
+.rateDiv,
+.pitchDiv,
+.voiceDiv,
+.voiceSelect {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.textLabel,
+.randomLabel,
+.rateLabel,
+.pitchLabel {
+	display: inline-block;
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+	width: 120px;
+}
+
+.textInput {
+	border: none;
+	border-color: transparent;
+	font-size: 80px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
+.randomInput.
+.rateInput,
+.pitchInput {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+}
+
+input[type="range"] {
+	width: 250px;
+	margin: 0;
+}
+
+body {
+	background-color: white;
+	color: black;
+}
+
+.darkModeButton {
+	background-color: black;
+	color: white;
+}
+
+.modeDiv,
+.modeButton {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
