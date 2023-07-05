@@ -95,7 +95,7 @@ grid.addEventListener('click', event => {
             
     over.innerHTML = game.allow[game.winner];
 
- }, false);
+}, false);
 
 let restart = document.getElementById('restart');
 restart.addEventListener('click', () => {
