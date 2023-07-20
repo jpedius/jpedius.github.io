@@ -1,6 +1,17 @@
 'use strict';
 
-let alphabet = [lower, upper];
+let s = [];
+let a = [];
+let c = [];
+let d = [];
+for (let i=0; i<states.length; i++) {
+	s.push(states[i].state);
+	a.push(states[i].abbreviation);
+	c.push(states[i].capital);
+	d.push(states[i].month + '/' + states[i].day + '/' + states[i].year);
+}
+
+let alphabet = [lower, upper, calendar, s, a, c, d];
 
 let howMany = alphabet[0];
 let previousOrNext = 0;
@@ -34,7 +45,7 @@ function shuffle(array) {
 }
 
 function clickSelectSentences() {
-	//previousOrNext = 0;
+	previousOrNext = 0;
 	howMany = alphabet[sentences.options.selectedIndex];
 	if (randomCheck == true) {
 		howMany = shuffle(howMany);
