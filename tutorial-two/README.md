@@ -1,5 +1,7 @@
 ## Tutorial
 
+[Exercises](exercises/)
+
 [Medicine](medicine/)
 
 [Plots](plots/)

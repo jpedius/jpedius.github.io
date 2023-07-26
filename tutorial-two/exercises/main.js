@@ -7,7 +7,7 @@ let exercises = [{
 }, {
 	name: 'Supine Pirtformis Stretch',
     title: 'supine-pirtformis-stretch',
-    exercise: 'Lie flat on your back with both knees bent. Take one leg and place ankle of opposite leg, allowing the hip to open up and feel a stretch the butt.',
+    exercise: 'Lie flat on your back with both knees bent. Take one leg and place ankle of opposite knee allowing the hip to open up and feel a stretch the butt.',
 }, {
 	name: 'Butterfly Stretch - Supine',
 	title: 'butterfly-stretch-supine',
@@ -15,7 +15,7 @@ let exercises = [{
 }, {
 	name: 'Trunk  Stretch Bilateral',
 	title: 'trunk-stretch-bilateral',
-    exercise: 'Start by lying on your back with your knees bent. Next slowly allow your knees to drop to the one side as you rotate through your spine for a gentle stretch. Arms out at sides in “T” position.',
+    exercise: 'Start by lying on your back with your knees bent. Next, slowly allow your knees to drop to the one side as you rotate through your spine for a gentle stretch. Arms out at sides in “T” position.',
 }, {
 	name: 'Sidelying Clamshell - Clam Shell',
 	title: 'sidelying-clamshell-clam-shell',
@@ -23,7 +23,7 @@ let exercises = [{
 }, {
 	name: 'Figure Four Bridge',
 	title: 'figure-four-bridge',
-    exercise: 'Start lying on back with both legs bent keep the affected leg bent, bring your left ankle on the right leg to rest on top of the knee. Press through the your heel and lift your butt off of the floor, keeping your stomach tight.',
+    exercise: 'Start lying on back with both legs bent, keep the affected leg bent, bring your left ankle on the right leg to rest on top of the knee. Press through the your heel and lift your butt off of the floor, keeping your stomach tight.',
 }, {
 	name: 'Heel Slides',
 	title: 'heel-slides',
