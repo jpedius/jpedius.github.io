@@ -78,7 +78,7 @@ let exercises = [{
 	name: 'Sidelying Clamshell - Clam Shell',
 	title: 'sidelying-clamshell-clam-shell',
     exercise: 'While lying on your LEFT side with your knees bent, draw up the top (RIGHT) '
-    	+ 'knee while keeping conta6{ of your feet together. Do not let your pelvis roll '
+    	+ 'knee while keeping contact of your feet together. Do not let your pelvis roll '
     	+ 'back during the lifting movement',
 }, {
 	name: 'Ankle Pumps - Seated AP',
