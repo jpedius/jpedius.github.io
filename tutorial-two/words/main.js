@@ -212,6 +212,8 @@ function clickButtonCheck() {
 function clickButtonMode() {
 	let element = document.body;
 	element.classList.toggle('darkModeButton');
+	readonly.classList.toggle('darkModeButton');
+	text.classList.toggle('darkModeButton');
 }
 
 sessionStorage.clear();

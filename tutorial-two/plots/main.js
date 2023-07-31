@@ -13,6 +13,8 @@ let src = {
 let howMany = [];
 let previousOrNext = 0;
 
+let text = document.getElementById('text');
+
 clickSelectSentences();
 
 function shuffle(array) {
@@ -107,4 +109,5 @@ function clickButtonNext() {
 function clickButtonMode() {
 	let element = document.body;
 	element.classList.toggle('darkModeButton');
+    text.classList.toggle('darkModeButton');
 }

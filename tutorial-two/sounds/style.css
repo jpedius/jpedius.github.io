@@ -2,8 +2,15 @@
 .allDiv,
 .allButton,
 .letterAudio,
-.letterButton,
+.letterButton {
+	font-size: 20px;
+	margin: 5px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+}
+
 .letterInput {
+	/*border: none;
+	border-color: transparent;*/
 	font-size: 20px;
 	margin: 5px 5px 5px 5px;
 	padding: 5px 5px 5px 5px;
@@ -25,7 +32,7 @@
 	padding: 5px 5px 5px 5px;
 }
 
-body {
+body, text {
 	background-color: white;
 	color: black;
 }

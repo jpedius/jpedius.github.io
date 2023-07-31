@@ -1,5 +1,8 @@
 'use strict';
 
+let readonly = document.getElementById('readonly');
+let text = document.getElementById('text');
+
 let howMany = allSentences[0].key;
 howMany = shuffle(howMany);
 for (let i=0; i<howMany.length; i++) {
@@ -86,4 +89,6 @@ function setValues() {
 function clickButtonMode() {
 	let element = document.body;
 	element.classList.toggle('darkModeButton');
+	readonly.classList.toggle('darkModeButton');
+	text.classList.toggle('darkModeButton');
 }

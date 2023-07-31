@@ -63,7 +63,7 @@ input[type="range"] {
 	width: 250px;
 }
 
-body {
+body, text {
 	background-color: white;
 	color: black;
 }

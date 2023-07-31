@@ -100,4 +100,7 @@ function clickButtonAll() {
 function clickButtonMode() {
 	let element = document.body;
 	element.classList.toggle('darkModeButton');
+    for (let i=0; i<a.length; i++) {
+        a[i].input.classList.toggle('darkModeButton');
+    }
 }

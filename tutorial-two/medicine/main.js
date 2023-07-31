@@ -105,4 +105,6 @@ function clickButtonDescription() {
 function clickButtonMode() {
 	let element = document.body;
 	element.classList.toggle('darkModeButton');
+	text.classList.toggle('darkModeButton');
+	description.classList.toggle('darkModeButton');
 }

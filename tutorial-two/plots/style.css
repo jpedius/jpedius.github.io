@@ -52,7 +52,7 @@ input[type="range"] {
 	margin: 0;
 }
 
-body {
+body, textarea {
 	background-color: white;
 	color: black;
 }
