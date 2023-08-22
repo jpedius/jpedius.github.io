@@ -1,3 +1,4 @@
 .DS_Store
 tutorial-two/words/files/*.txt
 scratch/
+localStorage.json
