@@ -282,3 +282,8 @@ async function clickButtonSave() {
 		console.log(error);
 	}
 }
+
+let textarea = document.getElementById('textarea');
+function clickButtonTextArea() {
+	textarea.innerHTML = data;
+}

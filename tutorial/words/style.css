@@ -29,7 +29,10 @@
 .rateDiv,
 .pitchDiv,
 .voiceDiv,
-.voiceSelect {
+.voiceSelect,
+.textareaButton,
+.textareaDiv,
+.textareaInput {
 	font-size: 20px;
 	margin: 5px 5px 5px 5px;
 	padding: 5px 5px 5px 5px;
