@@ -284,6 +284,8 @@ async function clickButtonSave() {
 }
 
 let textarea = document.getElementById('textarea');
-function clickButtonTextArea() {
+function clickButtonText() {
 	textarea.innerHTML = data;
+	textarea.classList.toggle('rootHidden');
+	textarea.classList.toggle('rootVisible');
 }
