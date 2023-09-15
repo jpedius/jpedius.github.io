@@ -71,6 +71,19 @@ let calendar = [
 	'December',
 ];
 
+let numbers = [
+    'One',
+    'Two',
+    'Three',
+    'Four',
+    'Five',
+    'Six',
+    'Seven',
+    'Eight',
+    'Nine',
+    'Ten',
+];
+
 let states = [{
     'state': 'Alabama',
     'abbreviation': 'AL',

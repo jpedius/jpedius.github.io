@@ -11,7 +11,7 @@ for (let i=0; i<states.length; i++) {
 	d.push(states[i].month + '/' + states[i].day + '/' + states[i].year);
 }
 
-let alphabet = [lower, upper, calendar, s, a, c, d];
+let alphabet = [lower, upper, calendar, numbers, s, a, c, d];
 
 let howMany = alphabet[0];
 let previousOrNext = 0;
