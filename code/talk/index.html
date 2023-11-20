@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talk</title>
+  <link href="normalize.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- -->
+  <div class="rootDiv" id="root">
+    <div class="textDiv">
+      <textarea class="textInput" id="text" onchange="clickSelectSentences()"></textarea>
+    </div>
+    <div class="rateDiv">
+      <label for="rate" class="rateLabel">Rate</label>
+      <input type="range" min="0.5" max="2" step="0.1" value="0.7" class="rateInput" id="rate" />
+    </div>
+    <div class="pitchDiv">
+      <label for="pitch" class="pitchLabel">Pitch</label>
+      <input type="range" min="0" max="2" step="0.1" value="1" class="pitchInput" id="pitch" />
+    </div>
+    <div class="voiceDiv">
+      <select class="voiceSelect" id="voice"></select>
+    </div>
+    <div class="modeDiv">
+      <button class="modeButton" onclick="clickButtonMode()">Toggle Mode</button>
+    </div>
+  </div>
+  <!-- -->
+
+  <script type="text/javascript" src="voices.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
