@@ -10,10 +10,10 @@ function my_copy() {
     let div = document.createElement('div');
     div.classList.add('myCopy');
 
-    let txt = document.createElement('textarea');
+    let txt = document.createElement('input');
+    txt.type = 'text';
+    txt.size = 30;
     txt.classList.add('myTxt');
-    txt.style.height = '20px';
-    txt.style.width = '300px';
 
     let btn = document.createElement('button');
     btn.classList.add('myBtn');
@@ -57,7 +57,7 @@ function my_text(main, words) {
         word.innerHTML = element;
 
         let play = document.createElement('button');
-        play.classList.add('myButton');
+        play.classList.add('myPlay');
         play.innerHTML = 'Play';
         play.addEventListener('click', () => {
             speak(element);

@@ -1,13 +1,6 @@
-.myBtn {
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-}
-
-.myTxt {
-  font-size: 10px;
-}
-
+.myBtn,
+.myTxt,
+.myPlay,
 .myWord {
   font-size: 20px;
   margin: 5px 5px 5px 5px;
