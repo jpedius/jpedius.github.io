@@ -1,35 +1,77 @@
 'use strict';
 
-let text = document.getElementById('text');
+document.title = 'Talk';
 
-clickSelectSentences();
+let root = document.getElementById('root');
+let main = document.getElementById('main');
 
-function shuffle(array) {
+function my_copy() {
 
-	let items = JSON.parse(JSON.stringify(array));
-	let currentIndex = items.length, randomIndex;
+    let div = document.createElement('div');
+    div.classList.add('myCopy');
 
-	// While there remain elements to shuffle...
-	while (currentIndex !== 0) {
+    let txt = document.createElement('textarea');
+    txt.classList.add('myTxt');
+    txt.style.height = '20px';
+    txt.style.width = '300px';
 
-		// Pick a remaining element...
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex--;
+    let btn = document.createElement('button');
+    btn.classList.add('myBtn');
+    btn.innerHTML = 'Clipboard';
+    btn.addEventListener('click', (event) => {
+        myText = txt.value;
+        my_text(main, myText);
+        txt.value = '';
+    });
 
-		// And swap it with the current element.
-		[items[currentIndex], items[randomIndex]] = [
-		items[randomIndex], items[currentIndex]];
-	}
+    div.appendChild(btn);
+    div.appendChild(txt);
+    main.appendChild(div);
 
-	return items;
+    return div
 }
 
-function clickSelectSentences() {
+function my_text(main, words) {
 
+    if (main.firstChild !== main.lastChild) {
+        main.removeChild(main.lastChild);
+    }
+
+    let reWhole = /[^\.!\?]+[\.!\?]+/g;
+    let a = words.trim().match(reWhole) || [];
+    let b = [];
+    a.forEach((element, index) => {
+        b.push(element.trim())
+    });
+
+    let div = document.createElement('div');
+    div.classList.add('myText');
+
+    b.forEach((element, index) => {
+
+        let c = document.createElement('div');
+        c.classList.add('myWord');
+
+        let word = document.createElement('span');
+        word.classList.add('myWord');
+        word.innerHTML = element;
+
+        let play = document.createElement('button');
+        play.classList.add('myButton');
+        play.innerHTML = 'Play';
+        play.addEventListener('click', () => {
+            speak(element);
+        });
+
+        c.appendChild(play);
+        c.appendChild(word);
+        div.appendChild(c);
+    });
+
+    main.appendChild(div);
+
+    return div
 }
 
-function clickButtonMode() {
-	let element = document.body;
-	element.classList.toggle('darkModeButton');
-    text.classList.toggle('darkModeButton');
-}
+let myText = '';
+let myCopy = my_copy()
