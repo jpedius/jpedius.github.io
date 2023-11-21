@@ -19,9 +19,18 @@ function my_copy() {
     btn.classList.add('myBtn');
     btn.innerHTML = 'Clipboard';
     btn.addEventListener('click', (event) => {
+
         myText = txt.value;
-        my_text(main, myText);
         txt.value = '';
+
+        myText = myText.trim();
+        if (!( myText.endsWith('.')
+            || myText.endsWith('!')
+            || myText.endsWith('?'))) {
+                myText += '.';
+        }
+        
+        my_text(main, myText);
     });
 
     div.appendChild(btn);
