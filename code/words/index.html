@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One word at a time</title>
+  <link href="normalize.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="lightModeButton">
+  <div class="rootDiv" id="my_root">
+    <div class="mainDiv" id="my_main"></div>
+    <div class="readDiv">
+      <label for="my_read" class="readLabel">Read</label>
+      <input type="text" class="readInput" id="my_read" size="25" 
+        autocomplete="off" autocorrect="off" autocapitalize="off" />
+    </div>
+    <div class="writeDiv">
+      <label for="my_write" class="writeLabel">Write</label>
+      <input type="text" class="writeInput" id="my_write" size="25"
+        autocomplete="off" autocorrect="off" autocapitalize="off" />
+    </div>
+    <div class="modeDiv">
+      <button class="modeButton" onclick="my_previous_button()" id="my_previous">Previous</button>
+      <button class="modeButton" onclick="my_play_button()" id="my_play">Play</button>
+      <button class="modeButton" onclick="my_show_hide_button()" id="my_show_hide">Show</button>
+      <button class="modeButton" onclick="my_next_button()" id="my_next">Next</button>
+    </div>
+    <div class="numberDiv">
+      <label for="my_number" class="numberLabel" id="my_label">Number 3</label>
+      <input type="range" min="0" max="14" step="1" value="3" class="numberInput" onclick="my_number_button()" id="my_number" />
+    </div>
+    <div class="rateDiv">
+      <label for="my_rate" class="rateLabel">Rate</label>
+      <input type="range" min="0.5" max="2" step="0.1" value="0.7" class="rateInput" id="my_rate" />
+    </div>
+    <div class="pitchDiv">
+      <label for="my_pitch" class="pitchLabel">Pitch</label>
+      <input type="range" min="0" max="2" step="0.1" value="1" class="pitchInput" id="my_pitch" />
+    </div>
+    <div class="voiceDiv">
+      <select class="voiceSelect" id="my_voice"></select>
+    </div>
+    <div class="modeDiv">
+      <button class="modeButton" onclick="my_mode_button()">Toggle Mode</button>
+    </div>
+  </div>
+  <script type="text/javascript" src="voices.js"></script>
+  <script type="text/javascript" src="words.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

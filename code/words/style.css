@@ -1,0 +1,120 @@
+.rootDiv {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.mainDiv {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.rateDiv,
+.pitchDiv,
+.voiceDiv,
+.voiceSelect {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.rateLabel,
+.pitchLabel {
+  display: inline-block;
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+  width: 120px;
+}
+
+.rateInput,
+.pitchInput {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+}
+
+input[type="range"] {
+  width: 250px;
+  margin: 0;
+}
+
+.lightModeButton, text {
+  background-color: white;
+  color: black;
+}
+
+.darkModeButton {
+  background-color: black;
+  color: white;
+}
+
+.modeDiv,
+.modeButton {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.writeDiv {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.writeLabel {
+  display: inline-block;
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+  width: 120px;
+}
+
+.writeInput {
+  border: none;
+  border-color: transparent;
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.readDiv {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.readLabel {
+  display: inline-block;
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+  width: 120px;
+}
+
+.readInput {
+  border: none;
+  border-color: transparent;
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.numberDiv {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.numberLabel {
+  display: inline-block;
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+  width: 120px;
+}
+
+.numberInput {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+}
