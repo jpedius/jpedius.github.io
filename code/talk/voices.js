@@ -1,13 +1,12 @@
 'use strict';
 
 // "Microsoft Zira - English (United States)"
+// "Google US English"
 // "Samantha"
-// "Daniel"
-// "Tessa"
 
-let pitch = document.getElementById('pitch');
-let rate = document.getElementById('rate');
-let voice = document.getElementById('voice');
+let my_pitch = document.getElementById('my_pitch');
+let my_rate  = document.getElementById('my_rate');
+let my_voice = document.getElementById('my_voice');
 
 const synth = window.speechSynthesis;
 let voices = [];
@@ -27,7 +26,7 @@ function populateVoiceList() {
         }
     });
 
-    voice.innerHTML = "";
+    my_voice.innerHTML = "";
 
     for (let i = 0; i < voices.length; i++) {
 
@@ -48,7 +47,7 @@ function populateVoiceList() {
                 option.defaultSelected = true;
             }
 
-            voice.appendChild(option);
+            my_voice.appendChild(option);
         }
     }
 }
@@ -65,7 +64,7 @@ function speak(talk) {
         return;
     }
 
-    if (voice !== '') {
+    if (my_voice !== '') {
 
         const utterThis = new SpeechSynthesisUtterance(talk);
 
@@ -78,7 +77,7 @@ function speak(talk) {
         };
 
         const selectedOption =
-            voice.selectedOptions[0].getAttribute("data-name");
+            my_voice.selectedOptions[0].getAttribute("data-name");
 
         for (let i = 0; i < voices.length; i++) {
             if (voices[i].name === selectedOption) {
@@ -87,8 +86,8 @@ function speak(talk) {
             }
         }
 
-        utterThis.pitch = pitch.value;
-        utterThis.rate = rate.value;
+        utterThis.pitch = my_pitch.value;
+        utterThis.rate = my_rate.value;
         synth.speak(utterThis);
     }
 }

@@ -3,93 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Title</title>
+  <title>Talk</title>
   <link href="normalize.css" rel="stylesheet">
-  <style>
-    .rootDiv {
-      font-size: 20px;
-      margin: 5px 5px 5px 5px;
-      padding: 5px 5px 5px 5px;
-    }
-
-    .mainDiv {
-      font-size: 20px;
-      margin: 5px 5px 5px 5px;
-      padding: 5px 5px 5px 5px;
-    }
-
-    .rateDiv,
-    .pitchDiv,
-    .voiceDiv,
-    .voiceSelect {
-      font-size: 20px;
-      margin: 5px 5px 5px 5px;
-      padding: 5px 5px 5px 5px;
-    }
-
-    .rateLabel,
-    .pitchLabel {
-      display: inline-block;
-      font-size: 20px;
-      margin: 5px 5px 5px 5px;
-      padding: 5px 5px 5px 5px;
-      width: 120px;
-    }
-
-    .rateInput,
-    .pitchInput {
-      font-size: 20px;
-      margin: 5px 5px 5px 5px;
-    }
-
-    input[type="range"] {
-      width: 250px;
-      margin: 0;
-    }
-
-    .lightModeButton {
-      background-color: white;
-      color: black;
-    }
-
-    .darkModeButton {
-      background-color: black;
-      color: white;
-    }
-
-    .modeDiv,
-    .modeButton {
-      font-size: 20px;
-      margin: 5px 5px 5px 5px;
-      padding: 5px 5px 5px 5px;
-    }
-  </style>
   <link href="style.css" rel="stylesheet">
 </head>
 <body class="lightModeButton">
-  <div class="rootDiv" id="root">
-    <div class="mainDiv" id="main"></div>
+  <div class="rootDiv" id="my_root">
+    <div class="modeDiv">
+      <button class="modeButton" onclick="my_clipboard_button()" id="my_clipboard">Clipboard</button>
+      <input type="text" class="copyInput" id="my_copy" size="25" 
+        autocomplete="off" autocorrect="off" autocapitalize="off" />
+    </div>
+    <div class="pasteDiv" id="my_paste"></div>
     <div class="rateDiv">
-      <label for="rate" class="rateLabel">Rate</label>
-      <input type="range" min="0.5" max="2" step="0.1" value="0.7" class="rateInput" id="rate" />
+      <label for="my_rate" class="rateLabel">Rate</label>
+      <input type="range" min="0.5" max="2" step="0.1" value="0.7" class="rateInput" id="my_rate" />
     </div>
     <div class="pitchDiv">
-      <label for="pitch" class="pitchLabel">Pitch</label>
-      <input type="range" min="0" max="2" step="0.1" value="1" class="pitchInput" id="pitch" />
+      <label for="my_pitch" class="pitchLabel">Pitch</label>
+      <input type="range" min="0" max="2" step="0.1" value="1" class="pitchInput" id="my_pitch" />
     </div>
     <div class="voiceDiv">
-      <select class="voiceSelect" id="voice"></select>
+      <select class="voiceSelect" id="my_voice"></select>
     </div>
     <div class="modeDiv">
-      <button class="modeButton" onclick="clickButtonMode()">Toggle Mode</button>
+      <button class="modeButton" onclick="my_mode_button()">Toggle Mode</button>
     </div>
-    <script type="text/javascript">
-      function clickButtonMode() {
-        let element = document.body;
-        element.classList.toggle('darkModeButton');
-        element.classList.toggle('lightModeButton');
-      }
-    </script>
   </div>
   <script type="text/javascript" src="voices.js"></script>
   <script type="text/javascript" src="main.js"></script>

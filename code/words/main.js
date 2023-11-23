@@ -25,7 +25,7 @@ function my_shuffle(array) {
 
 		// And swap it with the current element.
 		[items[currentIndex], items[randomIndex]] = [
-		items[randomIndex], items[currentIndex]];
+			items[randomIndex], items[currentIndex]];
 	}
 
 	return items;
@@ -66,14 +66,10 @@ function my_number_of_letters(all, missing, num) {
 }
 
 function my_read_and_write(tf) {
-	if (my_show === true) {
-		my_read.value = my_missing[my_length];
-	} else {
-		my_read.value = my_all[my_length];
-	}
-	if (tf === true) {
-		my_write.value = '';
-	}
+	my_read.value = my_show
+		? my_missing[my_length]
+		: my_all[my_length];
+	if (tf) { my_write.value = ''; }
 }
 
 function my_previous_button() {
@@ -87,12 +83,7 @@ function my_play_button() {
 };
 
 function my_show_hide_button() {
-	if (my_show_hide.innerHTML === 'Show') {
-		my_show_hide.innerHTML = 'Hide';    		
- 	}
-	else if (my_show_hide.innerHTML === 'Hide') {
-		my_show_hide.innerHTML = 'Show';
-	}
+	my_show_hide.innerHTML = my_show ? 'Hide' : 'Show';
 	my_show = !my_show;
 	my_read_and_write(false);
 };

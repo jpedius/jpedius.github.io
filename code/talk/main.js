@@ -1,86 +1,49 @@
 'use strict';
 
-document.title = 'Talk';
+let my_root = document.getElementById('my_root');
 
-let root = document.getElementById('root');
-let main = document.getElementById('main');
+let my_clipboard = document.getElementById('my_clipboard');
+let my_copy = document.getElementById('my_copy');
+let my_paste = document.getElementById('my_paste');
 
-function my_copy() {
+function my_clipboard_button() {
 
-    let div = document.createElement('div');
-    div.classList.add('myCopy');
+    my_text = (my_copy.value).trim() + ' . ';
+    my_copy.value = '';
 
-    let txt = document.createElement('input');
-    txt.type = 'text';
-    txt.size = 30;
-    txt.classList.add('myTxt');
+    let line = /[^\.!\?]+[\.!\?]\s/g;
+    my_array = [...my_text.matchAll(line)];
 
-    let btn = document.createElement('button');
-    btn.classList.add('myBtn');
-    btn.innerHTML = 'Clipboard';
-    btn.addEventListener('click', (event) => {
+    my_paste.replaceChildren();
 
-        myText = txt.value;
-        txt.value = '';
+    my_array.forEach((event) => {
 
-        myText = myText.trim();
-        if (!( myText.endsWith('.')
-            || myText.endsWith('!')
-            || myText.endsWith('?'))) {
-                myText += '.';
-        }
-        
-        my_text(main, myText);
-    });
-
-    div.appendChild(btn);
-    div.appendChild(txt);
-    main.appendChild(div);
-
-    return div
-}
-
-function my_text(main, words) {
-
-    if (main.firstChild !== main.lastChild) {
-        main.removeChild(main.lastChild);
-    }
-
-    let reWhole = /[^\.!\?]+[\.!\?]+/g;
-    let a = words.trim().match(reWhole) || [];
-    let b = [];
-    a.forEach((element, index) => {
-        b.push(element.trim())
-    });
-
-    let div = document.createElement('div');
-    div.classList.add('myText');
-
-    b.forEach((element, index) => {
-
-        let c = document.createElement('div');
-        c.classList.add('myWord');
+        let div = document.createElement('div');
+        div.classList.add('modeDiv');
 
         let word = document.createElement('span');
-        word.classList.add('myWord');
-        word.innerHTML = element;
+        word.classList.add('wordSpan');
+        word.innerHTML = event;
 
         let play = document.createElement('button');
-        play.classList.add('myPlay');
+        play.classList.add('modeButton');
         play.innerHTML = 'Play';
         play.addEventListener('click', () => {
-            speak(element);
+            speak(event);
         });
 
-        c.appendChild(play);
-        c.appendChild(word);
-        div.appendChild(c);
+        div.appendChild(play);
+        div.appendChild(word);
+        my_paste.appendChild(div);
     });
-
-    main.appendChild(div);
-
-    return div
 }
 
-let myText = '';
-let myCopy = my_copy()
+function my_mode_button() {
+    let element = document.body;
+    element.classList.toggle('darkModeButton');
+    element.classList.toggle('lightModeButton');
+    my_copy.classList.toggle('darkModeButton');
+}
+
+let my_text = '';
+let my_array = [];
