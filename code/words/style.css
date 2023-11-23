@@ -1,35 +1,37 @@
-.rootDiv {
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-}
-
-.mainDiv {
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-}
-
+.rootDiv,
+.readDiv,
+.writeDiv,
+.numberDiv,
 .rateDiv,
 .pitchDiv,
 .voiceDiv,
-.voiceSelect {
+.voiceSelect,
+.modeDiv,
+.modeButton {
   font-size: 20px;
   margin: 5px 5px 5px 5px;
   padding: 5px 5px 5px 5px;
 }
 
+.readLabel,
+.writeLabel,
+.numberLabel,
 .rateLabel,
 .pitchLabel {
   display: inline-block;
   font-size: 20px;
   margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
+  /*padding: 5px 5px 5px 5px;*/
   width: 120px;
 }
 
+.readInput,
+.writeInput,
+.numberInput,
 .rateInput,
 .pitchInput {
+  border: none;
+  border-color: transparent;
   font-size: 20px;
   margin: 5px 5px 5px 5px;
 }
@@ -47,74 +49,4 @@ input[type="range"] {
 .darkModeButton {
   background-color: black;
   color: white;
-}
-
-.modeDiv,
-.modeButton {
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-}
-
-.writeDiv {
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-}
-
-.writeLabel {
-  display: inline-block;
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-  width: 120px;
-}
-
-.writeInput {
-  border: none;
-  border-color: transparent;
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-}
-
-.readDiv {
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-}
-
-.readLabel {
-  display: inline-block;
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-  width: 120px;
-}
-
-.readInput {
-  border: none;
-  border-color: transparent;
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-}
-
-.numberDiv {
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-}
-
-.numberLabel {
-  display: inline-block;
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-  width: 120px;
-}
-
-.numberInput {
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
 }

@@ -1,7 +1,6 @@
 'use strict';
 
 let my_root = document.getElementById('my_root');
-let my_main = document.getElementById('my_main');
 
 let my_read = document.getElementById('my_read');
 let my_write = document.getElementById('my_write');
@@ -121,5 +120,5 @@ function my_mode_button() {
 let my_all = my_all_words(my_words);
 let my_length = 0;
 let my_show = true;
-let my_missing = my_number_of_letters(my_all, [], 3);
+let my_missing = my_number_of_letters(my_all, [], my_number.value);
 my_read_and_write(true);
