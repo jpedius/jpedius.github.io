@@ -8,10 +8,12 @@ let my_paste = document.getElementById('my_paste');
 
 function my_clipboard_button() {
 
-    my_text = (my_copy.value).trim() + ' . ';
+    my_text = (my_copy.value).trim();
     my_copy.value = '';
 
-    let line = /[^\.!\?]+[\.!\?]\s/g;
+    //console.log(my_text);
+
+    let line = /[^\.!\?]+[\.!\?]/g;
     my_array = [...my_text.matchAll(line)];
 
     my_paste.replaceChildren();
