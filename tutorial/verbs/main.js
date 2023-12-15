@@ -160,10 +160,13 @@ function my_copy_button() {
 }
 
 function my_mode_button() {
+
     let element = document.body;
     element.classList.toggle('darkModeButton');
     element.classList.toggle('lightModeButton');
+
 	my_who.classList.toggle('darkModeButton');
+	my_verb.classList.toggle('darkModeButton');
 	my_what.classList.toggle('darkModeButton');
 	my_where.classList.toggle('darkModeButton');
 	my_when.classList.toggle('darkModeButton');
