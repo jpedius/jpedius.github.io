@@ -12,6 +12,8 @@
 
 [Sounds](sounds/)
 
+[Verbs](verbs/)
+
 [Vocabulary](vocabulary/)
 
 [Words](words/)
