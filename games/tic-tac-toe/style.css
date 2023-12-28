@@ -1,4 +1,8 @@
-.rootDiv {
+.rootDiv,
+.gridGameOverDiv,
+.gridGameOverRestart,
+.buttonDiv,
+.buttonMode {
 	font-size: 20px;
 	margin: 5px 5px 5px 5px;
 	padding: 5px 5px 5px 5px;
@@ -16,17 +20,10 @@
 
 .gridItem {
 	border: 1px solid #808080;
-	font-size: 80px;
+	font-size: 100px;
 	text-align: center;
 	height: 100px;
 	width: 100px;
-}
-
-.gridGameOverDiv,
-.gridGameOverRestart {
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
 }
 
 .disabled {
@@ -49,11 +46,4 @@
 .buttonModeDark {
 	background-color: black;
 	color: white;
-}
-
-.buttonDiv,
-.buttonMode {
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
 }
