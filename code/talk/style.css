@@ -21,17 +21,17 @@
   width: 120px;
 }
 
-.copyInput,
-.rateInput,
-.pitchInput {
-  border: none;
-  border-color: transparent;
+.copyInput {
   font-size: 20px;
   margin: 5px 5px 5px 5px;
 }
 
 .rateInput,
 .pitchInput {
+  border: none;
+  border-color: transparent;
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
   width: 250px;
   margin: 0;
 }
