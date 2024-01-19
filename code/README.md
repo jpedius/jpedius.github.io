@@ -4,6 +4,8 @@
 
 [Go-WebAssembly](go-webassembly/)
 
+[Speech](speech/)
+
 [Talk](talk/)
 
 [Words](words/)
