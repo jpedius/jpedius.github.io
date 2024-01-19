@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech</title>
+  <link href="normalize.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="rootDiv" id="my_root">
+    <div class="copyDiv">
+      <textarea class="copyInput" id="my_copy" rows="5" cols="40"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+    </div>
+    <div class="voiceDiv playDiv wipeDiv">
+      <select class="voiceSelect" id="my_voice"></select>
+      <button class="playButton" id="my_play" onclick="my_play_button()">Play</button>
+      <button class="wipeButton" id="my_wipe" onclick="my_wipe_button()">Wipe</button>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="voices.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

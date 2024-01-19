@@ -1,0 +1,26 @@
+.rootDiv {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.copyDiv,
+.voiceDiv,
+.voiceSelect,
+.playDiv,
+.playButton,
+.wipeDiv,
+.wipeButton {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.copyInput {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+}
