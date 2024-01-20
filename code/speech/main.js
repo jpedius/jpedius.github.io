@@ -4,7 +4,9 @@ const synth = window.speechSynthesis;
 let voices = [];
 let she_voice = null;
 
-function populateVoiceList() {
+let my_copy = document.getElementById('my_copy');
+
+function my_populateVoiceList() {
 
     // Sorted by
     voices = synth.getVoices().sort(function (a, b) {
@@ -30,12 +32,12 @@ function populateVoiceList() {
     she_voice = voice
 }
 
-populateVoiceList();
+my_populateVoiceList();
 if (speechSynthesis.onvoiceschanged !== undefined) {
-    speechSynthesis.onvoiceschanged = populateVoiceList;
+    speechSynthesis.onvoiceschanged = my_populateVoiceList;
 }
 
-function speak(talk) {
+function my_speak(talk) {
 
     if (synth.speaking) {
         console.error("speechSynthesis.speaking");
@@ -61,13 +63,9 @@ function speak(talk) {
     }
 }
 
-let my_copy = document.getElementById('my_copy');
-let my_text = '';
-
 function my_play_button() {
-    my_text = (my_copy.value).trim();
-    if (my_text !== '') {
-        speak(my_text);
+    if ((my_copy.value).trim() !== '') {
+        my_speak(my_copy.value);
     }
 }
 
