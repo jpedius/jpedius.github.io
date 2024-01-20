@@ -1,55 +1,30 @@
-.rootDiv,
-.readDiv,
-.writeDiv,
-.numberDiv,
-.rateDiv,
-.pitchDiv,
-.voiceDiv,
-.voiceSelect,
+.rootDiv {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.numberLabel,
 .modeDiv,
 .modeButton {
-  font-size: 20px;
   margin: 5px 5px 5px 5px;
   padding: 5px 5px 5px 5px;
 }
 
-.readLabel,
-.writeLabel,
-.numberLabel,
-.rateLabel,
-.pitchLabel {
-  display: inline-block;
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  /*padding: 5px 5px 5px 5px;*/
-  width: 120px;
-}
-
 .readInput,
-.writeInput,
-.numberInput,
-.rateInput,
-.pitchInput {
+.writeInput {
   border: none;
   border-color: transparent;
-  font-size: 20px;
   margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+  font-size: 40px;
 }
 
-/*input[type="range"] {*/
-.numberInput,
-.rateInput,
-.pitchInput {
-  width: 250px;
+.numberInput {
   margin: 0;
-}
-
-.lightModeButton, text {
-  background-color: white;
-  color: black;
-}
-
-.darkModeButton {
-  background-color: black;
-  color: white;
+  width: 200px;
 }

@@ -4388,6 +4388,4 @@ const my_words = [[
 	'simultaneously',
 	'transformation',
 	'transportation',
-//], [ 
-//	'african-american',
 ]];
