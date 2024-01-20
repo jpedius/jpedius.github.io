@@ -17,11 +17,14 @@
 
 .readInput,
 .writeInput {
-  border: none;
-  border-color: transparent;
   margin: 5px 5px 5px 5px;
   padding: 5px 5px 5px 5px;
   font-size: 40px;
+}
+
+.readInput {
+  border: none;
+  border-color: transparent;
 }
 
 .numberInput {
