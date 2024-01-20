@@ -1,10 +1,6 @@
 .rootDiv,
 .pasteDiv,
 .wordSpan,
-.rateDiv,
-.pitchDiv,
-.voiceDiv,
-.voiceSelect,
 .modeDiv,
 .modeButton {
   font-size: 20px;
@@ -12,36 +8,7 @@
   padding: 5px 5px 5px 5px;
 }
 
-.rateLabel,
-.pitchLabel {
-  display: inline-block;
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-  width: 120px;
-}
-
 .copyInput {
-  font-size: 20px;
+  font-size: 28px;
   margin: 5px 5px 5px 5px;
-}
-
-.rateInput,
-.pitchInput {
-  border: none;
-  border-color: transparent;
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  width: 250px;
-  margin: 0;
-}
-
-.lightModeButton {
-  background-color: white;
-  color: black;
-}
-
-.darkModeButton {
-  background-color: black;
-  color: white;
 }
