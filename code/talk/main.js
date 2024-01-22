@@ -83,7 +83,7 @@ function my_clipboard_button() {
         div.classList.add('modeDiv');
 
         let word = document.createElement('span');
-        word.classList.add('wordSpan');
+        word.classList.add('modeDiv');
         word.innerHTML = event;
 
         let play = document.createElement('button');

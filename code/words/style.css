@@ -2,15 +2,16 @@
   font-size: 20px;
   margin: 5px 5px 5px 5px;
   padding: 5px 5px 5px 5px;
+
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.numberLabel,
 .modeDiv,
 .modeButton {
+  font-size: 20px;
   margin: 5px 5px 5px 5px;
   padding: 5px 5px 5px 5px;
 }
@@ -27,7 +28,14 @@
   border-color: transparent;
 }
 
+.numberLabel {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
 .numberInput {
+  font-size: 20px;
   margin: 0;
   width: 200px;
 }

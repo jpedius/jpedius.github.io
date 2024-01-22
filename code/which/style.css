@@ -2,6 +2,7 @@
   font-size: 20px;
   margin: 5px 5px 5px 5px;
   padding: 5px 5px 5px 5px;
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -9,10 +10,15 @@
 }
 
 .modeDiv,
+.modeButton {
+  font-size: 30px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
 .modeA,
 .versesDiv,
-.modeB,
-.modeButton {
+.modeB {
   font-size: 30px;
   margin: 5px 5px 5px 5px;
   padding: 5px 5px 5px 5px;
