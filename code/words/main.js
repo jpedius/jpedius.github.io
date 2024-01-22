@@ -58,7 +58,7 @@ function my_speak(talk) {
         return;
     }
 
-    if ((my_read.value).trim() !== '') {
+    if (talk.trim() !== '') {
 
         const utterThis = new SpeechSynthesisUtterance(talk);
 

@@ -48,7 +48,7 @@ function my_speak(talk) {
         return;
     }
 
-    if (talk !== '') {
+    if (talk.trim() !== '') {
 
         const utterThis = new SpeechSynthesisUtterance(talk);
 
