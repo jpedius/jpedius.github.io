@@ -71,33 +71,50 @@ function my_clipboard_button() {
 
     my_text = (my_copy.value).trim();
     my_copy.value = '';
+    my_array = [];
 
-    let line = /[^\.!\?]+[\.!\?]/g;
-    my_array = [...my_text.matchAll(line)];
+    let arr = my_text.split(' ').filter((w) => w !== '');
+    let re1 = /^([^\.!\?]+)$/g;
+    let re2 = /^([A-Z\.!,'\?]+)$/g;
+    let txt = '';
+
+    for (let i=0; i<arr.length; i++) {
+        txt += arr[i];
+        if (arr[i].match(re1) || arr[i].match(re2)) {
+            txt += ' ';
+        }
+        else {
+            my_array.push(txt);
+            txt = '';
+        }
+    }
+    if (txt !== '') {
+        my_array.push(txt);
+    }
 
     my_paste.replaceChildren();
 
     my_array.forEach((event) => {
+
+        let item = event.toString().trim();
 
         let div = document.createElement('div');
         div.classList.add('modeDiv');
 
         let word = document.createElement('span');
         word.classList.add('modeDiv');
-        word.innerHTML = event;
+        word.innerHTML = item;
 
         let play = document.createElement('button');
         play.classList.add('modeButton');
         play.innerHTML = 'Play';
         play.addEventListener('click', () => {
-            my_speak(event);
+            my_speak(item);
         });
 
         div.appendChild(play);
         div.appendChild(word);
         my_paste.appendChild(div);
-
-        console.log(event);
     });
 }
 
