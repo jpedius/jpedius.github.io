@@ -1,5 +1,7 @@
 ## Code
 
+[Plots](plots/)
+
 [Regex](regex.md)
 
 [Speech](speech/)
