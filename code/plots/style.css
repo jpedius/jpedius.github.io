@@ -1,0 +1,14 @@
+.rootDiv {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.textInput,
+.plotSelect,
+.modeDiv,
+.modeButton {
+  font-size: 20px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
