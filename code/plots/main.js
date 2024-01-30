@@ -6,6 +6,7 @@ let she_voice = null;
 
 let my_text = document.getElementById('my_text');
 let my_plot = document.getElementById('my_plot');
+let my_number = document.getElementById('my_number');
 
 let src = {
 
@@ -109,6 +110,7 @@ function my_plots_change() {
             if (txt !== '') { src.array.push(txt) }
 
             my_text.value = src.array[src.length];
+            my_number.innerHTML = src.length + 1;
         })
         .catch((error) => {
             console.error(`Error: ${error.message}`);
@@ -119,6 +121,7 @@ function my_previous_button() {
     if (src.length <= 0) { src.length = src.array.length; }
     src.length--;
     my_text.value = src.array[src.length];
+    my_number.innerHTML = src.length + 1;
 }
 
 function my_play_button() {
@@ -139,4 +142,5 @@ function my_next_button() {
     if (src.length >= src.array.length - 1) { src.length = -1; }
     src.length++;
     my_text.value = src.array[src.length];
+    my_number.innerHTML = src.length + 1;
 }
