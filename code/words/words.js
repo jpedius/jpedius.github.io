@@ -17,6 +17,7 @@ const my_words = [[
 	'ha',
 	'he',
 	'hi',
+	'ie',
 	'if',
 	'in',
 	'it',
@@ -29,12 +30,12 @@ const my_words = [[
 	'ok',
 	'on',
 	'or',
-	'pc',
+	'PC',
 	'pm',
 	're',
 	'so',
 	'to',
-	'tv',
+	'TV',
 	'uh',
 	'um',
 	'up',
@@ -59,6 +60,7 @@ const my_words = [[
 	'ash',
 	'ask',
 	'ass',
+	'ate',
 	'bad',
 	'bag',
 	'ban',
@@ -85,7 +87,7 @@ const my_words = [[
 	'cap',
 	'car',
 	'cat',
-	'ceo',
+	'CEO',
 	'cop',
 	'cow',
 	'cry',
@@ -96,7 +98,7 @@ const my_words = [[
 	'day',
 	'die',
 	'dig',
-	'dna',
+	'DNA',
 	'doc',
 	'dog',
 	'dot',
@@ -143,6 +145,7 @@ const my_words = [[
 	'hug',
 	'huh',
 	'ice',
+	'ill',
 	'its',
 	'jar',
 	'jaw',
@@ -266,7 +269,7 @@ const my_words = [[
 	'yes',
 	'yet',
 	'you',
-], [ 
+], [
 	'able',
 	'acid',
 	'acre',
@@ -924,7 +927,7 @@ const my_words = [[
 	'your',
 	'zero',
 	'zone',
-], [ 
+], [
 	'about',
 	'above',
 	'abuse',
@@ -1618,7 +1621,7 @@ const my_words = [[
 	'young',
 	'yours',
 	'youth',
-], [ 
+], [
 	'abroad',
 	'absorb',
 	'accent',
@@ -1745,6 +1748,7 @@ const my_words = [[
 	'client',
 	'clinic',
 	'closed',
+	'closer',
 	'closet',
 	'coffee',
 	'collar',
@@ -2048,6 +2052,7 @@ const my_words = [[
 	'option',
 	'orange',
 	'origin',
+	'others',
 	'outfit',
 	'outlet',
 	'output',
@@ -2322,7 +2327,7 @@ const my_words = [[
 	'worthy',
 	'writer',
 	'yellow',
-], [ 
+], [
 	'abandon',
 	'ability',
 	'absence',
@@ -2973,7 +2978,7 @@ const my_words = [[
 	'worried',
 	'writing',
 	'written',
-], [ 
+], [
 	'abortion',
 	'absolute',
 	'abstract',
@@ -3182,6 +3187,7 @@ const my_words = [[
 	'governor',
 	'graduate',
 	'grateful',
+	'greatest',
 	'guardian',
 	'guidance',
 	'handsome',
@@ -3470,7 +3476,7 @@ const my_words = [[
 	'withdraw',
 	'workshop',
 	'yourself',
-], [ 
+], [
 	'accompany',
 	'according',
 	'addiction',
@@ -3820,7 +3826,7 @@ const my_words = [[
 	'workplace',
 	'worldwide',
 	'yesterday',
-], [ 
+], [
 	'absolutely',
 	'acceptable',
 	'acceptance',
@@ -4093,7 +4099,7 @@ const my_words = [[
 	'well-being',
 	'widespread',
 	'wilderness',
-], [ 
+], [
 	'accommodate',
 	'achievement',
 	'acknowledge',
@@ -4254,7 +4260,7 @@ const my_words = [[
 	'uncertainty',
 	'unfortunate',
 	'willingness',
-], [ 
+], [
 	'additionally',
 	'agricultural',
 	'announcement',
@@ -4327,7 +4333,7 @@ const my_words = [[
 	'unbelievable',
 	'unemployment',
 	'unidentified',
-], [ 
+], [
 	'administrator',
 	'advertisement',
 	'approximately',
@@ -4368,7 +4374,7 @@ const my_words = [[
 	'understanding',
 	'unfortunately',
 	'unprecedented',
-], [ 
+], [
 	'accomplishment',
 	'accountability',
 	'administration',
