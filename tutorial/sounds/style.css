@@ -1,50 +1,20 @@
-.rootDiv,
-.allDiv,
-.allButton,
-.letterAudio,
-.letterButton {
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
+.myDiv,
+.myButton,
+.myText,
+.mySpan {
+    font-size: 20px;
+    padding: 5px;
 }
 
-.letterInput {
-	/*border: none;
-	border-color: transparent;*/
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
+.myGrid {
+    font-size: 20px;
+    padding: 5px;
+    display: grid;
+    gap: 5px 5px;
+    grid-template-columns: repeat(3, 300px);
 }
 
-.letterSpan {
-	display: none;
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
-}
-
-.soundsDiv {
-	display: grid;
-	font-size: 20px;
-	grid-template-columns: repeat(3, 300px);
-	gap: 5px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
-}
-
-body, text {
-	background-color: white;
-	color: black;
-}
-
-.darkModeButton {
-	background-color: black;
-	color: white;
-}
-
-.modeDiv,
-.modeButton {
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
+.myAudio {
+    font-size: 20px;
+    padding: 5px 0px;
 }

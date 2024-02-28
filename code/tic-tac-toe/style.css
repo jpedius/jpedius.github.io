@@ -1,0 +1,37 @@
+.myGameOver,
+.myRestart {
+	font-size: 20px;
+	padding: 5px;
+}
+
+.myText {
+	display: inline-block;
+	font-size: 20px;
+	padding: 5px;
+}
+
+.myContainer {
+	display: grid;
+	gap: 5px 6px;
+	grid-template-columns: repeat(3, 100px);
+}
+
+.myGrid {
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	font-size: 80px;
+	text-align: center;
+	width: 100px;
+	height: 100px;
+}
+
+.disabled {
+	cursor: not-allowed;
+}
+
+.x::after {
+	content: '❌';
+}
+
+.o::after {
+	content: '⭕';
+}

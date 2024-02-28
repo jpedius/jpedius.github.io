@@ -1,0 +1,18 @@
+.myDiv,
+.myTextarea,
+.myButton {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.mySelect {
+  font-size: 20px;
+  padding: 5px;
+  width: 200px;
+}
+
+.myDisplay {
+  display: inline;
+  position: relative;
+  top: -30px;
+}

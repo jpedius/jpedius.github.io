@@ -1,0 +1,12 @@
+.myDiv,
+.myButton,
+.myText,
+.mySpan {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.myDisplay {
+    font-size: 20px;
+    padding: 5px 0px;
+}

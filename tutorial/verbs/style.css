@@ -1,48 +1,14 @@
-.rootDiv,
-.verbDiv,
-.verbSelect,
-.rateDiv,
-.pitchDiv,
-.voiceDiv,
-.voiceSelect,
-.modeDiv,
-.modeButton {
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
+.myDiv,
+.myText,
+.mySelect,
+.myButton {
+    font-size: 20px;
+    padding: 5px;
 }
 
-.verbLabel,
-.rateLabel,
-.pitchLabel {
-  display: inline-block;
-  font-size: 20px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-  width: 80px;
-}
-
-.verbInput,
-.rateInput,
-.pitchInput {
-  /*border: none;
-  border-color: transparent;*/
-  font-size: 25px;
-  margin: 5px 5px 5px 5px;
-}
-
-.rateInput,
-.pitchInput {
-  width: 250px;
-  margin: 0;
-}
-
-.lightModeButton {
-  background-color: white;
-  color: black;
-}
-
-.darkModeButton {
-  background-color: black;
-  color: white;
+.myLabel {
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px;
+    width: 120px;
 }

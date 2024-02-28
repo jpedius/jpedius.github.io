@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <div>
+      <div class="myLabel">
+        <button class="myButtonWidth" onclick="my_text()">Text</button>
+      </div>
+      <input type="text" class="myText" readonly="readonly" id="text" size="30"
+        autocomplete="off" autocorrect="off" autocapitalize="off" />
+    </div>
+    <div>
+      <div class="myLabel">
+        <button class="myButtonWidth" onclick="my_description()">Description</button>
+      </div>
+      <input type="text" class="myText" readonly="readonly" id="description" size="30"
+        autocomplete="off" autocorrect="off" autocapitalize="off" />
+    </div>
+    <div>
+      <div class="myLabelImage">
+        <button class="myButtonWidth" onclick="my_image()">Image</button>
+      </div>
+      <img src="/files/img/medicine/blank-black.jpg" class="myImg" id="image" />
+    </div>
+    <div class="myDiv">
+      <label class="myLabel"></label>
+      <button class="myButton" onclick="my_previous()">Previous</button>
+      <button class="myButton" onclick="my_play()">Play</button>
+      <button class="myButton" onclick="my_next()">Next</button>
+    </div>
+  </main>
+  <script type="text/javascript" src="/files/js/medicine.js"></script>
+  <script type="text/javascript" src="/files/js/random.js"></script>
+  <script type="text/javascript" src="/files/js/voice.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

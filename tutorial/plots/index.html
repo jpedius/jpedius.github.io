@@ -4,92 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plots</title>
-  <link href="../../normalize.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
-
-  <!-- -->
-  <div class="rootDiv" id="root">
-    <div class="textDiv">
-      <textarea class="textInput" id="text" onchange="clickSelectSentences()"></textarea>
+  <main>
+    <div class="myDiv">
+      <select class="mySelect" id="kind" onchange="my_kind()"
+        data-files="/files/txt/plots/" data-txt=".txt"></select>
     </div>
-    <div class="sentencesDiv">
-      <select class="sentencesSelect" id="sentences" onchange="clickSelectSentences()" data-files="files/" data-txt=".txt">
-        <optgroup label="Harry Potter">
-          <option value="harry-potter">Harry Potter</option>
-          <option value="philosophers-stone">Philosopher's Stone</option>
-          <option value="chamber-of-secrets">Chamber of Secrets</option>
-          <option value="prisoner-of-azkaban">Prisoner of Azkaban</option>
-          <option value="goblet-of-fire">Goblet of Fire</option>
-          <option value="order-of-the-phoenix">Order of the Phoenix</option>
-          <option value="half-blood-prince">Half-Blood Prince</option>
-          <option value="deathly-hallows">Deathly Hallows</option>
-        </optgroup>
-        <optgroup label="The Inheritance Cycle">
-          <option value="the-inheritance-cycle">The Inheritance Cycle</option>
-          <option value="eragon">Eragon</option>
-          <option value="eldest">Eldest</option>
-          <option value="brisingr">Brisingr</option>
-          <option value="inheritance">Inheritance</option>
-        </optgroup>
-        <optgroup label="Lord of the Rings">
-          <option value="lord-of-the-rings">Lord of the Rings</option>
-          <option value="the-hobbit">The Hobbit</option>
-          <option value="the-fellowship-of-the-ring">The Fellowship of the Ring</option>
-          <option value="the-two-towers">The Two Towers</option>
-          <option value="the-return-of-the-king">The Return of the King</option>
-        </optgroup>
-        <optgroup label="His Dark Materials">
-          <option value="northern-lights">Northern Lights</option>
-          <option value="the-subtle-knife">The Subtle Knife</option>
-          <option value="the-amber-spyglass">The Amber Spyglass</option>
-        </optgroup>
-        <optgroup label="The Chronicles of Narnia">
-          <option value="the-lion-the-witch-and-the-wardrobe">The Lion the Witch and the Wardrobe</option>
-          <option value="prince-caspian">Prince Caspian</option>
-          <option value="the-voyage-of-the-dawn-treader">The Voyage of the Dawn Treader</option>
-          <option value="the-silver-chair">The Silver Chair</option>
-          <option value="the-horse-and-his-boy">The Horse and His Boy</option>
-          <option value="the-magicians-nephew">The Magicians Nephew</option>
-          <option value="the-last-battle">The Last Battle</option>
-        </optgroup>
-        <optgroup label="Klaus">
-          <option value="klaus">Klaus</option>
-        </optgroup>
-      </select>
+    <div class="myDiv">
+      <textarea class="myTextarea" readonly="readonly" id="read" rows="8" cols="50"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
     </div>
-    <div class="buttonsDiv">
-      <button class="previousButton" onclick="clickButtonPrevious()">Previous</button>
-      <button class="playButton" onclick="clickButtonPlay()">Play</button>
-      <button class="nextButton" onclick="clickButtonNext()">Next</button>
+    <div class="myDiv">
+      <button class="myButton" onclick="my_previous()">Previous</button>
+      <button class="myButton" onclick="my_play_selection()">Play Selection</button>
+      <button class="myButton" onclick="my_play_all()">Play All</button>
+      <button class="myButton" onclick="my_next()">Next</button>
+      <div class="myNumber" id="number">1</div>
     </div>
-    <div class="wordsDiv">
-      <select class="wordsSelect" id="words" onchange="clickSelectSentences()">
-        <option value="whole">The whole sentence</option>
-        <option value="comma">The comma separated sentence</option>
-        <option value="words">The individual words</option>
-      </select>
-    </div>
-    <div class="rateDiv">
-      <label for="rate" class="rateLabel">Rate</label>
-      <input type="range" min="0.5" max="2" step="0.1" value="0.7" class="rateInput" id="rate" />
-    </div>
-    <div class="pitchDiv">
-      <label for="pitch" class="pitchLabel">Pitch</label>
-      <input type="range" min="0" max="2" step="0.1" value="1" class="pitchInput" id="pitch" />
-    </div>
-    <div class="voiceDiv">
-      <select class="voiceSelect" id="voice"></select>
-    </div>
-    <div class="modeDiv">
-      <button class="modeButton" onclick="clickButtonMode()">Toggle Mode</button>
-    </div>
-  </div>
-  <!-- -->
-
-  <script type="text/javascript" src="../../voices.js"></script>
-  <script type="text/javascript" src="plots.js"></script>
+  </main>
+  <script type="text/javascript" src="/files/js/plots.js"></script>
+  <script type="text/javascript" src="/files/js/voice.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

@@ -1,0 +1,42 @@
+.myDiv,
+.myButton {
+	font-size: 20px;
+	padding: 5px;
+}
+
+.myText {
+	border: none;
+	border-color: transparent;
+	display: inline-block;
+	font-size: 20px;
+	padding: 5px;
+}
+
+.myImg {
+	font-size: 20px;
+	padding: 5px;
+	height: 250px;	
+	width: 250px;
+}
+
+.myLabel {
+	display: inline-block;
+	font-size: 20px;
+	padding: 5px;
+	width: 150px;
+}
+
+.myLabelImage {
+	display: inline-block;
+	font-size: 20px;
+	padding: 5px;
+	position: relative;
+	top: -229px;
+	width: 150px;
+}
+
+.myButtonWidth {
+	font-size: 20px;
+	padding: 5px;
+	width: 150px;
+}

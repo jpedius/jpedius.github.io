@@ -1,0 +1,465 @@
+'use strict';
+
+let hiragana = [{
+	'text': 'a',
+	'gif': '/files/img/japanese/hiragana/hiragana-あ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-あ.png',
+	'key': 'あ',
+}, {
+	'text': 'i',
+	'gif': '/files/img/japanese/hiragana/hiragana-い.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-い.png',
+	'key': 'い',
+}, {
+	'text': 'u',
+	'gif': '/files/img/japanese/hiragana/hiragana-う.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-う.png',
+	'key': 'う',
+}, {
+	'text': 'e',
+	'gif': '/files/img/japanese/hiragana/hiragana-え.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-え.png',
+	'key': 'え',
+}, {
+	'text': 'o',
+	'gif': '/files/img/japanese/hiragana/hiragana-お.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-お.png',
+	'key': 'お',
+}, {
+	'text': 'ka',
+	'gif': '/files/img/japanese/hiragana/hiragana-か.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-か.png',
+	'key': 'か',
+}, {
+	'text': 'ki',
+	'gif': '/files/img/japanese/hiragana/hiragana-き.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-き.png',
+	'key': 'き',
+}, {
+	'text': 'ku',
+	'gif': '/files/img/japanese/hiragana/hiragana-く.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-く.png',
+	'key': 'く',
+}, {
+	'text': 'ke',
+	'gif': '/files/img/japanese/hiragana/hiragana-け.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-け.png',
+	'key': 'け',
+}, {
+	'text': 'ko',
+	'gif': '/files/img/japanese/hiragana/hiragana-こ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-こ.png',
+	'key': 'こ',
+}, {
+	'text': 'sa',
+	'gif': '/files/img/japanese/hiragana/hiragana-さ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-さ.png',
+	'key': 'さ',
+}, {
+	'text': 'shi',
+	'gif': '/files/img/japanese/hiragana/hiragana-し.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-し.png',
+	'key': 'し',
+}, {
+	'text': 'su',
+	'gif': '/files/img/japanese/hiragana/hiragana-す.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-す.png',
+	'key': 'す',
+}, {
+	'text': 'se',
+	'gif': '/files/img/japanese/hiragana/hiragana-せ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-せ.png',
+	'key': 'せ',
+}, {
+	'text': 'so',
+	'gif': '/files/img/japanese/hiragana/hiragana-そ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-そ.png',
+	'key': 'そ',
+}, {
+	'text': 'ta',
+	'gif': '/files/img/japanese/hiragana/hiragana-た.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-た.png',
+	'key': 'た',
+}, {
+	'text': 'chi',
+	'gif': '/files/img/japanese/hiragana/hiragana-ち.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-ち.png',
+	'key': 'ち',
+}, {
+	'text': 'tsu',
+	'gif': '/files/img/japanese/hiragana/hiragana-つ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-つ.png',
+	'key': 'つ',
+}, {
+	'text': 'te',
+	'gif': '/files/img/japanese/hiragana/hiragana-て.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-て.png',
+	'key': 'て',
+}, {
+	'text': 'to',
+	'gif': '/files/img/japanese/hiragana/hiragana-と.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-と.png',
+	'key': 'と',
+}, {
+	'text': 'na',
+	'gif': '/files/img/japanese/hiragana/hiragana-な.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-な.png',
+	'key': 'な',
+}, {
+	'text': 'ni',
+	'gif': '/files/img/japanese/hiragana/hiragana-に.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-に.png',
+	'key': 'に',
+}, {
+	'text': 'nu',
+	'gif': '/files/img/japanese/hiragana/hiragana-ぬ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-ぬ.png',
+	'key': 'ぬ',
+}, {
+	'text': 'ne',
+	'gif': '/files/img/japanese/hiragana/hiragana-ね.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-ね.png',
+	'key': 'ね',
+}, {
+	'text': 'no',
+	'gif': '/files/img/japanese/hiragana/hiragana-の.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-の.png',
+	'key': 'の',
+}, {
+	'text': 'ha',
+	'gif': '/files/img/japanese/hiragana/hiragana-は.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-は.png',
+	'key': 'は',
+}, {
+	'text': 'hi',
+	'gif': '/files/img/japanese/hiragana/hiragana-ひ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-ひ.png',
+	'key': 'ひ',
+}, {
+	'text': 'fu',
+	'gif': '/files/img/japanese/hiragana/hiragana-ふ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-ふ.png',
+	'key': 'ふ',
+}, {
+	'text': 'he',
+	'gif': '/files/img/japanese/hiragana/hiragana-へ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-へ.png',
+	'key': 'へ',
+}, {
+	'text': 'ho',
+	'gif': '/files/img/japanese/hiragana/hiragana-ほ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-ほ.png',
+	'key': 'ほ',
+}, {
+	'text': 'ma',
+	'gif': '/files/img/japanese/hiragana/hiragana-ま.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-ま.png',
+	'key': 'ま',
+}, {
+	'text': 'mi',
+	'gif': '/files/img/japanese/hiragana/hiragana-み.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-み.png',
+	'key': 'み',
+}, {
+	'text': 'mu',
+	'gif': '/files/img/japanese/hiragana/hiragana-む.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-む.png',
+	'key': 'む',
+}, {
+	'text': 'me',
+	'gif': '/files/img/japanese/hiragana/hiragana-め.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-め.png',
+	'key': 'め',
+}, {
+	'text': 'mo',
+	'gif': '/files/img/japanese/hiragana/hiragana-も.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-も.png',
+	'key': 'も',
+}, {
+	'text': 'ya',
+	'gif': '/files/img/japanese/hiragana/hiragana-や.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-や.png',
+	'key': 'や',
+}, {
+	'text': 'yu',
+	'gif': '/files/img/japanese/hiragana/hiragana-ゆ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-ゆ.png',
+	'key': 'ゆ',
+}, {
+	'text': 'yo',
+	'gif': '/files/img/japanese/hiragana/hiragana-よ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-よ.png',
+	'key': 'よ',
+}, {
+	'text': 'ra',
+	'gif': '/files/img/japanese/hiragana/hiragana-ら.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-ら.png',
+	'key': 'ら',
+}, {
+	'text': 'ri',
+	'gif': '/files/img/japanese/hiragana/hiragana-り.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-り.png',
+	'key': 'り',
+}, {
+	'text': 'ru',
+	'gif': '/files/img/japanese/hiragana/hiragana-る.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-る.png',
+	'key': 'る',
+}, {
+	'text': 're',
+	'gif': '/files/img/japanese/hiragana/hiragana-れ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-れ.png',
+	'key': 'れ',
+}, {
+	'text': 'ro',
+	'gif': '/files/img/japanese/hiragana/hiragana-ろ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-ろ.png',
+	'key': 'ろ',
+}, {
+	'text': 'wa',
+	'gif': '/files/img/japanese/hiragana/hiragana-わ.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-わ.png',
+	'key': 'わ',
+}, {
+	'text': 'wo',
+	'gif': '/files/img/japanese/hiragana/hiragana-を.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-を.png',
+	'key': 'を',
+}, {
+	'text': 'n',
+	'gif': '/files/img/japanese/hiragana/hiragana-ん.gif',
+	'png': '/files/img/japanese/hiragana/hiragana-ん.png',
+	'key': 'ん',
+}];
+
+let katakana = [{
+	'text': 'a',
+	'gif': '/files/img/japanese/katakana/katakana-ア.gif',
+	'png': '/files/img/japanese/katakana/katakana-ア.png',
+	'key': 'ア',
+}, {
+	'text': 'i',
+	'gif': '/files/img/japanese/katakana/katakana-イ.gif',
+	'png': '/files/img/japanese/katakana/katakana-イ.png',
+	'key': 'イ',
+}, {
+	'text': 'u',
+	'gif': '/files/img/japanese/katakana/katakana-ウ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ウ.png',
+	'key': 'ウ',
+}, {
+	'text': 'e',
+	'gif': '/files/img/japanese/katakana/katakana-エ.gif',
+	'png': '/files/img/japanese/katakana/katakana-エ.png',
+	'key': 'エ',
+}, {
+	'text': 'o',
+	'gif': '/files/img/japanese/katakana/katakana-オ.gif',
+	'png': '/files/img/japanese/katakana/katakana-オ.png',
+	'key': 'オ',
+}, {
+	'text': 'ka',
+	'gif': '/files/img/japanese/katakana/katakana-カ.gif',
+	'png': '/files/img/japanese/katakana/katakana-カ.png',
+	'key': 'カ',
+}, {
+	'text': 'ki',
+	'gif': '/files/img/japanese/katakana/katakana-キ.gif',
+	'png': '/files/img/japanese/katakana/katakana-キ.png',
+	'key': 'キ',
+}, {
+	'text': 'ku',
+	'gif': '/files/img/japanese/katakana/katakana-ク.gif',
+	'png': '/files/img/japanese/katakana/katakana-ク.png',
+	'key': 'ク',
+}, {
+	'text': 'ke',
+	'gif': '/files/img/japanese/katakana/katakana-ケ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ケ.png',
+	'key': 'ケ',
+}, {
+	'text': 'ko',
+	'gif': '/files/img/japanese/katakana/katakana-コ.gif',
+	'png': '/files/img/japanese/katakana/katakana-コ.png',
+	'key': 'コ',
+}, {
+	'text': 'sa',
+	'gif': '/files/img/japanese/katakana/katakana-サ.gif',
+	'png': '/files/img/japanese/katakana/katakana-サ.png',
+	'key': 'サ',
+}, {
+	'text': 'shi',
+	'gif': '/files/img/japanese/katakana/katakana-シ.gif',
+	'png': '/files/img/japanese/katakana/katakana-シ.png',
+	'key': 'シ',
+}, {
+	'text': 'su',
+	'gif': '/files/img/japanese/katakana/katakana-ス.gif',
+	'png': '/files/img/japanese/katakana/katakana-ス.png',
+	'key': 'ス',
+}, {
+	'text': 'se',
+	'gif': '/files/img/japanese/katakana/katakana-セ.gif',
+	'png': '/files/img/japanese/katakana/katakana-セ.png',
+	'key': 'セ',
+}, {
+	'text': 'so',
+	'gif': '/files/img/japanese/katakana/katakana-ソ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ソ.png',
+	'key': 'ソ',
+}, {
+	'text': 'ta',
+	'gif': '/files/img/japanese/katakana/katakana-タ.gif',
+	'png': '/files/img/japanese/katakana/katakana-タ.png',
+	'key': 'タ',
+}, {
+	'text': 'chi',
+	'gif': '/files/img/japanese/katakana/katakana-チ.gif',
+	'png': '/files/img/japanese/katakana/katakana-チ.png',
+	'key': 'チ',
+}, {
+	'text': 'tsu',
+	'gif': '/files/img/japanese/katakana/katakana-ツ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ツ.png',
+	'key': 'ツ',
+}, {
+	'text': 'te',
+	'gif': '/files/img/japanese/katakana/katakana-テ.gif',
+	'png': '/files/img/japanese/katakana/katakana-テ.png',
+	'key': 'テ',
+}, {
+	'text': 'to',
+	'gif': '/files/img/japanese/katakana/katakana-ト.gif',
+	'png': '/files/img/japanese/katakana/katakana-ト.png',
+	'key': 'ト',
+}, {
+	'text': 'na',
+	'gif': '/files/img/japanese/katakana/katakana-ナ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ナ.png',
+	'key': 'ナ',
+}, {
+	'text': 'ni',
+	'gif': '/files/img/japanese/katakana/katakana-ニ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ニ.png',
+	'key': 'ニ',
+}, {
+	'text': 'nu',
+	'gif': '/files/img/japanese/katakana/katakana-ヌ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ヌ.png',
+	'key': 'ヌ',
+}, {
+	'text': 'ne',
+	'gif': '/files/img/japanese/katakana/katakana-ネ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ネ.png',
+	'key': 'ネ',
+}, {
+	'text': 'no',
+	'gif': '/files/img/japanese/katakana/katakana-ノ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ノ.png',
+	'key': 'ノ',
+}, {
+	'text': 'ha',
+	'gif': '/files/img/japanese/katakana/katakana-ハ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ハ.png',
+	'key': 'ハ',
+}, {
+	'text': 'hi',
+	'gif': '/files/img/japanese/katakana/katakana-ヒ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ヒ.png',
+	'key': 'ヒ',
+}, {
+	'text': 'fu',
+	'gif': '/files/img/japanese/katakana/katakana-フ.gif',
+	'png': '/files/img/japanese/katakana/katakana-フ.png',
+	'key': 'フ',
+}, {
+	'text': 'he',
+	'gif': '/files/img/japanese/katakana/katakana-ヘ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ヘ.png',
+	'key': 'ヘ',
+}, {
+	'text': 'ho',
+	'gif': '/files/img/japanese/katakana/katakana-ホ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ホ.png',
+	'key': 'ホ',
+}, {
+	'text': 'ma',
+	'gif': '/files/img/japanese/katakana/katakana-マ.gif',
+	'png': '/files/img/japanese/katakana/katakana-マ.png',
+	'key': 'マ',
+}, {
+	'text': 'mi',
+	'gif': '/files/img/japanese/katakana/katakana-ミ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ミ.png',
+	'key': 'ミ',
+}, {
+	'text': 'mu',
+	'gif': '/files/img/japanese/katakana/katakana-ム.gif',
+	'png': '/files/img/japanese/katakana/katakana-ム.png',
+	'key': 'ム',
+}, {
+	'text': 'me',
+	'gif': '/files/img/japanese/katakana/katakana-メ.gif',
+	'png': '/files/img/japanese/katakana/katakana-メ.png',
+	'key': 'メ',
+}, {
+	'text': 'mo',
+	'gif': '/files/img/japanese/katakana/katakana-モ.gif',
+	'png': '/files/img/japanese/katakana/katakana-モ.png',
+	'key': 'モ',
+}, {
+	'text': 'ya',
+	'gif': '/files/img/japanese/katakana/katakana-ヤ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ヤ.png',
+	'key': 'ヤ',
+}, {
+	'text': 'yu',
+	'gif': '/files/img/japanese/katakana/katakana-ユ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ユ.png',
+	'key': 'ユ',
+}, {
+	'text': 'yo',
+	'gif': '/files/img/japanese/katakana/katakana-ヨ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ヨ.png',
+	'key': 'ヨ',
+}, {
+	'text': 'ra',
+	'gif': '/files/img/japanese/katakana/katakana-ラ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ラ.png',
+	'key': 'ラ',
+}, {
+	'text': 'ri',
+	'gif': '/files/img/japanese/katakana/katakana-リ.gif',
+	'png': '/files/img/japanese/katakana/katakana-リ.png',
+	'key': 'リ',
+}, {
+	'text': 'ru',
+	'gif': '/files/img/japanese/katakana/katakana-ル.gif',
+	'png': '/files/img/japanese/katakana/katakana-ル.png',
+	'key': 'ル',
+}, {
+	'text': 're',
+	'gif': '/files/img/japanese/katakana/katakana-レ.gif',
+	'png': '/files/img/japanese/katakana/katakana-レ.png',
+	'key': 'レ',
+}, {
+	'text': 'ro',
+	'gif': '/files/img/japanese/katakana/katakana-ロ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ロ.png',
+	'key': 'ロ',
+}, {
+	'text': 'wa',
+	'gif': '/files/img/japanese/katakana/katakana-ワ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ワ.png',
+	'key': 'ワ',
+}, {
+	'text': 'wo',
+	'gif': '/files/img/japanese/katakana/katakana-ヲ.gif',
+	'png': '/files/img/japanese/katakana/katakana-ヲ.png',
+	'key': 'ヲ',
+}, {
+	'text': 'n',
+	'gif': '/files/img/japanese/katakana/katakana-ン.gif',
+	'png': '/files/img/japanese/katakana/katakana-ン.png',
+	'key': 'ン',
+}];

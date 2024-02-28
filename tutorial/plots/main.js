@@ -1,49 +1,40 @@
 'use strict';
 
-let src = {
+let kind = document.getElementById('kind');
+let read = document.getElementById('read');
+let number = document.getElementById('number');
 
-    sentences: (sentences.dataset.files
-        + sentences.value
-        + sentences.dataset.txt),
-        
-    text:'',
-    words: words.value,
+let req = {
+    plot: (kind.dataset.files
+        + kind.value
+        + kind.dataset.txt),
+    array: [],
+    length: 0,
 };
 
-let howMany = [];
-let previousOrNext = 0;
-
-let text = document.getElementById('text');
-
-clickSelectSentences();
-
-function shuffle(array) {
-
-	let items = JSON.parse(JSON.stringify(array));
-	let currentIndex = items.length, randomIndex;
-
-	// While there remain elements to shuffle...
-	while (currentIndex !== 0) {
-
-		// Pick a remaining element...
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex--;
-
-		// And swap it with the current element.
-		[items[currentIndex], items[randomIndex]] = [
-		items[randomIndex], items[currentIndex]];
-	}
-
-	return items;
+function my_options() {
+    kind.innerHTML = '';
+    for (let i=0; i<plots.length; i++) {
+        const optgroup = document.createElement('optgroup');
+        optgroup.label = plots[i].group;
+        kind.appendChild(optgroup);
+        for (let j=0; j<plots[i].options.length; j++) {
+            const option = document.createElement('option');
+            option.textContent = plots[i].options[j].name;
+            option.value = plots[i].options[j].key;
+            optgroup.appendChild(option);
+        }
+    }
 }
+my_options();
 
-function clickSelectSentences() {
+function my_kind() {
 
-    src.sentences = (sentences.dataset.files
-        + sentences.value
-        + sentences.dataset.txt);
+    req.plot = (kind.dataset.files
+        + kind.value
+        + kind.dataset.txt);
 
-    fetch(new Request(src.sentences))
+    fetch(new Request(req.plot))
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error, status = ${response.status}`);
@@ -52,62 +43,62 @@ function clickSelectSentences() {
         })
         .then((data) => {
 
-            let reWhole = /[^\.!\?]+[\.!\?]+/g;
-            let reComma = /[^\.!\?,]+[\.!\?,]+/g;
+            req.array = [];
+            req.length = 0;
 
-            src.text = data.trim().match(reWhole).map(function (x) {
-                return x.trim().match(reComma).map(function (y) {
-                    return y.trim().split(' ');
-                });
-            });
-            
-            src.words = words.value;
-            if ('whole' === words.value) {
-                howMany = src.text.map(function (x) {
-                    return x.map(function (y) {
-                        return y.join(' ');
-                    }).join(' ');
-                });
+            let arr = data.replaceAll('\n', ' ').split(' ').filter((t) => t !== '');
+            let txt = '';
+
+            let re1 = /^([^\.!\?]+)$/g;
+            let re2 = /^([A-Z\.!,'\?]+)$/g;
+            for (let i=0; i<arr.length; i++) {
+                txt += arr[i];
+                if (arr[i].match(re1) || arr[i].match(re2)) {
+                    txt += ' ';
+                }
+                else {
+                    req.array.push(txt);
+                    txt = '';
+                }
             }
-            else if ('comma' === words.value) {
-                howMany = src.text.flat(1).map(function (x) {
-                    return x.join(' ');
-                });
-            }
-            else if ('words' === words.value) {
-                howMany = src.text.flat(2);
-            }
-            previousOrNext = 0;
-            
-            text.value = howMany[previousOrNext];
+            if (txt !== '') { req.array.push(txt) }
+
+            read.value = req.array[req.length];
+            number.innerHTML = req.length + 1;
         })
         .catch((error) => {
             console.error(`Error: ${error.message}`);
         });
 }
+my_kind();
 
-function clickButtonPrevious() {
-	if (previousOrNext <= 0) {
-		previousOrNext = howMany.length;
-	}
-	previousOrNext--;
-	text.value = howMany[previousOrNext];
+function my_previous() {
+    if (req.length <= 0) {
+        req.length = req.array.length;
+    }
+    req.length--;
+    read.value = req.array[req.length];
+    number.innerHTML = req.length + 1;
 }
 
-function clickButtonPlay() {
-	speak(text.value);
+function my_play_selection() {
+    let start = read.selectionStart;
+    let finish = read.selectionEnd;
+    let sel = read.value.substring(start, finish);
+    if (sel !== 0) {
+        my_speak(sel);
+    }
 }
 
-function clickButtonNext() {
-	if (previousOrNext >= howMany.length - 1) {
-		previousOrNext = -1;
-	}
-	previousOrNext++;
-	text.value = howMany[previousOrNext];
+function my_play_all() {
+    my_speak(req.array[req.length]);
 }
 
-function clickButtonMode() {
-	let element = document.body;
-	element.classList.toggle('darkModeButton');
-    text.classList.toggle('darkModeButton');
+function my_next() {
+    if (req.length >= req.array.length - 1) {
+        req.length = -1;
+    }
+    req.length++;
+    read.value = req.array[req.length];
+    number.innerHTML = req.length + 1;
 }

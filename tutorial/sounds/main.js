@@ -1,59 +1,41 @@
 'use strict';
 
 let sounds = consonant.concat(vowel);
-sounds = shuffle(sounds);
+sounds = my_shuffle(sounds);
 
+let kind = document.getElementById('kind');
 let show = false;
 
-let audioSounds = document.getElementById('audioSounds');
-
-let a = setValues(sounds, audioSounds);
-
-function shuffle(array) {
-
-    let items = JSON.parse(JSON.stringify(array));
-    let currentIndex = items.length, randomIndex;
-
-    // While there remain elements to shuffle...
-    while (currentIndex !== 0) {
-
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-
-        // And swap it with the current element.
-        [items[currentIndex], items[randomIndex]] = [
-            items[randomIndex], items[currentIndex]];
-    }
-
-    return items;
+let arr = [];
+for (let i=0; i<sounds.length; i++) {
+    arr.push(my_sound_element(
+        kind, sounds[i].mp3, sounds[i].letter));
 }
 
-function soundElement(element, mp3, letter) {
+function my_sound_element(element, mp3, letter) {
 
     let div = document.createElement('div');
-    div.classList.add('letterDiv');
+    div.classList.add('myAudio');
 
     let audio = document.createElement('audio');
     audio.src = mp3;
-    audio.classList.add('letterAudio');
 
     let play = document.createElement('button');
-    play.classList.add('letterButton');
+    play.classList.add('myButton');
     play.innerHTML = 'Play';
     play.addEventListener('click', () => {
         audio.play();
     });
 
     let input = document.createElement('input');
+    input.classList.add('myText');
     input.type = 'text';
     input.size = 5;
-    input.classList.add('letterInput');   
 
     let span = document.createElement('span');
-    span.classList.add('letterSpan');
-    span.innerHTML = ' ' + letter + ' ';
-    span.style.display = 'none'; // 'none';
+    span.classList.add('mySpan');
+    span.innerHTML = ` ${letter} `;
+    span.style.display = 'none';
 
     div.appendChild(audio);
     div.appendChild(play);
@@ -62,45 +44,12 @@ function soundElement(element, mp3, letter) {
 
     element.appendChild(div);
 
-    return {
-        div: div,
-        audio: audio,
-        play: play,
-        input: input,
-        span: span,
-    }
+    return span;
 }
 
-function setValues(sounds, audioSounds) {
-
-    let elements = [];
-    for (let i=0; i<sounds.length; i++) {
-        let file = sounds[i].mp3;
-        let letter = sounds[i].letter;
-        elements.push(soundElement(audioSounds, file, letter));
+function my_all_sounds() {
+    for (let i=0; i<arr.length; i++) {
+        arr[i].style.display = show ? 'none' : 'inline';
     }
-    return elements;
-}
-
-function clickButtonAll() {
-
-    let elements = a;
-    for (let i=0; i<sounds.length; i++) {
-        if (show === true) {
-            elements[i].span.style.display = 'none';
-        }
-        else {
-            elements[i].span.style.display = 'inline';
-        }
-    }
-
     show = !show;
-}
-
-function clickButtonMode() {
-	let element = document.body;
-	element.classList.toggle('darkModeButton');
-    for (let i=0; i<a.length; i++) {
-        a[i].input.classList.toggle('darkModeButton');
-    }
 }

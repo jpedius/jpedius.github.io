@@ -1,77 +1,62 @@
 'use strict';
 
-let all = [hiragana[0], katakana[0]];
+let arr = [hiragana, katakana];
 
-let howMany = all[0];
-let previousOrNext = 0;
-
-let text = document.getElementById('text');
+let romaji = document.getElementById('romaji');
 let gif = document.getElementById('gif');
 let png = document.getElementById('png');
+let kind = document.getElementById('kind');
+let show_hide = document.getElementById('show_hide');
 
-let random = document.getElementById('random');
+let previousOrNext = 0;
+let howMany = arr[previousOrNext];
+let showHide = true;
 let randomCheck = false;
 
-setValues();
+function my_values() {
+	romaji.value = showHide
+		? howMany[previousOrNext].text
+		: '-----';
+	gif.src = howMany[previousOrNext].gif;
+	png.src = howMany[previousOrNext].png;
+	return howMany[previousOrNext];
+}
+my_values();
 
-function shuffle(array) {
-
-	let items = JSON.parse(JSON.stringify(array));
-	let currentIndex = items.length, randomIndex;
-
-	// While there remain elements to shuffle...
-	while (currentIndex !== 0) {
-
-		// Pick a remaining element...
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex--;
-
-		// And swap it with the current element.
-		[items[currentIndex], items[randomIndex]] = [
-		items[randomIndex], items[currentIndex]];
+function my_kind() {
+	howMany = arr[kind.options.selectedIndex];
+	previousOrNext = 0;
+	if (randomCheck == true) {
+		howMany = my_shuffle(howMany);
 	}
-
-	return items;
+	return my_values();
 }
 
-function clickSelectSentences() {
-	//previousOrNext = 0;
-	howMany = all[sentences.options.selectedIndex];
-	if (randomCheck == true) {
-		howMany = shuffle(howMany);
-	}
-	return setValues();
-} 
+function my_random() {
+	randomCheck = !randomCheck;
+	return my_kind();
+}
 
-function clickButtonPrevious() {
+function my_previous() {
 	if (previousOrNext <= 0) {
 		previousOrNext = howMany.length;
 	}
 	previousOrNext--;
-	return setValues();
+	return my_values();
 }
 
-function clickButtonNext() {
+function my_show_hide() {
+	show_hide.innerHTML = showHide ? 'Show' : 'Hide';
+	showHide = !showHide;
+	romaji.value = showHide
+		? howMany[previousOrNext].text
+		: '-----';
+}
+
+function my_next() {
 	if (previousOrNext >= howMany.length - 1) {
 		previousOrNext = -1;
 	}
 	previousOrNext++;
-	return setValues();
-}
-
-function clickCheckRandom() {
-	randomCheck = !randomCheck;
-	clickSelectSentences();
-}
-
-function setValues() {
-    text.value = howMany[previousOrNext].text;
-    gif.src = howMany[previousOrNext].gif;
-    png.src = howMany[previousOrNext].png;
-    return howMany[previousOrNext];
-}
-
-function clickButtonMode() {
-	let element = document.body;
-	element.classList.toggle('darkModeButton');
+	return my_values();
 }

@@ -1,70 +1,13 @@
-.rootDiv {
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
+.myDiv,
+.mySelect,
+.myTextarea,
+.myButton {
+    font-size: 20px;
+    padding: 5px;
 }
 
-.textDiv,
-.sentencesDiv,
-.sentencesSelect,
-.buttonsDiv,
-.previousButton,
-.playButton,
-.nextButton,
-.wordsDiv,
-.wordsSelect,
-.rateDiv,
-.pitchDiv,
-.voiceDiv,
-.voiceSelect {
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
-}
-
-.rateLabel,
-.pitchLabel {
-	display: inline-block;
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
-	width: 120px;
-}
-
-.textInput {
-	border: none;
-	border-color: transparent;
-	font-size: 40px;
-	height: 400px;	
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
-	width: 80%;
-}
-
-.rateInput,
-.pitchInput {
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-}
-
-input[type="range"] {
-	width: 250px;
-	margin: 0;
-}
-
-body, textarea {
-	background-color: white;
-	color: black;
-}
-
-.darkModeButton {
-	background-color: black;
-	color: white;
-}
-
-.modeDiv,
-.modeButton {
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
+.myNumber {
+    display: inline;
+    font-size: 20px;
+    padding: 5px;
 }

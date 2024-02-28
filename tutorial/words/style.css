@@ -1,100 +1,12 @@
-.rootDiv {
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 10px;
+.myDiv,
+.myLabel,
+.myRange,
+.myButton {
+    font-size: 20px;
+    padding: 5px;
 }
 
-.rootHidden {
-  visibility: hidden;
-}
-
-.rootVisible {
-  visibility: visible;
-}
-
-.wordsDiv {
-	display: grid;
-	font-size: 20px;
-	grid-template-columns: repeat(3, 150px);
-	gap: 5px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
-}
-
-.textDiv,
-.readonlyDiv,
-.numberDiv,
-.wordsGrid,
-.wordsCheckbox,
-.wordsLabel,
-.buttonsDiv,
-.previousButton,
-.playButton,
-.showButton,
-.checkButton,
-.nextButton,
-.textButton,
-.rateDiv,
-.pitchDiv,
-.voiceDiv,
-.voiceSelect,
-.textareaButton,
-.textareaDiv,
-.textareaInput {
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
-}
-
-.textLabel,
-.readonlyLabel,
-.numberLabel,
-.rateLabel,
-.pitchLabel {
-	display: inline-block;
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
-	width: 120px;
-}
-
-.textInput,
-.readonlyInput {
-	border: none;
-	border-color: transparent;
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
-}
-
-.numberInput,
-.rateInput,
-.pitchInput {
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-}
-
-input[type="range"] {
-	width: 250px;
-	margin: 0;
-}
-
-body, text {
-	background-color: white;
-	color: black;
-}
-
-.darkModeButton {
-	background-color: black;
-	color: white;
-}
-
-.modeDiv,
-.modeButton {
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
-	padding: 5px 5px 5px 5px;
+.myText {
+    font-size: 50px;
+    padding: 5px;
 }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Say</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <div class="myDiv" id="verbs">
+      <textarea class="myTextarea" rows="5" cols="30"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+      <div class="myDisplay">
+        <div class="myDisplay">
+          <select class="mySelect"></select>
+        </div>
+        <div class="myDisplay">
+          <button class="myButton" onclick="my_play(0)">Play</button>
+        </div>
+      </div>
+      <textarea class="myTextarea" rows="5" cols="30"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+    </div>
+    <div class="myDiv" id="nouns">
+      <textarea class="myTextarea" rows="5" cols="30"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+      <div class="myDisplay">
+        <div class="myDisplay">
+          <select class="mySelect"></select>
+        </div>
+        <div class="myDisplay">
+          <button class="myButton" onclick="my_play(1)">Play</button>
+        </div>
+      </div>
+      <textarea class="myTextarea" rows="5" cols="30"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+    </div>
+    <div class="myDiv" id="adjectives">
+      <textarea class="myTextarea" rows="5" cols="30"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+      <div class="myDisplay">
+        <div class="myDisplay">
+          <select class="mySelect"></select>
+        </div>
+        <div class="myDisplay">
+          <button class="myButton" onclick="my_play(2)">Play</button>
+        </div>
+      </div>
+      <textarea class="myTextarea" rows="5" cols="30"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+    </div>
+    <div class="myDiv" id="adverbs">
+      <textarea class="myTextarea" rows="5" cols="30"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+      <div class="myDisplay">
+        <div class="myDisplay">
+          <select class="mySelect"></select>
+        </div>
+        <div class="myDisplay">
+          <button class="myButton" onclick="my_play(3)">Play</button>
+        </div>
+      </div>
+      <textarea class="myTextarea" rows="5" cols="30"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+    </div>
+    <div class="myDiv">
+      <button class="myButton" onclick="my_previous()">Previous</button>
+      <button class="myButton" onclick="my_next()">Next</button>
+    </div>
+  </main>
+  <script type="text/javascript" src="/files/js/say.js"></script>
+  <script type="text/javascript" src="/files/js/voice.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

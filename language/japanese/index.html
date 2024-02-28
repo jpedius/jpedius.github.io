@@ -4,46 +4,43 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Japanese</title>
-  <link href="../../normalize.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
-
-  <!-- -->
-  <div class="rootDiv" id="root">
-    <div class="textDiv">
-      <label for="text" class="textLabel">Text</label>
-      <input type="text" readonly="readonly" class="textInput" id="text" autocomplete="off" autocorrect="off" autocapitalize="off" size="4" />
+  <main>
+    <div class="myDiv">
+      <label class="myLabel">Romaji</label>
+      <input type="text" class="myText" readonly="readonly" id="romaji" size="4"
+          autocomplete="off" autocorrect="off" autocapitalize="off" />
     </div>
-    <div class="imageDiv">
-      <label for="image" class="imageLabel">GIF</label>
-      <img src="files/hiragana-あ.gif" class="imageImg" id="gif" />
+    <div class="myDiv">
+      <label class="myLabel">GIF</label>
+      <img src="/files/img/japanese/hiragana/hiragana-あ.gif" class="myImg" id="gif" />
     </div>
-    <div class="imageDiv">
-      <label for="image" class="imageLabel">PNG</label>
-      <img src="files/hiragana-あ.png" class="imageImg" id="png" />
+    <div class="myDiv">
+      <label class="myLabel">PNG</label>
+      <img src="/files/img/japanese/hiragana/hiragana-あ.png" class="myImg" id="png" />
     </div>
-    <div class="sentencesDiv">
-      <select class="sentencesSelect" onchange="clickSelectSentences()" id="sentences">
+    <div class="myDiv">
+      <label class="myLabel"></label>
+      <select class="mySelect" id="kind" onchange="my_kind()">
         <option>Hiragana</option>
         <option>Katakana</option>
       </select>
     </div>
-    <div class="randomDiv">
-      <label for="random" class="randomLabel">Random</label>
-      <input type="checkbox" class="randomInput" id="random" onchange="clickCheckRandom()">
+    <div class="myDiv">
+      <label class="myLabel">Random</label>
+      <input type="checkbox" class="myCheckbox" id="random" onchange="my_random()" />
     </div>
-    <div class="buttonsDiv">
-      <button class="previousButton" onclick="clickButtonPrevious()">Previous</button>
-      <button class="nextButton" onclick="clickButtonNext()">Next</button>
+    <div class="myDiv">
+      <label class="myLabel"></label>
+      <button class="myButton" onclick="my_previous()">Previous</button>
+      <button class="myButton" id="show_hide" onclick="my_show_hide()">Hide</button>
+      <button class="myButton" onclick="my_next()">Next</button>
     </div>
-    <div class="modeDiv">
-      <button class="modeButton" onclick="clickButtonMode()">Toggle Mode</button>
-    </div>
-  </div>
-  <!-- -->
-
-  <script type="text/javascript" src="japanese.js"></script>
+  </main>
+  <script type="text/javascript" src="/files/js/japanese.js"></script>
+  <script type="text/javascript" src="/files/js/random.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

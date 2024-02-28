@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talk</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <div class="myDiv">
+      <button class="myButton" onclick="my_clip()">Clipboard</button>
+      <button class="myButton" onclick="my_wipe()">Wipe</button>
+      <input type="text" class="myText" id="copy" size="25" 
+        autocomplete="off" autocorrect="off" autocapitalize="off" />
+    </div>
+    <div class="myDiv" id="paste">
+    </div>
+  </main>
+  <script type="text/javascript" src="/files/js/voice.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
