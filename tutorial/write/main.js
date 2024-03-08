@@ -19,6 +19,10 @@ function my_words() {
 howMany = my_words();
 read.value = howMany[previousOrNext];
 
+function my_play() {
+    my_speak(howMany[previousOrNext]);
+}
+
 function my_previous() {
     if (previousOrNext <= 0) {
         previousOrNext = howMany.length;
