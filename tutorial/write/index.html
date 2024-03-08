@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Words</title>
+  <title>Write</title>
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <main>
+  <main class="myMain">
     <div class="myDiv">
-      <input type="text" class="myText" readonly="readonly" id="read" size="20" 
+      <input type="text" class="myText" readonly="readonly" id="read" size="12" 
         autocomplete="off" autocorrect="off" autocapitalize="off" />
     </div>
     <div class="myDiv">
       <button class="myButton" onclick="my_previous()">Previous</button>
-      <button class="myButton" onclick="my_next()">Next</button>
       <div class="myNumber" id="number">1</div>
+      <button class="myButton" onclick="my_next()">Next</button>
     </div>
   </main>
   <script type="text/javascript" src="/files/js/words.js"></script>
