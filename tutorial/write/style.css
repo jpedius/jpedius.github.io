@@ -1,0 +1,12 @@
+.myDiv,
+.myButton {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.myText {
+    font-size: 100px;
+    padding: 5px;
+    border: none;
+    border-color: transparent;
+}
