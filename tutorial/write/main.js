@@ -1,6 +1,7 @@
 'use strict';
 
 let read = document.getElementById('read');
+let number = document.getElementById('number');
 
 let howMany = null;
 let previousOrNext = 0;
@@ -24,6 +25,7 @@ function my_previous() {
     }
     previousOrNext--;
     read.value = howMany[previousOrNext];
+    number.innerHTML = previousOrNext + 1;
 }
 
 function my_next() {
@@ -32,4 +34,5 @@ function my_next() {
     }
     previousOrNext++;
     read.value = howMany[previousOrNext];
+    number.innerHTML = previousOrNext + 1;
 }

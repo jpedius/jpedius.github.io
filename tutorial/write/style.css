@@ -10,3 +10,9 @@
     border: none;
     border-color: transparent;
 }
+
+.myNumber {
+    display: inline;
+    font-size: 20px;
+    padding: 5px;
+}
