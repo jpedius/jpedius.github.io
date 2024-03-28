@@ -166,4 +166,22 @@ let plots = [{
     key: "and-another-thing",
     name: "And Another Thing...",
   }],
+}, {
+  group: "The Black Cauldron",
+  options: [{
+    key: "the-book-of-three",
+    name: "The Book of Three",
+  }, {
+    key: "the-black-cauldron",
+    name: "The Black Cauldron",
+  }, {
+    key: "the-castle-of-llyr",
+    name: "The Castle of Llyr",
+  }, {
+    key: "taran-wanderer",
+    name: "Taran Wanderer",
+  }, {
+    key: "the-high-king",
+    name: "The High King",
+  }],
 }];
