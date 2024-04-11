@@ -46,7 +46,7 @@ function my_kind() {
             req.array = [];
             req.length = 0;
 
-            let arr = data.replaceAll('\n', ' ').split(' ').filter((t) => t !== '');
+            let arr = data.replaceAll(/\[[a-z0-9]+\]/g, '').replaceAll('\n', ' ').split(' ').filter((t) => t !== '');
             let txt = '';
 
             let re1 = /^([^\.!\?]+)$/g;
