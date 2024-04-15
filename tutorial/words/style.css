@@ -1,3 +1,13 @@
+.myMain {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .myDiv,
 .myLabel,
 .myRange,

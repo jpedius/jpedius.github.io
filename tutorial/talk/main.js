@@ -9,7 +9,7 @@ function my_clip() {
     copy.value = '';
     let batch = [];
 
-    let arr = text.split(' ').filter((w) => w !== '');
+    let arr = text.replaceAll(/\[[a-z0-9]+\]/g, '').split(' ').filter((w) => w !== '');
     let re1 = /^([^\.!\?]+)$/g;
     let re2 = /^([A-Z\.!,'\?]+)$/g;
     let txt = '';
