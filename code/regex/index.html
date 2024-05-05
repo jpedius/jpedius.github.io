@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1 id="special-characters">Special characters</h1>
+<table>
+<thead>
+<tr>
+<th>expression</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.</code></td>
+<td>Match any character</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>Match line begin</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>Match line end</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Match previous RE 0 or more times greedily</td>
+</tr>
+<tr>
+<td><code>*?</code></td>
+<td>Match previous RE 0 or more times non-greedily</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>Match previous RE 1 or more times greedily</td>
+</tr>
+<tr>
+<td><code>+?</code></td>
+<td>Match previous RE 1 or more times non-greedily</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>Match previous RE 0 or 1 time greedily</td>
+</tr>
+<tr>
+<td><code>??</code></td>
+<td>Match previous RE 0 or 1 time non-greedily</td>
+</tr>
+<tr>
+<td><code>A&#124;B</code></td>
+<td>Match either RE A or B</td>
+</tr>
+<tr>
+<td><code>{m}</code></td>
+<td>Match previous RE exactly m times</td>
+</tr>
+<tr>
+<td><code>{m,n}</code></td>
+<td>Match previous RE m to n times greedily</td>
+</tr>
+<tr>
+<td><code>{m, n}?</code></td>
+<td>Match previous RE m to n times, no-greedily</td>
+</tr>
+</tbody>
+</table>
+<h1 id="character-set">Character set</h1>
+<table>
+<thead>
+<tr>
+<th>expression</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[abc]</code></td>
+<td>Match either <code>a</code>, <code>b</code> or <code>c</code></td>
+</tr>
+<tr>
+<td><code>[^abc]</code></td>
+<td>Match any character not in this set (i.e., not <code>a</code>, <code>b</code> and <code>c</code>)</td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td>Match the range from <code>a</code> to <code>z</code></td>
+</tr>
+<tr>
+<td><code>[a-f2-8]</code></td>
+<td>Match the range from <code>a</code> to <code>z</code> or the range from <code>2</code> to <code>8</code></td>
+</tr>
+<tr>
+<td><code>[a\-z]</code></td>
+<td>Match <code>a</code>, <code>-</code> or <code>z</code></td>
+</tr>
+<tr>
+<td><code>[a-]</code></td>
+<td>Match <code>a</code>, <code>-</code></td>
+</tr>
+<tr>
+<td><code>[-a]</code></td>
+<td>Match <code>-</code>, <code>a</code></td>
+</tr>
+<tr>
+<td><code>[-a]</code></td>
+<td>Match <code>-</code>, <code>a</code></td>
+</tr>
+<tr>
+<td><code>[{}*&#124;()[]+\^$.?]</code></td>
+<td>Match either one of the chacters in <code>[]{}*&#124;()+\^$?.</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Note that you can also use <a href="#char_class">character class</a> inside <code>[]</code>, for example, <code>[\w]</code> matches any character in <code>word</code> character class.</li>
+</ul>
+<h1 id="-a-name-char_class-a-character-class"><a name="char_class"></a>Character class</h1>
+<h2 id="-multiple-character-character-class">&quot;Multiple character&quot; character class</h2>
+<p>An expression of the form <code>[[:name:]]</code> matches the named character class <code>name</code>.</p>
+<table>
+<thead>
+<tr>
+<th>class name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>alnum</code></td>
+<td>Any alpha-numeric character</td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td>Any alphabetic character.</td>
+</tr>
+<tr>
+<td><code>digit</code></td>
+<td>Any decimal digit.</td>
+</tr>
+<tr>
+<td><code>xdigit</code></td>
+<td>Any hexadecimal digit character.</td>
+</tr>
+<tr>
+<td><code>lower</code></td>
+<td>Any lower case character.</td>
+</tr>
+<tr>
+<td><code>upper</code></td>
+<td>Any upper case character.</td>
+</tr>
+<tr>
+<td><code>cntrl</code></td>
+<td>Any control character[^1].</td>
+</tr>
+<tr>
+<td><code>print</code></td>
+<td>Any printable character.</td>
+</tr>
+<tr>
+<td><code>punct</code></td>
+<td>Any punctuation character. [^2]</td>
+</tr>
+<tr>
+<td><code>space</code></td>
+<td>Any whitespace character. [^3]</td>
+</tr>
+<tr>
+<td><code>word</code></td>
+<td>Any word character (alphanumeric characters plus the underscore).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-single-character-character-class">&quot;Single character&quot; character class</h2>
+<table>
+<thead>
+<tr>
+<th>class name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\d</code></td>
+<td>Equal to <code>[[:digit:]]</code></td>
+</tr>
+<tr>
+<td><code>\l</code></td>
+<td>Equal to <code>[[:lower:]]</code></td>
+</tr>
+<tr>
+<td><code>\u</code></td>
+<td>Equal to <code>[[:upper:]]</code></td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>Equal to <code>[[:space:]]</code></td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>Equal to <code>[[:word:]]</code></td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>Equal to <code>[^[:digit:]]</code></td>
+</tr>
+<tr>
+<td><code>\L</code></td>
+<td>Equal to <code>[^[:lower:]]</code></td>
+</tr>
+<tr>
+<td><code>\U</code></td>
+<td>Equal to <code>[^[:upper:]]</code></td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>Equal to <code>[^[:word:]]</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="regex-groups">Regex groups</h1>
+<h2 id="defining-groups">Defining groups</h2>
+<table>
+<thead>
+<tr>
+<th>expression</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(?&lt;NAME&gt;expression)</code></td>
+<td>Define a regex group named <code>NAME</code> which you can later refer to with <code>\g{NAME}</code></td>
+</tr>
+<tr>
+<td><code>(?=pattern)</code></td>
+<td>Positive lookahead, consumes zero characters, the preceding RE only matches if this matches</td>
+</tr>
+<tr>
+<td><code>(?=pattern)</code></td>
+<td>Positive lookahead, consumes zero characters, the preceding RE only matches if this matches</td>
+</tr>
+<tr>
+<td><code>(?&lt;=pattern)</code></td>
+<td>Positive lookbehind, consumes zero characters, the following RE will only match if preceded with this fixed length RE.</td>
+</tr>
+<tr>
+<td><code>(?&lt;!pattern)</code></td>
+<td>Negative lookbehind, consumes zero characters, the following RE will only match if not preceded with this fixed length RE.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="matching-groups">Matching groups</h2>
+<table>
+<thead>
+<tr>
+<th>expression</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\1</code></td>
+<td>Refer to first regex group</td>
+</tr>
+<tr>
+<td><code>\g{1}</code></td>
+<td>Refer to first regex group</td>
+</tr>
+<tr>
+<td><code>\g{12}</code></td>
+<td>Refer to 12th regex group</td>
+</tr>
+<tr>
+<td><code>\g{-1}</code></td>
+<td>Refer to last regex group</td>
+</tr>
+<tr>
+<td><code>\g{-2}</code></td>
+<td>Refer to last but one regex group</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The regex groups are indexed by the order of their opening braces.</li>
+<li>Note the <code>\g{NUM}</code> form allows for matching regex group index larger than 9, for example, <code>\g{12}</code>.</li>
+</ul>
+<h1 id="miscellaneous">Miscellaneous</h1>
+<h2 id="escapes">Escapes</h2>
+<table>
+<thead>
+<tr>
+<th>class name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\xdd</code></td>
+<td>A hexadecimal escape sequence - matches the single character whose code point is <code>0xdd</code>.</td>
+</tr>
+<tr>
+<td><code>\x{dddd}</code></td>
+<td>A hexadecimal escape sequence - matches the single character whose code point is <code>0xdddd</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="word-boundaries">Word boundaries</h2>
+<p>The following escape sequences match the boundaries of words:</p>
+<table>
+<thead>
+<tr>
+<th>class name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\&lt;</code></td>
+<td>Matches the start of a word.</td>
+</tr>
+<tr>
+<td><code>\&gt;</code></td>
+<td>Matches the end of a word.</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>Matches a word boundary (the start or end of a word).</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>Matches only when not at a word boundary.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="https://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html">https://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html</a></li>
+<li><a href="http://docs.sublimetext.info/en/latest/search_and_replace/search_and_replace_overview.html">http://docs.sublimetext.info/en/latest/search_and_replace/search_and_replace_overview.html</a></li>
+<li><a href="https://github.com/stajahlee/sublime-cheat-sheets/blob/master/cheat-sheets/Regular%20Expressions.cheatsheet">https://github.com/stajahlee/sublime-cheat-sheets/blob/master/cheat-sheets/Regular%20Expressions.cheatsheet</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/character_classes/std_char_clases.html">Character class</a></li>
+</ul>
+<p>[^1]: Control character explanation: <a href="https://en.wikipedia.org/wiki/Control_character">https://en.wikipedia.org/wiki/Control_character</a></p>
+<p>[^2]: There are 14 punctuation marks in English: <a href="https://grammar.yourdictionary.com/punctuation/what/fourteen-punctuation-marks.html">https://grammar.yourdictionary.com/punctuation/what/fourteen-punctuation-marks.html</a></p>
+<p>[^3]: For whitespace character, see <a href="https://en.wikipedia.org/wiki/Whitespace_character">https://en.wikipedia.org/wiki/Whitespace_character</a></p>
+
+</body>
+</html>
