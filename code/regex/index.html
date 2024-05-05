@@ -2,129 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Message</title>
-  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<h1 id="special-characters">Special characters</h1>
-<table>
-<thead>
-<tr>
-<th>expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>.</code></td>
-<td>Match any character</td>
-</tr>
-<tr>
-<td><code>^</code></td>
-<td>Match line begin</td>
-</tr>
-<tr>
-<td><code>$</code></td>
-<td>Match line end</td>
-</tr>
-<tr>
-<td><code>*</code></td>
-<td>Match previous RE 0 or more times greedily</td>
-</tr>
-<tr>
-<td><code>*?</code></td>
-<td>Match previous RE 0 or more times non-greedily</td>
-</tr>
-<tr>
-<td><code>+</code></td>
-<td>Match previous RE 1 or more times greedily</td>
-</tr>
-<tr>
-<td><code>+?</code></td>
-<td>Match previous RE 1 or more times non-greedily</td>
-</tr>
-<tr>
-<td><code>?</code></td>
-<td>Match previous RE 0 or 1 time greedily</td>
-</tr>
-<tr>
-<td><code>??</code></td>
-<td>Match previous RE 0 or 1 time non-greedily</td>
-</tr>
-<tr>
-<td><code>A&#124;B</code></td>
-<td>Match either RE A or B</td>
-</tr>
-<tr>
-<td><code>{m}</code></td>
-<td>Match previous RE exactly m times</td>
-</tr>
-<tr>
-<td><code>{m,n}</code></td>
-<td>Match previous RE m to n times greedily</td>
-</tr>
-<tr>
-<td><code>{m, n}?</code></td>
-<td>Match previous RE m to n times, no-greedily</td>
-</tr>
-</tbody>
-</table>
-<h1 id="character-set">Character set</h1>
-<table>
-<thead>
-<tr>
-<th>expression</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>[abc]</code></td>
-<td>Match either <code>a</code>, <code>b</code> or <code>c</code></td>
-</tr>
-<tr>
-<td><code>[^abc]</code></td>
-<td>Match any character not in this set (i.e., not <code>a</code>, <code>b</code> and <code>c</code>)</td>
-</tr>
-<tr>
-<td><code>[a-z]</code></td>
-<td>Match the range from <code>a</code> to <code>z</code></td>
-</tr>
-<tr>
-<td><code>[a-f2-8]</code></td>
-<td>Match the range from <code>a</code> to <code>z</code> or the range from <code>2</code> to <code>8</code></td>
-</tr>
-<tr>
-<td><code>[a\-z]</code></td>
-<td>Match <code>a</code>, <code>-</code> or <code>z</code></td>
-</tr>
-<tr>
-<td><code>[a-]</code></td>
-<td>Match <code>a</code>, <code>-</code></td>
-</tr>
-<tr>
-<td><code>[-a]</code></td>
-<td>Match <code>-</code>, <code>a</code></td>
-</tr>
-<tr>
-<td><code>[-a]</code></td>
-<td>Match <code>-</code>, <code>a</code></td>
-</tr>
-<tr>
-<td><code>[{}*&#124;()[]+\^$.?]</code></td>
-<td>Match either one of the chacters in <code>[]{}*&#124;()+\^$?.</code></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Note that you can also use <a href="#char_class">character class</a> inside <code>[]</code>, for example, <code>[\w]</code> matches any character in <code>word</code> character class.</li>
-</ul>
-<h1 id="-a-name-char_class-a-character-class"><a name="char_class"></a>Character class</h1>
-<h2 id="-multiple-character-character-class">&quot;Multiple character&quot; character class</h2>
-<p>An expression of the form <code>[[:name:]]</code> matches the named character class <code>name</code>.</p>
+  <h1 id="special-characters">Special characters</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>expression</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.</code></td>
+        <td>Match any character</td>
+      </tr>
+      <tr>
+        <td><code>^</code></td>
+        <td>Match line begin</td>
+      </tr>
+      <tr>
+        <td><code>$</code></td>
+        <td>Match line end</td>
+      </tr>
+      <tr>
+        <td><code>*</code></td>
+        <td>Match previous RE 0 or more times greedily</td>
+      </tr>
+      <tr>
+        <td><code>*?</code></td>
+        <td>Match previous RE 0 or more times non-greedily</td>
+      </tr>
+      <tr>
+        <td><code>+</code></td>
+        <td>Match previous RE 1 or more times greedily</td>
+      </tr>
+      <tr>
+        <td><code>+?</code></td>
+        <td>Match previous RE 1 or more times non-greedily</td>
+      </tr>
+      <tr>
+        <td><code>?</code></td>
+        <td>Match previous RE 0 or 1 time greedily</td>
+      </tr>
+      <tr>
+        <td><code>??</code></td>
+        <td>Match previous RE 0 or 1 time non-greedily</td>
+      </tr>
+      <tr>
+        <td><code>A&#124;B</code></td>
+        <td>Match either RE A or B</td>
+      </tr>
+      <tr>
+        <td><code>{m}</code></td>
+        <td>Match previous RE exactly m times</td>
+      </tr>
+      <tr>
+        <td><code>{m,n}</code></td>
+        <td>Match previous RE m to n times greedily</td>
+      </tr>
+      <tr>
+        <td><code>{m, n}?</code></td>
+        <td>Match previous RE m to n times, no-greedily</td>
+      </tr>
+    </tbody>
+  </table>
+  <h1 id="character-set">Character set</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>expression</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>[abc]</code></td>
+        <td>Match either <code>a</code>, <code>b</code> or <code>c</code></td>
+      </tr>
+      <tr>
+        <td><code>[^abc]</code></td>
+        <td>Match any character not in this set (i.e., not <code>a</code>, <code>b</code> and <code>c</code>)</td>
+      </tr>
+      <tr>
+        <td><code>[a-z]</code></td>
+        <td>Match the range from <code>a</code> to <code>z</code></td>
+      </tr>
+      <tr>
+        <td><code>[a-f2-8]</code></td>
+        <td>Match the range from <code>a</code> to <code>z</code> or the range from <code>2</code> to <code>8</code></td>
+      </tr>
+      <tr>
+        <td><code>[a\-z]</code></td>
+        <td>Match <code>a</code>, <code>-</code> or <code>z</code></td>
+      </tr>
+      <tr>
+        <td><code>[a-]</code></td>
+        <td>Match <code>a</code>, <code>-</code></td>
+      </tr>
+      <tr>
+        <td><code>[-a]</code></td>
+        <td>Match <code>-</code>, <code>a</code></td>
+      </tr>
+      <tr>
+        <td><code>[-a]</code></td>
+        <td>Match <code>-</code>, <code>a</code></td>
+      </tr>
+      <tr>
+        <td><code>[{}*&#124;()[]+\^$.?]</code></td>
+        <td>Match either one of the chacters in <code>[]{}*&#124;()+\^$?.</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <ul>
+    <li>Note that you can also use <a href="#char_class">character class</a> inside <code>[]</code>, for example, <code>[\w]</code> matches any character in <code>word</code> character class.</li>
+  </ul>
+  <h1 id="-a-name-char_class-a-character-class"><a name="char_class"></a>Character class</h1>
+  <h2 id="-multiple-character-character-class">&quot;Multiple character&quot; character class</h2>
+  <p>An expression of the form <code>[[:name:]]</code> matches the named character class <code>name</code>.</p>
 <table>
 <thead>
 <tr>
