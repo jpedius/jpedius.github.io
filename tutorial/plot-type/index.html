@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plot Type</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <div class="myDiv">
+      <select class="mySelect" id="kind" onchange="my_kind()"
+        data-files="/files/txt/plots/" data-txt=".txt"></select>
+    </div>
+    <div class="myDiv">
+      <textarea class="myTextarea" readonly="readonly" id="read" rows="12" cols="36"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+    </div>
+    <div class="myDiv">
+      <input type="text" class="myText" id="write" size="44" 
+        autocomplete="off" autocorrect="off" autocapitalize="off" />
+      <!--<textarea class="myTextarea" id="write" rows="12" cols="30"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>-->
+    </div>
+    <div class="myDiv">
+      <button class="myButton" onclick="my_previous()">Prev</button>
+      <button class="myButton" onclick="my_play_each()">Each</button>
+      <button class="myButton" onclick="my_play_read()">Read</button>
+      <button class="myButton" onclick="my_next_word()">Next Word</button>
+      <button class="myButton" onclick="my_play_all()">Play</button>
+      <button class="myButton" onclick="my_next()">Next</button>
+      <div class="myNumber" id="number">1</div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/files/js/plots.js"></script>
+  <script type="text/javascript" src="/files/js/voice.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

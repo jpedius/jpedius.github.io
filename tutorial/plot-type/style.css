@@ -1,0 +1,14 @@
+.myDiv,
+.mySelect,
+.myTextarea,
+.myText,
+.myButton {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.myNumber {
+    display: inline;
+    font-size: 20px;
+    padding: 5px;
+}
