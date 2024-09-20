@@ -1,0 +1,17 @@
+.myDiv {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.myImg {
+    font-size: 20px;
+    padding: 5px;
+    width: 300px;
+}
+
+.myLabel {
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px;
+    width: 200px;
+}
