@@ -1,0 +1,11 @@
+ .myMain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.myTime {
+    font-size: 20px;
+    margin: 15px;
+}
