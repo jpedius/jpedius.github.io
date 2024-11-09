@@ -6,8 +6,20 @@ const APPLICATION_HEIGHT = 800;
 const CIRCLE_WIDTH  = 400;
 const CIRCLE_HEIGHT = 400;
 
-const TIME_HOUR   = 7;
-const TIME_MINUTE = 45;
+let kind = document.getElementById('kind');
+
+const TIME_HOUR   = 12;
+const TIME_MINUTE = 0;
+const TIME_AM_PM  = "a"
+
+let num = String(TIME_HOUR) + ":" + String(TIME_MINUTE);
+if (TIME_MINUTE <= 9) {
+	num += "0";
+}
+//num += " AM"
+kind.value = num;
+
+console.log(kind.value);
 
 const CLOCK_2_PI   = 2 * Math.PI;
 const CLOCK_HOUR   = CLOCK_2_PI / 12;
