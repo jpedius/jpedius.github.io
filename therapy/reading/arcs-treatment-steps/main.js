@@ -56,6 +56,7 @@ let myRules = [
 
 let myMain = document.getElementById("my_main");
 let myImages = document.getElementById("my_images");
+let myTimestamp = document.getElementById("my_timestamp");
 
 for (let i=0; i<myVisualSupports.length; i++) {
 
@@ -73,4 +74,18 @@ for (let i=0; i<myVisualSupports.length; i++) {
     div.appendChild(img);
 
     myImages.appendChild(div);
+}
+
+let myA = document.getElementById("my_a");
+let myB = document.getElementById("my_b");
+let myC = document.getElementById("my_c");
+
+function fn_timestamp() {
+
+	myB.value = Date.now();
+
+	let a = myA.value;
+	
+	a = a.replace(" ", "_").toLowerCase();
+	myC.value = a + "_" + myB.value;
 }
