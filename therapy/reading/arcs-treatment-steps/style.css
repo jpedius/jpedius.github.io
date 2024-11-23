@@ -1,13 +1,20 @@
-.myH1,
-.myDiv,
-.myTextarea {
+.myH1 {
 	font-size: 20px;
 	padding: 5px;
 }
 
-.mySpan {
+.myTextarea {
 	font-size: 20px;
 	padding: 5px;
+	vertical-align: bottom;
+}
+
+.myDiv {
+	font-size: 20px;
+}
+
+.mySpan {
+	font-size: 20px;
 	display: inline-block;
 }
 
@@ -18,6 +25,5 @@ input[type=text], textarea {
 
 .myImage {
 	font-size: 20px;
-	padding: 5px;
 	width: 100px;
 }
