@@ -1,7 +1,7 @@
 'use strict';
 
 let myTitle = document.getElementById("my_title");
-myTitle.innerHTML = document.title = "ARCS"; // Treatment Steps
+myTitle.innerHTML = document.title = "ARCS Treatment Steps";
 
 let myVisualSupports = [
 	{
@@ -55,33 +55,22 @@ let myRules = [
 ];
 
 let myMain = document.getElementById("my_main");
+let myImages = document.getElementById("my_images");
+
 for (let i=0; i<myVisualSupports.length; i++) {
 
     let div = document.createElement('div');
     div.classList.add('myDiv');
 
-    // let play = document.createElement('button');
-    // play.classList.add('myButton');
-    // play.innerHTML = 'Play';
-    // play.addEventListener('click', () => {
-    // 	my_speak(myVisualSupports[i].name);
-    //     //my_speak(my_exercises[i]);
-    // });
-
     let img = document.createElement('img');
     img.classList.add('myImage');
     img.src = myVisualSupports[i].img;
     img.alt = myVisualSupports[i].name;
-    //img.width = 100;
     img.addEventListener('click', () => {
     	my_speak(myVisualSupports[i].name);
-        //my_speak(my_exercises[i]);
     });
 
-    //div.appendChild(play);
     div.appendChild(img);
 
-    //console.log(i, i.length, myVisualSupports[i].name);
-
-    myMain.appendChild(div);
+    myImages.appendChild(div);
 }

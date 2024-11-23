@@ -1,7 +1,19 @@
 .myH1,
-.myDiv {
+.myDiv,
+.myTextarea {
 	font-size: 20px;
 	padding: 5px;
+}
+
+.mySpan {
+	font-size: 20px;
+	padding: 5px;
+	display: inline-block;
+}
+
+input[type=text], textarea {
+    border-style: inset;
+    border-width: 2px;
 }
 
 .myImage {
