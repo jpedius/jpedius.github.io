@@ -86,6 +86,6 @@ function fn_timestamp() {
 
 	let a = myA.value;
 	
-	a = a.replace(" ", "_").toLowerCase();
+	a = a.replaceAll(" ", "_").toLowerCase();
 	myC.value = a + "_" + myB.value;
 }
