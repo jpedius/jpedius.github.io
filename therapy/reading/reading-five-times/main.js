@@ -27,6 +27,20 @@ let months_of_the_year = [
 	"dec", // "December",
 ];
 
+let selections = [
+	"The Cost of Speed",
+];
+
+function fn_options() {
+    title.innerHTML = '';
+    for (let i=0; i<selections.length; i++) {
+        const option = document.createElement('option');
+        option.textContent = `${selections[i]}`;
+        title.appendChild(option);
+    }
+}
+fn_options();
+
 function fn_time(time, num) {
 	
 	let now = Date.now();
