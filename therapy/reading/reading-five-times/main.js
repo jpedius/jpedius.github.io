@@ -42,6 +42,18 @@ function fn_options() {
 }
 fn_options();
 
+function fn_clear() {
+	type.value = "";
+	for (let i=1; i<=5; i++) {
+		let startInput = document.getElementById("startInput" + i);
+		startInput.value = "";
+		let stopInput  = document.getElementById("stopInput" + i);
+		stopInput.value = "";
+		let timeInput  = document.getElementById("timeInput" + i);
+		timeInput.value = "";
+	}
+}
+
 function fn_time(time, num) {
 	
 	let now = Date.now();
