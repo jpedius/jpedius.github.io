@@ -1,6 +1,7 @@
 'use strict';
 
 let title = document.getElementById("myTitle");
+let type = document.getElementById("myType");
 
 let days_of_the_week = [
 	"sun", // "Sunday",
@@ -66,7 +67,14 @@ function fn_time(time, num) {
 		let min = Math.floor(seconds / 60);
 		let sec = seconds - min * 60;
 
-		let a = title.value;
+		let a = "";
+		if (type.value !== "") {
+			a = type.value;
+		}
+		else {
+			a = title.value;
+		}
+
 		a = a.replaceAll(" ", "_");
 		a = a.toLowerCase();
 		a = a + "_" + String(num).toString();
