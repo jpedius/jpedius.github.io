@@ -1,0 +1,11 @@
+.myH1,
+.myDiv,
+.myButton {
+	font-size: 30px;
+	padding: 5px;
+}
+
+.myText {
+	font-size: 50px;
+	padding: 5px;
+}

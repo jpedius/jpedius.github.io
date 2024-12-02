@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spelling a Word</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <main id="idMain">
+    <h1 class="myH1">Spelling a Word</h1>
+    <div class="myDiv">
+      <input type="text" class="myText" readonly="readonly" id="idRead" size="20" 
+        autocomplete="off" autocorrect="off" autocapitalize="off" />
+    </div>
+    <div class="myDiv">
+      <input type="text" class="myText" id="idWrite" size="20" 
+        autocomplete="off" autocorrect="off" autocapitalize="off" />
+    </div>
+    <div class="myDiv">
+      <button class="myButton" onclick="fn_previous()">Previous</button>
+      <button class="myButton" onclick="fn_play()">Play</button>
+      <button class="myButton" id="idShowHide" onclick="fn_show_hide()">Show</button>
+      <button class="myButton" onclick="fn_next()">Next</button>
+    </div>
+    <div class="myDiv">
+      <button class="myButton" onclick="fn_clipboard()">Array of Words</button>
+    </div>
+  </main>
+  <script type="text/javascript" src="/files/js/words.js"></script>
+  <script type="text/javascript" src="/files/js/random.js"></script>
+  <script type="text/javascript" src="/files/js/voice.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
