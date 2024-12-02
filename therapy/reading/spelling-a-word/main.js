@@ -3,6 +3,7 @@
 let idMain  = document.getElementById("idMain");
 let idRead  = document.getElementById("idRead");
 let idWrite = document.getElementById("idWrite");
+let idClipboard = document.getElementById("idClipboard");
 
 let howMany = null;
 let previousOrNext = 0;
@@ -42,11 +43,10 @@ function fn_words() {
     w = w.slice(0, numberOfWords);
 
     for (let i=0; i<w.length; i++) {
-    	let a = {
+    	arrayOfWords.push({
     		spelled: w[i].show,
     		my_way: "",
-    	};
-    	arrayOfWords.push(a);
+    	});
     }
 
     return w;
@@ -95,6 +95,7 @@ function fn_mark() {
 
 function fn_clipboard() {
 	writeClipboardText(JSON.stringify(arrayOfWords, null, "\t"));
+	idClipboard.value = JSON.stringify(arrayOfWords);
 	//console.log(arrayOfWords);
 }
 
