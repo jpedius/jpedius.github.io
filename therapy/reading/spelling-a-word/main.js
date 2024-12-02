@@ -42,7 +42,11 @@ function fn_words() {
     w = w.slice(0, numberOfWords);
 
     for (let i=0; i<w.length; i++) {
-    	arrayOfWords.push(w[i].show);
+    	let a = {
+    		spelled: w[i].show,
+    		my_way: "",
+    	};
+    	arrayOfWords.push(a);
     }
 
     return w;
@@ -83,12 +87,15 @@ function fn_next() {
     return fn_read_and_write(true);
 }
 
+function fn_mark() {
+	if (idWrite.value !== "") {
+		arrayOfWords[previousOrNext].my_way = idWrite.value;
+	}
+}
+
 function fn_clipboard() {
-	let text = "";
-    for (let i=0; i<arrayOfWords.length; i++) {
-    	text += arrayOfWords[i] + "\n";
-    }
-	writeClipboardText(text);
+	writeClipboardText(JSON.stringify(arrayOfWords, null, "\t"));
+	//console.log(arrayOfWords);
 }
 
 async function writeClipboardText(text) {
