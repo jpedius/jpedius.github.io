@@ -13,6 +13,31 @@ let numberOfLetters = 3;
 
 let arrayOfWords = [];
 
+let days_of_the_week = [
+	"sun", // "Sunday",
+	"mon", // "Monday",
+	"tue", // "Tuesday",
+	"wed", // "Wednesday",
+	"thu", // "Thursday",
+	"fri", // "Friday",
+	"sat", // "Saturday",
+];
+
+let months_of_the_year = [
+	"jan", // "January",
+	"feb", // "February",
+	"mar", // "March",
+	"apr", // "April",
+	"may", // "May",
+	"jun", // "June",
+	"jul", // "July",
+	"aug", // "August",
+	"sep", // "September",
+	"oct", // "October",
+	"nov", // "November",
+	"dec", // "December",
+];
+
 function fn_words() {
 
     let w = [];
@@ -93,9 +118,31 @@ function fn_mark() {
 	}
 }
 
+function fn_time() {
+	
+	let now = Date.now();
+
+	let n = new Date(Date.now());
+	let d = n.getDay();
+	let t = n.getDate();
+	let m = n.getMonth();
+
+	let a = days_of_the_week[d];
+	a = a + "_" + String(t).toString();
+	a = a + "_" + months_of_the_year[m];
+
+	return a;
+}
+
 function fn_clipboard() {
-	writeClipboardText(JSON.stringify(arrayOfWords, null, "\t"));
-	idClipboard.value = JSON.stringify(arrayOfWords);
+
+	let time = "let " + fn_time() + " = ";
+
+	let text = time + JSON.stringify(arrayOfWords, null, "\t");
+	writeClipboardText(text);
+	
+	idClipboard.value = time + JSON.stringify(arrayOfWords);
+
 	//console.log(arrayOfWords);
 }
 
