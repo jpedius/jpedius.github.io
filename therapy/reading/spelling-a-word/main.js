@@ -3,7 +3,6 @@
 let idMain  = document.getElementById("idMain");
 let idRead  = document.getElementById("idRead");
 let idWrite = document.getElementById("idWrite");
-let idClipboard = document.getElementById("idClipboard");
 
 let howMany = null;
 let previousOrNext = 0;
@@ -87,6 +86,7 @@ function fn_read_and_write(tf) {
 fn_read_and_write(true);
 
 function fn_previous() {
+	fn_mark();
     if (previousOrNext <= 0) {
         previousOrNext = howMany.length;
     }
@@ -105,6 +105,7 @@ function fn_show_hide() {
 }
 
 function fn_next() {
+	fn_mark();
     if (previousOrNext >= howMany.length - 1) {
         previousOrNext = -1;
     }
@@ -135,15 +136,9 @@ function fn_time() {
 }
 
 function fn_clipboard() {
-
 	let time = "let " + fn_time() + " = ";
-
 	let text = time + JSON.stringify(arrayOfWords, null, "\t");
 	writeClipboardText(text);
-	
-	idClipboard.value = time + JSON.stringify(arrayOfWords);
-
-	//console.log(arrayOfWords);
 }
 
 async function writeClipboardText(text) {
