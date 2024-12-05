@@ -119,6 +119,13 @@ async function fn_write_clipboard_text(text) {
 
 function fn_clear() {
 
+	idInput.value = "";
+	for (let i=1; i<=5; i++) {
+		document.getElementById("idStartInput" + i).value = "";
+		document.getElementById("idStopInput" + i).value = "";
+		document.getElementById("idTimeInput" + i).value = "";
+	}
+
 	const settings = {
 		sunday: [],
 		monday: [],
