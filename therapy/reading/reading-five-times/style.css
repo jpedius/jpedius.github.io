@@ -1,7 +1,8 @@
+.myH1,
 .myDiv,
-.myText,
+.myInput,
 .mySelect,
-.myInput {
+.myButton {
 	font-size: 30px;
 	padding: 5px;
 }

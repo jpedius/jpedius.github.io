@@ -1,114 +1,134 @@
 'use strict';
 
-let title = document.getElementById("myTitle");
-let type = document.getElementById("myType");
+let idInput = document.getElementById("idInput");
+let idSelect = document.getElementById("idSelect");
+
+let local_storage = "reading-five-times";
 
 let days_of_the_week = [
-	"sun", // "Sunday",
-	"mon", // "Monday",
-	"tue", // "Tuesday",
-	"wed", // "Wednesday",
-	"thu", // "Thursday",
-	"fri", // "Friday",
-	"sat", // "Saturday",
+	{ item: "sunday",    mini: "sun" },
+	{ item: "monday",    mini: "mon" },
+	{ item: "tuesday",   mini: "tue" },
+	{ item: "wednesday", mini: "wed" },
+	{ item: "thursday",  mini: "thu" },
+	{ item: "friday",    mini: "fri" },
+	{ item: "saturday",  mini: "sat" },
 ];
 
 let months_of_the_year = [
-	"jan", // "January",
-	"feb", // "February",
-	"mar", // "March",
-	"apr", // "April",
-	"may", // "May",
-	"jun", // "June",
-	"jul", // "July",
-	"aug", // "August",
-	"sep", // "September",
-	"oct", // "October",
-	"nov", // "November",
-	"dec", // "December",
+	{ item: "January",   mini: "jan" },
+	{ item: "February",  mini: "feb" },
+	{ item: "March",     mini: "mar" },
+	{ item: "April",     mini: "apr" },
+	{ item: "May",       mini: "may" },
+	{ item: "June",      mini: "jun" },
+	{ item: "July",      mini: "jul" },
+	{ item: "August",    mini: "aug" },
+	{ item: "September", mini: "sep" },
+	{ item: "October",   mini: "oct" },
+	{ item: "November",  mini: "nov" },
+	{ item: "December",  mini: "dec" },
 ];
 
 let selections = [
 	"The Cost of Speed",
-	"How to Scare a Bear",
+	"Ancient Song",
 ];
 
 function fn_options() {
-    title.innerHTML = '';
+    idSelect.innerHTML = '';
     for (let i=0; i<selections.length; i++) {
         const option = document.createElement('option');
         option.textContent = `${selections[i]}`;
-        title.appendChild(option);
+        idSelect.appendChild(option);
     }
 }
 fn_options();
 
-function fn_clear() {
-	type.value = "";
+function fn_start(num) {
+	document.getElementById("idStartInput" + num).value = Date.now();
+}
+
+function fn_stop(num) {
+
+	let startInput = document.getElementById("idStartInput" + num);
+	let stopInput  = document.getElementById("idStopInput" + num);
+	let timeInput  = document.getElementById("idTimeInput" + num);
+
+	stopInput.value = Date.now();
+
+	let duration = stopInput.value - startInput.value;
+	let minutes = Math.floor(duration / 60000);
+	let seconds = ((duration % 60000) / 1000).toFixed(0);
+	let time = minutes + "_" + (seconds < 10 ? '0' : '') + seconds;
+	let now = new Date(Date.now());
+
+	let title = idInput.value !== "" ? idInput.value : idSelect.value;
+	title = title.replaceAll(" ", "_");
+	title = title.toLowerCase();
+	title = title + "_" + String(num).toString();
+	title = title + "_" + time;
+	title = title + "_" + days_of_the_week[now.getDay()].mini;
+	title = title + "_" + String(now.getDate()).toString();
+	title = title + "_" + months_of_the_year[now.getMonth()].mini;
+
+	timeInput.value = title;
+}
+
+function fn_write() {
+
+	let words = [];
 	for (let i=1; i<=5; i++) {
-		let startInput = document.getElementById("startInput" + i);
-		startInput.value = "";
-		let stopInput  = document.getElementById("stopInput" + i);
-		stopInput.value = "";
-		let timeInput  = document.getElementById("timeInput" + i);
-		timeInput.value = "";
+
+		let startInput = document.getElementById("idStartInput" + i);
+		let stopInput  = document.getElementById("idStopInput" + i);
+		let timeInput  = document.getElementById("idTimeInput" + i);
+
+		let item = i;
+		item += "," + startInput.value;
+		item += "," + stopInput.value;
+		item += "," + timeInput.value;
+		words.push(item);
+	}
+
+	let json = localStorage.getItem(local_storage);
+	let settings = JSON.parse(json);
+	let day = (new Date(Date.now())).getDay();
+
+	settings[days_of_the_week[day].item] = words;
+	localStorage.setItem(local_storage, JSON.stringify(settings));
+}
+
+function fn_copy() {
+
+	let json = localStorage.getItem(local_storage);
+	let settings = JSON.parse(json);
+
+	let text = JSON.stringify(settings, null, "\t");
+	fn_write_clipboard_text(text);
+}
+
+async function fn_write_clipboard_text(text) {
+
+	try {
+		await navigator.clipboard.writeText(text);
+	} catch (error) {
+		console.error(error.message);
 	}
 }
 
-function fn_time(time, num) {
-	
-	let now = Date.now();
-	document.getElementById(time + "Input" + num).value = now;
+function fn_clear() {
 
-	let n = new Date(Date.now());
-	let d = n.getDay();
-	let t = n.getDate();
-	let m = n.getMonth();
+	const settings = {
+		sunday: [],
+		monday: [],
+		tuesday: [],
+		wednesday: [],
+		thursday: [],
+		friday: [],
+		saturday: [],
+	};
 
-	// console.log(days_of_the_week[d]);
-	// console.log(months_of_the_year[m]);
-
-	if (time === "stop") {
-
-		let startInput = document.getElementById("startInput" + num);
-		let stopInput  = document.getElementById("stopInput" + num);
-		let timeInput  = document.getElementById("timeInput" + num);
-
-		let elapsed = stopInput.value - startInput.value;
-		let seconds = Math.floor(elapsed / 1000);
-
-		let min = Math.floor(seconds / 60);
-		let sec = seconds - min * 60;
-
-		let a = "";
-		if (type.value !== "") {
-			a = type.value;
-		}
-		else {
-			a = title.value;
-		}
-
-		a = a.replaceAll(" ", "_");
-		a = a.toLowerCase();
-		a = a + "_" + String(num).toString();
-		a = a + "_" + String(min).toString();
-		a = a + "_" + String(sec).toString();
-		// a = a + "_" + String(now).toString();
-		a = a + "_" + days_of_the_week[d];
-		a = a + "_" + String(t).toString();
-		a = a + "_" + months_of_the_year[m];
-		timeInput.value = a;
-
-		console.log("----------------");
-		console.log(now);
-		console.log(time);
-		console.log(num);
-		console.log(elapsed);
-		console.log(seconds);
-		console.log(min);
-		console.log(sec);
-		console.log(d);
-		console.log(t);
-		console.log(m);
-	}
+	localStorage.removeItem(local_storage);
+	localStorage.setItem(local_storage, JSON.stringify(settings));
 }

@@ -1,40 +1,40 @@
 'use strict';
 
-let idMain  = document.getElementById("idMain");
 let idRead  = document.getElementById("idRead");
 let idWrite = document.getElementById("idWrite");
+let idShowHide = document.getElementById("idShowHide");
 
+let numberOfWords = 50;
+let numberOfLetters = 3;
 let howMany = null;
 let previousOrNext = 0;
 let showHide = true;
-let numberOfWords = 50;
-let numberOfLetters = 3;
 
-let arrayOfWords = [];
+let local_storage = "spelling-a-word";
 
 let days_of_the_week = [
-	"sun", // "Sunday",
-	"mon", // "Monday",
-	"tue", // "Tuesday",
-	"wed", // "Wednesday",
-	"thu", // "Thursday",
-	"fri", // "Friday",
-	"sat", // "Saturday",
+	{ item: "sunday",    mini: "sun" },
+	{ item: "monday",    mini: "mon" },
+	{ item: "tuesday",   mini: "tue" },
+	{ item: "wednesday", mini: "wed" },
+	{ item: "thursday",  mini: "thu" },
+	{ item: "friday",    mini: "fri" },
+	{ item: "saturday",  mini: "sat" },
 ];
 
 let months_of_the_year = [
-	"jan", // "January",
-	"feb", // "February",
-	"mar", // "March",
-	"apr", // "April",
-	"may", // "May",
-	"jun", // "June",
-	"jul", // "July",
-	"aug", // "August",
-	"sep", // "September",
-	"oct", // "October",
-	"nov", // "November",
-	"dec", // "December",
+	{ item: "January",   mini: "jan" },
+	{ item: "February",  mini: "feb" },
+	{ item: "March",     mini: "mar" },
+	{ item: "April",     mini: "apr" },
+	{ item: "May",       mini: "may" },
+	{ item: "June",      mini: "jun" },
+	{ item: "July",      mini: "jul" },
+	{ item: "August",    mini: "aug" },
+	{ item: "September", mini: "sep" },
+	{ item: "October",   mini: "oct" },
+	{ item: "November",  mini: "nov" },
+	{ item: "December",  mini: "dec" },
 ];
 
 function fn_words() {
@@ -60,38 +60,37 @@ function fn_words() {
                 }
             }
 
-            w.push({ show: item, hide: hide, random: rand });
+            w.push({ show: item, hide: hide, random: rand, write: '' });
         });
     });
     w = my_shuffle(w);
     w = w.slice(0, numberOfWords);
-
-    for (let i=0; i<w.length; i++) {
-    	arrayOfWords.push({
-    		spelled: w[i].show,
-    		my_way: "",
-    	});
-    }
 
     return w;
 }
 howMany = fn_words();
 
 function fn_read_and_write(tf) {
-    idRead.value = showHide
-        ? howMany[previousOrNext].hide
-        : howMany[previousOrNext].show;
-    if (tf) { idWrite.value = ''; }
+
+	idRead.value = showHide
+	    ? howMany[previousOrNext].hide
+	    : howMany[previousOrNext].show;
+	if (tf) { idWrite.value = ''; }
 }
 fn_read_and_write(true);
 
 function fn_previous() {
-	fn_mark();
+
+	if (idWrite.value !== '') {
+		howMany[previousOrNext].write = idWrite.value;
+	}
+
     if (previousOrNext <= 0) {
         previousOrNext = howMany.length;
     }
     previousOrNext--;
-    return fn_read_and_write(true);
+
+    fn_read_and_write(true);
 }
 
 function fn_play() {
@@ -99,52 +98,73 @@ function fn_play() {
 }
 
 function fn_show_hide() {
+
     idShowHide.innerHTML = showHide ? 'Hide' : 'Show';
     showHide = !showHide;
+
     fn_read_and_write(false);
 }
 
 function fn_next() {
-	fn_mark();
+
+	if (idWrite.value !== '') {
+		howMany[previousOrNext].write = idWrite.value;
+	}
+
     if (previousOrNext >= howMany.length - 1) {
         previousOrNext = -1;
     }
     previousOrNext++;
-    return fn_read_and_write(true);
+
+    fn_read_and_write(true);
 }
 
-function fn_mark() {
-	if (idWrite.value !== "") {
-		arrayOfWords[previousOrNext].my_way = idWrite.value;
+function fn_write() {
+
+	let words = [];
+	for (let i=0; i<howMany.length; i++) {
+		let item = howMany[i].show + "," + howMany[i].write;
+		words.push(item);
 	}
+
+	let json = localStorage.getItem(local_storage);
+	let settings = JSON.parse(json);
+	let day = (new Date(Date.now())).getDay();
+
+	settings[days_of_the_week[day].item] = words;
+	localStorage.setItem(local_storage, JSON.stringify(settings));
 }
 
-function fn_time() {
-	
-	let now = Date.now();
+function fn_copy() {
 
-	let n = new Date(Date.now());
-	let d = n.getDay();
-	let t = n.getDate();
-	let m = n.getMonth();
+	let json = localStorage.getItem(local_storage);
+	let settings = JSON.parse(json);
 
-	let a = days_of_the_week[d];
-	a = a + "_" + String(t).toString();
-	a = a + "_" + months_of_the_year[m];
-
-	return a;
+	let text = JSON.stringify(settings, null, "\t");
+	fn_write_clipboard_text(text);
 }
 
-function fn_clipboard() {
-	let time = "let " + fn_time() + " = ";
-	let text = time + JSON.stringify(arrayOfWords, null, "\t");
-	writeClipboardText(text);
-}
+async function fn_write_clipboard_text(text) {
 
-async function writeClipboardText(text) {
 	try {
 		await navigator.clipboard.writeText(text);
 	} catch (error) {
 		console.error(error.message);
 	}
+}
+
+function fn_clear() {
+
+	const settings = {
+		sunday: [],
+		monday: [],
+		tuesday: [],
+		wednesday: [],
+		thursday: [],
+		friday: [],
+		saturday: [],
+	};
+
+	localStorage.removeItem(local_storage);
+	localStorage.setItem(local_storage, JSON.stringify(settings));
 }
