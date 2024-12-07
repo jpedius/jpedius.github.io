@@ -174,9 +174,10 @@ function fn_previous() {
 
 function fn_play(selection) {
     if (selection === true) {
+        let text = req.array[req.length].show;
         let start = idRead.selectionStart;
         let finish = idRead.selectionEnd;
-        let sel = idRead.value.substring(start, finish);
+        let sel = text.substring(start, finish);
         if (sel !== 0) { my_speak(sel); }
     }
     else {
