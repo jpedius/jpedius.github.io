@@ -16,3 +16,8 @@ json = localStorage.getItem("spelling-a-word");
 settings = JSON.parse(json);
 text = JSON.stringify(settings, null, "\t");
 idSpellingAWord.value = text;
+
+json = localStorage.getItem("sentence-generator");
+settings = JSON.parse(json);
+text = JSON.stringify(settings, null, "\t");
+idSentenceGenerator.value = text;

@@ -3,6 +3,7 @@
 let idRead  = document.getElementById("idRead");
 let idWrite = document.getElementById("idWrite");
 let idShowHide = document.getElementById("idShowHide");
+let idNumber = document.getElementById("idNumber");
 
 let numberOfWords = 50;
 let numberOfLetters = 3;
@@ -75,6 +76,7 @@ function fn_read_and_write(tf) {
 	idRead.value = showHide
 	    ? howMany[previousOrNext].hide
 	    : howMany[previousOrNext].show;
+	idNumber.innerHTML = previousOrNext + 1;
 	if (tf) { idWrite.value = ''; }
 }
 fn_read_and_write(true);
@@ -154,6 +156,8 @@ async function fn_write_clipboard_text(text) {
 }
 
 function fn_clear() {
+
+	idWrite.value = '';
 
 	const settings = {
 		sunday: [],

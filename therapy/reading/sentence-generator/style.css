@@ -1,0 +1,18 @@
+.myH1,
+.myDiv,
+.mySelect,
+.myInput,
+.myTextarea,
+.myButton,
+.myNumber {
+    font-size: 30px;
+    padding: 5px;
+}
+
+.myNumber {
+    display: inline;
+}
+
+.ow-break-word2 {
+  overflow-wrap: break-word;
+}

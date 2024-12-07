@@ -1,7 +1,12 @@
 .myH1,
 .myDiv,
 .myInput,
-.myButton {
+.myButton,
+.myNumber {
 	font-size: 30px;
 	padding: 5px;
+}
+
+.myNumber {
+    display: inline;
 }
