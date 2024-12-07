@@ -12,6 +12,16 @@ let showHide = true;
 
 let local_storage = "sentence-generator";
 
+let days_of_the_week = [
+    { item: "sunday",    mini: "sun" },
+    { item: "monday",    mini: "mon" },
+    { item: "tuesday",   mini: "tue" },
+    { item: "wednesday", mini: "wed" },
+    { item: "thursday",  mini: "thu" },
+    { item: "friday",    mini: "fri" },
+    { item: "saturday",  mini: "sat" },
+];
+
 let selections = [{
 	name: "The Cost of Speed",
 	key: "the-cost-of-speed",
@@ -205,9 +215,10 @@ function fn_next() {
 function fn_write() {
 
     let words = [];
-
-
-
+    for (let i=0; i<req.array.length; i++) {
+        let item = req.array[i].show + "," + req.array[i].write;
+        words.push(item);
+    }
 
     let json = localStorage.getItem(local_storage);
     let settings = JSON.parse(json);
