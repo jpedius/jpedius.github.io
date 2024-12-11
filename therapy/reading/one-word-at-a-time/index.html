@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Word at a Time</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <h1 class="myH1">One Word at a Time</h1>
+    <div class="myDiv">
+      <select class="mySelect" id="idSelection" onchange="fn_selection()"
+        data-files="/therapy/reading/one-word-at-a-time/files/" data-txt=".txt"></select>
+    </div>
+    <div class="myDiv">
+      <textarea class="myTextarea" id="idRead" readonly="readonly" rows="12" cols="36"
+        autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+    </div>
+    <div class="myDiv">
+      <div class="mySentence">Sentence</div>
+      <button class="myButton" onclick="fn_previous_sentence()">Previous</button>
+      <button class="myButton" onclick="fn_play_sentence()">Play</button>
+      <button class="myButton" onclick="fn_next_sentence()">Next</button>
+      <div class="myNumber" id="idNumberSentence">1</div>
+    </div>
+    <div class="myDiv">
+      <div class="myWord">Word</div>
+      <button class="myButton" id="idPreviousWord" onclick="fn_previous_word()">Previous</button>
+      <button class="myButton" id="idPlayWord" onclick="fn_play_word()">Play</button>
+      <button class="myButton" id="idNextWord" onclick="fn_next_word()">Next</button>
+      <div class="myNumber" id="idNumberWord">1</div>
+    </div>
+    <!--<div class="myDiv">
+      <div class="myLocalStorage"></div>
+      <button class="myButton" onclick="fn_write()">Write</button>
+      <button class="myButton" onclick="fn_copy()">Copy</button>
+      <button class="myButton" onclick="fn_clear()">Clear</button>
+    </div>-->
+  </main>
+  <script type="text/javascript" src="/files/js/random.js"></script>
+  <script type="text/javascript" src="/files/js/voice.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

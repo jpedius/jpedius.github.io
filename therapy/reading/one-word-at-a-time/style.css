@@ -1,0 +1,23 @@
+.myH1,
+.myDiv,
+.mySelect,
+.myTextarea,
+.myInput,
+.myButton,
+.myNumber {
+    font-size: 30px;
+    padding: 5px;
+}
+
+.mySentence,
+.myWord,
+.myLocalStorage {
+	display: inline-block;
+	font-size: 30px;
+	padding: 5px;
+	width: 125px;
+}
+
+.myNumber {
+    display: inline;
+}
