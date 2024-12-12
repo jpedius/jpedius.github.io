@@ -11,11 +11,23 @@ let idNumberWord = document.getElementById("idNumberWord");
 let local_storage = "one-word-at-a-time";
 
 let selections = [{
-	name: "The Cost of Speed",
-	key: "the-cost-of-speed",
+	name: "Tug of War",
+	key:  "tug-of-war",
+}, {
+	name: "Coloring Time",
+	key:  "coloring-time",
 }, {
     name: "Ancient Song",
-    key: "ancient-song",
+    key:  "ancient-song",
+}, {
+	name: "Step Right Up",
+	key:  "step-right-up",
+}, {
+	name: "The Cost of Speed",
+	key:  "the-cost-of-speed",
+}, {
+	name: "How to Scare a Bear",
+	key:  "how-to-scare-a-bear",
 }];
 
 let req = {
