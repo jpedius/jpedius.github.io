@@ -10,8 +10,7 @@
 }
 
 .mySentence,
-.myWord,
-.myLocalStorage {
+.myWord {
 	display: inline-block;
 	font-size: 30px;
 	padding: 5px;
