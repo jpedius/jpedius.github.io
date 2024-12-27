@@ -1,7 +1,13 @@
 .myH1,
 .myDiv,
 .mySpan,
-.myButton {
+.myTextarea {
     font-size: 30px;
     padding: 5px;
+}
+
+.myButton {
+    font-size: 30px;
+    padding: 5px 10px;
+    margin: 0px 10px;
 }
