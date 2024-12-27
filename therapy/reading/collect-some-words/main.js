@@ -27,7 +27,7 @@ let lastItemLength = pastWords.length - 1;
 
 if (lastItemLength !== -1 && pastWords[lastItemLength].date === day) {
 
-	todaysWords = pastWords[lastItemLength];
+	todaysWords = pastWords[lastItemLength].words;
 	todaysNumberAlreadyDone = true;
 	idSave.disabled = true;
 }
@@ -59,39 +59,33 @@ else {
 	todaysWords = small.concat(large);
 }
 
-function fn_array(array) {
+for (let i=0; i<todaysWords.length; i++) {
 
-	for (let i=0; i<array.length; i++) {
+    let div = document.createElement('div');
+    div.classList.add('myDiv');
 
-	    let div = document.createElement('div');
-	    div.classList.add('myDiv');
+	let span = document.createElement('span');
+	span.classList.add('mySpan');
+	span.innerHTML = ' ' + todaysWords[i] + ' ';
 
-    	let span = document.createElement('span');
-    	span.classList.add('mySpan');
-    	span.innerHTML = ' ' + array[i] + ' ';
+    let play = document.createElement('button');
+    play.classList.add('myButton');
+    play.innerHTML = 'Play';
+    play.addEventListener('click', () => {
+        fn_speak(todaysWords[i]);
+    });
 
-	    let play = document.createElement('button');
-	    play.classList.add('myButton');
-	    play.innerHTML = 'Play';
-	    play.addEventListener('click', () => {
-	        fn_speak(array[i]);
-	    });
+    div.appendChild(play);
+    div.appendChild(span);
 
-	    div.appendChild(play);
-	    div.appendChild(span);
-
-    	idDiv.appendChild(div);
-	}
+	idDiv.appendChild(div);
 }
-fn_array(todaysWords.words);
 
 function fn_save() {
 
 	if (todaysNumberAlreadyDone !== true) {
-		pastWords.push({
-			date: day,
-			words: todaysWords,
-		});
+		pastWords.push({ date: day, words: todaysWords });
 		localStorage.setItem(local_storage, JSON.stringify(pastWords));
+		idSave.disabled = true;
 	}
 }
