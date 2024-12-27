@@ -3,6 +3,7 @@
 // console.log(words);
 
 let idDiv = document.getElementById("idDiv");
+let idShow = document.getElementById("idShow");
 let idSave = document.getElementById("idSave");
 
 let NUMBER_OF_SMALL_WORDS = 3
@@ -59,6 +60,8 @@ else {
 	todaysWords = small.concat(large);
 }
 
+let spans = [];
+let show = false;
 for (let i=0; i<todaysWords.length; i++) {
 
     let div = document.createElement('div');
@@ -67,6 +70,8 @@ for (let i=0; i<todaysWords.length; i++) {
 	let span = document.createElement('span');
 	span.classList.add('mySpan');
 	span.innerHTML = ' ' + todaysWords[i] + ' ';
+	span.style.display = 'none';
+	spans.push(span);
 
     let play = document.createElement('button');
     play.classList.add('myButton');
@@ -79,6 +84,15 @@ for (let i=0; i<todaysWords.length; i++) {
     div.appendChild(span);
 
 	idDiv.appendChild(div);
+}
+
+function fn_show_or_hidden() {
+
+    show = !show;
+    for (let i=0; i<spans.length; i++) {
+        spans[i].style.display = show ? 'inline' : 'none';
+    }
+    idShow.innerHTML = show ? 'Hide' : 'Show';
 }
 
 function fn_save() {
