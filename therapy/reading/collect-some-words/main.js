@@ -1,41 +1,22 @@
 'use strict';
 
-// console.log(words);
+let id_collect = document.getElementById("idCollect");
+let id_save_words = document.getElementById("idSaveWords");
 
-let idDiv = document.getElementById("idDiv");
-let idSave = document.getElementById("idSave");
+let local_storage = "collect-some-words";
+let json = localStorage.getItem(local_storage);
+let past_words = JSON.parse(json);
+if (past_words === null) { past_words = []; }
 
 let NUMBER_OF_SMALL_WORDS = 3
 let NUMBER_OF_SMALL_SLICES = 5;
 let NUMBER_OF_LARGE_SLICES = 10;
 
-let today = new Date();
-let months = [
-	"January", "February", "March", "April", "May", "June", "July",
-	"August", "September", "October", "November", "December",
-];
-let day = today.getDate() + " " + months[today.getMonth()] + " " + today.getFullYear();
-
-let local_storage = "collect-some-words";
-let json = localStorage.getItem(local_storage);
-let pastWords = JSON.parse(json);
-if (pastWords === null) { pastWords = []; }
-
-let todaysWords = [];
-let todaysNumberAlreadyDone = false;
-let lastItemLength = pastWords.length - 1;
-
-if (lastItemLength !== -1 && pastWords[lastItemLength].date === day) {
-
-	todaysWords = pastWords[lastItemLength].words;
-	todaysNumberAlreadyDone = true;
-	idSave.disabled = true;
-}
-else {
+function fn_select_set(previous) {
 
 	let past = [];
-	for (let i=0; i<pastWords.length; i++) {
-		let w = pastWords[i].words;
+	for (let i=0; i<previous.length; i++) {
+		let w = previous[i].words;
 		past = past.concat(w);
 	}
 
@@ -56,77 +37,140 @@ else {
 	small = fn_shuffle(small).slice(0, NUMBER_OF_SMALL_SLICES);
 	large = fn_shuffle(large).slice(0, NUMBER_OF_LARGE_SLICES);
 
-	todaysWords = small.concat(large);
+	return small.concat(large);
 }
 
-let showHidden = [];
-let textArea = [];
+function fn_day() {
 
-for (let i=0; i<todaysWords.length; i++) {
+	let today = new Date();
+	let months = [
+		"January",
+		"February",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December",
+	];
+	let day = today.getDate() + " " + months[today.getMonth()] + " " + today.getFullYear();
 
-    let div = document.createElement('div');
-    div.classList.add('myDiv');
+	return day;
+}
 
-    let write = document.createElement('textarea');
-    write.classList.add('myTextarea');
-    write.rows = 4;
-    write.cols = 40;
+function fn_todays_words(previous) {
+
+	let day = fn_day();
+	let last = previous.length - 1;
+
+	let the_words = [];
+	let the_text = [];
+	if (last !== -1 && previous[last].date === day) {
+		the_words = previous[last].words;
+		the_text = previous[last].text;
+		id_save_words.disabled = true;
+	}
+	else {
+		the_words = fn_select_set(previous);
+		for (let i=0; i<the_words.length; i++) {
+			the_text.push('');
+		}
+	}
+
+	return [the_words, the_text];
+}
+
+function fn_create_single_sentence(the_word, the_text, the_show) {
+
+	let div = document.createElement('div');
+	div.classList.add('myDiv');
+
+	let write = document.createElement('textarea');
+	write.classList.add('myTextarea');
+	write.value = the_text;
+	write.rows = 4;
+	write.cols = 40;
+
+	let playWord = document.createElement('button');
+	playWord.classList.add('myButton');
+	playWord.innerHTML = 'Play Word';
+	playWord.addEventListener('click', () => {
+		fn_speak(the_word);
+	});
+
+	let playText = document.createElement('button');
+	playText.classList.add('myButton');
+	playText.innerHTML = 'Play Text';
+	playText.addEventListener('click', () => {
+		if (write.value !== '') {
+			fn_speak(write.value);
+		}
+	});
+
+	let show = document.createElement('button');
+	show.classList.add('myButton');
+	show.innerHTML = 'Show';
+	show.addEventListener('click', () => {
+		the_show = !the_show;
+		show.innerHTML = the_show ? 'Hide' : 'Show';
+		span.style.display = the_show ? 'inline' : 'none';
+	});
 
 	let span = document.createElement('span');
 	span.classList.add('mySpan');
-	span.innerHTML = ' ' + todaysWords[i] + ' ';
+	span.innerHTML = ' ' + the_word + ' ';
 	span.style.display = 'none';
 
-    let play = document.createElement('button');
-    play.classList.add('myButton');
-    play.innerHTML = 'Play';
-    play.addEventListener('click', () => {
-        fn_speak(todaysWords[i]);
-    });
+	let div1 = document.createElement('div');
+	div1.appendChild(write);
+	div.appendChild(div1);
 
-    let show = document.createElement('button');
-    show.classList.add('myButton');
-    show.innerHTML = 'Show';
-    show.addEventListener('click', () => {
-        showHidden[i] = !showHidden[i];
-        show.innerHTML = showHidden[i] ? 'Hide' : 'Show';
-        span.style.display = showHidden[i] ? 'inline' : 'none';
-    });
+	let div2 = document.createElement('div');
+	div2.appendChild(playWord);
+	div2.appendChild(playText);
+	div2.appendChild(show);
+	div2.appendChild(span);
+	div.appendChild(div2);
 
-    let div1 = document.createElement('div');
-    div1.appendChild(write);
-    div.appendChild(div1);
+	let hr = document.createElement('hr');
+	div.appendChild(hr);
 
-    let div2 = document.createElement('div');
-    div2.appendChild(play);
-    div2.appendChild(show);
-    div2.appendChild(span);
-    div.appendChild(div2);
+	id_collect.appendChild(div);
 
-    let hr = document.createElement('hr');
-    div.appendChild(hr);
-
-	idDiv.appendChild(div);
-
-	showHidden.push(false);
-
-	let texts = pastWords[lastItemLength].text;
-	write.innerHTML = texts[i];
-
-	textArea.push(write);
+	return write;
 }
 
-function fn_save() {
+let [todays_words, today_text] = fn_todays_words(past_words);
+let show_hidden = [];
+let save_writes = []
 
-	if (todaysNumberAlreadyDone !== true) {
+for (let i=0; i<todays_words.length; i++) { 
+	show_hidden.push(false);
+	let save = fn_create_single_sentence(todays_words[i], today_text[i], show_hidden[i]);
+	save_writes.push(save);
+}
+
+function fn_save_words() {
+
+	if (id_save_words.disabled === false) {
 
 		let text = [];
-		for (let i=0; i<textArea.length; i++) {
-			text.push(textArea[i].value);
+		for (let i=0; i<save_writes.length; i++) {
+			text.push(save_writes[i].value);
 		}
 
-		pastWords.push({ date: day, words: todaysWords, text: text });
-		localStorage.setItem(local_storage, JSON.stringify(pastWords));
-		idSave.disabled = true;
+		past_words.push({
+			date: fn_day(),
+			words: todays_words,
+			text: text 
+		});
+		
+		localStorage.setItem(local_storage, JSON.stringify(past_words));
+
+		id_save_words.disabled = true;
 	}
 }
