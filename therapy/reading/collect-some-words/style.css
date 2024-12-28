@@ -1,7 +1,8 @@
 .myH1,
 .myDiv,
 .mySpan,
-.myTextarea {
+.myTextarea,
+.myInput {
     font-size: 30px;
     padding: 5px;
 }

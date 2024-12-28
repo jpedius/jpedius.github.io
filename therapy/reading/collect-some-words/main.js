@@ -2,6 +2,7 @@
 
 let id_collect = document.getElementById("idCollect");
 let id_save_words = document.getElementById("idSaveWords");
+let id_input = document.getElementById("idInput");
 
 let local_storage = "collect-some-words";
 let json = localStorage.getItem(local_storage);
@@ -172,5 +173,13 @@ function fn_save_words() {
 		localStorage.setItem(local_storage, JSON.stringify(past_words));
 
 		id_save_words.disabled = true;
+	}
+}
+
+function fn_delete_words() {
+
+	if (id_input.value.toLowerCase() === 'delete') {
+		localStorage.removeItem(local_storage);
+		id_input.value = '';
 	}
 }
