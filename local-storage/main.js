@@ -2,6 +2,8 @@
 
 let idReadingFiveTimes = document.getElementById("idReadingFiveTimes");
 let idSpellingAWord = document.getElementById("idSpellingAWord");
+let idSentenceGenerator = document.getElementById("idSentenceGenerator");
+let idCollectSomeWords = document.getElementById("idCollectSomeWords");
 
 let json = null;
 let settings = null;
@@ -21,3 +23,8 @@ json = localStorage.getItem("sentence-generator");
 settings = JSON.parse(json);
 text = JSON.stringify(settings, null, "\t");
 idSentenceGenerator.value = text;
+
+json = localStorage.getItem("collect-some-words");
+settings = JSON.parse(json);
+text = JSON.stringify(settings, null, "\t");
+idCollectSomeWords.value = text;
