@@ -9,7 +9,11 @@
 <body>
   <main>
     <h1 class="myH1">Collect Some Words</h1>
-    <div class="myDiv" id="idCollect">
+    <div class="myDiv">
+      <select class="mySelect" id="idSelect" onchange="fn_change_words()"></select>
+      <hr />
+    </div>
+    <div class="myDiv" id="idCollection">
     </div>
     <div class="myDiv">
       <button class="myButton" id="idSaveWords" onclick="fn_save_words()">Save Words</button>
