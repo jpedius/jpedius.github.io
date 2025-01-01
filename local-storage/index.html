@@ -25,7 +25,12 @@
     </div>
     <h1 class="myH1">Collect Some Words</h1>
     <div class="myDiv">
-      <textarea class="myTextarea" id="idCollectSomeWords" readonly="readonly" rows="20" cols="86"
+      <textarea class="myTextarea" id="idTextWords" rows="20" cols="86"
+        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+      <button class="myButton" id="idSaveWords" onclick="fn_save_words()">Save Words</button>
+    </div>
+    <div class="myDiv">
+      <textarea class="myTextarea" id="idCollectSomeWords" rows="20" cols="86"
         autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
     </div>
   </main>

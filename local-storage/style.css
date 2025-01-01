@@ -1,6 +1,7 @@
 .myH1,
 .myDiv,
-.myTextarea {
+.myTextarea,
+.myButton {
 	font-size: 30px;
 	padding: 5px;
 }

@@ -5,6 +5,9 @@ let idSpellingAWord = document.getElementById("idSpellingAWord");
 let idSentenceGenerator = document.getElementById("idSentenceGenerator");
 let idCollectSomeWords = document.getElementById("idCollectSomeWords");
 
+let idTextWords = document.getElementById("idTextWords");
+let idSaveWords = document.getElementById("idSaveWords");
+
 let json = null;
 let settings = null;
 let text = null;
@@ -25,6 +28,15 @@ text = JSON.stringify(settings, null, "\t");
 idSentenceGenerator.value = text;
 
 json = localStorage.getItem("collect-some-words");
-settings = JSON.parse(json);
-text = JSON.stringify(settings, null, "\t");
-idCollectSomeWords.value = text;
+// if (json !== null) {
+// 	settings = JSON.parse(json);
+// 	text = JSON.stringify(settings, null, "\t");
+// 	idCollectSomeWords.value = text;
+// }
+
+function fn_save_words() {
+
+	localStorage.removeItem("collect-some-words");
+	let text = idTextWords.value;
+	localStorage.setItem("collect-some-words", text);
+}
