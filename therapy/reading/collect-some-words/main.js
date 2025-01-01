@@ -3,6 +3,7 @@
 // python3 -m http.server 3000
 
 let id_select = document.getElementById("idSelect");
+let id_clear_screen = document.getElementById("idClearScreen");
 let id_collection = document.getElementById("idCollection");
 let id_save_words = document.getElementById("idSaveWords");
 let id_input = document.getElementById("idInput");
@@ -37,6 +38,12 @@ function fn_select_words(previous_words) {
 	id_select.appendChild(add);
 }
 fn_select_words(past_words);
+
+function fn_clear_screen() {
+	for (let i=0; i<NUMBER_OF_SELECTION; i++) {
+		item_collection[i].write.value = '';
+	}
+}
 
 function fn_remaining_words(previous_words) {
 
