@@ -251,9 +251,9 @@ function fn_save_words() {
 
 	id_save_words.disabled = true;
 }
-if (item_selection.date === fn_day()) {
-	id_save_words.disabled = true;
-}
+//if (item_selection.date === fn_day()) {
+//	id_save_words.disabled = true;
+//}
 
 function fn_delete_words() {
 
