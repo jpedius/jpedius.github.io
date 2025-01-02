@@ -134,6 +134,33 @@ function fn_create() {
 		let div0 = document.createElement('div');
 		div0.classList.add('myDiv');
 
+		let start = document.createElement('button');
+		let stop = document.createElement('button');
+	    let input = document.createElement('input');
+
+		start.classList.add('myButton');
+		start.innerHTML = 'Start';
+
+		stop.classList.add('myButton');
+		stop.innerHTML = 'Stop';
+		stop.disabled = true;
+
+	    input.classList.add('myInputTime');
+	    input.type = 'text';
+    	input.size = 5;
+    	input.readOnly = true;
+
+		start.addEventListener('click', () => {
+			start.time_value = Date.now();
+			start.disabled = true;
+			stop.disabled = false;
+		});
+		stop.addEventListener('click', () => {
+			stop.time_value = Date.now();
+			stop.disabled = true;
+			fn_add_event_listener_stop(i, start, stop, input);
+		});
+
 		let write = document.createElement('textarea');
 		write.classList.add('myTextarea');
 		write.value = fn_create_element_text(i);
@@ -168,6 +195,8 @@ function fn_create() {
 		});
 
 		create.push({
+			start: start,
+			input: input,
 			write: write,
 			span: span,
 			tf: false,
@@ -175,15 +204,21 @@ function fn_create() {
 		});
 
 		let div1 = document.createElement('div');
-		div1.appendChild(write);
+		div1.appendChild(start);
+		div1.appendChild(stop);
+		div1.appendChild(input);
 		div0.appendChild(div1);
 
 		let div2 = document.createElement('div');
-		div2.appendChild(word);
-		div2.appendChild(text);
-		div2.appendChild(show);
-		div2.appendChild(span);
+		div2.appendChild(write);
 		div0.appendChild(div2);
+
+		let div3 = document.createElement('div');
+		div3.appendChild(word);
+		div3.appendChild(text);
+		div3.appendChild(show);
+		div3.appendChild(span);
+		div0.appendChild(div3);
 
 		let hr = document.createElement('hr');
 		div0.appendChild(hr);
@@ -194,6 +229,17 @@ function fn_create() {
 	return create;
 }
 let item_collection = fn_create();
+
+function fn_add_event_listener_stop(num, start, stop, input) {
+
+	let duration = stop.time_value - start.time_value;
+
+	let minutes = Math.floor(duration / 60000);
+	let seconds = ((duration % 60000) / 1000).toFixed(0);
+	seconds = (seconds < 10 ? '0' : '') + seconds
+
+	input.value = minutes + ':' + seconds;
+}
 
 function fn_add_event_listener_word(num) {
 	let event = (item_selection.words)[num];
@@ -224,6 +270,8 @@ function fn_change_words() {
 
 	for (let i=0; i<NUMBER_OF_SELECTION; i++) {
 		let item = item_collection[i];
+		item.start.disabled = false;
+		item.input.value = '';
 		item.write.value = (item_selection.text)[i];
 		item.span.innerHTML = '-'.repeat(8);
 		item.tf = false;
@@ -234,6 +282,13 @@ function fn_change_words() {
 function fn_save_words() {
 
 	let the_date = fn_day();
+
+	let the_times = [];
+	for (let i=0; i<NUMBER_OF_SELECTION; i++) {
+		let item = item_collection[i];
+		let time = item.input.value;
+		the_times.push(time)
+	}
 
 	let the_words = [];
 	for (let i=0; i<NUMBER_OF_SELECTION; i++) {
@@ -250,6 +305,7 @@ function fn_save_words() {
 
 	past_words.push({
 		date: the_date,
+		times: the_times,
 		words: the_words,
 		text: the_texts,
 	});
