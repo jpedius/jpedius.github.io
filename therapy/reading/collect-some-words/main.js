@@ -18,6 +18,13 @@ let NUMBER_OF_SMALL_SLICES = 5;
 let NUMBER_OF_LARGE_SLICES = 10;
 let NUMBER_OF_SELECTION = NUMBER_OF_SMALL_SLICES + NUMBER_OF_LARGE_SLICES;
 
+for (let i=0; i<past_words.length; i++) {	 
+	if (typeof past_words[i].times === 'undefined') {
+		let item = Array(NUMBER_OF_SELECTION).fill('');
+		past_words[i].times = item;
+	}
+}
+
 function fn_select_words(previous_words) {
 
 	id_select.innerHTML = '';
@@ -99,13 +106,16 @@ function fn_new_selection(previous_words) {
 
 	let the_words = fn_remaining_words(previous_words);
 
+	let the_times = [];
 	let the_text = [];
 	for (let i=0; i<the_words.length; i++) {
+		the_times.push('');
 		the_text.push('');
 	}
 
 	return {
 		date: fn_day(),
+		times: the_times,
 		words: the_words,
 		text: the_text,
 	};
@@ -147,6 +157,7 @@ function fn_create() {
 
 	    input.classList.add('myInputTime');
 	    input.type = 'text';
+	    input.value = fn_create_element_input(i);
     	input.size = 5;
     	input.readOnly = true;
 
@@ -241,6 +252,11 @@ function fn_add_event_listener_stop(num, start, stop, input) {
 	input.value = minutes + ':' + seconds;
 }
 
+function fn_create_element_input(num) {
+	let event = (item_selection.times)[num];
+	return event;	
+}
+
 function fn_add_event_listener_word(num) {
 	let event = (item_selection.words)[num];
 	fn_speak(event);
@@ -271,7 +287,7 @@ function fn_change_words() {
 	for (let i=0; i<NUMBER_OF_SELECTION; i++) {
 		let item = item_collection[i];
 		item.start.disabled = false;
-		item.input.value = '';
+		item.input.value = (item_selection.times)[i];
 		item.write.value = (item_selection.text)[i];
 		item.span.innerHTML = '-'.repeat(8);
 		item.tf = false;
