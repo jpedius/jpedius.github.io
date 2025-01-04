@@ -31,8 +31,12 @@ let months_of_the_year = [
 ];
 
 let selections = [
-	"The Cost of Speed",
+	"Tug of War",
+	"Coloring Time",
 	"Ancient Song",
+	"Step Right Up",
+	"The Cost of Speed",
+	"How to Scare a Bear",
 ];
 
 function fn_options() {
