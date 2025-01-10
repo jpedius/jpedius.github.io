@@ -1,6 +1,9 @@
 'use strict';
 
 let idSelection = document.getElementById("idSelection");
+let idStart = document.getElementById("idStart");
+let idStop = document.getElementById("idStop");
+let idInput = document.getElementById("idInput");
 let idRead = document.getElementById("idRead");
 let idNumberParagraph = document.getElementById("idNumberParagraph")
 let idNumberSentence = document.getElementById("idNumberSentence");
@@ -41,6 +44,7 @@ let selections = [{
 	words: 159, // [12, 10, 7, 12, 7, 8, 7, 11, 5, 9, 3, 13, 15, 7, 6, 22],
 }];
 
+let start_time = null;
 let req = {
     selection: (idSelection.dataset.files
          + idSelection.value
@@ -137,6 +141,11 @@ function fn_request(data) {
 
 function fn_sentence_text() {
 
+	idStart.disabled = false;
+	idStop.disabled = true;
+	idInput.value = '';
+	start_time = null;
+
     idRead.value = req.array[req.length].hidden;
     idNumberParagraph.innerHTML = req.words;
     idNumberSentence.innerHTML = req.length + 1;
@@ -145,6 +154,27 @@ function fn_sentence_text() {
     idPreviousWord.disabled = true;
     idPlayWord.disabled = false;
     idNextWord.disabled = false;
+}
+
+function fn_start() {
+
+	idStart.disabled = true;
+	idStop.disabled = false;
+	start_time = Date.now();
+}
+
+function fn_stop() {
+
+	idStop.disabled = true;
+	let stop_time = Date.now();
+
+	let duration = stop_time - start_time;
+
+	let minutes = Math.floor(duration / 60000);
+	let seconds = ((duration % 60000) / 1000).toFixed(0);
+	seconds = (seconds < 10 ? '0' : '') + seconds
+
+	idInput.value = minutes + ':' + seconds;
 }
 
 function fn_previous_sentence() {
@@ -157,7 +187,11 @@ function fn_previous_sentence() {
 }
 
 function fn_play_sentence() {
-    my_speak(req.array[req.length].show);
+    fn_speak(req.array[req.length].show);
+}
+
+function fn_play_slow_sentence() {
+    fn_speak(req.array[req.length].show, -0.2);
 }
 
 function fn_next_sentence() {
@@ -203,7 +237,7 @@ function fn_play_word() {
 
 	if (num < req.array[req.length].words) {
 		let show = arr.arrays[num].show;
-		my_speak(show);
+		fn_speak(show);
 	}
 }
 

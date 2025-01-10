@@ -15,6 +15,12 @@
       <div class="myNumber" id="idNumberParagraph"></div>
     </div>
     <div class="myDiv">
+      <button class="myButton" id="idStart" onclick="fn_start()">Start</button>
+      <button class="myButton" id="idStop" onclick="fn_stop()" disabled>Stop</button>
+      <input type="input" class="myInput" id="idInput" value="" size="5" readonly
+        autocomplete="off" autocorrect="off" autocapitalize="off" />
+    </div>
+    <div class="myDiv">
       <textarea class="myTextarea" id="idRead" readonly="readonly" rows="5" cols="36"
         autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
     </div>
@@ -22,6 +28,7 @@
       <div class="mySentence">Sentence</div>
       <button class="myButton" onclick="fn_previous_sentence()">Previous</button>
       <button class="myButton" onclick="fn_play_sentence()">Play</button>
+      <button class="myButton" onclick="fn_play_slow_sentence()">Play Slow</button>
       <button class="myButton" onclick="fn_next_sentence()">Next</button>
       <div class="myNumber" id="idNumberSentence">1</div>
     </div>
@@ -33,8 +40,8 @@
       <div class="myNumber" id="idNumberWord">1</div>
     </div>
   </main>
-  <script type="text/javascript" src="/files/js/random.js"></script>
-  <script type="text/javascript" src="/files/js/voice.js"></script>
+  <script type="text/javascript" src="random.js"></script>
+  <script type="text/javascript" src="voice.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
