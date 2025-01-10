@@ -2,6 +2,7 @@
 
 let idSelection = document.getElementById("idSelection");
 let idRead = document.getElementById("idRead");
+let idNumberParagraph = document.getElementById("idNumberParagraph")
 let idNumberSentence = document.getElementById("idNumberSentence");
 let idPreviousWord = document.getElementById("idPreviousWord");
 let idPlayWord = document.getElementById("idPlayWord");
@@ -11,23 +12,33 @@ let idNumberWord = document.getElementById("idNumberWord");
 let local_storage = "one-word-at-a-time";
 
 let selections = [{
+	name: "I Don't Feel Like It",
+	key:  "i-dont-feel-like-it",
+	words: 128, // [9, 4, 6, 9, 4, 4, 12, 7, 3, 13, 4, 4, 4, 1, 8, 3, 11, 6, 5, 6],
+}, {
 	name: "Tug of War",
 	key:  "tug-of-war",
+	words: 120, // [11, 13, 13, 12, 9, 9, 6, 6, 15, 9, 14],
 }, {
 	name: "Coloring Time",
 	key:  "coloring-time",
+	words: 132, // [6, 9, 4, 7, 7, 8, 7, 7, 7, 6, 8, 8, 8, 6, 8, 6, 7, 11],
 }, {
     name: "Ancient Song",
     key:  "ancient-song",
+	words: 136, // [11, 10, 11, 6, 15, 11, 9, 16, 12, 11, 10, 12],
 }, {
 	name: "Step Right Up",
 	key:  "step-right-up",
+	words: 145, // [11, 15, 13, 9, 9, 7, 8, 5, 8, 11, 10, 12, 6, 6, 11],
 }, {
 	name: "The Cost of Speed",
 	key:  "the-cost-of-speed",
+	words: 136, // [6, 5, 6, 7, 12, 7, 12, 5, 7, 11, 6, 4, 10, 10, 12, 12],
 }, {
 	name: "How to Scare a Bear",
 	key:  "how-to-scare-a-bear",
+	words: 159, // [12, 10, 7, 12, 7, 8, 7, 11, 5, 9, 3, 13, 15, 7, 6, 22],
 }];
 
 let req = {
@@ -36,6 +47,7 @@ let req = {
          + idSelection.dataset.txt),
     array: [],
     length: 0,
+    words: "",
 };
 
 function fn_options() {
@@ -44,6 +56,7 @@ function fn_options() {
         const option = document.createElement('option');
         option.textContent = selections[i].name;
         option.value = selections[i].key;
+        option.dataset.words = selections[i].words;
         idSelection.appendChild(option);
     }
 }
@@ -55,6 +68,9 @@ function fn_selection() {
           idSelection.dataset.files
         + idSelection.value
         + idSelection.dataset.txt);
+
+    let idx = idSelection.options.selectedIndex;
+    req.words = idSelection.options[idx].dataset.words + ' words';
 
     fetch(new Request(req.selection))
         .then((response) => {
@@ -122,6 +138,7 @@ function fn_request(data) {
 function fn_sentence_text() {
 
     idRead.value = req.array[req.length].hidden;
+    idNumberParagraph.innerHTML = req.words;
     idNumberSentence.innerHTML = req.length + 1;
     idNumberWord.innerHTML = req.array[req.length].words;
     req.array[req.length].number = 0;
