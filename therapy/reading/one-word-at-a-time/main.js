@@ -5,6 +5,7 @@ let idStart = document.getElementById("idStart");
 let idStop = document.getElementById("idStop");
 let idInput = document.getElementById("idInput");
 let idRead = document.getElementById("idRead");
+let idWords = document.getElementById("idWords");
 let idNumberParagraph = document.getElementById("idNumberParagraph")
 let idNumberSentence = document.getElementById("idNumberSentence");
 let idPreviousWord = document.getElementById("idPreviousWord");
@@ -147,6 +148,8 @@ function fn_sentence_text() {
 	start_time = null;
 
     idRead.value = req.array[req.length].hidden;
+    idWords.value = '';
+
     idNumberParagraph.innerHTML = req.words;
     idNumberSentence.innerHTML = req.length + 1;
     idNumberWord.innerHTML = req.array[req.length].words;
