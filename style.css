@@ -1,3 +1,14 @@
+.myHeader,
+.myH1,
+.myMain,
+.myGrid,
+.myH2,
+.myP,
+.myFooter {
+    font-size: 30px;
+    padding: 5px;
+}
+
 .myFooter {
     padding: 50px;
     text-align: center;
@@ -6,5 +17,5 @@
 .myMain {
     display: grid;
     gap: 5px 6px;
-    grid-template-columns: repeat(5, 200px);
+    grid-template-columns: repeat(3, 400px);
 }
