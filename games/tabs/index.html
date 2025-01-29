@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs</title>
+  <link href="tabs.css" rel="stylesheet">
+</head>
+<body>
+  <main>
+
+    <!-- Tab links -->
+    <div class="tab">
+      <button class="tablinks" onclick="fn_tabs(event, 'idOneWordAtATime')">One Word at a Time</button>
+      <button class="tablinks" onclick="fn_tabs(event, 'idLocalStorage')">Local Storage</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="idOneWordAtATime" class="tabcontent">
+      <h3>One Word at a Time</h3>
+      <p>London is the capital city of England.</p>
+      
+      <h3>Toggle Dark/Light Mode</h3>
+      <p>Click the button to toggle between dark and light mode for this page.</p>
+      <button onclick="fn_mode()">Toggle dark mode</button>
+    </div>
+
+    <div id="idLocalStorage" class="tabcontent">
+      <h3>Local Storage</h3>
+      <p>Paris is the capital of France.</p>
+    </div>
+
+  </main>
+  <script type="text/javascript" src="tabs.js"></script>
+</body>
+</html>
