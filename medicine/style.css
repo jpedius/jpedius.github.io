@@ -1,0 +1,41 @@
+.myHeader {
+	font-size: 40px;
+	padding: 5px;
+}
+
+.myContainer {
+	display: grid;
+	gap: 5px;
+	grid-template-columns: 150px 500px;
+}
+
+.myGrid {
+	font-size: 30px;
+	padding: 5px;
+}
+
+.myGridSpan {
+	font-size: 30px;
+	padding: 5px;
+	grid-column-start: span 2;
+}
+
+.myButton {
+	font-size: 20px;
+	padding: 5px;
+}
+
+.myRight {
+	float: right;
+}
+
+.myImage {
+	height: 250px;	
+	width: 250px;
+}
+
+.myButtonItem {
+	font-size: 20px;
+	padding: 5px;
+	margin: 0px 5px 0px 0px;
+}
