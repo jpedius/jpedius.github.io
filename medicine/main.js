@@ -1,19 +1,14 @@
 'use strict';
 
-let medicine = fn_medicine();
-medicine = fn_shuffle(medicine);
-
-function fn_medicine_text(items, div) {
+function fn_container_text(items, div) {
 
 	let btn = document.createElement('button');
 	btn.classList.add('myButton');
-	btn.classList.add('myRight');
 	btn.innerHTML = 'Name';
 	btn.addEventListener('click', () => {
-		let len = items.length;
 		items.name = !items.name;
 		div2.innerHTML = items.name
-			? medicine[len].name
+			? items.medicine[items.length].name
 			: items.hidden;
 	});
 
@@ -23,8 +18,7 @@ function fn_medicine_text(items, div) {
 
 	let div2 = document.createElement('div');
 	div2.classList.add('myGrid');
-	let len = items.length;
-	div2.innerHTML = (medicine[len]).name
+	div2.innerHTML = items.medicine[items.length].name
 
 	div.appendChild(div1);
 	div.appendChild(div2);
@@ -32,17 +26,15 @@ function fn_medicine_text(items, div) {
 	return div2;
 }
 
-function fn_medicine_description(items, div) {
+function fn_container_description(items, div) {
 
 	let btn = document.createElement('button');
 	btn.classList.add('myButton');
-	btn.classList.add('myRight');
 	btn.innerHTML = 'Description';
 	btn.addEventListener('click', () => {
-		let len = items.length;
 		items.description = !items.description;
 		div2.innerHTML = items.description
-			? medicine[len].description
+			? items.medicine[items.length].description
 			: items.hidden;
 	});
 
@@ -52,7 +44,6 @@ function fn_medicine_description(items, div) {
 
 	let div2 = document.createElement('div');
 	div2.classList.add('myGrid');
-	let len = items.length;
 	div2.innerHTML = '----------';
 
 	div.appendChild(div1);
@@ -61,17 +52,15 @@ function fn_medicine_description(items, div) {
 	return div2;
 }
 
-function fn_medicine_image(items, div) {
+function fn_container_image(items, div) {
 
 	let btn = document.createElement('button');
 	btn.classList.add('myButton');
-	btn.classList.add('myRight');
 	btn.innerHTML = 'Image';
 	btn.addEventListener('click', () => {
-		let len = items.length;
 		items.image = !items.image;
 		img.src = items.image
-			? '/main/img/medicine/' + (medicine[len]).image
+			? '/main/img/medicine/' + items.medicine[items.length].image
 			: '/main/img/medicine/blank-black.jpg';
 	});
 
@@ -81,7 +70,6 @@ function fn_medicine_image(items, div) {
 
 	let img = document.createElement('img');
 	img.classList.add('myImage');
-	let len = items.length;
 	img.src = '/main/img/medicine/blank-black.jpg';
 
 	let div2 = document.createElement('div');
@@ -94,7 +82,7 @@ function fn_medicine_image(items, div) {
 	return img;
 }
 
-function fn_medicine_button(items, div, ndi) {
+function fn_container_button(items, div, array) {
 
 	let div1 = document.createElement('div');
 	div1.classList.add('myGrid');
@@ -104,30 +92,29 @@ function fn_medicine_button(items, div, ndi) {
 	prev.classList.add('myButtonItem');
 	prev.innerHTML = 'Previous';
 	prev.addEventListener('click', () => {
-		let len = items.length;
-		if (len <= 0) { len = medicine.length; }
-		len--;
-		items.length = len;
-		fn_medicine_items(items, ndi);
+		if (items.length <= 0) {
+			items.length = items.medicine.length;
+		}
+		items.length--;
+		fn_container_array(items, array);
 	});
 
 	let play = document.createElement('button');
 	play.classList.add('myButtonItem');
 	play.innerHTML = 'Play';
 	play.addEventListener('click', () => {
-		let len = items.length;
-		fn_speak((medicine[len]).name);
+		fn_speak(items.medicine[items.length].name);
 	});
 
 	let next = document.createElement('button');
 	next.classList.add('myButtonItem');
 	next.innerHTML = 'Next';
 	next.addEventListener('click', () => {
-		let len = items.length;
-		if (len >= medicine.length - 1) { len = -1; }
-		len++;
-		items.length = len;
-		fn_medicine_items(items, ndi);
+		if (items.length >= items.medicine.length - 1) {
+			items.length = -1;
+		}
+		items.length++;
+		fn_container_array(items, array);
 	});
 
 	let div2 = document.createElement('div');
@@ -140,35 +127,33 @@ function fn_medicine_button(items, div, ndi) {
 	div.appendChild(div2);
 }
 
-function fn_medicine_items(items, ndi) {
+function fn_container_array(items, array) {
 
-	let len = items.length;
-
-	ndi.name.innerHTML = items.name
-		? medicine[len].name
+	array.name.innerHTML = items.name
+		? items.medicine[items.length].name
 		: items.hidden;
 
-	ndi.description.innerHTML = items.description
-		? medicine[len].description
+	array.description.innerHTML = items.description
+		? items.medicine[items.length].description
 		: items.hidden;
 
-	ndi.image.src = items.image
-		? '/main/img/medicine/' + (medicine[len]).image
+	array.image.src = items.image
+		? '/main/img/medicine/' + items.medicine[items.length].image
 		: '/main/img/medicine/blank-black.jpg';
 }
 
 function fn_container(items) {
 
-	let element = document.getElementById('idMedicine');
+	let element = document.getElementById('idMain');
 
 	let div = document.createElement('div');
 	div.classList.add('myContainer');
 
-	let name = fn_medicine_text(items, div);
-	let description = fn_medicine_description(items, div);
-	let image = fn_medicine_image(items, div);
+	let name = fn_container_text(items, div);
+	let description = fn_container_description(items, div);
+	let image = fn_container_image(items, div);
 	
-	fn_medicine_button(items, div, {
+	fn_container_button(items, div, {
 		name: name,
 		description: description,
 		image: image,
@@ -176,10 +161,19 @@ function fn_container(items) {
 
 	element.appendChild(div);
 }
-fn_container({
-	length: 0,
-	name: true,
-	description: false,
-	image: false,
-	hidden: '----------',
-});
+
+function fn_main() {
+
+	let medicine = fn_medicine();
+	medicine = fn_shuffle(medicine);
+
+	fn_container({
+		medicine: medicine,
+		length: 0,
+		name: true,
+		description: false,
+		image: false,
+		hidden: '----------',
+	});
+}
+fn_main();
