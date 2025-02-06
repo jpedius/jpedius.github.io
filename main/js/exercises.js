@@ -1,8 +1,8 @@
 'use strict';
 
-function fn_exercises() {
+export function fn_exercises() {
 
-	const exercises = [{
+	const items = [{
 		name: 'Seated Hamstring Stretch',
 		key: 'seated-hamstring-stretch',
 		exercises: [
@@ -240,5 +240,5 @@ function fn_exercises() {
 		]
 	}];
 
-	return exercises;
+	return items;
 }

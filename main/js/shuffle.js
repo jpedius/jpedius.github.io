@@ -1,6 +1,6 @@
 'use strict'
 
-function fn_shuffle(array) {
+export function fn_shuffle(array) {
 
 	let items = JSON.parse(JSON.stringify(array));
 	let currentIndex = items.length, randomIndex;

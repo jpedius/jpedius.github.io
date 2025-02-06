@@ -3,23 +3,14 @@
 	padding: 5px;
 }
 
-.myDiv {
-	font-size: 30px;
-	padding: 5px;
-}
-
 .mySelect {
 	font-size: 30px;
 	padding: 5px;
-}
-
-.myImageDiw {
-	font-size: 30px;
-	padding: 5px;
+	margin: 0px 0px 10px 0px;
 }
 
 .myImage {
-	padding: 5px;
+	padding: 5px 0px;
 	width: 500px;
 }
 
@@ -36,7 +27,7 @@
 
 .myExercisesGrid {
 	font-size: 30px;
-	padding: 5px;
+	padding: 5px 0px;
 }
 
 .myInstructionsContainer {
@@ -51,5 +42,5 @@
 
 .myInstructionsGrid {
 	font-size: 30px;
-	padding: 5px;
+	padding: 5px 0px;
 }

@@ -35,7 +35,7 @@ if (speechSynthesis.onvoiceschanged !== undefined) {
 	speechSynthesis.onvoiceschanged = fn_populate_voice_list;
 }
 
-function fn_speak(talk, rate=0.7, pitch=1) {
+export function fn_speak(talk, rate=0.7, pitch=1) {
 
 	if (synth.speaking) {
 		console.error('speechSynthesis.speaking');
