@@ -238,6 +238,73 @@ export function fn_exercises() {
 			[ 'Complete', '3 Sets' ],
 			[ 'Perform',  '1 Times a Day' ],
 		]
+	}, {
+		name: 'Bridge with BANDED HIP ABDUCTION',
+		key: 'bridge-with-banded-hip-abduction',
+		image: 'bridge-with-banded-hip-abduction.jpg',
+		exercises: [
+			'Lie on your back, knees bent, red theraband around your thighs.',
+			'This is a 4-count exercise.',
+			'1: bridge hips up',
+			'2: knees press out (hips stay lifted)',
+			'3: knees back together (hips stay lifted)',
+			'4: hips down',
+			'BREATHING: breathe in and out, changing breath for each count of movement',
+		],
+		instructions: [
+			[ 'Repeat',   '10 Times' ],
+			[ 'Complete', '2 Sets' ],
+		]
+	}, {
+		name: 'Hamstring Curl with Stability Ball',
+		key: 'hamstring-curl-with-stability-ball',
+		image: 'hamstring-curl-with-stability-ball.jpg',
+		exercises: [
+			'Lie down on your back with your knees straight and your feet on the ball.',
+			'Slowly curl the ball towards your body and return to the starting position.',
+			'EXHALE as you roll the ball in',
+			'INHALE as you roll the ball out',
+		],
+		instructions: [
+			[ 'Repeat',   '10 Times' ],
+			[ 'Complete', '3 Sets' ],
+		]
+	}, {
+		name: 'Supine Hip Circumduction',
+		key: 'supine-hip-circumduction',
+		image: 'supine-hip-circumduction.jpg',
+		exercises: [
+			'1. Start supine with both legs bent.',
+			'2. Slightly lift one leg and rest it on a small physioball',
+			'3. Begin circling hip in clockwise direction. Start small and gradually get bigger. 10x.',
+			'4. Switch directions, circling hip in counterclockwise direction. Start small and gradually get bigger. 10x.',
+			'5. Repeat on other leg.',
+			'1 set RIGHT leg, clockwise; 1 set RIGHT leg, counterclockwise',
+			'1 set LEFT leg, clockwise; 1 set LEFT leg, counterclockwise',
+			'BREATHING: keep a steady rhythm of inhale/exhale (no specific patterning)',
+		],
+		instructions: [
+			[ 'Repeat',   '10 Times' ],
+			[ 'Complete', '4 Sets' ],
+			[ 'Perform',  '1 Times a Day' ],
+		]
+	}, {
+		name: 'SEATED (or supine) HEEL SLIDES WITH TOWEL',
+		key: 'seated-or-supine-heel-slides-with-towel',
+		image: 'seated-or-supine-heel-slides-with-towel.jpg',
+		exercises: [
+			'While in a seated position (or laying on your back) place your foot on top of a small towel.',
+			'Then, slowly slide your foot in clockwise circles 10 times, then counter clockwise circles 10 times.',
+			'Complete 1 clockwise set and counterclockwise set on RIGHT SIDE.',
+			'Complete 1 clockwise set and counterclockwise set on LEFT SIDE.',
+			'BREATHING: keep a steady rhythm of inhale/exhale (no specific patterning)',
+		],
+		instructions: [
+			[ 'Repeat',   '10 Times' ],
+			[ 'Hold',   '1 Second' ],
+			[ 'Complete', '4 Sets' ],
+			[ 'Perform',  '1 Times a Day' ],
+		]
 	}];
 
 	return items;
