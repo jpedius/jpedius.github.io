@@ -1,9 +1,10 @@
 'use strict';
 
-function fn_medicine() {
+export function fn_medicine() {
 
-	const medicine = [{
-		name: 'labetalol',
+	const items = [{
+		name: 'Labetalol',
+		key: 'labetalol',
 		image: 'labetalol.jpg',
 		description: 'Labetalol HCL 300 mg tablet',
 		pronunciation: {
@@ -11,7 +12,8 @@ function fn_medicine() {
 			google: 'luh·/bay/·tuh·laal'
 		}
 	}, {
-		name: 'lisinopril', 
+		name: 'Lisinopril',
+		key: 'lisinopril',
 		image: 'lisinopril.jpg', 
 		description: 'Lisinopril 20 mg tablet',
 		pronunciation: {
@@ -19,7 +21,8 @@ function fn_medicine() {
 			google: 'luh·/si/·nuh·pruhl'
 		}
 	}, {
-		name: 'amlodipine besylate',
+		name: 'Amlodipine Besylate',
+		key: 'amlodipine besylate',
 		image: 'amlodipine-besylate.jpg',
 		description: 'Amlodipine Besylate 10 mg tablet',
 		pronunciation: {
@@ -27,7 +30,8 @@ function fn_medicine() {
 			google: 'am·/low/·duh·peen' // besylate
 		}
 	}, { 
-		name: 'spironolactone',
+		name: 'Spironolactone',
+		key: 'spironolactone',
 		image: 'spironolactone.jpg',
 		description: 'Spironolactone 25 mg tablet',
 		pronunciation: {
@@ -35,7 +39,8 @@ function fn_medicine() {
 			google: 'spai·ruh·now·/lak/·town'
 		}
 	}, { 
-		name: 'tamsulosin',
+		name: 'Tamsulosin',
+		key: 'tamsulosin',
 		image: 'tamsulosin.jpg',
 		description: 'Tamsulosin HCL 0.4 mg capsule',
 		pronunciation: {
@@ -43,7 +48,8 @@ function fn_medicine() {
 			google: 'tam·suh·/low/·sn'
 		}
 	}, { 
-		name: 'rosuvastatin calcium',
+		name: 'Rosuvastatin Calcium',
+		key: 'rosuvastatin calcium',
 		image: 'rosuvastatin-calcium.jpg',
 		description: 'Rosuvastatin Calcium 5 mg tablet',
 		pronunciation: { 
@@ -52,5 +58,5 @@ function fn_medicine() {
 		}
 	}];
 
-	return medicine;
+	return items;
 }
