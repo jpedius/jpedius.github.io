@@ -473,3 +473,18 @@ function fn_katakana() {
 
 	return katakana;
 }
+
+export function fn_japanese() {
+
+	const items = [{
+		name: 'Hiragana',
+		key: 'hiragana',
+		characters: fn_hiragana(),
+	}, {
+		name: 'Katakana',
+		key: 'katakana',
+		characters: fn_katakana(),
+	}]
+
+	return items;
+}

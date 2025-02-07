@@ -4,19 +4,6 @@ import { fn_speak } from '../main/js/voice.js';
 import { fn_shuffle } from '../main/js/shuffle.js';
 import { fn_worksheets } from '../main/js/worksheets.js';
 
-function fn_show_or_hidden(selected, random, elements) {
-
-	let a = elements.random.checked;
-
-	elements.read.value = a
-		? selected.random[items.length]
-		: selected.alphabet[items.length];
-
-	console.log(items);
-	console.log(random);
-	console.log(elements.random.checked);
-}
-
 function fn_add_read(div) {
 
 	let div1 = document.createElement('div');
@@ -62,7 +49,7 @@ function fn_add_random(div, select, items, elements) {
 	random.addEventListener('click', () => {
 
 		let index = select.options.selectedIndex;
-		let selected = items.worksheets[index];
+		let selected = items.container[index];
 
 		items.random = !items.random;
 
@@ -73,7 +60,7 @@ function fn_add_random(div, select, items, elements) {
 			elements.read.value = selected.random[items.length];
 		}
 		else {
-			elements.read.value = selected.alphabet[items.length];
+			elements.read.value = selected.worksheets[items.length];
 		}
 
 		elements.write.value = '';
@@ -94,10 +81,10 @@ function fn_add_buttons(div, select, items, elements) {
 	prev.addEventListener('click', () => {
 
 		let index = select.options.selectedIndex;
-		let selected = items.worksheets[index];
+		let selected = items.container[index];
 
 		if (items.length <= 0) {
-			items.length = selected.alphabet.length;
+			items.length = selected.worksheets.length;
 		}
 		items.length--;
 
@@ -108,7 +95,7 @@ function fn_add_buttons(div, select, items, elements) {
 			elements.read.value = selected.random[items.length];
 		}
 		else {
-			elements.read.value = selected.alphabet[items.length];
+			elements.read.value = selected.worksheets[items.length];
 		}
 	});
 	div1.appendChild(prev);
@@ -119,9 +106,9 @@ function fn_add_buttons(div, select, items, elements) {
 	play.addEventListener('click', () => {
 
 		let index = select.options.selectedIndex;
-		let selected = items.worksheets[index];
+		let selected = items.container[index];
 
-		fn_speak(selected.alphabet[items.length]);
+		fn_speak(selected.worksheets[items.length]);
 	});
 	div1.appendChild(play);
 
@@ -131,7 +118,7 @@ function fn_add_buttons(div, select, items, elements) {
 	show.addEventListener('click', () => {
 
 		let index = select.options.selectedIndex;
-		let selected = items.worksheets[index];
+		let selected = items.container[index];
 
 		items.show = !items.show;
 		show.innerHTML = items.show ? 'Hidden' : 'Show';
@@ -143,7 +130,7 @@ function fn_add_buttons(div, select, items, elements) {
 			elements.read.value = selected.random[items.length];
 		}
 		else {
-			elements.read.value = selected.alphabet[items.length];
+			elements.read.value = selected.worksheets[items.length];
 		}
 	});
 	div1.appendChild(show);
@@ -154,9 +141,9 @@ function fn_add_buttons(div, select, items, elements) {
 	next.addEventListener('click', () => {
 
 		let index = select.options.selectedIndex;
-		let selected = items.worksheets[index];
+		let selected = items.container[index];
 
-		if (items.length >= selected.alphabet.length - 1) {
+		if (items.length >= selected.worksheets.length - 1) {
 			items.length = -1;
 		}
 		items.length++;
@@ -168,7 +155,7 @@ function fn_add_buttons(div, select, items, elements) {
 			elements.read.value = selected.random[items.length];
 		}
 		else {
-			elements.read.value = selected.alphabet[items.length];
+			elements.read.value = selected.worksheets[items.length];
 		}
 	});
 	div1.appendChild(next);
@@ -194,14 +181,20 @@ function fn_add(div, select, items) {
 function fn_update(div, select, items) {
 
 	let index = select.options.selectedIndex;
-	let selected = items.worksheets[index];
+	let selected = items.container[index];
 
 	items.length = 0;
 
 	let read = div.children[0].children[0];
-	read.value = items.random
-		? selected.random[items.length]
-		: selected.alphabet[items.length];
+	if (items.show) {
+		read.value = items.hidden;
+	}
+	else if (items.random) {
+		read.value = selected.random[items.length];
+	}
+	else {
+		read.value = selected.worksheets[items.length];
+	}
 
 	let write = div.children[1].children[0];
 	write.value = '';
@@ -217,9 +210,9 @@ function fn_select(main, items) {
 	});
 	main.appendChild(select);
 
-	for (let i=0; i<items.worksheets.length; i++) {
+	for (let i=0; i<items.container.length; i++) {
 		const option = document.createElement('option');
-		option.textContent = items.worksheets[i].name;
+		option.textContent = items.container[i].name;
 		select.appendChild(option);
 	}
 
@@ -261,18 +254,18 @@ function fn_main(element, items) {
 	fn_items_div(main, items, select);
 }
 
-function fn_worksheets_random(worksheets) {
+function fn_worksheets_random(container) {
 
 	let items = [];
 
 	let i=0;
-	while (i<worksheets.length) {
+	while (i<container.length) {
 		
-		let random = fn_shuffle(worksheets[i].alphabet);
+		let random = fn_shuffle(container[i].worksheets);
 		items.push({
-			name: worksheets[i].name,
-			key: worksheets[i].key,
-			alphabet: worksheets[i].alphabet,
+			name: container[i].name,
+			key: container[i].key,
+			worksheets: container[i].worksheets,
 			random: random,
 		});
 		
@@ -284,14 +277,14 @@ function fn_worksheets_random(worksheets) {
 
 function fn_app() {
 
-	let worksheets = fn_worksheets();
-	worksheets = fn_worksheets_random(worksheets);
+	let container = fn_worksheets();
+	container = fn_worksheets_random(container);
 
 	let element = document.getElementById('main');
 
 	fn_header(element, 'Worksheets');
 	fn_main(element, {
-		worksheets: worksheets,
+		container: container,
 		length: 0,
 		random: false,
 		show: false,

@@ -540,31 +540,31 @@ export function fn_worksheets() {
 	const items = [{
 		name: 'Upper Case Letters',
 		key: 'upper-case-letters',
-		alphabet: fn_upper_case(),
+		worksheets: fn_upper_case(),
 	}, {
 		name: 'Lower Case Letters',
 		key: 'lower-case-letters',
-		alphabet: fn_lower_case(),
+		worksheets: fn_lower_case(),
 	}, {
 		name: 'Calendar',
 		key: 'calendar',
-		alphabet: fn_calendar(),
+		worksheets: fn_calendar(),
 	}, {
 		name: 'Numbers',
 		key: 'numbers',
-		alphabet: fn_numbers(),
+		worksheets: fn_numbers(),
 	}, {
 		name: 'States',
 		key: 'states',
-		alphabet: states,
+		worksheets: states,
 	}, {
 		name: 'Abbreviation',
 		key: 'abbreviation',
-		alphabet: abbreviation,
+		worksheets: abbreviation,
 	}, {
 		name: 'Capital',
 		key: 'capital',
-		alphabet: capital,
+		worksheets: capital,
 	}];
 
 	return items;
