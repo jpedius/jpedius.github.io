@@ -1,0 +1,38 @@
+.myHeader {
+	font-size: 40px;
+	padding: 5px;
+}
+
+.mySelect {
+	font-size: 30px;
+	padding: 5px;
+	margin: 0px 0px 10px 0px;
+}
+
+.myDiv {
+	font-size: 80px;
+	padding: 5px;
+}
+
+.myImage {
+	padding: 5px 0px;
+	width: 500px;
+}
+
+.myRandom {
+    display: inline-block;
+	font-size: 20px;
+	padding: 5px;
+}
+
+.myCheckbox {
+    display: inline-block;
+	font-size: 30px;
+	padding: 5px;
+}
+
+.myButtons {
+	font-size: 20px;
+	padding: 5px;
+	margin: 5px 5px 0px 0px;
+}
