@@ -110,11 +110,16 @@ function fn_select(main, items) {
 	});
 	main.appendChild(select);
 
-	for (let i=0; i<items.exercises.length; i++) {
-		const option = document.createElement('option');
-		option.textContent = items.exercises[i].name;
-		select.appendChild(option);
-	}
+	for (let i=0; i<items.optgroup.length; i++) {
+        const optgroup = document.createElement('optgroup');
+        optgroup.label = items.optgroup[i].group;
+        select.appendChild(optgroup);
+        for (let j=0; j<items.optgroup[i].options.length; j++) {
+            const option = document.createElement('option');
+            option.textContent = items.optgroup[i].options[j].name;
+            optgroup.appendChild(option);
+        }
+    }
 
 	return select;
 }
@@ -156,12 +161,24 @@ function fn_main(element, items) {
 
 function fn_app() {
 
-	let exercises = fn_exercises();
+	let optgroup = fn_exercises();
+
+	let group = [];
+	for (let i=0; i<optgroup.length; i++) {
+		group = group.concat(optgroup[i].group)
+	}
+
+	let exercises = [];
+	for (let i=0; i<optgroup.length; i++) {
+		exercises = exercises.concat(optgroup[i].options);
+	}
 
 	let element = document.getElementById('main');
 
 	fn_header(element, 'Exercises');
 	fn_main(element, {
+		optgroup: optgroup,
+		group: group,
 		exercises: exercises,
 	});
 }
