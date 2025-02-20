@@ -5,6 +5,101 @@ export function fn_exercises() {
 	const items = [{
 		group: "First Set of Exercise",
 		options: [{
+			name: 'Diaphragmatic Breathing',
+			key: 'diaphragmatic-breathing',
+			image: 'diaphragmatic-breathing.jpg',
+			exercises: [
+				'While lying down on your back, place one hand on your breast bone and one hand on your abdomen near your navel.',
+				'Slowly take a deep breath in and focus on trying to get your hand on your stomach rise while the hand on your breast bone remains still.',
+				'As you breathe in, the hand on your stomach should rise.',
+				'When you breath out, the hand on your stomach should lower.',
+			],
+			instructions: [
+				[ 'Repeat',   '20 Times' ],
+				[ 'Hold',     '1 Second' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '1 Times a Day' ],
+			]
+		}, {
+			name: 'Glute Bridge',
+			key: 'glute-bridge',
+			image: 'glute-bridge.jpg',
+			exercises: [
+				'Starting in the supine position with knees bent and feet flat on the table or floor, engage your core and press your heels into the ground to lift your glutes off of the surface.',
+				'Slowly lower back down to the surface.',
+			],
+			instructions: [
+				[ 'Repeat', '10 Times' ],
+				[ 'Complete', '3 Sets' ],
+			]
+		}, {
+			name: 'HIP ROTATION (ankle over knee)',
+			key: 'hip-rotation-ankle-over-knee',
+			image: 'hip-rotation-ankle-over-knee.jpg',
+			exercises: [
+				'Lie on your back and bend your knees.',
+				'Place ankle over opposite knee.',
+				'Swivel your knee and thigh up and in toward your chest (INTERNAL ROTATION), then swivel it down and out toward your butt/hip (EXTERNAL ROTATION).',
+				'Complete 1-2 sets of 20 internal <> external rotations on each side.',
+			],
+			instructions: [
+				[ 'Complete', '2 Sets' ],
+				[ 'Perform', '1 Times a Day' ],
+			]			
+		}, {
+			name: 'ROCKING PIRIFORMIS STRETCH',
+			key: 'rocking-piriformis-stretch',
+			image: 'rocking-piriformis-stretch.jpg',
+			exercises: [
+				'Lie on your back with both knees bent.',
+				'Next, place your ankle of one leg on top of the thigh of your other leg.',
+				'Next, slowly allow your leg to move to the side until a gentle stretch is felt on the top most leg.',
+				'The stretch can be felt along the back of the legs, buttocks and or back.',
+				'Do 1-2 sets of 10 reps per side.',
+			],
+			instructions: [
+				[ 'Repeat', '10 Times' ],
+				[ 'Hold', '1 Second' ],
+				[ 'Complete', '2 Sets' ],
+				[ 'Perform', '1 Times a Day' ],
+			]			
+		}, {
+			name: 'SIDE LYING TRUNK ROTATION',
+			key: 'side-lying-trunk-rotation',
+			image: 'side-lying-trunk-rotation.jpg',
+			exercises: [
+				'While lying on your side with your arms outstretched in front of your body, slowly twist your upper body to the side and rotated your spine.',
+				'Your arms and head should also be rotating along with the spine as shown.',
+				'Follow your head with your hand.',
+				'Do 1-2 sets of 10 reps per side.',
+			],
+			instructions: [
+				[ 'Repeat', '10 Times' ],
+				[ 'Hold', '1 Second' ],
+				[ 'Complete', '2 Sets' ],
+				[ 'Perform', '1 Times a Day' ],
+			]			
+		}, {
+			name: 'Bridge with BANDED HIP ABDUCTION',
+			key: 'bridge-with-banded-hip-abduction',
+			image: 'bridge-with-banded-hip-abduction.jpg',
+			exercises: [
+				'Lie on your back, knees bent, red theraband around your thighs.',
+				'This is a 4-count exercise.',
+				'1: bridge hips up',
+				'2: knees press out (hips stay lifted)',
+				'3: knees back together (hips stay lifted)',
+				'4: hips down',
+				'BREATHING: breathe in and out, changing breath for each count of movement',
+			],
+			instructions: [
+				[ 'Repeat',   '10 Times' ],
+				[ 'Complete', '2 Sets' ],
+			]
+		}],
+	}, {
+		group: "Second Set of Exercise",
+		options: [{
 			name: 'SEATED (or supine) HEEL SLIDES WITH TOWEL',
 			key: 'seated-or-supine-heel-slides-with-towel',
 			image: 'seated-or-supine-heel-slides-with-towel.jpg',
@@ -53,23 +148,6 @@ export function fn_exercises() {
 			instructions: [
 				[ 'Repeat',   '10 Times' ],
 				[ 'Complete', '3 Sets' ],
-			]
-		}, {
-			name: 'Bridge with BANDED HIP ABDUCTION',
-			key: 'bridge-with-banded-hip-abduction',
-			image: 'bridge-with-banded-hip-abduction.jpg',
-			exercises: [
-				'Lie on your back, knees bent, red theraband around your thighs.',
-				'This is a 4-count exercise.',
-				'1: bridge hips up',
-				'2: knees press out (hips stay lifted)',
-				'3: knees back together (hips stay lifted)',
-				'4: hips down',
-				'BREATHING: breathe in and out, changing breath for each count of movement',
-			],
-			instructions: [
-				[ 'Repeat',   '10 Times' ],
-				[ 'Complete', '2 Sets' ],
 			]
 		}, {
 			name: 'Supine Single Leg Clamshell',
@@ -128,37 +206,6 @@ export function fn_exercises() {
 			instructions: [
 				[ 'Repeat',   '20 Times' ],
 				[ 'Complete', '2 Sets' ],
-			]
-		}],
-	}, {
-		group: "Second Set of Exercise",
-		options: [{
-			name: 'Diaphragmatic Breathing',
-			key: 'diaphragmatic-breathing',
-			image: 'diaphragmatic-breathing.jpg',
-			exercises: [
-				'While lying down on your back, place one hand on your breast bone and one hand on your abdomen near your navel.',
-				'Slowly take a deep breath in and focus on trying to get your hand on your stomach rise while the hand on your breast bone remains still.',
-				'As you breathe in, the hand on your stomach should rise.',
-				'When you breath out, the hand on your stomach should lower.',
-			],
-			instructions: [
-				[ 'Repeat',   '20 Times' ],
-				[ 'Hold',     '1 Second' ],
-				[ 'Complete', '3 Sets' ],
-				[ 'Perform',  '1 Times a Day' ],
-			]
-		}, {
-			name: 'Glute Bridge',
-			key: 'glute-bridge',
-			image: 'glute-bridge.jpg',
-			exercises: [
-				'Starting in the supine position with knees bent and feet flat on the table or floor, engage your core and press your heels into the ground to lift your glutes off of the surface.',
-				'Slowly lower back down to the surface.',
-			],
-			instructions: [
-				[ 'Repeat', '10 Times' ],
-				[ 'Complete', '3 Sets' ],
 			]
 		}],
 	}, {
