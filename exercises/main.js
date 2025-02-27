@@ -10,7 +10,7 @@ function fn_image(div, selected) {
 
 	let img = document.createElement('img');
 	img.classList.add('myImage');
-	img.src = '/main/img/therapy/pt/' + selected.image;
+	img.src = '/main/img/therapy/' + selected.image;
 	div1.appendChild(img);
 }
 

@@ -5,9 +5,25 @@ export function fn_exercises() {
 	const items = [{
 		group: "First Set of Exercise",
 		options: [{
+			name: 'GAIT TRAINING - SEQUENCING - HIP FLEXION TO HEEL STRIKE',
+			key: 'gait-training-sequencing-hip-flexion-to-heel-strike',
+			image: 'pt/gait-training-sequencing-hip-flexion-to-heel-strike.jpg',
+			exercises: [
+				'Start with your feet together as shown.',
+				'Lift your RIGHT knee (shown in picture two), then press your heel down to the ground, toes should stay up.',
+				'Keep your left knee straight and strong to support you.',
+				'Use a railing for support and balance as needed',
+			],
+			instructions: [
+				[ 'Repeat',   '20 Times' ],
+				[ 'Hold',     '1 Second' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '1 Times a Day' ],
+			]
+		}, {
 			name: 'Diaphragmatic Breathing',
 			key: 'diaphragmatic-breathing',
-			image: 'diaphragmatic-breathing.jpg',
+			image: 'pt/diaphragmatic-breathing.jpg',
 			exercises: [
 				'While lying down on your back, place one hand on your breast bone and one hand on your abdomen near your navel.',
 				'Slowly take a deep breath in and focus on trying to get your hand on your stomach rise while the hand on your breast bone remains still.',
@@ -23,7 +39,7 @@ export function fn_exercises() {
 		}, {
 			name: 'Glute Bridge',
 			key: 'glute-bridge',
-			image: 'glute-bridge.jpg',
+			image: 'pt/glute-bridge.jpg',
 			exercises: [
 				'Starting in the supine position with knees bent and feet flat on the table or floor, engage your core and press your heels into the ground to lift your glutes off of the surface.',
 				'Slowly lower back down to the surface.',
@@ -35,7 +51,7 @@ export function fn_exercises() {
 		}, {
 			name: 'HIP ROTATION (ankle over knee)',
 			key: 'hip-rotation-ankle-over-knee',
-			image: 'hip-rotation-ankle-over-knee.jpg',
+			image: 'pt/hip-rotation-ankle-over-knee.jpg',
 			exercises: [
 				'Lie on your back and bend your knees.',
 				'Place ankle over opposite knee.',
@@ -49,7 +65,7 @@ export function fn_exercises() {
 		}, {
 			name: 'ROCKING PIRIFORMIS STRETCH',
 			key: 'rocking-piriformis-stretch',
-			image: 'rocking-piriformis-stretch.jpg',
+			image: 'pt/rocking-piriformis-stretch.jpg',
 			exercises: [
 				'Lie on your back with both knees bent.',
 				'Next, place your ankle of one leg on top of the thigh of your other leg.',
@@ -66,7 +82,7 @@ export function fn_exercises() {
 		}, {
 			name: 'SIDE LYING TRUNK ROTATION',
 			key: 'side-lying-trunk-rotation',
-			image: 'side-lying-trunk-rotation.jpg',
+			image: 'pt/side-lying-trunk-rotation.jpg',
 			exercises: [
 				'While lying on your side with your arms outstretched in front of your body, slowly twist your upper body to the side and rotated your spine.',
 				'Your arms and head should also be rotating along with the spine as shown.',
@@ -82,7 +98,7 @@ export function fn_exercises() {
 		}, {
 			name: 'Bridge with BANDED HIP ABDUCTION',
 			key: 'bridge-with-banded-hip-abduction',
-			image: 'bridge-with-banded-hip-abduction.jpg',
+			image: 'pt/bridge-with-banded-hip-abduction.jpg',
 			exercises: [
 				'Lie on your back, knees bent, red theraband around your thighs.',
 				'This is a 4-count exercise.',
@@ -100,9 +116,25 @@ export function fn_exercises() {
 	}, {
 		group: "Second Set of Exercise",
 		options: [{
+			name: 'GAIT TRAINING - SEQUENCING - HIP FLEXION TO HEEL STRIKE',
+			key: 'gait-training-sequencing-hip-flexion-to-heel-strike',
+			image: 'pt/gait-training-sequencing-hip-flexion-to-heel-strike.jpg',
+			exercises: [
+				'Start with your feet together as shown.',
+				'Lift your RIGHT knee (shown in picture two), then press your heel down to the ground, toes should stay up.',
+				'Keep your left knee straight and strong to support you.',
+				'Use a railing for support and balance as needed',
+			],
+			instructions: [
+				[ 'Repeat',   '20 Times' ],
+				[ 'Hold',     '1 Second' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '1 Times a Day' ],
+			]
+		}, {
 			name: 'SEATED (or supine) HEEL SLIDES WITH TOWEL',
 			key: 'seated-or-supine-heel-slides-with-towel',
-			image: 'seated-or-supine-heel-slides-with-towel.jpg',
+			image: 'pt/seated-or-supine-heel-slides-with-towel.jpg',
 			exercises: [
 				'While in a seated position (or laying on your back) place your foot on top of a small towel.',
 				'Then, slowly slide your foot in clockwise circles 10 times, then counter clockwise circles 10 times.',
@@ -119,7 +151,7 @@ export function fn_exercises() {
 		}, {
 			name: 'Supine Hip Circumduction',
 			key: 'supine-hip-circumduction',
-			image: 'supine-hip-circumduction.jpg',
+			image: 'pt/supine-hip-circumduction.jpg',
 			exercises: [
 				'1. Start supine with both legs bent.',
 				'2. Slightly lift one leg and rest it on a small physioball',
@@ -138,7 +170,7 @@ export function fn_exercises() {
 		}, {
 			name: 'Hamstring Curl with Stability Ball',
 			key: 'hamstring-curl-with-stability-ball',
-			image: 'hamstring-curl-with-stability-ball.jpg',
+			image: 'pt/hamstring-curl-with-stability-ball.jpg',
 			exercises: [
 				'Lie down on your back with your knees straight and your feet on the ball.',
 				'Slowly curl the ball towards your body and return to the starting position.',
@@ -152,7 +184,7 @@ export function fn_exercises() {
 		}, {
 			name: 'Supine Single Leg Clamshell',
 			key: 'supine-single-leg-clamshell',
-			image: 'supine-single-leg-clamshell.jpg',
+			image: 'pt/supine-single-leg-clamshell.jpg',
 			exercises: [
 				'Place an elastic band around the knees.',
 				'Lie down in hooklying position with both feet positioned flat and straight.',
@@ -168,7 +200,7 @@ export function fn_exercises() {
 		}, {
 			name: 'Supine Hip Abduction - Elastic Band Clams - Clamshell',
 			key: 'supine-hip-abduction-elastic-band-clams-clamshell',
-			image: 'supine-hip-abduction-elastic-band-clams-clamshell.jpg',
+			image: 'pt/supine-hip-abduction-elastic-band-clams-clamshell.jpg',
 			exercises: [
 				'Lie down on your back with your knees bent.',
 				'Place an elastic band around your knees and then pull your knees apart.',
@@ -181,7 +213,7 @@ export function fn_exercises() {
 		}, {
 			name: 'Supine March',
 			key: 'supine-march',
-			image: 'supine-march.jpg',
+			image: 'pt/supine-march.jpg',
 			exercises: [
 				'Lie on your back with your knees pulled up so that your feet rest on the table.',
 				'Hold your core and slowly lift one leg from the table.',
@@ -195,7 +227,7 @@ export function fn_exercises() {
 		}, {
 			name: 'Lumbar Rotations',
 			key: 'lumbar-rotations',
-			image: 'lumbar-rotations.jpg',
+			image: 'pt/lumbar-rotations.jpg',
 			exercises: [
 				'Lying on your back with your knees bent, slowly drop your legs to one side and hold the stretch.',
 				'Come back to the middle and switch sides.',
@@ -206,6 +238,138 @@ export function fn_exercises() {
 			instructions: [
 				[ 'Repeat',   '20 Times' ],
 				[ 'Complete', '2 Sets' ],
+			]
+		}],
+	}, {
+		group: "Three Set of Exercise",
+		options: [{
+			name: 'GAIT TRAINING - SEQUENCING - HIP FLEXION TO HEEL STRIKE',
+			key: 'gait-training-sequencing-hip-flexion-to-heel-strike',
+			image: 'pt/gait-training-sequencing-hip-flexion-to-heel-strike.jpg',
+			exercises: [
+				'Start with your feet together as shown.',
+				'Lift your RIGHT knee (shown in picture two), then press your heel down to the ground, toes should stay up.',
+				'Keep your left knee straight and strong to support you.',
+				'Use a railing for support and balance as needed',
+			],
+			instructions: [
+				[ 'Repeat',   '20 Times' ],
+				[ 'Hold',     '1 Second' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '1 Times a Day' ],
+			]
+		}, {
+			name: 'Seated shoulder abduction',
+			key: 'seated-shoulder-abduction',
+			image: 'ot/seated-shoulder-abduction.jpg',
+			exercises: [
+				'Begin with your arms relaxed at your side.',
+				'Raise the dumbbell straight out to the side, while keeping your arm straight.',
+				'Control the weight on the way down.',
+				'Do not allow your shoulder to move past you ears.',
+			],
+			instructions: [
+				[ 'Repeat',   '12 Times' ],
+				[ 'Hold',     '1 Second' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '2 Times' ],
+			]
+		}, {
+			name: 'Rickshaw',
+			key: 'rickshaw',
+			image: 'ot/rickshaw.jpg',
+			exercises: [
+				'Set rickshaw to appropriate weight.',
+				'Sit forward in the seat, leaning forward slightly, and tighten core.',
+				'Press handles down until arms are fully extended.',
+				'Raise handles to mid trunk try not to shrug shoulders up towards your ears.',
+			],
+			instructions: [
+				[ 'Repeat',   '12 Times' ],
+				[ 'Hold',     '3 Second' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '2 Times' ],
+			]
+		}, {
+			name: 'Standing Weighted Side Bend',
+			key: 'standing-weighted-side-bend',
+			image: 'ot/standing-weighted-side-bend.jpg',
+			exercises: [
+				'Begin in, standing with one dumbbell along your side, in upright position.',
+				'Place the opposite arm in behind your head with the elbow bent.',
+				'Allow the dumbbell to travel towards the floor while feeling a stretch through the opposite rib cage.',
+				'Contract the oblique muscles as you return to starting position.',
+				'Complete all repetitions on one side before switching to the other.',
+			],
+			instructions: [
+				[ 'Repeat',   '12 Times' ],
+				[ 'Hold',     '2 Second' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '2 Times' ],
+			]
+		}, {
+			name: 'BOX SQUATS',
+			key: 'box-squats',
+			image: 'ot/box-squats.jpg',
+			exercises: [
+				'Start by sitting on a box, bench, chair or some other such sittable surface.',
+				'Brace the core, lean forward, and press through your legs to stand up.',
+				'Once standing, solidify good upright posture (chest up , no hunching).',
+				'Slowly control the return to start.',
+			],
+			instructions: [
+				[ 'Repeat',   '10 Times' ],
+				[ 'Hold',     '3 Second' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '2 Times' ],
+			]
+		}, {
+			name: 'MEDICINE BALL - Sit-Stand',
+			key: 'medicine-ball-sit-stand',
+			image: 'ot/medicine-ball-sit-stand.jpg',
+			exercises: [
+				'Start by standing up and holding a medicine ball at your chest height.',
+				'Next, squat/sit down on a chair/surface as you extend your arms forward so that your elbows straighten.',
+				'Return to original position.',
+			],
+			instructions: [
+				[ 'Repeat',   '12 Times' ],
+				[ 'Hold',     '3 Second' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '2 Times' ],
+			]
+		}, {
+			name: 'Seated Bending - EYES OPEN',
+			key: 'seated-bending-eyes-open',
+			image: 'ot/seated-bending-eyes-open.jpg',
+			exercises: [
+				'Begin in sitting.',
+				'Bend forward as if you were going to touch the floor while holding your medicine ball and touch the floor to the left of your left foot and return upright.',
+				'Repeat but touch the floor in between your feet and return upright.',
+				'Repeat but touch the floor to the right of your right foot and return upright.',
+				'Repeat all as indicated.',
+			],
+			instructions: [
+				[ 'Repeat',   '6 Times' ],
+				[ 'Hold',     '2 Second' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '2 Times' ],
+			]
+		}, {
+			name: 'SITUPS with OVERHEAD MEDBALL',
+			key: 'situps-with-overhead-medball',
+			image: 'ot/situps-with-overhead-medball.jpg',
+			exercises: [
+				'Sitting with your legs weighted while on the bench, hold a med-ball or kettlebell close to your body at chest level.',
+				'Lean back into a half sit-up, and then brace this position for the overhead portion.',
+				'Holding the half sit-up, lift the med-ball or kettlebell overhead and continue to brace core',
+				'Slowly control the ball back down to chest level and sit-up to the starting upright position',
+			],
+			instructions: [
+				[ 'Repeat',   '10 Times' ],
+				[ 'Hold',     '1 Second' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '2 Times' ],
 			]
 		}],
 	}, {
