@@ -112,6 +112,49 @@ export function fn_exercises() {
 				[ 'Repeat',   '10 Times' ],
 				[ 'Complete', '2 Sets' ],
 			]
+		}, {
+			name: 'Prone PUSH BACK',
+			key: 'prone-push-back',
+			image: 'pt/prone-push-back.jpg',
+			exercises: [
+				'Start by lying on your stomach with weight on your elbows.',
+				'Using your elbows push your hips back toward your heels so that weight comes onto your knees, as if you were going to push yourself off the floor.',
+				'Chink tuck: make sure your neck is in line with the rest of your body by tucking your chin.',
+				'In this position your eyes should point down towards the floor/bed.',
+				'EXHALE as you push back.',
+			],
+			instructions: [
+				[ 'Repeat',   '10 Times' ],
+				[ 'Complete', '2 Sets' ],
+				[ 'Perform',  '1 Times a Day' ],
+			]
+		}, {
+			name: 'Bridge with band push',
+			key: 'bridge-with-band-push',
+			image: 'pt/bridge-with-band-push.jpg',
+			exercises: [
+				'Place green band around your knees.',
+				'Press knees gently outwards to put tension in the band, hold this tension throughout.',
+				'Keeping knees slightly apart, bridge hips up and down.',
+			],
+			instructions: [
+				[ 'Repeat',   '10 Times' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '1 Times a Day' ],
+			]
+		}, {
+			name: 'Hip Flexion',
+			key: 'hip-flexion',
+			image: 'pt/hip-flexion.jpg',
+			exercises: [
+				'Keep one foot pushing down gently into mat while opposite knee and thigh pull toward your chest.',
+				'EXHALE as you pull, INHALE as you rest between repetitions.',
+			],
+			instructions: [
+				[ 'Repeat',   '20 Times' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '1 Times a Day' ],
+			]
 		}],
 	}, {
 		group: "Second Set of Exercise",
