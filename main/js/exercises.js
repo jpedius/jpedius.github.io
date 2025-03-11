@@ -119,7 +119,7 @@ export function fn_exercises() {
 			exercises: [
 				'Start by lying on your stomach with weight on your elbows.',
 				'Using your elbows push your hips back toward your heels so that weight comes onto your knees, as if you were going to push yourself off the floor.',
-				'Chink tuck: make sure your neck is in line with the rest of your body by tucking your chin.',
+				'Chink tuck, make sure your neck is in line with the rest of your body by tucking your chin.',
 				'In this position your eyes should point down towards the floor/bed.',
 				'EXHALE as you push back.',
 			],
