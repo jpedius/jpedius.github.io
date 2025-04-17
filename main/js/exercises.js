@@ -3,6 +3,64 @@
 export function fn_exercises() {
 
 	const items = [{
+		group: "Zero Set of Exercise",
+		options: [{
+			name: 'Modified single leg stance sit/stands',
+			key: 'modified-single-leg-stance-sit-stands',
+			// image: 'modified-single-leg-stance-sit-stands.jpg',
+			exercises: [
+				"Place small box (3' to 7' height) under left foot",
+				"Left foot and box should be slightly forward compared to right foot",
+				"Place right foot a little more in the center/underneath you compared to how you would normally stand or walk",
+				"You should feel most of your body weight on right side, and only feel like you are resting your left foot on the box",
+				"Stand up with most of your body weight on right side, sit down with most of your body weight on right side",
+					"To increase difficulty:",
+						"Increase box height under left foot",
+						"Decrease seat/chair height",
+			],
+			// instructions: [
+			// 	[ 'Repeat',   '20 Times' ],
+			// 	[ 'Hold',     '1 Second' ],
+			// 	[ 'Complete', '3 Sets' ],
+			// 	[ 'Perform',  '1 Times a Day' ],
+			// ],
+		}, {
+			name: 'Walking with left step first',
+			key: 'walking-with-left-step-first',
+			// image: 'walking-with-left-step-first.jpg',
+			exercises: [
+				"You may need to increase your right-sided weight shift prior to stepping",
+					"Right-left-right-STEP (with left foot) this will help you practice the right-sided shift before you step",
+					"Also think about getting taller in your ribcage and chest as you shift to the right",
+						"This makes it an anterolateral (forward and slightly diagonal toward right side weight shift)",
+			],
+			// instructions: [
+			// 	[ 'Repeat',   '20 Times' ],
+			// 	[ 'Hold',     '1 Second' ],
+			// 	[ 'Complete', '3 Sets' ],
+			// 	[ 'Perform',  '1 Times a Day' ],
+			// ],
+		}, {
+ 			name: 'Right posterolateral hip activation',
+			key: 'right-posterolateral-hip-activation',
+			// image: 'right-posterolateral-hip-activation.jpg',
+			exercises: [
+				"Strengthening your hip will help you improve the quality and control of your walking, especially how and where you place your right foot",
+				"Stand with knees and toes pointed forward:",
+					"Use your right foot and heel to push off and away, so your chest turns left",
+					"Carefully and slowly allow chest to rotate back to center position",
+				"Stand with knees and toes pointed forward, right knee slightly bent and pushing slightly outward",
+					"As you step and turn your left foot leftward, use your right foot and hip to push off, continuing to keep right knee bent, and think about pushing right thigh and knee over even slightly more toward the right",
+					"Slowly and carefully step back to center, left toes will point forward again",
+			],
+			// instructions: [
+			// 	[ 'Repeat',   '20 Times' ],
+			// 	[ 'Hold',     '1 Second' ],
+			// 	[ 'Complete', '3 Sets' ],
+			// 	[ 'Perform',  '1 Times a Day' ],
+			// ],
+		}],
+	}, {			
 		group: "First Set of Exercise",
 		options: [{
 			name: 'GAIT TRAINING - SEQUENCING - HIP FLEXION TO HEEL STRIKE',
