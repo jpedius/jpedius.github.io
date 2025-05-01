@@ -3,7 +3,7 @@
 export function fn_exercises() {
 
 	const items = [{
-		group: "04-30-2025",
+		group: "Set 04-30-2025",
 		options: [{
 			name: 'Modified Russian Twist',
 			key: 'modified-russian-twist',
@@ -101,7 +101,7 @@ export function fn_exercises() {
 			]
 		}],
 	}, {
-		group: "Zero Set of Exercise",
+		group: "Set One",
 		options: [{
 			name: 'Modified single leg stance sit/stands',
 			key: 'modified-single-leg-stance-sit-stands',
@@ -159,7 +159,7 @@ export function fn_exercises() {
 			// ],
 		}],
 	}, {			
-		group: "First Set of Exercise",
+		group: "Set Two",
 		options: [{
 			name: 'GAIT TRAINING - SEQUENCING - HIP FLEXION TO HEEL STRIKE',
 			key: 'gait-training-sequencing-hip-flexion-to-heel-strike',
@@ -313,7 +313,7 @@ export function fn_exercises() {
 			]
 		}],
 	}, {
-		group: "Second Set of Exercise",
+		group: "Set Three",
 		options: [{
 			name: 'GAIT TRAINING - SEQUENCING - HIP FLEXION TO HEEL STRIKE',
 			key: 'gait-training-sequencing-hip-flexion-to-heel-strike',
@@ -440,7 +440,7 @@ export function fn_exercises() {
 			]
 		}],
 	}, {
-		group: "Three Set of Exercise",
+		group: "Set Four",
 		options: [{
 			name: 'GAIT TRAINING - SEQUENCING - HIP FLEXION TO HEEL STRIKE',
 			key: 'gait-training-sequencing-hip-flexion-to-heel-strike',
@@ -572,7 +572,7 @@ export function fn_exercises() {
 			]
 		}],
 	}, {
-		group: "Old Set of Exercise",
+		group: "Set Six",
 		options: [{
 			name: 'Seated Hamstring Stretch',
 			key: 'seated-hamstring-stretch',
