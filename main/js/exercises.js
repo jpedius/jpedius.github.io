@@ -3,6 +3,104 @@
 export function fn_exercises() {
 
 	const items = [{
+		group: "04-30-2025",
+		options: [{
+			name: 'Modified Russian Twist',
+			key: 'modified-russian-twist',
+			image: 'pt/modified-russian-twist.jpg',
+			exercises: [
+				'Holding small weight at stomach, and lean back until you feel your abdominal muscles engage.',
+				'Lead in each direction with the albums and twist from left to right with the torso.',
+				'Each side equals one full repetition.',
+			],
+			instructions: [
+				[ 'Repeat',   '20 Times' ],
+				[ 'Complete', '3 Sets' ],
+			]
+		}, {
+			name: 'Hamstring Curl with Stability Ball',
+			key: 'hamstring-curl-with-stability-ball',
+			image: 'pt/hamstring-curl-with-stability-ball.jpg',
+			exercises: [
+				'Lie down on your back with your knees straight and your feet on the ball.',
+				'Slowly curl the ball towards your body and return to the starting position.',
+			],
+			instructions: [
+				[ 'Repeat',   '10 Times' ],
+				[ 'Complete', '2 Sets' ],
+			]
+		}, {
+			name: 'Lumbar Rotation - Stability Ball',
+			key: 'lumbar-rotation-stability-ball',
+			image: 'pt/lumbar-rotation-stability-ball.jpg',
+			exercises: [
+				'Twist the ball right and left, using your abdominal muscles to change direction each time.',
+			],
+			instructions: [
+				[ 'Repeat',   '20 Times' ],
+				[ 'Complete', '2 Sets' ],
+			]
+		}, {
+			name: 'Bridging on a SB with ball under the knees',
+			key: 'bridging-on-a-sb-with-ball-under-the-knees',
+			image: 'pt/bridging-on-a-sb-with-ball-under-the-knees.jpg',
+			exercises: [
+				'Begin lying on your back with a stability ball under your knees.',
+				'Activate your core muscles for stabilization of the spine.',
+				'Slowly tighten up your gluteals and have your hips off the floor, stabilizing and holding your lower body steady on the ball.',
+				'Hold then slowly release back down to the table. Repeat.',
+			],
+			instructions: [
+				[ 'Repeat',   '10 Times' ],
+				[ 'Complete', '2 Sets' ],
+			]
+		}, {
+			name: 'Modified dead bug',
+			key: 'modified-dead-bug',
+			image: 'pt/modified-dead-bug.jpg',
+			exercises: [
+				'Begin by laying on back.',
+				'Knees are bent with feet on the ground.',
+				'Loop a green or red band around your arms, and gently pull apart to engage the upper body and trunk.',
+				'Inhale in center position.',
+				'As you exhale, pull your band towards right knee and tap.',
+				'As you exhale, pull your band towards left knee and tap.',
+				'Inhale to release to center position.',
+				'Press the opposite hand on the up knee, engaging the core ensuring the back is flat.',
+				'Hold for time and repeat on the other side.',
+			],
+			instructions: [
+				[ 'Repeat',   '20 Times' ],
+				[ 'Complete', '2 Sets' ],
+			]
+		}, {
+			name: 'Quadruped rock',
+			key: 'quadruped-rock',
+			image: 'pt/quadruped-rock.jpg',
+			exercises: [
+				'Get into an all fours position with hands below shoulders and knees below hips.',
+				'Wrap fingers over the edge of the table so you are bearing weight through the seals of the hands.',
+				'If this is painful in the wrists you can rock forward back with weight on your elbows instead.',
+			],
+			instructions: [
+				[ 'Repeat',   '10 Times' ],
+				[ 'Complete', '2 Sets' ],
+			]
+		}, {
+			name: 'Quadruped on elbows, leg reach',
+			key: 'quadruped-on-elbows-leg-reach',
+			image: 'pt/quadruped-on-elbows-leg-reach.jpg',
+			exercises: [
+				'The quadruped position with weight on elbows try to press one leg back (like you are shutting the door with your foot) then bring the knee back down to the mat.',
+				'Switch and reach your other leg back, then return knee to the mat.',
+			],
+			instructions: [
+				[ 'Repeat',   '20 Times' ],
+				[ 'Complete', '2 Sets' ],
+				[ 'Perform',  '3 Times a Day' ],
+			]
+		}],
+	}, {
 		group: "Zero Set of Exercise",
 		options: [{
 			name: 'Modified single leg stance sit/stands',
