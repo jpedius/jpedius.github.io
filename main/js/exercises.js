@@ -1,8 +1,60 @@
 'use strict';
 
+// python3 -m http.server 3000
+
 export function fn_exercises() {
 
 	const items = [{
+		group: "Set 05-28-2025",
+		options: [{
+			name: 'Seated soleus stretch',
+			key: 'seated-soleus-stretch',
+			// image: 'pt/seated-soleus-stretch.jpg',
+			exercises: [
+				'In sitting, place your foot underneath you so that your toes are directly below your knee.',
+				'Use your upper body to push your heel onto the floor to feel a stretch at the back of your lower leg.',
+			],
+			instructions: [
+				[ 'Repeat',   '5 Times' ],
+				[ 'Hold',     '30 Seconds' ],
+				[ 'Complete', '1 Set' ],
+				[ 'Perform',  '1 Time(s) a Day' ],
+			]
+		}, {
+			name: 'STANDING CALF STRETCH - GASTROC',
+			key: 'standing-calf-stretch-gastroc',
+			// image: 'pt/standing-calf-stretch-gastroc.jpg',
+			exercises: [
+				'Start by standing in front of a wall or other sturdy object.',
+				'Step forward with one foot and maintain your toes on both feet to be pointed straight forward.',
+				'Keep the leg behind you with a straight knee during the stretch.',
+				'Lean forward towards the wall and support yourself with your arms as you allow your front knee to bend until a gentle stretch is felt along the back of your leg that is most behind you.',
+				'Move closer or further away from the wall to control the stretch of the back leg.',
+				'Also you can adjust the bend of the front knee to control the stretch as well.',
+			],
+			instructions: [
+				[ 'Repeat',   '3 Times' ],
+				[ 'Hold',     '1 Minute' ],
+				[ 'Complete', '3 Sets' ],
+				[ 'Perform',  '1 Time(s) a Day' ],
+			]
+		}, {
+			name: 'BALL STM - PLANTAR FASCIA',
+			key: 'ball-stm-plantar-fascia',
+			// image: 'pt/ball-stm-plantar-fascia.jpg',
+			exercises: [
+				'While seated, place a small ball under the arch of your foot and press into it while rolling it around.',
+				'Use this form of self-soft tissue massage technique for the arch of the foot.',
+				'1) roll ball from toe to heel 20 times',
+				'2) roll ball side to side under the arch 20 times',
+				'3) roll ball 10 times clockwise circles and 10 times counterclockwise circles under the ball of the foot',
+				'4) roll ball 10 times clockwise circles and 10 times counterclockwise circles under the heel of the foot', 
+			],
+			instructions: [
+				[ 'Repeat',   '20 Times' ],
+			]
+		}]
+	}, {
 		group: "Set 04-30-2025",
 		options: [{
 			name: 'Modified Russian Twist',
