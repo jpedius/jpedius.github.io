@@ -14,8 +14,9 @@
     text-align: center;
 }
 
-.myMain {
+/*.myMain {
     display: grid;
     gap: 5px 6px;
     grid-template-columns: repeat(3, 400px);
 }
+*/

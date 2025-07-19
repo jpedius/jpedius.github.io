@@ -1,0 +1,46 @@
+.myHeader {
+	font-size: 40px;
+	padding: 5px;
+}
+
+.mySelect {
+	font-size: 30px;
+	padding: 5px;
+	margin: 0px 0px 10px 0px;
+}
+
+.myImage {
+	padding: 5px 0px;
+	width: 500px;
+}
+
+.myExercisesContainer {
+	display: grid;
+	gap: 5px;
+	grid-template-columns: 100px 800px;
+}
+
+.myExercisesPlay {
+	font-size: 20px;
+	padding: 5px 15px;
+}
+
+.myExercisesGrid {
+	font-size: 30px;
+	padding: 5px 0px;
+}
+
+.myInstructionsContainer {
+	display: grid;
+	gap: 5px;
+	grid-template-columns: 100px 150px 650px;
+}
+
+.myInstructionsGridSpan {
+	grid-column-start: span 2;
+}
+
+.myInstructionsGrid {
+	font-size: 30px;
+	padding: 5px 0px;
+}
