@@ -52,6 +52,7 @@ function fn_main_html(element) {
 
 	let names = [
 		{name: "Exercises", href: "my/exercises"},
+		{name: "Gastroenterology", href: "my/gastroenterology"},
 	];
 
 	for (let i of names) {
