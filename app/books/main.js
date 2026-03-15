@@ -12,8 +12,7 @@ let plots = {
 
 function fn_request(element) {
 
-	let txt = "alices-adventures-in-wonderland"
-	let url = "/app/txt/books/" + txt + "/" + element.group.value + ".txt";
+	let url = "/app/txt/books/" + element.group.value + ".txt";
 
 	fetch(new Request(url))
 		.then((response) => {
