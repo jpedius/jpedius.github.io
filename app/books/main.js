@@ -34,6 +34,7 @@ function fn_request(element) {
 
 			element.read.value = plots.array[plots.length];
 			element.number.innerHTML = plots.length + 1;
+			element.total.innerHTML = plots.array.length;
 		})
 		.catch((error) => {
 			console.error(`Error: ${error.message}`);
@@ -65,6 +66,7 @@ function fn_main(element, style) {
 			"group": group,
 			"read": read,
 			"number": number,
+			"total": total,
 		});
 	});
 
@@ -74,7 +76,7 @@ function fn_main(element, style) {
 	    padding: 5px;
 	}`);
 
-	let read = entry.textarea(div, ["myTextarea"], 10, 70, true);
+	let read = entry.textarea(div, ["myTextarea"], 14, 70, true);
 
 	div = entry.div(main, ["myDiv"]);
 	style.add(`.myButton {
@@ -106,12 +108,27 @@ function fn_main(element, style) {
 		number.innerHTML = plots.length + 1;
 	});
 
-	let number = entry.number(div, ["myNumber"], 1)
+	let number = entry.number(div, ["myButton"], 1);
+	entry.number(div, ["myButton"], "/");
+	let total = entry.number(div, ["myButton"], "");
+
+	entry.button(div, ["myButton"], "Go To", (event) => {
+		let e = Number(input.value);
+		let t = Number(total.innerHTML);
+		if (e !== NaN && e !== 0 && e <= t) {
+			plots.length = e - 1;
+			read.value = plots.array[plots.length];
+			number.innerHTML = plots.length + 1;
+			input.value = "";
+		}
+	});
+	let input = entry.input(div, ["myButton"], 4);
 
 	fn_request({
 		"group": group,
 		"read": read,
 		"number": number,
+		"total": total,
 	});
 }
 
