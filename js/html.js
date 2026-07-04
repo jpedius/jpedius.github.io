@@ -27,6 +27,16 @@ export class MyHTML {
 		return item;
 	}
 
+	hr(element, css=null) {
+
+		let item = document.createElement("hr");
+		if (css !== null) { item.classList.add(...css); }
+
+		element.appendChild(item);
+
+		return item;
+	}
+
 	input(element, css, size, readonly=false) {
 
 		let item = document.createElement("input");
