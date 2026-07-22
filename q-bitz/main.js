@@ -22,6 +22,12 @@ class MyMain extends MyApplication {
 
   style() {
 
+    let style = this.myStyle.add(`.myDiv {
+      font: 20px --main-font, sans-serif;
+      padding: 5px;
+    }`).set();
+
+    return style;
   }
 }
 new MyMain("Q-Bitz").main();
