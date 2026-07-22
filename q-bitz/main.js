@@ -1,51 +1,27 @@
 "use strict";
 
-import { fn_speak } from "../js/speak.js";
-import { MyStyle } from "../js/style.js";
-import { MyHTML, MyEntry } from "../js/html.js";
+import { MyApplication } from "../js/application.js";
 
-import { fn_qbitz, MyQBitz } from "./q-bitz.js";
+class MyMain extends MyApplication {
 
-function fn_main(body, style) {
+  constructor(title) {
+    super(title);
 
-	let html = new MyHTML();
-	let object = { "cribbage": null };
-	let tips = fn_cribbage();
+    this.myObject = null;
+  }   
 
-	let main = document.createElement("main");
-	body.appendChild(main);
+  main() {
 
-	style.add(`
-		.myDiv {
-			font: 20px --main-font, sans-serif;
-		    padding: 5px;
-		}
-	`);
+    this.title();
+    let body = this.header("myHeader");
+    let main = document.createElement("main");
+    body.appendChild(main);
 
-	let div = html.div(main, ["myDiv"]);
+    this.style();
+  }
+
+  style() {
+
+  }
 }
-
-function fn_app(title) {
-
-	let style = new MyStyle();
-	let entry = new MyEntry(title);
-
-	entry.title();
-	let body = entry.header(["myHeader"]);
-
-	style.add(`:root {
-		--main-font: "Fira Sans";
-	}`);
-	style.add(`.myHeader {
-		align-items: center;
-		display: flex;
-		font: 52px --main-font, sans-serif;
-		justify-content: center;
-		padding: 5px;
-	}`);
-
-	fn_main(body, style);
-
-	style.css();
-}
-fn_app("Q-Bitz");
+new MyMain("Q-Bitz").main();

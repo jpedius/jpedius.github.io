@@ -2,22 +2,30 @@
 
 export class MyStyle {
 
-	constructor() { this.style = []; }
+  constructor() {
 
-	add(element) { this.style.push(element); }
+    this.myStyle = [];
+  }
 
-	css() {
+  add(element) {
 
-		let element = document.createElement("style");
+    this.myStyle.push(element);
 
-		let style = "";
-		this.style.forEach((event) => {
-			style += event + "\n";
-		});
+    return this;
+  }
 
-		element.innerHTML = style;
-		document.head.appendChild(element);
+  set() {
 
-		return style;
-	}
+    let element = document.createElement("style");
+
+    let style = "";
+    this.myStyle.forEach((event) => {
+      style += event + "\n";
+    });
+
+    element.innerHTML = style;
+    document.head.appendChild(element);
+
+    return style;
+  }
 }

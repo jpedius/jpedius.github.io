@@ -2,145 +2,161 @@
 
 export class MyHTML {
 
-	button(element, css, text, click=null) {
+  button(element, css=null, text="", click=null) {
 
-		let item = document.createElement("button");
-		if (css !== null) { item.classList.add(...css); }
+    let item = document.createElement("button");
+    if (css !== null) { item.classList.add(...css); }
 
-		item.innerHTML = text;
-		item.addEventListener("click", click);
+    item.innerHTML = text;
+    item.addEventListener("click", click);
 
-		element.appendChild(item);
+    element.appendChild(item);
 
-		return item;
-	}
+    return item;
+  }
 
-	div(element, css=null, text="") {
+  checkbox(element, css=null, check=false) {
 
-		let item = document.createElement("div");
-		if (css !== null) { item.classList.add(...css); }
+    let item = document.createElement("input");
+    if (css !== null) { item.classList.add(...css); }
 
-		item.innerHTML = text;
+    item.type = "checkbox";
+    item.autocomplete = "off";
+    item.autocorrect = "off";
+    item.autocapitalize = "off";
+    if (check === true) { item.checked = "checked"; }
 
-		element.appendChild(item);
+    element.appendChild(item);
 
-		return item;
-	}
+    return item;
+  }
 
-	hr(element, css=null) {
+  div(element, css=null, text="") {
 
-		let item = document.createElement("hr");
-		if (css !== null) { item.classList.add(...css); }
+    let item = document.createElement("div");
+    if (css !== null) { item.classList.add(...css); }
 
-		element.appendChild(item);
+    item.innerHTML = text;
 
-		return item;
-	}
+    element.appendChild(item);
 
-	input(element, css, size, readonly=false) {
+    return item;
+  }
 
-		let item = document.createElement("input");
-		if (css !== null) { item.classList.add(...css); }
+  hidden(element) {
 
-		item.type = "text";
-		item.autocomplete = "off";
-		item.autocorrect = "off";
-		item.autocapitalize = "off";
-		item.size = size;
-		if (readonly === true) { item.readOnly = "readonly"; }
+    let item = document.createElement("input");
 
-		element.appendChild(item);
+    item.type = "hidden";
 
-		return item;
-	}
+    element.appendChild(item);
 
-	number(element, css, text) {
+    return item;
+  }
 
-		let item = document.createElement("span");
-		if (css !== null) { item.classList.add(...css); }
+  hr(element, css=null) {
 
-		item.innerHTML = text;
+    let item = document.createElement("hr");
+    if (css !== null) { item.classList.add(...css); }
 
-		element.appendChild(item);
+    element.appendChild(item);
 
-		return item;
-	}
+    return item;
+  }
 
-	options(element, choose, keys) {
+  img(element, css=null, width=100, height=100, src=null) {
 
-		let len = element.children.length;
-		for (let i=0; i<len; i++) {
-			element.remove(0);
-		}
+    let item = document.createElement("img");
+    if (css !== null) { item.classList.add(...css); }
 
-		for (let i=0; i<choose.length; i++) {
-	    	const option = document.createElement("option");
-	    	if (keys == true) {
-		    	option.textContent = choose[i].name;
-				option.value = choose[i].key;
-			}
-	    	else {
-		    	option.textContent = choose[i].group;
-				option.value = choose[i].group;
-	    	}
-	    	element.appendChild(option);
-	    }
+    item.width = width;
+    item.height = height;
+    item.src = src;
 
-	    return element;
-	}
+    element.appendChild(item);
 
-	select(element, css, change=null) {
+    return item;
+  }
 
-		let item = document.createElement("select");
-		if (css !== null) { item.classList.add(...css); }
+  input(element, css=null, size=4, readonly=false) {
 
-		item.innerHTML = "";
-		item.addEventListener("change", change);
+    let item = document.createElement("input");
+    if (css !== null) { item.classList.add(...css); }
 
-		element.appendChild(item);
+    item.type = "text";
+    item.autocomplete = "off";
+    item.autocorrect = "off";
+    item.autocapitalize = "off";
+    item.size = size;
+    if (readonly === true) { item.readOnly = "readonly"; }
 
-		return item;
-	}
+    element.appendChild(item);
 
-	span(element, css=null, text="", style=null) {
+    return item;
+  }
 
-		let item = document.createElement("span");
-		if (css !== null) { item.classList.add(...css); }
+  number(element, css=null, text="") {
 
-		item.innerHTML = text;
-		if (style !== null) {
-			for (let i=0; i<style.length; i++) {
-				item.style.setProperty(style[i][0], style[i][1]);
-			}
-		}
+    let item = document.createElement("span");
+    if (css !== null) { item.classList.add(...css); }
 
-		element.appendChild(item);
+    item.innerHTML = text;
 
-		return item;
-	}
-}
+    element.appendChild(item);
 
-export class MyEntry {
+    return item;
+  }
 
-	constructor(title) { this.myTitle = title; }
+  options(element, choose, keys) {
 
-	title() { document.title = this.myTitle; }
+    let len = element.children.length;
+    for (let i=0; i<len; i++) {
+      element.remove(0);
+    }
 
-	header(css) {
+    for (let i=0; i<choose.length; i++) {
+      const option = document.createElement("option");
+      if (keys == true) {
+        option.textContent = choose[i].name;
+        option.value = choose[i].key;
+      }
+      else {
+        option.textContent = choose[i].group;
+        option.value = choose[i].group;
+      }
+      element.appendChild(option);
+    }
 
-		let body = document.getElementById("body");
+      return element;
+  }
 
-		let header = document.createElement("header");
-		body.appendChild(header);
+  select(element, css=null, change=null) {
 
-		let div = document.createElement("div");
-		div.classList.add(...css);
-		div.innerHTML = this.myTitle;
-		header.appendChild(div);
+    let item = document.createElement("select");
+    if (css !== null) { item.classList.add(...css); }
 
-		let hr = document.createElement("hr");
-		header.appendChild(hr);
+    item.innerHTML = "";
+    item.addEventListener("change", change);
 
-		return body;
-	}
+    element.appendChild(item);
+
+    return item;
+  }
+
+  span(element, css=null, text="", style=null) {
+
+    let item = document.createElement("span");
+    if (css !== null) { item.classList.add(...css); }
+
+    item.innerHTML = text;
+    if (style !== null) {
+      for (let i=0; i<style.length; i++) {
+        item.style.setProperty(style[i][0], style[i][1]);
+      }
+    }
+
+    element.appendChild(item);
+
+    return item;
+  }
 }
