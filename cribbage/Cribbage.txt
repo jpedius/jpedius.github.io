@@ -1,0 +1,18 @@
+fifteens
+	two points for each distinct combination of two or more cards totalling exactly fifteen (counting aces as one, face cards as ten)
+
+runs
+	three points for a run of three consecutive cards (regardless of suit)
+	four points for a run of four
+	five points for a run of five
+
+pairs
+	two points for a pair of cards of the same rank
+	six points for three cards of the same rank (known as a "pair royal", comprising three distinct pairs)
+	twelve points for four cards of the same rank (a "double pair royal", comprising six distinct pairs)
+
+flush
+	four points for a flush, where all four cards in the hand are of the same suit, with an additional point if the starter card is also of that suit. (Note that four suited cards including the starter, but missing one of the cards in the hand, does not score for flush.)
+
+his nob(s)
+	one point for holding the jack of the same suit as the starter card ("one for his nob" or "... his nobs"[)
